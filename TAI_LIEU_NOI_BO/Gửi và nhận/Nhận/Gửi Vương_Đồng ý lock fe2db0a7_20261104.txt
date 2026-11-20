@@ -1,0 +1,14 @@
+Phong đồng ý lock.json bắt đầu fe2db0a7.
+
+Đã kiểm ngày 04/11/2026 trên máy Phong:
+- SHA-256 đầy đủ: fe2db0a75e698ae0804f504f7bad9bd0bbf64cba92f14f7d8a393cba2b2aab0f.
+- 16/16 tệp khớp; danh sách hash đáp ứng cổng khóa.
+- RF là phương pháp chính; A: N=1000, min_count=20, max_len=2, min_confidence=0,05.
+- LR C=0,1; RF depth=10, leaf=100, 300 cây; khớp Pipeline đã lưu.
+- Ngưỡng F1 LR=0,7312827512437302, RF=0,5777123663354883; khớp CSV validation.
+- approvals của bản nháp vẫn false; không sửa tay và chưa mở test.
+
+Vương tiếp tục --approve Phong Vuong trên máy Vương theo quy trình đã chốt. Khi tạo khóa chính thức, chỉ locked_at và approvals được thay đổi; cấu hình, ngưỡng và hash 16 tệp giữ nguyên. Hash lock.json sau approve sẽ khác; cần lưu cùng kết quả chính thức.
+
+Hồ sơ máy Phong: output/duyet_lock_fe2db0a7_20261104/kiem_lock.log và verification.json.
+Biên bản chính phía Vương có thể cập nhật ô Phong duyệt khóa nháp ngày 04/11/2026; chỉ ghi “đã khóa” sau khi --approve thực sự hoàn tất. Không gửi thêm bản biên bản song song.

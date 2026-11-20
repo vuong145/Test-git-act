@@ -1,0 +1,4 @@
+method  baskets  inference_seconds  recall_at_10       n  positives  threshold  accuracy  precision   recall       f1  roc_auc  average_precision      tn   fp   fn  tp
+    LR     2000           1.750347      0.090588 1990983       1997   0.731283  0.997540   0.038792 0.061092 0.047452 0.783104           0.012239 1985963 3023 1875 122
+    RF     2000           6.084351      0.093011 1990983       1997   0.577712  0.997595   0.048512 0.075113 0.058951 0.809245           0.013768 1986044 2942 1847 150
+2.000 giỏ LR/RF khớp nguồn; 500 dòng Top-10 Rules độc lập khớp.

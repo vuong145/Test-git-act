@@ -1,0 +1,41 @@
+case,order_id,method,rank,product_id,product_name,hit
+có luật khớp,36,Popularity,1,24852,Banana,False
+có luật khớp,36,Popularity,2,13176,,False
+có luật khớp,36,Popularity,3,21137,Organic Strawberries,False
+có luật khớp,36,Popularity,4,21903,Organic Baby Spinach,False
+có luật khớp,36,Popularity,5,47626,,False
+có luật khớp,36,Rules,1,13176,,False
+có luật khớp,36,Rules,2,21903,Organic Baby Spinach,False
+có luật khớp,36,Rules,3,21137,Organic Strawberries,False
+có luật khớp,36,Rules,4,24852,Banana,False
+có luật khớp,36,Rules,5,47626,,False
+có luật khớp,36,LR,1,24852,Banana,False
+có luật khớp,36,LR,2,13176,,False
+có luật khớp,36,LR,3,21137,Organic Strawberries,False
+có luật khớp,36,LR,4,21903,Organic Baby Spinach,False
+có luật khớp,36,LR,5,47626,,False
+có luật khớp,36,RF,1,13176,,False
+có luật khớp,36,RF,2,21903,Organic Baby Spinach,False
+có luật khớp,36,RF,3,21137,Organic Strawberries,False
+có luật khớp,36,RF,4,47209,organic hass avocado,False
+có luật khớp,36,RF,5,24852,Banana,False
+không có luật khớp,5858,Popularity,1,24852,Banana,False
+không có luật khớp,5858,Popularity,2,13176,,False
+không có luật khớp,5858,Popularity,3,21137,Organic Strawberries,False
+không có luật khớp,5858,Popularity,4,21903,Organic Baby Spinach,False
+không có luật khớp,5858,Popularity,5,47626,,False
+không có luật khớp,5858,Rules,1,24852,Banana,False
+không có luật khớp,5858,Rules,2,13176,,False
+không có luật khớp,5858,Rules,3,21137,Organic Strawberries,False
+không có luật khớp,5858,Rules,4,21903,Organic Baby Spinach,False
+không có luật khớp,5858,Rules,5,47626,,False
+không có luật khớp,5858,LR,1,24852,Banana,False
+không có luật khớp,5858,LR,2,13176,,False
+không có luật khớp,5858,LR,3,21137,Organic Strawberries,False
+không có luật khớp,5858,LR,4,21903,Organic Baby Spinach,False
+không có luật khớp,5858,LR,5,47626,,False
+không có luật khớp,5858,RF,1,24852,Banana,False
+không có luật khớp,5858,RF,2,13176,,False
+không có luật khớp,5858,RF,3,21137,Organic Strawberries,False
+không có luật khớp,5858,RF,4,19660,Spring Water,False
+không có luật khớp,5858,RF,5,44632,SPARKLING WATER GRAPEFRUIT,False

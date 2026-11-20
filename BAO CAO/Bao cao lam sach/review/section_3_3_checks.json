@@ -1,0 +1,46 @@
+{
+  "pdf": "2521001118_Nhom01_TieuLuan.pdf",
+  "pdf_sha256": "390463e8815f24dffbd9bd22af790079de99f8d3c242752f25f9d4dd9a090f52",
+  "pages_checked": [
+    {
+      "pdf_page": 24,
+      "overflow": []
+    },
+    {
+      "pdf_page": 25,
+      "overflow": []
+    },
+    {
+      "pdf_page": 26,
+      "overflow": []
+    },
+    {
+      "pdf_page": 27,
+      "overflow": []
+    },
+    {
+      "pdf_page": 28,
+      "overflow": []
+    },
+    {
+      "pdf_page": 29,
+      "overflow": []
+    },
+    {
+      "pdf_page": 30,
+      "overflow": []
+    },
+    {
+      "pdf_page": 31,
+      "overflow": []
+    }
+  ],
+  "renderer_checks": [
+    "success",
+    "compile_failure_preserves_previous",
+    "locked_target_retains_new_build"
+  ],
+  "data_check": "six clean CSV hashes match recorded runs; Master hash unchanged",
+  "publication": "published: primary PDF hash matches reviewed build",
+  "journal_modified": true
+}

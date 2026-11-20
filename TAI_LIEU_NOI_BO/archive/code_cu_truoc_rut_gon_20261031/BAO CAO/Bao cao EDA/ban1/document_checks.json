@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "scope": "standalone member 1 preview, not integrated thesis",
+  "pages": 6,
+  "pdf_sha256": "05c7fe65f0e6f37b190c2e71d69d2c9c9149e41f74fc97f32569c79a5ca49cdc",
+  "qmd_sha256": "d4815c081eba00a7950b271d99ac6f051d3b243b078ecc751b6d9f1962bdf804",
+  "body_table_nominal_font_pt": 12,
+  "table_page_extracted_sizes_bp": {
+    "2": [
+      11.96
+    ],
+    "3": [
+      11.96,
+      14.35
+    ],
+    "4": [
+      11.96
+    ]
+  },
+  "figure_font_pt": 12,
+  "figure_insert_width_cm": 16,
+  "rotated_axis_text_note": "pdfplumber size for rotated glyphs reflects glyph width; source font is 12 pt",
+  "pngs": {
+    "fig-ref-basket-distribution.png": {
+      "pixels": [
+        1890,
+        1740
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "fig-ref-category-concentration.png": {
+      "pixels": [
+        1890,
+        2160
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  },
+  "visual_review": "all six pages inspected; no clipped tables, figures or captions; Vietnamese captions",
+  "pending": [
+    "peer review",
+    "full thesis integration and final page budget"
+  ]
+}

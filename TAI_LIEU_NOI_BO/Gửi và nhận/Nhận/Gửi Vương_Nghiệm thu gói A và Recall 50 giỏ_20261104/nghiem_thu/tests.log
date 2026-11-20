@@ -1,0 +1,61 @@
+test_both_members_independent_of_chunk_size_and_order (test_cleaning.CleaningTests.test_both_members_independent_of_chunk_size_and_order) ... ok
+test_noncontiguous_basket_rejected (test_cleaning.CleaningTests.test_noncontiguous_basket_rejected) ... ok
+test_orphan_prior_key_rejected_without_overwriting_output (test_cleaning.CleaningTests.test_orphan_prior_key_rejected_without_overwriting_output) ... ok
+test_partition_overlap_rejected (test_cleaning.CleaningTests.test_partition_overlap_rejected) ... ok
+test_baskets_missing_singleton_and_repeated_department (test_m2_foundation.FoundationTests.test_baskets_missing_singleton_and_repeated_department) ... ok
+test_failed_write_preserves_previous (test_m2_foundation.FoundationTests.test_failed_write_preserves_previous) ... ok
+test_hour_boundaries (test_m2_foundation.FoundationTests.test_hour_boundaries) ... ok
+test_reject_conflicting_na_and_invalid_hour (test_m2_foundation.FoundationTests.test_reject_conflicting_na_and_invalid_hour) ... ok
+test_reject_corrupt_keys_and_multiple_baskets (test_m2_foundation.FoundationTests.test_reject_corrupt_keys_and_multiple_baskets) ... ok
+test_split_counts_union_reproducibility (test_m2_foundation.FoundationTests.test_split_counts_union_reproducibility) ... ok
+test_split_small_rounding (test_m2_foundation.FoundationTests.test_split_small_rounding) ... ok
+test_hand_computed_tables (test_m2_hypotheses.HypothesisTests.test_hand_computed_tables) ... ok
+test_holm_keeps_family_and_original_order (test_m2_hypotheses.HypothesisTests.test_holm_keeps_family_and_original_order) ... ok
+test_invalid_counts (test_m2_hypotheses.HypothesisTests.test_invalid_counts) ... ok
+test_counts_do_not_overflow_and_absent_department (test_m2_multivariate.MultivariateTests.test_counts_do_not_overflow_and_absent_department) ... ok
+test_empty_time_cells_and_missing_group (test_m2_multivariate.MultivariateTests.test_empty_time_cells_and_missing_group) ... ok
+test_hand_calculated_pair_and_direction (test_m2_multivariate.MultivariateTests.test_hand_calculated_pair_and_direction) ... ok
+test_insufficient_pair_is_na (test_m2_multivariate.MultivariateTests.test_insufficient_pair_is_na) ... ok
+test_pairwise_missing_and_constant (test_m2_multivariate.MultivariateTests.test_pairwise_missing_and_constant) ... ok
+test_reject_unknown_department_and_missing_basket (test_m2_multivariate.MultivariateTests.test_reject_unknown_department_and_missing_basket) ... ok
+test_all_missing_frequency_and_numeric (test_m2_summary.SummaryTests.test_all_missing_frequency_and_numeric) ... ok
+test_conflicting_order_attribute_rejected (test_m2_summary.SummaryTests.test_conflicting_order_attribute_rejected) ... ok
+test_duplicate_product_rejected (test_m2_summary.SummaryTests.test_duplicate_product_rejected) ... ok
+test_missing_and_valid_denominators (test_m2_summary.SummaryTests.test_missing_and_valid_denominators) ... ok
+test_missing_names_and_zero_groups_preserved (test_m2_summary.SummaryTests.test_missing_names_and_zero_groups_preserved) ... ok
+test_remaining_departments_union (test_m2_summary.SummaryTests.test_remaining_departments_union) ... ok
+test_sample_std_quantiles_and_ranking (test_m2_summary.SummaryTests.test_sample_std_quantiles_and_ranking) ... ok
+test_union_coverage_not_sum_of_popularities (test_m2_summary.SummaryTests.test_union_coverage_not_sum_of_popularities) ... ok
+test_rule_priority_ties_outside_catalog_and_empty_candidates (test_m4_crosscheck.CrosscheckTests.test_rule_priority_ties_outside_catalog_and_empty_candidates) ... ok
+test_catalog_rank_ties_and_denominator (test_m4_data.CatalogAndRulesTests.test_catalog_rank_ties_and_denominator) ... ok
+test_empty_rows_kept_and_algorithms_agree (test_m4_data.CatalogAndRulesTests.test_empty_rows_kept_and_algorithms_agree) ... ok
+test_support_gap_detects_small_difference_and_missing_itemset (test_m4_data.CatalogAndRulesTests.test_support_gap_detects_small_difference_and_missing_itemset) ... ok
+test_worst_gap_checks_every_run_not_only_the_first (test_m4_data.CatalogAndRulesTests.test_worst_gap_checks_every_run_not_only_the_first) ... ok
+test_hidden_items_do_not_change_features (test_m4_data.FeatureTests.test_hidden_items_do_not_change_features) ... ok
+test_metrics_by_hand_and_empty_candidates (test_m4_data.FeatureTests.test_metrics_by_hand_and_empty_candidates) ... ok
+test_negative_sampling_keeps_positives (test_m4_data.FeatureTests.test_negative_sampling_keeps_positives) ... ok
+test_rule_features_by_hand_and_no_rule_is_zero (test_m4_data.FeatureTests.test_rule_features_by_hand_and_no_rule_is_zero) ... ok
+test_ties_break_by_product_id (test_m4_data.FeatureTests.test_ties_break_by_product_id) ... ok
+test_rule_metrics_by_hand (test_m4_data.MaskConfigTests.test_rule_metrics_by_hand) ... ok
+test_stored_mask_must_match_config (test_m4_data.MaskConfigTests.test_stored_mask_must_match_config) ... ok
+test_hidden_count_and_partition (test_m4_data.MaskTests.test_hidden_count_and_partition) ... ok
+test_same_seed_and_order_same_mask (test_m4_data.MaskTests.test_same_seed_and_order_same_mask) ... ok
+test_synthetic_mining_and_classifier_pipeline (test_m4_environment.M4EnvironmentTests.test_synthetic_mining_and_classifier_pipeline)
+Thu vien khai pha, tien xu ly va hai classifier chay tren fixture. ... ok
+test_coefficients_reconstruct_log_odds (test_m4_interpret.InterpretTests.test_coefficients_reconstruct_log_odds) ... ok
+test_importance_reproducible_and_model_unchanged (test_m4_interpret.InterpretTests.test_importance_reproducible_and_model_unchanged) ... ok
+test_reject_one_class_importance (test_m4_interpret.InterpretTests.test_reject_one_class_importance) ... ok
+test_sampling_keeps_whole_baskets (test_m4_interpret.InterpretTests.test_sampling_keeps_whole_baskets) ... ok
+test_ablation_columns (test_m4_model.ModelTests.test_ablation_columns) ... ok
+test_bootstrap_matches_seeded_reference (test_m4_model.ModelTests.test_bootstrap_matches_seeded_reference) ... ok
+test_bootstrap_pairing_and_edges (test_m4_model.ModelTests.test_bootstrap_pairing_and_edges) ... ok
+test_f1_threshold_exhaustive (test_m4_model.ModelTests.test_f1_threshold_exhaustive) ... ok
+test_grid_selects_fastest_within_tolerance (test_m4_model.ModelTests.test_grid_selects_fastest_within_tolerance) ... ok
+test_metrics_by_hand (test_m4_model.ModelTests.test_metrics_by_hand) ... ok
+test_preprocessing_fit_only_and_unknown_category (test_m4_model.ModelTests.test_preprocessing_fit_only_and_unknown_category) ... ok
+test_relative_paths_only (test_no_hard_paths.NoHardPathTests.test_relative_paths_only) ... ok
+
+----------------------------------------------------------------------
+Ran 55 tests in 5.007s
+
+OK

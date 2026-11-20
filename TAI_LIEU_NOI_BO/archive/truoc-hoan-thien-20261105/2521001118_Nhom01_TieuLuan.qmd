@@ -1,0 +1,1305 @@
+---
+# Không thêm title/author ở YAML: bìa riêng đã được tạo bên dưới.
+lang: vi
+bibliography: references.bib
+csl: styles/apa.csl
+citeproc: true
+format:
+  pdf:
+    documentclass: report
+    classoption: [oneside, openany]
+    pdf-engine: xelatex
+    papersize: a4
+    fontsize: 12pt
+    mainfont: "Times New Roman"
+    sansfont: "Times New Roman"
+    monofont: "Consolas"
+    geometry:
+      - top=2cm
+      - bottom=2cm
+      - left=3cm
+      - right=2cm
+    linestretch: 1.3
+    number-sections: true
+    number-depth: 3
+    top-level-division: chapter
+    toc: false
+    lof: false
+    lot: false
+    colorlinks: false
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    fig-dpi: 300
+    keep-tex: false
+    include-in-header:
+      text: |
+        \usepackage{tikz}
+        \usetikzlibrary{calc}
+        \usepackage{graphicx}
+        \usepackage{float}
+        \usepackage{flafter}
+        \usepackage{placeins}
+        \usepackage{caption}
+        \usepackage{titlesec}
+        \usepackage{fvextra}
+        \usepackage{etoolbox}
+        \usepackage{booktabs}
+        \setlength{\parindent}{0pt}
+        \setlength{\parskip}{6pt}
+        \setcounter{tocdepth}{2}
+        \titleformat{\chapter}[display]
+          {\normalfont\bfseries\centering\fontsize{16}{20}\selectfont}
+          {\chaptertitlename\ \thechapter}{6pt}{}
+        \titlespacing*{\chapter}{0pt}{0pt}{18pt}
+        \titleformat{\section}{\normalfont\bfseries\fontsize{14}{18}\selectfont}{\thesection}{0.7em}{}
+        \titlespacing*{\section}{0pt}{14pt}{6pt}
+        \titleformat{\subsection}{\normalfont\bfseries\itshape\fontsize{12}{16}\selectfont}{\thesubsection}{0.7em}{}
+        \titlespacing*{\subsection}{0pt}{10pt}{4pt}
+        \titleformat{\subsubsection}{\normalfont\itshape\fontsize{12}{15}\selectfont}{\thesubsubsection}{0.7em}{}
+        \titlespacing*{\subsubsection}{0pt}{8pt}{3pt}
+        \captionsetup{labelsep=colon,font=normalsize,labelfont=bf}
+        \AtBeginDocument{%
+          \renewcommand{\chaptername}{CHƯƠNG}%
+          \renewcommand{\appendixname}{PHỤ LỤC}%
+          \renewcommand{\contentsname}{MỤC LỤC}%
+          \renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}%
+          \renewcommand{\listfigurename}{DANH MỤC HÌNH VẼ / BIỂU ĐỒ}%
+          \renewcommand{\tablename}{Bảng}%
+          \renewcommand{\figurename}{Hình}%
+          \setlength{\parskip}{6pt}%
+        }
+        \AtBeginEnvironment{CSLReferences}{\setlength{\parskip}{6pt}}
+        \DefineVerbatimEnvironment{CodeAppendix}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\normalsize}
+crossref:
+  chapters: true
+  fig-title: "Hình"
+  tbl-title: "Bảng"
+  fig-prefix: "Hình"
+  tbl-prefix: "Bảng"
+  title-delim: ":"
+execute:
+  echo: false
+  warning: false
+  error: false
+---
+
+```{=latex}
+\pagenumbering{gobble}
+\begin{titlepage}
+% Vẽ khung viền trang bìa đôi bằng TikZ chuẩn học thuật
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width = 2pt, color = black] ($(current page.north west) + (2.5cm,-1.5cm)$) rectangle ($(current page.south east) + (-1.5cm,1.5cm)$);
+  \draw[line width = 0.6pt, color = black] ($(current page.north west) + (2.65cm,-1.65cm)$) rectangle ($(current page.south east) + (-1.35cm,1.35cm)$);
+\end{tikzpicture}
+
+\centering
+{\bfseries\fontsize{14}{18}\selectfont TRƯỜNG ĐẠI HỌC TÀI CHÍNH - MARKETING\par}
+\vspace{0.25cm}
+{\bfseries\fontsize{13}{17}\selectfont KHOA KHOA HỌC DỮ LIỆU\par}
+\vspace{0.8cm}
+\IfFileExists{assets/logo-truong.png}{%
+  \includegraphics[height=2.5cm]{assets/logo-truong.png}%
+}{\fbox{\parbox[c][2.3cm][c]{3.2cm}{\centering LOGO TRƯỜNG}}}
+\par\vspace{0.8cm}
+{\bfseries\fontsize{18}{22}\selectfont BÀI TIỂU LUẬN KẾT THÚC MÔN HỌC\par}
+\vspace{0.4cm}
+{\bfseries\fontsize{14}{18}\selectfont LẬP TRÌNH PYTHON CHO KHOA HỌC DỮ LIỆU\par}
+\vspace{0.7cm}
+{\bfseries\fontsize{15}{20}\selectfont PHÂN TÍCH GIỎ HÀNG VÀ ĐỀ XUẤT BÁN CHÉO TRÊN DỮ LIỆU INSTACART QUY MÔ LỚN\par}
+\vspace{0.3cm}
+{\bfseries Đề tài PRJ-08\par}
+\vspace{0.9cm}
+\begin{minipage}{0.88\textwidth}
+\raggedright
+\textbf{Giảng viên hướng dẫn:} Trần Mạnh Tường\par
+\textbf{Lớp học phần:} 2631101190501 \qquad \textbf{Nhóm:} 01\par
+\vspace{0.3cm}
+\textbf{Sinh viên thực hiện:}\par
+1. Lê Văn Vương      — MSSV: 2521001118\par
+2. Hoàng Thanh Phong — MSSV: 2521001087\par
+\end{minipage}
+\vfill
+{\bfseries\fontsize{13}{17}\selectfont Thành phố Hồ Chí Minh, tháng 11 năm 2026\par}
+\end{titlepage}
+\clearpage
+\pagenumbering{roman}
+\pagestyle{plain}
+```
+
+# LỜI CAM ĐOAN VÀ LỜI CẢM ƠN {.unnumbered .unlisted}
+
+**Lời cam đoan**
+
+[Viết cam đoan đúng với quá trình thực hiện: nguồn dữ liệu, kết quả đo thực tế, đóng góp, việc sử dụng AI và trách nhiệm kiểm chứng. Không khẳng định không dùng AI nếu có sử dụng.]
+
+**Lời cảm ơn**
+
+[Viết lời cảm ơn phù hợp. Điền ngày và chữ ký nếu trường yêu cầu.]
+
+<!-- Nếu trường bắt buộc trang nhận xét giảng viên, chèn sau bìa hoặc theo mẫu trường; xem README. -->
+
+```{=latex}
+\clearpage
+\renewcommand{\contentsname}{MỤC LỤC}
+% Chỉ mục lục giảm giãn dòng (toàn bài 1,3) để vừa 2 trang; chữ vẫn 12 pt.
+{\linespread{1.15}\selectfont\tableofcontents}
+\clearpage
+```
+
+# DANH MỤC CHỮ VIẾT TẮT {.unnumbered}
+
+| Chữ viết tắt | Giải thích |
+|:--|:--|
+| EDA | Phân tích khám phá dữ liệu |
+| RAM | Bộ nhớ truy cập ngẫu nhiên |
+| ML | Học máy |
+| PRJ | Mã đề tài |
+| ERD | Sơ đồ thực thể và quan hệ |
+| IQR | Khoảng tứ phân vị |
+| LR | Hồi quy logistic |
+| RF | Rừng ngẫu nhiên |
+| CI | Khoảng tin cậy |
+| ROC-AUC | Diện tích dưới đường cong ROC |
+| AP | Average Precision; độ chính xác trung bình |
+| CRISP-DM | Quy trình chuẩn liên ngành cho khai phá dữ liệu |
+| RSS | Bộ nhớ vật lý tiến trình đang sử dụng |
+| CSV | Tệp văn bản phân tách bằng dấu phẩy |
+| NA | Giá trị thiếu hoặc không áp dụng |
+| API | Giao diện lập trình ứng dụng |
+| A/B | Thử nghiệm đối chứng giữa hai phương án |
+
+```{=latex}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DANH MỤC BẢNG BIỂU}
+\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}
+\listoftables
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DANH MỤC HÌNH VẼ / BIỂU ĐỒ}
+\renewcommand{\listfigurename}{DANH MỤC HÌNH VẼ / BIỂU ĐỒ}
+\listoffigures
+\clearpage
+```
+
+# TÓM TẮT ĐỒ ÁN {.unnumbered}
+
+Nghiên cứu xây dựng quy trình gợi ý sản phẩm mua kèm trong khi khách hàng đang tạo giỏ, từ dữ liệu Instacart đa bảng được bổ sung nhiễu theo yêu cầu học phần. Sáu bảng được làm sạch và tích hợp; dữ liệu được phân hoạch theo người dùng thành reference, fit, validation và test để tách việc học thống kê, huấn luyện, lựa chọn cấu hình và đánh giá cuối. Bài toán hoàn thiện giỏ được mô phỏng bằng cách che một phần sản phẩm, sau đó so sánh Popularity, luật kết hợp, Logistic Regression và Random Forest trên cùng danh mục ứng viên. Apriori và FP-Growth cho cùng itemset và support tại hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy thực nghiệm. Lựa chọn cấu hình thực hiện trên validation, còn tập test được chấm sau khi khóa. Trên 24.877 giỏ test đủ điều kiện, Random Forest đạt Recall@10 bằng 0,0971, cao hơn Popularity 0,0216 với khoảng tin cậy bootstrap 95% [0,0192; 0,0239], và cao hơn Rules 0,0047 trong so sánh bổ trợ chưa hiệu chỉnh đa so sánh. Tuy nhiên, trần Recall@10 của danh mục Top-1.000 chỉ đạt 0,5198, cho thấy giới hạn đáng kể ở khâu tạo ứng viên. Nghiên cứu đề xuất sử dụng luật đồng mua làm nền, thử nghiệm tầng xếp hạng Random Forest theo cân bằng chất lượng và chi phí, đồng thời dự phòng bằng độ phổ biến. Lộ trình triển khai gồm thử nghiệm kín, A/B theo người dùng và giám sát chất lượng, đa dạng cùng quyền riêng tư. Kết quả phản ánh hiệu quả ngoại tuyến trong một thiết kế che giỏ và một phân hoạch; chưa chứng minh khả năng tăng doanh thu hoặc tác động nhân quả trong vận hành thực tế.
+
+```{=latex}
+\clearpage
+\pagenumbering{arabic}
+```
+
+# TỔNG QUAN ĐỀ TÀI VÀ MỤC TIÊU NGHIÊN CỨU {#sec-tong-quan}
+
+```{=latex}
+\edef\SavedClubPenalty{\the\clubpenalty}
+\edef\SavedWidowPenalty{\the\widowpenalty}
+\clubpenalty=10000
+\widowpenalty=10000
+```
+
+## Bối cảnh nghiên cứu và Lý do chọn đề tài
+
+Trong bán lẻ trực tuyến, bộ phận kinh doanh và vận hành gợi ý phải lựa chọn sản phẩm mua kèm phù hợp khi khách đang tạo giỏ. Tình huống nghiên cứu đặt ra là danh sách chỉ dựa trên độ phổ biến có thể chưa phản ánh nhu cầu của giỏ hiện tại, trong khi dữ liệu phân tán và nhiễu làm giảm độ tin cậy của phân tích. Đây là bài toán quản trị giả định cần kiểm chứng, không phải khẳng định về hệ thống đang vận hành của Instacart.
+
+Dữ liệu Instacart được công bố năm 2017, đăng lại bởi psparks trên Kaggle [@instacart_dataset] và từng dùng trong cuộc thi Market Basket Analysis [@instacart]. Đề tài dùng bản bổ sung nhiễu để kiểm chứng xử lý đa bảng; khai thác quan hệ đồng mua bằng Apriori và FP-Growth để **hoàn thiện giỏ hàng**. Câu hỏi quản trị là liệu gợi ý theo phần giỏ quan sát có tốt hơn gợi ý phổ biến, với chi phí tính toán phù hợp. Do thiếu giá bán, lợi nhuận và lịch sử hiển thị gợi ý, nghiên cứu chưa đo tác động doanh thu hoặc hiệu quả nhân quả.
+
+## Xác định vấn đề và Câu hỏi nghiên cứu
+
+Nghiên cứu xây dựng quy trình xếp hạng sản phẩm mua kèm từ dữ liệu đa bảng, tập trung trả lời năm câu hỏi:
+
+1. Quy trình làm sạch và tích hợp sáu bảng dữ liệu bảo đảm tính toàn vẹn quan hệ, quy mô phân tích và hiệu quả sử dụng bộ nhớ đến mức nào?
+2. Cấu trúc giỏ hàng và các mối quan hệ đồng xuất hiện giữa sản phẩm, ngành hàng có đặc điểm gì nổi bật?
+3. Apriori và FP-Growth khác nhau ra sao về thời gian thực thi, mức sử dụng RAM và kết quả khai phá trong cùng điều kiện?
+4. Phương pháp xếp hạng dựa trên luật kết hợp, Logistic Regression và Random Forest có cải thiện chất lượng gợi ý ngoài mẫu so với phương pháp dựa trên độ phổ biến hay không?
+5. Kết quả thực nghiệm hỗ trợ những khuyến nghị nào về gợi ý bán chéo và triển khai thử nghiệm trong doanh nghiệp?
+
+## Mục tiêu nghiên cứu (Tổng quát và Cụ thể)
+
+**Mục tiêu tổng quát:** Xây dựng quy trình phân tích giỏ hàng đa bảng có thể tái lập, phát hiện quan hệ đồng mua và đánh giá chất lượng gợi ý ngoài mẫu để làm căn cứ đề xuất thử nghiệm bán chéo.
+
+1. **Dữ liệu, tuần 1:** Làm sạch sáu CSV; tạo bảng phân tích chính trên **1 triệu dòng sản phẩm–đơn hàng**, đối chiếu 1.384.617 dòng train. Đầu ra gồm bảng trước–sau và kiểm tra không trùng khóa, không khóa ngoại mồ côi, không mất/nhân dòng do ghép; thuộc tính còn thiếu và giả định khôi phục được công bố.
+2. **Tài nguyên, tuần 2:** Áp dụng chunksize, tối ưu dtype và Parquet; lập bảng RAM đỉnh, thời gian, dung lượng trước–sau trên cùng dữ liệu và máy, kiểm tra kết quả tương đương. Báo cáo mức thay đổi thực đo, không mặc định mọi kỹ thuật đều cải thiện.
+3. **EDA và khai phá, tuần 2:** Đúc kết **4–5 insight định lượng** kèm biểu đồ và ý nghĩa kinh doanh; kiểm định liên hệ ngành hàng. Chạy Apriori và FP-Growth trên cùng giao dịch, danh mục và ngưỡng; đối chiếu trực tiếp itemset và support, đồng thời benchmark lặp. Confidence và lift của luật được tính từ support theo cùng công thức, không phải hai phép đối chiếu độc lập đã thực hiện.
+4. **Mô hình, tuần 3:** Huấn luyện Logistic Regression (LR) [@hosmer2013] và Random Forest (RF) [@breiman2001] từ đặc trưng sản phẩm, giỏ quan sát và thống kê reference; so sánh với Popularity Baseline và Association Rules trên cùng ứng viên. Đầu ra gồm cấu hình, metrics và diễn giải đặc trưng.
+5. **Đánh giá và ứng dụng, tuần 4:** Báo cáo **macro Recall@10**, chênh lệch với baseline và khoảng tin cậy 95%. Phương pháp chính được chọn trên validation; chỉ kết luận cải thiện có bằng chứng khi cận dưới khoảng tin cậy chênh lệch trên test lớn hơn 0. Kết quả không cải thiện vẫn được phân tích. Hoàn thành khuyến nghị, KPI và lộ trình thử nghiệm A/B.
+
+**Tính khả thi và thời hạn:** Bốn tuần tính từ mốc khởi động 15/10/2026, dự kiến kết thúc 11/11/2026; đây là lịch nghiên cứu, không thay thế hạn nộp học phần. Pilot trên máy 24 GB RAM dùng để kiểm tra toàn luồng và khả năng thực thi trên mẫu nhỏ. Top-N và tham số luật được chọn bằng lưới 24 cấu hình trên validation; số mẫu âm được cố định trước ở mức tối đa 20 mẫu mỗi giỏ fit. Mức tối ưu và khả thi chỉ được xác nhận bằng kết quả đo.
+
+## Đối tượng và Phạm vi nghiên cứu
+
+**Đối tượng nghiên cứu** là hành vi đồng mua sản phẩm trong các giỏ hàng Instacart và khả năng dự đoán sản phẩm phù hợp để gợi ý.
+
+**Phạm vi dữ liệu:** Sáu bảng gồm \textit{orders}, \textit{order\_products\_\_prior}, \textit{order\_products\_\_train}, \textit{products}, \textit{aisles}, \textit{departments}, liên kết qua các khóa đơn hàng, sản phẩm, quầy và ngành hàng. Bảng train có 1.384.617 dòng thuộc 131.209 giỏ, là nguồn chia bốn tập nghiên cứu; prior có 32.434.489 dòng, phục vụ kiểm tra dữ liệu lớn và tổng hợp theo khối, không tạo đặc trưng classifier. Bản gốc chỉ đối chứng, không dùng điền dữ liệu nhiễu.
+
+```{=latex}
+\begin{samepage}
+```
+
+**Bài toán và biến nghiên cứu:** Kết hợp luật kết hợp với phân loại nhị phân bằng LR/RF để xếp hạng ứng viên cho phần giỏ bị che.
+
+- **Biến mục tiêu (Y):** \textit{purchase\_label}=1 khi ứng viên thuộc phần bị che; bằng 0 khi không thuộc giỏ đầy đủ. Sản phẩm đã quan sát được loại khỏi ứng viên. Nhãn này khác \textit{reordered}.
+- **Các biến giải thích (X):** Độ phổ biến reference, số luật khớp, confidence/lift lớn nhất, kích thước giỏ quan sát, số sản phẩm cùng ngành và ngành của ứng viên. Chỉ dùng thống kê reference và phần giỏ quan sát; phần bị che chỉ tạo nhãn và chấm điểm.
+
+```{=latex}
+\end{samepage}
+```
+
+Đơn vị phân tích bảng chính là cặp đơn hàng–sản phẩm; đơn vị khai phá là giỏ; đơn vị phân loại là cặp giỏ–ứng viên. Tập test nghiên cứu chiếm 20% người dùng có giỏ train, được giữ độc lập với các bước lựa chọn và huấn luyện.
+
+## Ý nghĩa lý luận và Thực tiễn của đề tài
+
+**Về lý luận:** Đánh giá sự kết hợp giữa thống kê đồng mua và classifier trong bài toán hoàn thiện giỏ trên người dùng ngoài mẫu; tách vai trò học thống kê, huấn luyện, lựa chọn cấu hình và kiểm thử. Đóng góp là quy trình ứng dụng có kiểm chứng, không đề xuất thuật toán mới.
+
+**Về thực tiễn:** Hỗ trợ lựa chọn cơ chế gợi ý và vị trí mua kèm trên ứng dụng. Chương 5 chuyển bằng chứng về chất lượng, độ phủ và chi phí thành kế hoạch A/B với tỷ lệ nhấp, thêm vào giỏ và giá trị đơn hàng khi có dữ liệu; cân nhắc thiên lệch sản phẩm phổ biến, bảo mật và giới hạn suy rộng.
+
+# CƠ SỞ LÝ THUYẾT VÀ PHƯƠNG PHÁP NGHIÊN CỨU {#sec-co-so-ly-thuyet}
+
+## Cơ sở lý thuyết chuyên ngành liên quan
+
+Phân tích giỏ hàng khai thác đồng xuất hiện để hỗ trợ bán chéo. Giỏ được biểu diễn bằng tập mã sản phẩm, không chứa số lượng hay trình tự lựa chọn. Với $N$ giỏ, đặt $s(S)=n(S)/N$, trong đó $n(S)$ là số giỏ chứa toàn bộ tập $S$. Luật kết hợp $A\rightarrow B$ có hai tập sản phẩm khác rỗng và rời nhau. Các chỉ số được xác định như sau [@mlxtend_rules]:
+
+$$
+\begin{aligned}
+\mathrm{Support}&=s(A\cup B), &\mathrm{Confidence}&=\frac{s(A\cup B)}{s(A)},\\
+\mathrm{Lift}&=\frac{s(A\cup B)}{s(A)s(B)}, &\mathrm{Leverage}&=s(A\cup B)-s(A)s(B),\\
+\mathrm{Conviction}&=\frac{1-s(B)}{1-\mathrm{Confidence}}.
+\end{aligned}
+$$
+
+Support đo mức phổ biến; Confidence đo tỷ lệ có $B$ trong các giỏ chứa $A$; Lift so với kỳ vọng độc lập. Leverage đo chênh lệch tuyệt đối, Conviction bổ sung hướng liên hệ. Lift không chứng minh nhân quả hay sự thay thế. Mẫu số phải hợp lệ; Conviction vô hạn/không xác định được ghi riêng.
+
+Bài toán đánh giá là **hoàn thiện giỏ hàng**: dùng phần quan sát để xếp hạng sản phẩm bị che, không dự báo đơn kế tiếp. Đơn vị khai phá là giỏ; đơn vị phân loại là cặp giỏ–ứng viên. Nhãn $y=1$ khi ứng viên thuộc phần bị che, $y=0$ khi không thuộc giỏ đầy đủ; nhãn này không phải `reordered` và không biểu thị sự yêu thích sản phẩm.
+
+## Tổng quan các nghiên cứu thực nghiệm trước đây
+
+@agrawal1994 đề xuất Apriori/AprioriTid và đánh giá khả năng mở rộng trên cơ sở dữ liệu giao dịch; kết quả cho thấy lợi thế so với các thuật toán đối chứng được khảo sát. Nhóm kế thừa nguyên lý cắt tỉa tập ứng viên, nhưng hiệu quả khai phá chưa đồng nghĩa với chất lượng gợi ý ngoài mẫu.
+
+@han2000 dùng cây FP và phát triển mẫu để tránh sinh tập ứng viên, báo cáo hiệu năng tốt hơn Apriori trong thực nghiệm của tác giả. Nhóm kế thừa FP-Growth và thiết kế benchmark cùng điều kiện; mức lợi thế trên dữ liệu Instacart và máy của nhóm phải được đo lại.
+
+@rendle2010 kết hợp sở thích cá nhân và chuyển tiếp tuần tự trong FPMC, cho kết quả tốt hơn các đối chứng phân rã ma trận và Markov trong thực nghiệm của tác giả. Công trình xét giỏ kế tiếp; đồ án xét giỏ hiện tại bị che, không triển khai FPMC do phạm vi và hạn chế dữ liệu thứ tự.
+
+Từ các hướng trên, nhu cầu kiểm chứng của đề tài là liệu luật đồng mua và classifier cải thiện gợi ý so với độ phổ biến trong điều kiện dữ liệu nhiễu và tài nguyên giới hạn. Nghiên cứu kết nối xử lý đa bảng, benchmark khai phá và đánh giá xếp hạng; không suy rộng kết quả công trình trước thành kết quả đồ án.
+
+## Quy trình nghiên cứu dữ liệu (Data Science Workflow)
+
+Quy trình bảy giai đoạn vận dụng CRISP-DM: xác định vấn đề; thu thập–ghép nối; làm sạch; EDA; tạo đặc trưng; mô hình hóa; đánh giá–khuyến nghị. Câu hỏi 1 được trả lời tại mục 3.1–3.3 bằng kiểm tra dữ liệu và tài nguyên; câu 2 tại 3.4–3.6 bằng insight và kiểm định; câu 3–4 tại chương 4 bằng benchmark và đánh giá mô hình; câu 5 tại chương 5 bằng hành động, KPI và lộ trình ứng dụng.
+
+Bảng chính lấy chi tiết `train` nối nhiều–một với `orders`, `products`, `aisles`, `departments`; `prior` phục vụ kiểm tra và tổng hợp theo khối, không tạo đặc trưng classifier trong thiết kế này. Quy trình kiểm chứng số dòng, khóa và thành phần giỏ trước–sau xử lý; không xóa giao dịch chỉ vì thiếu thuộc tính phụ, không dùng bản gốc để điền. Thuộc tính không khôi phục đáng tin được giữ thiếu; báo cáo chất lượng lưu riêng. Thứ tự tái dựng theo vị trí dòng là giả định, không phải giá trị gốc đã được xác minh. Thống kê chất lượng toàn bộ dữ liệu phục vụ kiểm tra cấu trúc; EDA định hướng mô hình chỉ dùng reference. Ngoại lai về kích thước giỏ được khảo sát bằng IQR và đối chiếu nghiệp vụ, không tự động xóa giỏ lớn hợp lệ.
+
+Người dùng có giỏ trong `order_products__train` được chia với seed 42 thành 80% phát triển và 20% kiểm thử. Phần phát triển gồm reference, classifier fit và validation; tỷ lệ trên toàn quần thể là:
+
+- **Reference — 30%:** học độ phổ biến, danh mục ứng viên và luật; thực hiện EDA định hướng mô hình (phân phối, nhóm hàng và đồng mua).
+- **Classifier fit — 30%:** học tham số tiền xử lý và classifier từ thống kê reference.
+- **Validation — 20%:** chọn cấu hình, ngưỡng và phương pháp.
+- **Test — 20%:** đánh giá sau khi khóa thiết kế, không tham gia lựa chọn hoặc huấn luyện.
+
+Bốn tập không giao người dùng. Test 20% này khác 75.000 đơn `eval_set=test` của nguồn vốn không có chi tiết sản phẩm công khai. Tách theo người dùng tránh giao nhau giữa các tập thay cho stratify từng dòng ứng viên; tỷ lệ lớp được báo cáo riêng. Reference giúp tránh học luật từ đáp án của giỏ huấn luyện; tham số điền thiếu, mã hóa và chuẩn hóa classifier chỉ fit trên classifier fit [@sklearn_pitfalls].
+
+Giữ nguyên giỏ reference để học thống kê. Với giỏ fit/validation/test có $k\ge2$, che ngẫu nhiên $h=\min(k-1,\max(1,\lfloor0{,}2k\rfloor))$ sản phẩm. Gọi $O_j,H_j$ là phần quan sát và phần che; ứng viên là $C_j=C\setminus O_j$, với $C$ gồm Top-N sản phẩm từ reference. Không bổ sung đáp án vào $C$. Lưu cố định phép che theo seed và mã giỏ cho mọi phương pháp; giỏ một sản phẩm chỉ loại khỏi đánh giá che giỏ. Giỏ không có đáp án trong $C$ vẫn được chấm với Recall bằng 0, không bị loại để làm đẹp kết quả. Che ngẫu nhiên mô phỏng thiếu một phần giỏ, không tái hiện chính xác trình tự khách thêm hàng trong thực tế.
+
+## Các phương pháp thống kê và Thuật toán Học máy ứng dụng
+
+**Khai phá và benchmark.** Hai thuật toán dùng ma trận Boolean thưa, cùng giỏ, danh mục, ngưỡng support và độ dài tập tối đa. Giỏ rỗng sau lọc danh mục vẫn thuộc mẫu số support. Chạy riêng từng thuật toán ba lần, báo trung vị thời gian, RAM đỉnh và tính nhất quán itemset/support; tách chi phí tạo ma trận khỏi khai phá. Không có cấu hình nào bị loại do ngân sách pilot. FP-Growth chạy 12 tổ hợp khai phá, kết hợp hai ngưỡng confidence thành 24 cấu hình validation; benchmark Apriori và FP-Growth được báo cáo tại cấu hình đã chọn và cấu hình lớn nhất của lưới.
+
+**Gợi ý và classifier.** Popularity Baseline xếp theo tỷ lệ giỏ reference chứa sản phẩm. Luật gợi ý có hậu đề một sản phẩm $b$, tiền đề $A\subseteq O_j$; ưu tiên ứng viên có luật, xếp theo confidence lớn nhất, rồi độ phổ biến. LR học log-odds tuyến tính; RF tổng hợp cây để biểu diễn quan hệ phi tuyến. Đặc trưng X gồm độ phổ biến, số luật khớp, confidence/lift lớn nhất, kích thước $O_j$, số sản phẩm quan sát cùng ngành ứng viên và ngành ứng viên. Không có luật thì ba đặc trưng luật bằng 0. Ứng viên không có luật xếp sau theo độ phổ biến. Các phương pháp phá hòa cuối cùng bằng mã sản phẩm tăng dần; không dùng $H_j$ để tính X.
+
+`Pipeline`/`ColumnTransformer` đóng gói điền thiếu, `OneHotEncoder` (bỏ qua danh mục mới) và `StandardScaler` cho biến số của LR; RF không cần chuẩn hóa. Giữ mọi nhãn dương trong $C_j$; lấy mẫu âm không hoàn lại từ $C_j\setminus H_j$ khi fit, kể cả giỏ không có dương; công bố số âm/giỏ và seed. Validation/test chấm toàn bộ ứng viên theo lô. Điểm classifier chưa được coi là xác suất mua đã hiệu chỉnh.
+
+Top-N và ngưỡng luật chọn bằng Recall@10 của phương pháp luật trên validation, sau đó cố định khi tuning classifier. Vì vậy, kết luận so sánh có điều kiện trên danh mục chung, không phải tối ưu riêng từng phương pháp. Lưới tìm kiếm và cấu hình cuối ghi ở chương 4; test chỉ mở sau khi khóa lựa chọn. Các cặp nhãn 0 là chưa mua trong giỏ, không có nghĩa khách không thích sản phẩm.
+
+**Kiểm định và đánh giá.** Chi-square kiểm tra sự độc lập giữa hai ngành hàng trên reference, với giả thuyết không là hai chỉ báo xuất hiện ngành hàng độc lập; kèm Cramér’s V. Chốt các cặp trước kiểm định, kiểm tra tần số kỳ vọng, dùng một giỏ/người, mức ý nghĩa 0,05 và điều chỉnh Holm khi kiểm định nhiều cặp. Với bảng $2\times2$ không đáp ứng điều kiện xấp xỉ, cân nhắc Fisher exact; biến hằng không được kiểm định như biến có biến thiên.
+
+```{=latex}
+\begin{samepage}
+```
+
+Với $M$ giỏ đánh giá và danh sách gợi ý $R_j^K$, các chỉ số trung bình theo giỏ là:
+
+$$
+\begin{aligned}
+P@K&=\frac1M\sum_{j=1}^{M}\frac{|R_j^K\cap H_j|}{K},\qquad
+R@K=\frac1M\sum_{j=1}^{M}\frac{|R_j^K\cap H_j|}{|H_j|},\\
+HR@K&=\frac1M\sum_{j=1}^{M}\mathbf{1}\{R_j^K\cap H_j\ne\varnothing\}.
+\end{aligned}
+$$
+
+```{=latex}
+\end{samepage}
+```
+
+Chỉ số chính là **Recall@10** [@manning2008]; bổ sung các chỉ số trên tại $K=5,10$ và đường Recall@K từ $K=1$ đến $10$. Recall tính cả đáp án ngoài $C$; Precision vẫn chia $K$ khi danh sách ngắn. Báo riêng tỷ lệ đáp án thuộc danh mục, tỷ lệ giỏ có luật trước dự phòng. Độ phủ danh mục được gợi ý chưa được tính trong thực nghiệm này. Classifier có thêm Accuracy, Precision, Recall, F1, ROC-AUC, Average Precision và ma trận nhầm lẫn; Average Precision không đồng nhất với diện tích PR tính bằng hình thang [@sklearn_ap]. Ngưỡng phân loại tối đa hóa F1 trên validation; metric không xác định được báo riêng, không tự gán 0. Bootstrap ghép cặp theo người dùng, 2.000 lần và seed cố định, cho khoảng tin cậy percentile 95% của chênh lệch Recall@10. Phép so sánh xác nhận dành cho phương pháp chọn trên validation với baseline; các so sánh còn lại mang tính bổ trợ. Không dùng test để chọn lại mô hình. Permutation importance trên validation với thước đo Average Precision hỗ trợ diễn giải classifier, có lưu ý đặc trưng tương quan. Hiệu quả ngoại tuyến là căn cứ đề xuất A/B test, chưa chứng minh tăng doanh thu.
+
+## Môi trường thực nghiệm và Công cụ lập trình Python
+
+Mọi lượt chạy chính thức, gồm làm sạch, bảng Master, benchmark M1, chia tập, thống kê, kiểm định và các giai đoạn của Chương 4, dùng cùng một môi trường `.venv-m2` trên một máy (Windows 11, RAM 24 GB): Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3, khóa trong `requirements.txt`. Bảng Master được tạo lần đầu ngày 20/10/2026 trong một môi trường Python khác (3.12.10, pandas 3.0.3, PyArrow 24.0.0) và tạo lại ngày 04/11/2026 trong `.venv-m2`; hai bản giống nhau từng ô, chỉ khác byte do phiên bản PyArrow. Benchmark M1 được đo lại trong `.venv-m2` cùng ngày. Máy của Phong dùng Python 3.12.10 (khác bản vá) để phát triển và kiểm chứng, không sinh số liệu trong bài.
+
+pandas/NumPy xử lý bảng; PyArrow lưu Parquet; SciPy hỗ trợ kiểm định; mlxtend và scikit-learn phục vụ giai đoạn mô hình; Matplotlib/Seaborn xuất hình 300 DPI. Mã nguồn tổ chức theo mô-đun; kiểm tra cú pháp và kiểm thử được ghi theo phiên, chưa coi đó là chứng nhận tuân thủ toàn bộ PEP 8. Nhật ký tại gốc ghi đúng công cụ và thao tác thực tế theo P-D-M-V. Quarto quản lý tham chiếu, trích dẫn APA 7 và biên dịch PDF. Mã nguồn và nhật ký làm việc được nộp riêng, không đưa toàn văn vào phụ lục của bản tiểu luận.
+
+```{=latex}
+\clubpenalty=\SavedClubPenalty
+\widowpenalty=\SavedWidowPenalty
+```
+
+# THU THẬP, GHÉP NỐI VÀ PHÂN TÍCH KHÁM PHÁ DỮ LIỆU (EDA) {#sec-thu-thap}
+
+## Mô tả nguồn gốc và Cấu trúc tập dữ liệu đa tệp (Multi-file) {#sec-mo-ta-du-lieu}
+
+### Nguồn gốc và Bối cảnh tập dữ liệu
+
+Nghiên cứu sử dụng bộ dữ liệu **Instacart Market Basket Analysis**, được nhóm tiếp cận thông qua nền tảng Kaggle [@instacart_dataset]. Nguồn dữ liệu do Instacart công bố chính thức vào năm 2017, bao gồm lịch sử mua sắm tạp hóa trực tuyến đã được ẩn danh của hơn 200.000 khách hàng [@instacart2017]. Trong phạm vi đề tài, dữ liệu được khai thác để phân tích cấu trúc giỏ hàng, hành vi mua sắm lặp lại và đề xuất các sản phẩm bán chéo (cross-selling). Do mẫu công bố đã qua quy trình chọn lọc của doanh nghiệp, kết quả nghiên cứu không mặc nhiên đại diện cho toàn bộ thị trường bán lẻ nói chung.
+
+Theo yêu cầu học phần, nhóm tiếp nhận phiên bản dữ liệu được giảng viên bổ sung nhiễu nhân tạo nhằm mô phỏng các vấn đề thường gặp trong kỹ thuật dữ liệu thực tế (khuyết thiếu thuộc tính, khoảng trắng thừa, sai lệch định dạng). Các bảng dữ liệu vẫn giữ nguyên số dòng nhưng chất lượng thuộc tính bị suy giảm. Mục 3.1 trình bày nguồn gốc, cấu trúc và phạm vi sử dụng; quy trình ghép nối và tối ưu bộ nhớ được trình bày tại @sec-merge-master, còn chi tiết quy trình xử lý nhiễu được giải trình tại Mục 3.3. Nhóm nghiên cứu tuân thủ nguyên tắc không sử dụng bản dữ liệu sạch gốc để điền hoặc hiệu chỉnh các giá trị bị nhiễu.
+
+### Quy mô và Đơn vị quan sát của sáu tệp dữ liệu
+
+Bộ dữ liệu bao gồm sáu tệp CSV có mối quan hệ ràng buộc thông qua các mã định danh. Bảng \ref{tbl-quy-mo-6-tep} thống kê kích thước, đơn vị quan sát và khóa của từng tệp theo kết quả kiểm toán kỹ thuật. Cần lưu ý rằng các khái niệm khóa chính và khóa ngoại ở đây mô tả các ràng buộc quan hệ được kiểm tra và thực thi bằng chương trình phân tích; bản thân định dạng CSV thuần văn bản không tự bảo đảm các ràng buộc toàn vẹn này.
+
+```{=latex}
+\begin{minipage}{\textwidth}
+\centering
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\captionof{table}{Quy mô và đơn vị quan sát của sáu tệp dữ liệu}
+\label{tbl-quy-mo-6-tep}
+\begin{tabular}{@{}p{2cm}rrp{3.6cm}p{5.5cm}@{}}
+\toprule
+\textbf{Bảng} & \textbf{Số dòng} & \textbf{Cột} & \textbf{Đơn vị quan sát} & \textbf{Khóa chính} \\
+\midrule
+aisles & 134 & 2 & Một quầy & aisle\_id \\
+departments & 21 & 2 & Một ngành & department\_id \\
+products & 49.688 & 4 & Một sản phẩm & product\_id \\
+orders & 3.421.083 & 7 & Một đơn hàng & order\_id \\
+Chi tiết prior & 32.434.489 & 4 & Một sản phẩm trong đơn prior & (order\_id, product\_id) \\
+Chi tiết train & 1.384.617 & 4 & Một sản phẩm trong đơn train & (order\_id, product\_id) \\
+\bottomrule
+\end{tabular}
+\par\vspace{4pt}
+\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: Báo cáo kiểm toán đầu vào sáu CSV.} Chi tiết prior và train lần lượt là order\_products\_\_prior và order\_products\_\_train.}
+\end{minipage}
+```
+
+Tổng quy mô lưu trữ của sáu tệp đạt **37.290.032 dòng**, phản ánh số lượng bản ghi ở nhiều cấp quan sát khác nhau chứ không phải số giao dịch độc lập. Riêng bảng `orders` quản lý 3.421.083 đơn hàng của 206.209 người dùng khác nhau. Hai bảng chi tiết chứa tổng cộng 33.819.106 cặp đơn--sản phẩm, thuộc 3.214.874 đơn hàng lịch sử (`prior`) và 131.209 đơn hàng thuộc tập huấn luyện (`train`). Ngoài ra, 75.000 đơn hàng thuộc tập kiểm thử (`test`) của nguồn không có chi tiết sản phẩm công khai trong dữ liệu.
+
+Trong phân tích giỏ hàng, cần phân biệt rành mạch giữa một đơn hàng (cấp giao dịch) và một dòng chi tiết (cấp sản phẩm trong giỏ): một đơn hàng chứa 10 sản phẩm khác nhau sẽ tương ứng với một dòng duy nhất trong `orders` nhưng chiếm 10 dòng trong bảng chi tiết. Do dữ liệu không có thuộc tính số lượng (quantity), số dòng chi tiết của một giỏ hàng phản ánh số loại sản phẩm phân biệt được chọn mua.
+
+### Phân nhóm bảng và Ý nghĩa các thuộc tính nghiệp vụ
+
+Về mặt chức năng cơ sở dữ liệu, sáu tệp được phân thành ba nhóm rõ rệt: nhóm danh mục tra cứu (`aisles`, `departments`, `products`), nhóm thông tin đầu đơn (`orders`) và nhóm chi tiết giỏ hàng (`order_products__prior`, `order_products__train`). Cách phân rã chuẩn hóa này giúp tối ưu hóa lưu trữ, tách biệt thông tin tĩnh của sản phẩm khỏi các giao dịch phát sinh theo thời gian. Bảng \ref{tbl-tu-dien-tom-tat} hệ thống hóa ý nghĩa nghiệp vụ của các thuộc tính.
+
+```{=latex}
+\begin{minipage}{\textwidth}
+\centering
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\captionof{table}{Từ điển dữ liệu tóm tắt của các nhóm bảng}
+\label{tbl-tu-dien-tom-tat}
+\begin{tabular}{@{}p{2cm}p{5.5cm}p{7.5cm}@{}}
+\toprule
+\textbf{Nhóm bảng} & \textbf{Tên trường} & \textbf{Ý nghĩa và miền giá trị} \\
+\midrule
+Quầy & aisle\_id; aisle & Mã quầy và tên nhóm danh mục. \\
+Ngành & department\_id; department & Mã ngành và tên ngành hàng. \\
+Sản phẩm & product\_id; product\_name & Mã sản phẩm và tên sản phẩm. \\
+ & aisle\_id; department\_id & Khóa ngoại tới quầy và ngành. \\
+Đơn hàng & order\_id; user\_id & Mã đơn và người dùng; không có bảng người dùng riêng. \\
+ & eval\_set & Phân vùng nguồn: prior, train, test. \\
+ & order\_number & Số thứ tự đơn của một người dùng, bắt đầu từ 1. \\
+ & order\_dow;\newline order\_hour\_of\_day & Mã ngày 0--6 và giờ 0--23. \\
+ & days\_since\_prior\_order & Số ngày từ đơn trước, chặn trên ở 30; đơn đầu thiếu. \\
+Chi tiết & order\_id; product\_id & Hai khóa ngoại đồng thời tạo khóa ghép. \\
+ & add\_to\_cart\_order & Vị trí thêm sản phẩm vào giỏ, bắt đầu từ 1. \\
+ & reordered & 1 nếu người dùng đã mua sản phẩm trước đây; 0 nếu chưa. \\
+\bottomrule
+\end{tabular}
+\par\vspace{4pt}
+\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: Lược đồ sáu CSV và tài liệu Instacart (2017).}}
+\end{minipage}
+```
+
+Các mã định danh mang bản chất phân loại danh nghĩa (nominal) dù được biểu diễn ở dạng số nguyên. Thuộc tính `reordered` chỉ ghi nhận người dùng đã từng mua sản phẩm hay chưa, không đồng nhất với nhãn mục tiêu của bài toán gợi ý giỏ hàng. Nhóm nghiên cứu giữ nguyên mã hóa thứ 0--6 và giờ 0--23, không tự ý gán nhãn thứ khi chưa có quy ước chính thức từ nguồn.
+
+### Quan hệ liên bảng và Đơn vị phân tích
+
+Hình \ref{fig-erd-data} trực quan hóa cấu trúc quan hệ thực thể giữa sáu tệp dữ liệu. Mối quan hệ nhiều--nhiều ($N:N$) giữa đơn hàng và sản phẩm được giải quyết thông qua hai bảng cầu nối chi tiết giao dịch với cặp khóa ghép `(order_id, product_id)`.
+
+```{=latex}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    box/.style={rectangle, draw=black, thick, fill=blue!5, rounded corners=2pt, minimum height=0.9cm, minimum width=2.6cm, align=center, font=\small\bfseries},
+    bridge/.style={rectangle, draw=black, thick, fill=orange!10, rounded corners=2pt, minimum height=0.9cm, minimum width=3.4cm, align=center, font=\small\bfseries},
+    arrow/.style={->, >=stealth, thick, draw=black!80}
+]
+    \node[box] (aisles) at (0, 2.5) {AISLES\\ \footnotesize(134 dòng)};
+    \node[box] (dept) at (0, 0) {DEPARTMENTS\\ \footnotesize(21 dòng)};
+    \node[box] (prod) at (4, 1.25) {PRODUCTS\\ \footnotesize(49.688 dòng)};
+    \node[box] (orders) at (10.6, 1.25) {ORDERS\\ \footnotesize(3.421.083 đơn)};
+    
+    \node[bridge] (prior) at (7.3, 2.5) {ORDER\_PRODUCTS\_PRIOR\\ \footnotesize(32.434.489 dòng chi tiết)};
+    \node[bridge] (train) at (7.3, 0) {ORDER\_PRODUCTS\_TRAIN\\ \footnotesize(1.384.617 dòng chi tiết)};
+
+    \draw[arrow] (aisles) -- node[above, font=\footnotesize] {\texttt{aisle\_id}} (prod);
+    \draw[arrow] (dept) -- (prod);
+    
+    \draw[arrow] (prod) |- (prior);
+    \draw[arrow] (orders) |- (prior);
+    
+    \draw[arrow] (prod) |- (train);
+    \draw[arrow] (orders) |- (train);
+\end{tikzpicture}
+\caption{Sơ đồ quan hệ giữa sáu tệp Instacart; mũi tên từ bảng cha tới bảng tham chiếu}
+\label{fig-erd-data}
+\end{figure}
+```
+
+Mỗi dòng chi tiết tham chiếu chính xác đến một đơn hàng duy nhất và một sản phẩm duy nhất; mỗi sản phẩm thuộc về đúng một quầy kệ và một ngành hàng. Do không tồn tại liên kết trực tiếp giữa `aisles` và `departments` trong lược đồ dữ liệu, nhóm không đưa ra bất kỳ giả định phụ thuộc nào giữa hai bảng danh mục này.
+
+### Phạm vi sử dụng dữ liệu trong nghiên cứu
+
+Bám sát thiết kế phương pháp đã xác lập ở Chương 1 và Chương 2, bảng phân tích chính phục vụ nghiên cứu được xây dựng từ `order_products__train` kết hợp với bốn bảng `orders`, `products`, `aisles` và `departments`. Đơn vị phân tích được duy trì ở cấp độ cặp đơn hàng--sản phẩm, với quy mô chuẩn đạt **1.384.617 dòng thuộc 131.209 giỏ hàng**, đáp ứng trọn vẹn yêu cầu quy mô trên một triệu dòng giao dịch của đề tài PRJ-08.
+
+Tệp `order_products__prior` được sử dụng độc lập cho kiểm toán tính nhất quán và tổng hợp mô tả theo khối; không tạo đặc trưng X, danh mục ứng viên hoặc luật cho mô hình. Nhóm không nối dọc prior vào Master vì phạm vi phân tích đã chọn là giỏ train. Bản thân thao tác nối dọc không gây rò rỉ; nguy cơ phát sinh khi thông tin thuộc tập đánh giá được dùng để học hoặc chọn cấu hình. Tập 131.209 khách hàng trong train sẽ được chia thành bốn tập không giao người dùng: Reference (30%), Classifier Fit (30%), Validation (20%) và Test (20%).
+
+Do dữ liệu không chứa thông tin về giá bán, biên lợi nhuận, số lượng đơn vị mua và nhật ký tương tác gợi ý trong quá khứ, các đánh giá hiệu năng mô hình hoàn toàn dựa trên thước đo độ chính xác ngoại tuyến (offline evaluation) như Recall@K và Precision@K, không suy diễn võ đoán thành doanh thu thực tế khi chưa có thử nghiệm thực địa A/B testing.
+
+
+## Quy trình ghép nối bảng dữ liệu (Merge / Concat) và Tối ưu bộ nhớ {#sec-merge-master}
+
+Nhằm phục vụ bài toán khai phá luật kết hợp và phân loại giỏ hàng, dữ liệu phân tán trên năm tệp CSV sạch cần được hợp nhất thành một bảng phân tích duy nhất (bảng Master). Giai đoạn này đối mặt với hai thách thức kỹ thuật lớn: nguy cơ phát sinh dòng mồ côi hoặc nhân bản dòng do sai lệch khóa quan hệ, và áp lực tiêu thụ tài nguyên bộ nhớ (RAM) khi xử lý quy mô hàng triệu bản ghi giao dịch. Nhóm tác giả triển khai quy trình hợp nhất có kiểm toán nghiêm ngặt kết hợp tối ưu hóa kiểu dữ liệu theo hợp đồng schema chặt chẽ.
+
+Trong thứ tự thực thi, làm sạch và chuẩn hóa khóa được hoàn tất trước khi ghép; mục 3.3 trình bày chi tiết các quy tắc và đối soát trước--sau. Đặc biệt, khoảng trắng và sai định dạng khóa phải được xử lý trước khi kiểm tra quan hệ. Thứ tự trình bày 3.2 rồi 3.3 theo đề cương không phải thứ tự chạy chương trình.
+
+### Chiến lược ghép nối theo khối và Kiểm toán toàn vẹn quan hệ
+
+Bảng nền ban đầu là tập chi tiết giao dịch huấn luyện `order_products__train.csv` gồm 1.384.617 dòng, tương ứng với 131.209 giỏ hàng của 131.209 người dùng khác nhau. Bốn bảng danh mục và thuộc tính được ghép tuần tự theo mô hình quan hệ nhiều–một ($N:1$):
+
+1. **Lượt 1:** Ghép với bảng `orders.csv` qua khóa `order_id` để bổ sung định danh người dùng (`user_id`), tập dữ liệu (`eval_set`), số thứ tự đơn hàng (`order_number`), thứ trong tuần (`order_dow`), giờ đặt hàng trong ngày (`order_hour_of_day`) và số ngày kể từ đơn trước (`days_since_prior_order`).
+2. **Lượt 2:** Ghép với bảng `products.csv` qua khóa `product_id` để bổ sung tên sản phẩm (`product_name`), mã quầy kệ (`aisle_id`) và mã ngành hàng (`department_id`).
+3. **Lượt 3:** Ghép với bảng `aisles.csv` qua khóa `aisle_id` để bổ sung tên quầy kệ (`aisle`).
+4. **Lượt 4:** Ghép với bảng `departments.csv` qua khóa `department_id` để bổ sung tên ngành hàng (`department`).
+
+Mỗi phép ghép dùng `how="left"` để giữ các dòng bên trái, `validate="many_to_one"` để từ chối khóa trùng ở bảng cha, `indicator=True` để kiểm tra mức khớp và `sort=False` để không sắp xếp lại khóa. Thứ tự dòng được kiểm chứng riêng bằng chuỗi cặp khóa. Phần ghép và ghi train thực hiện qua sáu khối, tối đa 250.000 dòng/khối. Tuy nhiên, chương trình còn lưu các khối trước ghi, hợp nhất thành `df_before` và đọc toàn bộ Parquet thành `df_read` để đối soát. Bước kiểm tra miền đầu vào cũng đọc toàn bảng. Vì vậy, đây là ghép/ghi theo khối kết hợp kiểm chứng toàn bảng trong RAM, không phải pipeline có bộ nhớ giới hạn ở một khối.
+
+Trước mỗi lượt ghép, tính duy nhất và tính toàn vẹn (không chứa giá trị `null`) của khóa trên bảng bên phải được kiểm tra tiên quyết. Sau mỗi lượt ghép, thuật toán lập tức xác thực năm điều kiện: (1) biến `_merge` phải đạt 100% nhãn `both`, tuyệt đối không có dòng `left_only` (không có khóa ngoại mồ côi); (2) số dòng trước và sau ghép hoàn toàn không đổi; (3) không phát sinh các cột trùng tên ngoài dự kiến (hậu tố `_x`, `_y`); (4) chuỗi cặp khóa `(order_id, product_id)` không bị xáo trộn; (5) xóa bỏ cột `_merge` sau khi ghi nhận nhật ký kiểm toán. Toàn bộ chuỗi cặp khóa được đối chiếu xuyên suốt qua mã băm SHA-256 với giá trị ban đầu là `584d45ca6677ea0f...`.
+
+```{=latex}
+\begin{minipage}{\textwidth}
+\centering
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\captionof{table}{Kiểm toán bốn phép ghép nối bảng Master}
+\label{tbl-join-audit}
+\begin{tabular}{@{}p{2cm}p{3cm}rrr@{}}
+\toprule
+\textbf{Bảng thêm} & \textbf{Khóa ghép} & \textbf{Dòng trước} & \textbf{Dòng sau} & \textbf{Không khớp} \\
+\midrule
+orders & order\_id & 1.384.617 & 1.384.617 & 0 \\
+products & product\_id & 1.384.617 & 1.384.617 & 0 \\
+aisles & aisle\_id & 1.384.617 & 1.384.617 & 0 \\
+departments & department\_id & 1.384.617 & 1.384.617 & 0 \\
+\bottomrule
+\end{tabular}
+\par\vspace{4pt}
+\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: join\_audit.csv của pipeline M1.} Cả bốn lượt bảo toàn chuỗi cặp khóa; tỷ lệ khớp là 100\%.}
+\end{minipage}
+```
+
+Kết quả tại Bảng \ref{tbl-join-audit} khẳng định 100% bản ghi giao dịch trong tập huấn luyện đều tìm thấy thông tin tương ứng trong các bảng danh mục mà không làm thất thoát, nhân bản dòng hay xáo trộn trật tự chuỗi khóa.
+
+Các phép ghép sử dụng `DataFrame.merge` (API tương ứng `pd.merge`) với điều kiện nhiều–một và kiểm tra số dòng. `pd.concat(..., ignore_index=True)` nối các khối của cùng bảng: `orders_chunks` tạo `df_orders`, còn `chunks_before` tạo bảng đối soát `df_before`; số khối phụ thuộc kích thước khối, không đồng nhất với số tệp nguồn. Các kiểm tra bảo toàn dòng/khóa được thực hiện sau ghép; không nối prior và train theo mã sản phẩm.
+
+### Hợp đồng kiểu dữ liệu và Kiểm chứng thực nghiệm trước–sau thu hẹp kiểu
+
+Baseline kiểu rộng được dựng lại bằng `int64`, `float64` và `object` trên cùng dữ liệu Master, có bộ nhớ DataFrame 423,04 MiB theo `memory_usage(deep=True)`. Đây không phải số đo mặc định của mọi phiên bản pandas, cũng không phải RAM đỉnh toàn tiến trình. Nhóm thiết kế schema tiết kiệm bộ nhớ và kiểm tra miền giá trị trước khi chuyển kiểu:
+
+* **Kiểm chứng an toàn `days_since_prior_order`:** Trên 2.667.831 bản ghi có giá trị trong `orders.csv`, miền quan sát là các số nguyên từ 0 đến 30. Phép đối chiếu `float64` với `Float32` cho sai số tuyệt đối cực đại bằng 0 và mặt nạ thiếu không đổi. Với pandas nullable `Float32`, mỗi phần tử dùng 4 byte dữ liệu và 1 byte mặt nạ thiếu, so với 8 byte của `float64`. Mức giảm vùng dữ liệu và mặt nạ là 37,5%, chưa tính chỉ mục và chi phí đối tượng; không phải mức giảm RAM đỉnh của chương trình.
+* **Xác thực giới hạn miền số nguyên:** 
+  * `order_id` ($[1; 3.421.083]$), `user_id` ($[1; 206.209]$) và `product_id` ($[1; 49.688]$) không có giá trị thiếu, không có phần thập phân và nằm trọn trong giới hạn $[-2^{31}; 2^{31}-1]$, được chuyển sang `int32`.
+  * `add_to_cart_order` ($[1; 80]$) và `order_number` ($[1; 100]$) nằm trọn trong giới hạn $[-32.768; 32.767]$, được chuyển sang `int16`.
+  * `aisle_id` ($[1; 134]$) vượt giới hạn 127 của `int8`, nên nhóm chọn `int16` và kiểm tra miền trước khi ép kiểu. Đây là lựa chọn trong hợp đồng kiểu số nguyên có dấu; không khẳng định `int16` là kiểu duy nhất biểu diễn được miền này.
+  * `department_id` ($[1; 21]$) nằm gọn trong giới hạn của `int8` ($-128$ đến $127$).
+* **Xử lý thuộc tính khuyết thiếu và phân loại:** Các cột số nguyên chứa ô thiếu (`reordered`, `order_dow`, `order_hour_of_day`) được định dạng `Int8` (nullable integer của pandas) để duy trì nguyên vẹn các ô `null` mà không bị ép buộc thay thế thành số 0. Bốn biến định tính (`eval_set`, `product_name`, `aisle`, `department`) được chuyển sang `category`, giữ nguyên các giá trị thiếu thực tế (mã danh mục `-1`), tuyệt đối không chèn nhãn nhân tạo "Unknown" làm sai lệch phân phối.
+
+Nhóm đối soát giá trị và mặt nạ thiếu giữa `df_before` và `df_read` trên 1.384.617 dòng, 15 cột. Cột “Sau đọc” trong bảng lược đồ tương ứng `pd.read_parquet(..., dtype_backend="numpy_nullable")`; chế độ đọc mặc định có thể trả dtype khác khi cột số nguyên có thiếu. Kiểm tra riêng hai chế độ đọc xác nhận giá trị và mặt nạ thiếu giống nhau; không dùng tên dtype đơn lẻ để kết luận dữ liệu thay đổi. Kiểm tra hồi quy độc lập xác nhận phép bằng chính xác trên toàn bộ dữ liệu, bao gồm cột ngày, và xác nhận Master tạo lại tương đương Master đã lưu. Bảng \ref{tbl-master-schema} trình bày lược đồ của lượt chạy ban đầu. Cột “Sau ghép” tương ứng `raw_merged_dtype`; “Bản đối soát” tương ứng `dtype_before_write`, lấy từ bản ghép các khối; `product_name` trở về `string` khi ghép các khối có tập category khác nhau, dù từng khối được chuyển sang category trước khi ghi.
+
+```{=latex}
+\begin{minipage}{\textwidth}
+\centering
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\captionof{table}{Kiểu dữ liệu và số ô thiếu của 15 thuộc tính Master}
+\label{tbl-master-schema}
+\begin{tabular}{@{}p{4.8cm}p{2.1cm}p{2.3cm}p{2.1cm}r@{}}
+\toprule
+\textbf{Thuộc tính} & \textbf{Sau ghép} & \textbf{Bản đối soát} & \textbf{Sau đọc} & \textbf{Ô thiếu} \\
+\midrule
+order\_id & int32 & int32 & Int32 & 0 \\
+product\_id & int32 & int32 & Int32 & 0 \\
+add\_to\_cart\_order & int16 & int16 & Int16 & 0 \\
+reordered & Int8 & Int8 & Int8 & 420.771 \\
+user\_id & int32 & int32 & Int32 & 0 \\
+eval\_set & string & category & category & 0 \\
+order\_number & int16 & int16 & Int16 & 0 \\
+order\_dow & Int8 & Int8 & Int8 & 389.536 \\
+order\_hour\_of\_day & Int8 & Int8 & Int8 & 227.767 \\
+days\_since\_prior\_order & Float32 & Float32 & Float32 & 233.086 \\
+product\_name & string & string & category & 207.404 \\
+aisle\_id & int16 & int16 & Int16 & 0 \\
+department\_id & int8 & int8 & Int8 & 0 \\
+aisle & string & category & category & 454.974 \\
+department & string & category & category & 0 \\
+\bottomrule
+\end{tabular}
+\par\vspace{4pt}
+\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: master\_schema.csv của pipeline M1.} Số ô thiếu và vị trí thiếu trước/sau bằng nhau; cả 15 cột đạt kiểm tra bảo toàn giá trị. Bản đối soát là dữ liệu ghép các khối dùng để so với kết quả đọc Parquet.}
+\end{minipage}
+```
+
+Toàn bộ 15/15 thuộc tính đều đạt tỷ lệ bảo toàn 100% về vị trí các ô khuyết thiếu và giá trị dữ liệu. Bảng phân tích Master chính thức giữ lại 207.404 ô khuyết thiếu ở thuộc tính `product_name` và 454.974 ô khuyết thiếu ở `aisle`. Sự gia tăng số ô thiếu của `product_name` từ 6.923 bản ghi danh mục lên 207.404 dòng giao dịch phản ánh đúng thực tế một mã sản phẩm bị khuyết tên xuất hiện lặp lại trong nhiều đơn hàng khác nhau.
+
+Số thiếu ở mục 3.2 được đếm trên dòng sản phẩm–đơn của Master train; mục 3.3 đếm trên từng bảng nguồn. Phần thống kê 3.4 sẽ báo theo reference và cấp quan sát ghi tại mỗi bảng. Thuộc tính đơn lặp theo số sản phẩm trong Master, nên không so trực tiếp các tỷ lệ thiếu giữa ba phạm vi này. Script `m1_inspect_artifact.py` lưu `shape`, `info(memory_usage="deep")`, tỷ lệ `isna().mean()*100` và dtype của hai chế độ đọc để kiểm chứng cấu trúc; đây không phải lượt benchmark mới.
+
+### Quy trình 5 bước xuất bản và Chứng thực tệp Parquet
+
+Quy trình hiện hành tách việc tạo, kiểm tra và xuất bản Parquet để giảm rủi ro thay thế tệp đang dùng bằng dữ liệu chưa được kiểm chứng:
+
+1. **Ghi tệp tạm:** Dữ liệu sau khi ghép và ép kiểu được ghi theo luồng vào tệp tạm `master_train.tmp.parquet` thông qua `pq.ParquetWriter` với thuật toán nén Snappy và lược đồ PyArrow định hình sẵn.
+2. **Đóng bộ ghi:** Hoàn tất cấu trúc Parquet và đóng handle trước khi đọc lại. Đóng writer không đồng nghĩa với bảo đảm dữ liệu đã bền vững trên thiết bị lưu trữ khi mất điện.
+3. **Đọc lại tệp tạm:** Sử dụng `pd.read_parquet` với cơ chế `numpy_nullable` để tải lại toàn bộ tệp tạm vào RAM độc lập.
+4. **Thực thi bộ 13 tiêu chí kiểm tra cuối:** Kiểm tra đồng thời 13 điều kiện bắt buộc:
+   * Số dòng đúng 1.384.617; số cột đúng 15; tên và thứ tự cột khớp 100% hợp đồng.
+   * Số đơn hàng đạt 131.209; số người dùng khác nhau đạt 131.209; mỗi người dùng có đúng một đơn hàng thuộc tập train.
+   * Số khóa chính/ngoại bị thiếu bằng 0; số cặp khóa `(order_id, product_id)` trùng lặp bằng 0.
+   * 100% giá trị của `eval_set` mang nhãn `train`.
+   * Mã băm SHA-256 của chuỗi cặp khóa trùng khớp tuyệt đối với đầu vào ban đầu.
+   * Nội dung giá trị và vị trí mặt nạ thiếu bảo toàn 100% giữa trước ghi và sau đọc.
+   * Các biến phân loại giữ nguyên nhãn thực và `null` thực tế, không chứa các nhãn rác (`Unknown`, `nan`, `<NA>`).
+5. **Xuất bản từng tệp:** Sau khi kiểm chứng, chương trình sao chép sang tệp tạm cạnh mỗi đích, gọi `flush`/`fsync`, kiểm tra SHA-256 của bản sao rồi dùng `os.replace` để thay thế đích. Đích xuất bản là `DATA/Data đã làm sạch/master_train.parquet`, tính từ thư mục bài. Thay thế nguyên tử áp dụng cho tệp Parquet, không phải giao dịch đồng thời cho Parquet và các báo cáo JSON/CSV; cần đối chiếu hash trước sử dụng.
+
+Hồ sơ `master_verification.json` của lượt chạy ngày 04/11/2026 trong `.venv-m2` ghi trạng thái `PASSED`, kích thước 16,21 MiB (16.992.331 byte) và mã băm SHA-256 của Master đã lưu. SHA-256 là mã băm kiểm tra toàn vẹn, không phải chữ ký số xác thực tác giả. Ở lượt này 13 tiêu chí đều đạt. Theo biên bản đồng bộ của Vương ngày 04/11, Master tạo lại khớp chính xác từng ô (giá trị và vị trí thiếu, cả hai chế độ đọc) với bản tạo lần đầu ngày 20/10/2026 trong môi trường khác; hai tệp chỉ khác byte vì được ghi bằng hai phiên bản PyArrow. Hồ sơ `m1_revision_checks.json` trong thư mục báo cáo kiểm tra lưu môi trường và hash mã nguồn của lượt hồi quy ngày 20/10/2026.
+
+### Đánh giá hiệu năng thực nghiệm đa chiều (Benchmark)
+
+Để lượng hóa khách quan lợi ích của việc tối ưu hóa kiểu dữ liệu và định dạng lưu trữ, nhóm tác giả xây dựng kịch bản benchmark độc lập tại `scripts/m1_benchmark.py`. Nhằm đảm bảo tính chuẩn xác và hạn chế tối đa sai số và thiên lệch thực nghiệm, quy trình đo tuân thủ các nguyên tắc khoa học:
+
+* **Cô lập tiến trình con:** Mỗi lần đo chạy trong tiến trình Python mới để tách trạng thái interpreter và lịch sử heap. Cơ chế này không xóa cache hệ điều hành hoặc loại bỏ mọi nhiễu đo.
+* **Đo tài nguyên:** Thời gian dùng `perf_counter`; RSS được lấy mẫu bằng `psutil` với khoảng nghỉ yêu cầu 5 ms. Peak RSS là giá trị lớn nhất quan sát được trong khoảng đo; lịch điều phối có thể làm chậm lấy mẫu và các đỉnh ngắn có thể bị bỏ sót.
+* **Đồng nhất quy tắc nhận diện thiếu và schema:** Tất cả các nhánh đọc CSV đều áp dụng `keep_default_na=False, na_values=[""]`. Khi đọc CSV và đọc Parquet, dữ liệu đầu ra đều được chuẩn hóa về cùng một hợp đồng kiểu dữ liệu, đưa bộ nhớ DataFrame về mức hoàn toàn tương đương nhau (**51,11 MiB**). Ngoài thời gian đo, hàm kiểm chứng độc lập xác nhận hai cách đọc cho kết quả trùng khớp 100% từng giá trị và vị trí thiếu.
+* **So sánh trên cùng tệp đối chứng:** Nhánh ghi và đọc Parquet được thực hiện trên cùng tệp `master_benchmark.parquet` (15,34 MiB); nhánh ghi và đọc CSV thực hiện trên cùng tệp `master_benchmark.csv` (118,86 MiB).
+* **Ba lượt đo:** Mỗi phép đo chạy ba lần trên Windows 11; metadata ghi CPU AMD (`AuthenticAMD`, 8 nhân vật lý/16 luồng) và tổng RAM 23,31 GiB được hệ thống nhận diện, máy có RAM danh định 24 GB. Bảng báo trung vị; kết quả phản ánh môi trường warm-cache, không phải tốc độ đọc từ thiết bị trong điều kiện cold-cache.
+
+```{=latex}
+\begin{minipage}{\textwidth}
+\centering
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\captionof{table}{Hiệu năng bộ nhớ và lưu trữ: trung vị ba lượt đo}
+\label{tbl-data-benchmark}
+\begin{tabular}{@{}p{5cm}rrrr@{}}
+\toprule
+\textbf{Thao tác} & \textbf{RAM DF} & \textbf{RSS đỉnh} & \textbf{Đĩa} & \textbf{Giây} \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{A. Tối ưu kiểu dữ liệu}} \\
+Baseline rộng: hồ sơ tĩnh & 423,04 & --- & --- & --- \\
+Thu hẹp kiểu & 50,10 & 483,35 & --- & 1,1697 \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{B. Định dạng và đọc/ghi}} \\
+Ghi CSV & --- & 295,54 & 118,86 & 9,7270 \\
+Ghi Parquet & --- & 302,15 & 15,34 & 1,0131 \\
+Đọc CSV & 51,11 & 224,13 & 118,86 & 6,1819 \\
+Đọc Parquet & 51,11 & 299,08 & 15,34 & 0,2089 \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{C. Tái sử dụng Master}} \\
+Nạp 5 CSV và ghép & 50,10 & 394,59 & --- & 9,3488 \\
+Đọc Master Parquet & 51,11 & 290,02 & --- & 0,2033 \\
+\bottomrule
+\end{tabular}
+\par\vspace{4pt}
+\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: data\_benchmark.csv, lượt 04/11/2026 của script m1\_benchmark.py.} RAM DF, RSS đỉnh và dung lượng đĩa tính bằng MiB; thời gian tính bằng giây. Baseline rộng là hồ sơ bộ nhớ tĩnh được dựng lại.}
+\end{minipage}
+```
+
+Phân tích kết quả thực nghiệm tại Bảng \ref{tbl-data-benchmark} mang lại các kết luận kỹ thuật quan trọng:
+
+1. **Tối ưu kiểu dữ liệu (A):** Bộ nhớ DataFrame giảm từ 423,04 xuống 50,10 MiB, tương ứng **88,16%** theo công thức $(1-50{,}10/423{,}04)\times100$. Thời gian trung vị là 1,1697 giây. Trong lúc chuyển kiểu, bản rộng và bản tối ưu cùng tồn tại; Peak RSS 483,35 MiB không phải mức bộ nhớ DataFrame sau tối ưu.
+2. **Hiệu quả Parquet so với CSV (B):** Tệp Parquet chiếm 15,34 MiB, so với 118,86 MiB của CSV; tỷ số dung lượng là $118{,}86/15{,}34 \approx 7{,}75$ lần. Ghi Parquet mất 1,0131 giây, so với 9,7270 giây của CSV; tỷ số thời gian $9{,}7270/1{,}0131 \approx 9{,}60$ lần. Đọc Parquet mất 0,2089 giây, so với 6,1819 giây của CSV; tỷ số $6{,}1819/0{,}2089 \approx 29{,}59$ lần. Cả hai cách đọc được chuẩn hóa về cùng cấu trúc DataFrame 51,11 MiB.
+3. **Tái sử dụng Master (C):** Đọc Master đã chuẩn bị mất 0,2033 giây, Peak RSS 290,02 MiB; nạp năm CSV và ghép lại mất 9,3488 giây, Peak RSS 394,59 MiB. Tỷ số thời gian $9{,}3488/0{,}2033 \approx 45{,}99$ lần; chênh RSS $394{,}59-290{,}02=104{,}57$ MiB. Phép đo không bao gồm chi phí tạo Master lần đầu, kiểm tra miền, mã băm, đối soát từng ô và xuất bản.
+
+Parquet có đánh đổi bộ nhớ: ở B, Peak RSS khi đọc là 299,08 MiB so với 224,13 MiB của CSV; khi ghi là 302,15 so với 295,54 MiB. Nhanh hơn và nhỏ hơn trên đĩa không đồng nghĩa RAM đỉnh thấp hơn. Ba lượt ghi CSV dao động 9,6451--10,7859 giây, ghi Parquet 1,0021--1,0232 giây; đọc CSV 6,0317--6,6182 giây và đọc Parquet 0,1876--0,3120 giây. Đây là lượt đo ngày 04/11/2026, phụ thuộc dữ liệu, kiểu, thư viện và cache của máy thực nghiệm.
+
+Kết quả hỗ trợ tái sử dụng `master_train.parquet` cho các bước sau, nhưng chưa chứng minh hiệu năng của EDA hay mô hình. Cần chia tập theo thiết kế trước EDA định hướng mô hình; chỉ reference được dùng để học thống kê và luật. Hai lệnh M1 hiện xác định thư mục từ vị trí script, nhận tùy chọn đường dẫn tương đối theo thư mục bài và có chế độ `--check-inputs`; các đường dẫn tuyệt đối trong hồ sơ cũ được giữ như dấu vết của lượt chạy, không phải cấu hình vận hành.
+
+
+
+## Quy trình làm sạch và Xử lý dữ liệu khuyết / ngoại lai {#sec-cleaning-pipeline}
+
+Mục này trình bày chi tiết các quy tắc làm sạch dữ liệu ở cấp từng bảng và từng thuộc tính, tập trung vào tầng chất lượng nội dung dữ liệu (*Data Quality & Domain Level*). Khác với Mục 3.2 --- nơi trình bày kiến trúc tích hợp hệ thống, xây dựng bảng Master và đánh giá thực nghiệm hiệu năng lưu trữ --- mục này giải trình căn cứ nhận diện, phương pháp xử lý hoặc quyết định bảo toàn các giá trị khuyết thiếu, sai lệch định dạng, vi phạm miền giá trị và các dị thường nghiệp vụ trên toàn bộ sáu tệp nguồn thô ban đầu.
+
+Về **trình tự thực thi kỹ thuật**, việc chuẩn hóa khóa định danh và làm sạch các trường dữ liệu bắt buộc phải được hoàn tất trước khi ghép nối để kiểm soát chặt chẽ rủi ro rơi rụng khóa hoặc ghép sai lệch quan hệ. Về **bố cục trình bày học thuật**, Mục 3.2 tập trung vào kết quả tích hợp và tối ưu hệ thống, còn mục này đi sâu vào cơ chế kiểm soát chất lượng dữ liệu thành phần. Hai mục có sự liên kết chặt chẽ nhưng hoàn toàn không lặp lại sơ đồ ERD hay các bảng đo benchmark RAM/I/O.
+
+### Nguyên tắc làm sạch và Kiểm soát thay đổi
+
+Quy trình làm sạch được thiết kế tuân thủ nghiêm ngặt các nguyên tắc khoa học dữ liệu:
+
+1. **Bảo toàn bản ghi giao dịch:** Tuyệt đối không tự động loại bỏ một dòng bản ghi trong bảng chi tiết giỏ hàng chỉ vì một thuộc tính phụ như tên sản phẩm, vị trí thêm vào giỏ hay cờ mua lại bị thiếu hoặc không hợp lệ. Khi cặp khóa `(order_id, product_id)` còn xác định được, bản ghi đó vẫn chứa đựng thông tin giỏ hàng nguyên vẹn và có giá trị cho bài toán khai phá đồng mua. Mọi trường hợp vi phạm khóa đều được đưa vào nhật ký kiểm toán riêng, không tùy tiện sinh mã giả mạo.
+2. **Phân biệt dữ liệu khuyết có cấu trúc với khuyết do nhiễu:** Một giá trị có thể thiếu hoàn toàn hợp lệ theo ngữ nghĩa nghiệp vụ, tiêu biểu như biến khoảng cách thời gian `days_since_prior_order` tại đơn hàng đầu tiên của mỗi người dùng ($order\_number = 1$). Ngược lại, các chuỗi như `?`, `null`, `None` hoặc `chưa rõ` là biểu hiện thông tin bị thay thế bởi dị thường nhập liệu. Nghiên cứu phân biệt rạch ròi hai trường hợp này, không gộp chung để điền trung bình, trung vị, mode hay số 0 một cách máy móc.
+3. **Làm sạch đặc thù theo từng thuộc tính:** Mỗi cột dữ liệu sở hữu miền giá trị và bản chất kinh tế riêng biệt. Nhóm không áp dụng biểu thức chính quy (*regex*) trích xuất số một cách cào bằng trên mọi chuỗi ký tự, bởi việc cắt bỏ hậu tố không bảo đảm phần số còn lại phản ánh đúng giá trị nguyên bản.
+4. **Không dùng bản tham chiếu nguyên bản để điền dữ liệu:** Tập dữ liệu gốc ban đầu chỉ được dùng làm đối chứng để đo lường mức độ sai lệch và kiểm chứng quy tắc thuật toán; nhóm không thực hiện sao chép giá trị từ bản gốc sang tệp nhiễu để điền khuyết hay ghi đè.
+5. **Không tự động xóa ngoại lai bằng ngưỡng thống kê đơn lẻ:** Các giỏ hàng lớn và vị trí sản phẩm bất thường được kiểm tra theo các ràng buộc cấu trúc; kiểm tra này không xác minh toàn bộ hành vi mua sắm thực tế. Nhóm không sử dụng quy tắc biên IQR hay độ lệch chuẩn làm căn cứ duy nhất để loại bỏ giao dịch hợp lệ.
+6. **Bảo toàn nguyên vẹn lược đồ (schema) của sáu tệp CSV sạch:** Toàn bộ kết quả kiểm toán, cờ cảnh báo và chỉ số kiểm tra được lưu trữ trong báo cáo chất lượng độc lập; tuyệt đối không tự ý bổ sung các cột phụ (như `is_outlier_cart_pos`) vào sáu tệp CSV sạch đầu ra nhằm bảo đảm tính tương thích với mọi hệ thống hạ tầng tiếp nhận.
+
+**Quyết định xử lý thiếu theo vai trò thuộc tính.** Khóa thiếu hoặc mâu thuẫn làm dừng kiểm chứng, không sinh mã thay thế. Khoảng cách trước đơn đầu giữ NA vì không áp dụng; các giá trị hành vi chưa xác định được cũng giữ NA, không điền mean/mode làm thay đổi phân phối. Tên sản phẩm thiếu vẫn giữ mã và giao dịch; khi trình bày có thể dùng nhãn “Chưa có tên (ID=...)” ở lớp báo cáo, không ghi đè CSV. Nhãn ngành `missing` có sẵn là giá trị nguồn, không phải nhãn mới do điền khuyết. Nếu classifier cần imputation, tham số điền chỉ được học trên classifier_fit, không trên validation/test.
+
+### Phân loại các vấn đề chất lượng dữ liệu
+
+Từ các báo cáo kiểm kê dữ liệu, kiểm tra khóa và đối chiếu với tập chuẩn, các khiếm khuyết trên tập dữ liệu thô được quy hoạch thành bốn nhóm vấn đề chính: (i) lỗi bề mặt định dạng như khoảng trắng thừa (`" 1"`, `"banana "`) và sai lệch kiểu ký tự; (ii) giá trị thiếu chuẩn hoặc token chuỗi giả lập thiếu; (iii) giá trị vi phạm miền hợp lệ (số âm, chuỗi kèm đơn vị đo); và (iv) mâu thuẫn về trình tự logic hoặc phân vùng nghiệp vụ. Các số liệu được nêu dưới đây là **số lượng phát hiện kiểm toán trên tập đầu vào nhiễu**, làm cơ sở định lượng quy mô thách thức cần xử lý.
+
+### Làm sạch bảng `orders`
+
+Bảng `orders` giữ vai trò bảng điều phối trung tâm, ghi nhận thông tin thời gian và định danh cho 3.421.083 đơn hàng của 206.209 người dùng khác nhau. Đây là bảng chịu mức độ nhiễu loạn phức tạp nhất, được xử lý qua từng lớp thuộc tính:
+
+* **Chuẩn hóa khóa định danh:** Toàn bộ khoảng trắng đầu/cuối được làm sạch khỏi `order_id` và `user_id` trước khi thiết lập quan hệ liên kết. Sau chuẩn hóa, thuật toán xác nhận khóa chính `order_id` đạt tính duy nhất tuyệt đối ($100\%$).
+* **Khôi phục nhãn phân vùng `eval_set`:** Parser cleaning ghi nhận 314.925 token thiếu (`missing_token`) và 498.404 nhãn không hợp lệ (`invalid_label`), tổng cộng **813.329 ô không dùng được sau parse ban đầu**. Hai nhóm loại trừ nhau theo trạng thái trong `cleaning_summary.csv`; tổng khớp cột `unusable_after_initial_parse` của `before_after.csv`. Nhóm áp dụng thuật toán xác định tư cách thành viên (*membership verification*): các mã đơn xuất hiện trong `order_products__prior` được xác định thuộc phân vùng `prior` (tổng cộng 3.214.874 đơn); các mã đơn xuất hiện trong `order_products__train` thuộc phân vùng `train` (tổng cộng 131.209 đơn). Đây là quy mô phân vùng sau xử lý, không phải số nhãn được sửa. Hồ sơ `relational_summary.csv` ghi nhận 764.250 nhãn được khôi phục về `prior`, 31.140 về `train` và 17.939 được suy ra là `test`, tổng cộng 813.329 nhãn. Đúng 75.000 đơn hàng không thuộc hai bảng chi tiết trên được định danh là phân vùng `test` sau khi kiểm chứng chặt chẽ tính độc lập và toàn vẹn của phân hoạch. Thuật toán không gán nhãn `test` tùy tiện chỉ dựa trên trạng thái thiếu.
+* **Xử lý số thứ tự đơn hàng `order_number`:** Biến ghi số thứ tự đơn hàng, bắt đầu từ 1. Đầu vào chứa 798.715 token thiếu và tổng cộng 1.233.938 ô không thể sử dụng trực tiếp sau parse ban đầu. Nhóm áp dụng quy trình tái dựng dựa trên thứ tự bản ghi tương đối của từng người dùng theo giả định kỹ thuật rằng thứ tự dòng trong tệp nguồn được bảo tồn. Để kiểm soát an toàn dữ liệu, hàm xử lý thiết lập cơ chế kiểm tra ngắt quãng: nếu phát hiện một nhóm người dùng bị xuất hiện lặp lại ngắt quãng hoặc vượt giới hạn biên cho phép, pipeline sẽ ném ngoại lệ dừng thực thi (`raise ValueError`) chứ không âm thầm gán thiếu để lướt qua lỗi. Kết quả kiểm toán thực tế xác nhận toàn bộ 3.421.083 đơn hàng đều vượt qua cổng kiểm soát và được tái dựng thành chuỗi liên tục bắt đầu từ 1.
+* **Kiểm tra miền giá trị `order_dow` và `order_hour_of_day`:** Miền hợp lệ được chốt nghiêm ngặt: thứ trong tuần $\in [0, 6]$ và giờ trong ngày $\in [0, 23]$. Khi gặp các chuỗi ký tự bất thường kèm hậu tố lạ như `"2 %"`, mã nguồn hiện hành không tự ý bóc tách phần số nhằm tránh nguy cơ suy đoán sai lệch bản chất dữ liệu; thay vào đó, hệ thống đánh dấu cờ cảnh báo `suffix_unresolved` và chuyển thành giá trị khuyết thiếu chuẩn (`pd.NA`). Chỉ các giá trị sau khi chuẩn hóa chuỗi và ép kiểu số nguyên nằm trọn vẹn trong miền hợp lệ mới được nghiệm thu (2.455.802 ô hợp lệ ở `order_dow` và 2.865.536 ô ở `order_hour_of_day`). Biến `order_dow` được giữ nguyên mã số nguyên, không tự ý gán nhãn ngày tháng cụ thể khi chưa có quy chuẩn xác minh từ nhà cung cấp dữ liệu. Không áp dụng `pd.to_datetime` cho mã ngày 0–6 hoặc giờ 0–23: dữ liệu không có ngày lịch, tháng và năm đủ để tạo mốc thời gian; chuyển chúng thành ngày giả sẽ làm sai ý nghĩa.
+* **Xử lý khoảng cách giữa các đơn hàng `days_since_prior_order`:** Kiểm kê đầu vào ghi nhận 753.252 ô thiếu. Về mặt bản chất nghiệp vụ, biến này không áp dụng cho đơn hàng đầu tiên của mỗi người dùng ($order\_number = 1$, chiếm đúng 206.209 bản ghi), do đó bắt buộc phải giữ nguyên giá trị `NA`, tuyệt đối không điền giá trị 0 (vì 0 mang ngữ nghĩa đặt hàng lại ngay trong cùng ngày) hoặc điền trung bình. Đối với 547.043 đơn hàng tiếp theo bị mất thông tin do nhiễu mà không thể suy luận chắc chắn từ dữ liệu thời gian khác, nhóm bảo toàn trạng thái thiếu và ghi nhận giới hạn này vào báo cáo kiểm toán.
+
+### Làm sạch bảng `products`
+
+Bảng `products` quản lý danh mục 49.688 sản phẩm. Kiểm kê ghi nhận 6.923 giá trị bị khuyết hoặc thay thế bằng token rác trong `product_name`. Nhóm thực hiện chuẩn hóa các token như `"null"`, `"None"` về giá trị thiếu chuẩn của hệ thống (`pd.NA`). Các sản phẩm không có tên vẫn được bảo toàn nguyên vẹn mã `product_id`, bảo đảm không làm gián đoạn liên kết khóa ngoại với các bảng giao dịch.
+
+Toàn bộ khoảng trắng thừa trong `product_id`, `aisle_id` và `department_id` được cắt tỉa triệt để. Kiểm toán khóa ngoại xác nhận $100\%$ các mã `aisle_id` và `department_id` trong bảng sản phẩm đều khớp nối hoàn hảo với hai bảng danh mục tương ứng, không phát sinh bất kỳ khóa mồ côi nào.
+
+### Làm sạch bảng `aisles` và `departments`
+
+Hai bảng danh mục quầy kệ (`aisles` - 134 dòng) và ngành hàng (`departments` - 21 dòng) được làm sạch khoảng trắng trên cả khóa chính và tên hiển thị. Tại bảng `aisles`, 40 token thiếu được chuẩn hóa về `NA` (tương ứng tỷ lệ thiếu 29,85%). Nhóm đặc biệt lưu ý không chuyển đổi chuỗi có nội dung literal `"missing"` thành giá trị `null` một cách tùy tiện, vì đây là nhãn danh mục thực tế của bộ dữ liệu Instacart; việc hiển thị thành "Chưa xác định" chỉ được thực hiện ở lớp báo cáo, không làm sai lệch ngữ nghĩa trường dữ liệu nguồn.
+
+### Làm sạch hai bảng chi tiết prior và train
+
+Hai bảng chi tiết giao dịch phản ánh cấu trúc giỏ hàng thực tế thông qua khóa ghép `(order_id, product_id)`. Báo cáo kiểm toán xác nhận sau khi chuẩn hóa định dạng mã, không phát sinh bất kỳ bản ghi trùng lặp nào trên cặp khóa chính này.
+
+* **Xử lý thuộc tính vị trí nhặt hàng `add_to_cart_order`:** Thuộc tính này là số nguyên dương ($\ge 1$). Đầu vào `prior` chứa 3.223.158 token thiếu và 6.005.160 ô không dùng được sau parse ban đầu; đầu vào `train` có tương ứng 348.739 token thiếu và 525.773 ô không dùng được sau parse ban đầu. Một giá trị như `9999` vẫn có thể qua kiểm tra số nguyên dương ban đầu nhưng không phù hợp vị trí trong giỏ; vì vậy không đồng nhất lỗi vị trí với số ô không dùng được sau parse. Bước tái dựng đối chiếu cả giá trị đã parse: sửa 762.067 vị trí quan sát được ở prior và 67.880 ở train theo giả định thứ tự dòng, ngoài các ô được điền sau parse. Các số này được ghi riêng trong `relational_summary.csv`. Quy trình tái dựng vị trí nhặt hàng được triển khai tuần tự theo thứ tự dòng bản ghi liên tục của từng mã đơn hàng. Kích thước giỏ hàng lớn nhất quan sát được là 145 sản phẩm ở `prior` và 80 sản phẩm ở `train`; không phát hiện vi phạm các ràng buộc cấu trúc đã kiểm tra ở các giỏ này. Nhóm giữ nguyên thành phần giỏ vì kích thước lớn tự nó chưa đủ chứng minh lỗi ghi nhận.
+* **Xử lý cờ mua lại `reordered`:** Biến nhận giá trị nhị phân $\{0, 1\}$. Đầu vào `prior` ghi nhận 5.438.428 token thiếu và 9.049.308 ô không dùng được sau parse ban đầu; bảng `train` ghi nhận tương ứng 211.571 token thiếu và 420.771 ô không dùng được sau parse ban đầu. Các giá trị hợp lệ 0 và 1 được bảo tồn; các giá trị âm hoặc chuỗi kèm đơn vị đo không rõ nguồn gốc (như `"1 kg"`, `"0 USD"`) được hệ thống đánh dấu và chuyển thành giá trị thiếu chuẩn (`pd.NA`). Do `reordered` không phải nhãn mục tiêu của bài toán hoàn thiện giỏ hàng trong đề tài, việc khuyết thiếu ở biến này không dẫn đến việc loại bỏ dòng giao dịch tương ứng.
+
+Kiểm tra `duplicated(["order_id", "product_id"])` không phát hiện khóa giao dịch trùng trong đầu ra nghiệm thu, nên số dòng giao dịch bị xóa vì trùng là 0. Pipeline dừng khi phát hiện vi phạm khóa thay vì tự chọn một dòng bằng `drop_duplicates`. Ở G0, `drop_duplicates` trên cặp `(user_id, order_id)` tạo bảng người–giỏ phục vụ kiểm tra phân hoạch; đó là thay đổi cấp biểu diễn, không phải loại giao dịch lỗi. Hai thao tác được phân biệt trong hồ sơ.
+
+### Kiểm tra tính nhất quán của lịch sử đơn hàng
+
+Báo cáo kiểm toán chuỗi đơn hàng ban đầu ghi nhận 189.577 người dùng có chuỗi `order_number` bị đứt đoạn hoặc thiếu điểm xuất phát. Nhóm nhấn mạnh đây là **kết quả kiểm toán trực tiếp trên tập dữ liệu đầu vào nhiễu** khi tồn tại nhiều giá trị âm, rác và khuyết thiếu chưa qua xử lý, chứ chưa đủ bằng chứng khẳng định nguyên nhân là do cắt cụt lịch sử tự nhiên. 
+
+Sau khi áp dụng quy trình tái dựng dựa trên thứ tự bản ghi tương đối của từng người dùng trong tệp nguồn (theo giả định kỹ thuật bảo tồn trình tự dòng), toàn bộ chuỗi thứ tự đơn hàng của 206.209 người dùng đều được phục hồi thành công và đạt tính liên tục bắt đầu từ 1. Nhóm minh bạch công bố kết quả này chứng minh thuật toán tái dựng hoạt động đúng theo các quy tắc và giả định đề ra, chứ không tự nhận là bằng chứng đã phục hồi chính xác 100% trình tự mua hàng thực tế nếu dữ liệu thô ban đầu bị xáo trộn vị trí dòng.
+
+### Tổng hợp quy tắc làm sạch và Đối soát thực chứng Trước --- Sau
+
+Nhằm minh chứng năng lực kiểm soát dữ liệu bài bản và đáp ứng yêu cầu thẩm định thực nghiệm của Rubric Trụ cột II, Bảng \ref{tbl-dq-rules} tổng hợp toàn bộ quy tắc kỹ thuật và điều kiện nghiệm thu trên sáu bảng, trong khi Bảng \ref{tbl-dq-before-after} công bố số liệu đối soát định lượng Before -- After thực tế được trích xuất trực tiếp từ tệp kiểm toán chuẩn `before_after.csv`.
+
+```{=latex}
+\begin{minipage}{\textwidth}
+\centering
+\normalsize
+\setlength{\tabcolsep}{4pt}
+\captionof{table}{Quy tắc xử lý và kiểm chứng chất lượng sáu bảng nguồn}
+\label{tbl-dq-rules}
+\begin{tabular}{@{}p{2cm}p{5.7cm}p{7.3cm}@{}}
+\toprule
+\textbf{Bảng} & \textbf{Xử lý chính} & \textbf{Kết quả kiểm chứng} \\
+\midrule
+Quầy & Chuẩn hóa mã và tên; giữ thiếu; bảo toàn nhãn danh mục ``missing''. & 134 dòng; khóa duy nhất; 40 tên thiếu (29,85\%). \\
+\addlinespace
+Ngành & Chuẩn hóa khoảng trắng; giữ nhãn ngành hàng. & 21 dòng; khóa duy nhất; không có tên thiếu. \\
+\addlinespace
+Sản phẩm & Chuẩn hóa mã; không suy đoán tên thiếu. & 49.688 dòng; 6.923 tên thiếu; mã quầy và ngành khớp bảng cha. \\
+\addlinespace
+Đơn hàng & Kiểm tra miền; tái dựng thứ tự theo dòng; khôi phục phân vùng từ bảng chi tiết. & 3.421.083 dòng; khóa duy nhất; 3.214.874 prior, 131.209 train, 75.000 test. \\
+\addlinespace
+Chi tiết prior & Kiểm tra khóa ghép; tái dựng vị trí theo dòng; giữ thiếu ở cờ mua lại. & 32.434.489 dòng; không trùng khóa ghép; mã đơn và sản phẩm khớp bảng cha. \\
+\addlinespace
+Chi tiết train & Áp dụng cùng quy tắc với prior; bảo toàn thành phần giỏ. & 1.384.617 dòng, 131.209 giỏ; không trùng khóa ghép; khớp bảng cha. \\
+\bottomrule
+\end{tabular}
+\par\vspace{4pt}
+\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: Hồ sơ kiểm toán cleaning: before\_after.csv, relational\_summary.csv và verification.json.}}
+\end{minipage}
+```
+
+Quầy, Ngành, Sản phẩm, Đơn hàng lần lượt là `aisles`, `departments`, `products`, `orders`; hai bảng chi tiết là `order_products__prior` và `order_products__train`.
+
+```{=latex}
+\begin{minipage}{\textwidth}
+\centering
+\normalsize
+\setlength{\tabcolsep}{4pt}
+\captionof{table}{Đối soát thiếu và giá trị không dùng được trước--sau xử lý}
+\label{tbl-dq-before-after}
+\begin{tabular}{@{}p{4.5cm}rrrr@{}}
+\toprule
+\textbf{Bảng: thuộc tính} & \textbf{Thiếu đầu} & \textbf{K.dùng đầu} & \textbf{Thiếu cuối} & \textbf{Tỷ lệ (\%)} \\
+\midrule
+Quầy: tên & 40 & 40 & 40 & 29,85 \\
+Ngành: tên & 0 & 0 & 0 & 0,00 \\
+Sản phẩm: tên & 6.923 & 6.923 & 6.923 & 13,93 \\
+Đơn: phân vùng & 314.925 & 813.329 & 0 & 0,00 \\
+Đơn: số thứ tự & 798.715 & 1.233.938 & 0 & 0,00 \\
+Đơn: mã ngày & 463.331 & 965.281 & 965.281 & 28,22 \\
+Đơn: giờ & 555.547 & 555.547 & 555.547 & 16,24 \\
+Đơn: khoảng cách ngày & 753.252 & 753.252 & 753.252 & 22,02 \\
+Train: vị trí trong giỏ & 348.739 & 525.773 & 0 & 0,00 \\
+Train: cờ mua lại & 211.571 & 420.771 & 420.771 & 30,39 \\
+Prior: vị trí trong giỏ & 3.223.158 & 6.005.160 & 0 & 0,00 \\
+Prior: cờ mua lại & 5.438.428 & 9.049.308 & 9.049.308 & 27,90 \\
+\bottomrule
+\end{tabular}
+\par\vspace{4pt}
+\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: before\_after.csv; tỷ lệ được tính trong missingness\_summary.csv bằng script kiểm toán bổ trợ.}}
+\end{minipage}
+```
+
+“Thiếu đầu” là số token thiếu theo parser. “K.dùng đầu” là `unusable_after_initial_parse`, gồm cả thiếu, sai định dạng, hậu tố chưa phân giải, ngoài miền và nhãn không hợp lệ; không cộng cột này với “Thiếu đầu”. “Tỷ lệ” là số ô thiếu cuối chia tổng dòng bảng nguồn. CSV bổ trợ lưu cả tỷ lệ thiếu đầu và cuối cho mọi cột; các cột khóa không liệt kê trong bảng đều có tỷ lệ thiếu cuối bằng 0.
+
+Các tên rút gọn tương ứng: phân vùng là `eval_set`; số thứ tự là `order_number`; mã ngày là `order_dow`; giờ là `order_hour_of_day`; khoảng cách ngày là `days_since_prior_order`; vị trí trong giỏ là `add_to_cart_order`; cờ mua lại là `reordered`.
+
+### Kiểm tra ngoại lai về kích thước giỏ hàng
+
+Kiểm toán cấu trúc trên toàn bộ 131.209 giỏ train trong Master cho $Q_1=5$, $Q_3=14$, $IQR=9$ sản phẩm; hàng rào IQR là $[-8{,}5;27{,}5]$. Có 5.222 giỏ (3,98%) vượt hàng rào trên, tức chứa ít nhất 28 sản phẩm; kích thước giỏ nằm trong khoảng 1--80. Các giỏ này được giữ lại vì cặp khóa không trùng, khóa ngoại hợp lệ và vượt ngưỡng thống kê không tự nó chứng minh lỗi ghi nhận. Dữ liệu không đủ để kết luận chúng thuộc hộ gia đình hay một phân khúc khách hàng cụ thể.
+
+Script kiểm toán bổ trợ `m1_quality_summary.py` nằm trong thư mục `scripts/`. Kết quả được lưu trong báo cáo `basket_quality_summary.json`, kèm hash Master, phiên bản thư viện và quy tắc phân vị. Đây là kiểm toán chất lượng toàn bảng, không dùng ngưỡng IQR này để chọn đặc trưng, lọc mẫu hay điều chỉnh mô hình. EDA định hướng mô hình ở mục 3.4--3.6 chỉ thực hiện trên reference sau chia tập. Việc tái dựng vị trí sản phẩm và giữ giỏ lớn không làm thay đổi tập sản phẩm của giỏ.
+
+### Đóng gói dữ liệu sạch và Kiểm soát khả năng tái lập
+
+Toàn bộ quy trình làm sạch được đóng gói thành các module thực thi tự động trong thư mục `scripts/cleaning/`, xử lý luồng dữ liệu lớn theo khối (`chunksize = 250.000`) để giảm lượng dữ liệu nạp mỗi lần; các cấu trúc tra cứu vẫn chiếm RAM và các kiểm tra quan hệ dùng SQLite trên đĩa. Kết quả xuất bản gồm đúng sáu tệp CSV sạch độc lập đặt tại `DATA/Data đã làm sạch/`, duy trì lược đồ nguyên bản và cấu trúc giao dịch gốc.
+
+Script `summarize_cleaning.py` đối chiếu SHA-256 của sáu CSV hiện tại với `new_sha256` trong `run_report.json` của từng lượt chạy được `latest.json` trỏ tới. Cả sáu tệp khớp hồ sơ đầu ra. Script xuất `comparison_previous.csv` để tổng hợp so sánh với bản xuất trước đó; đây không phải tệp đầu vào dùng để xác minh hash. Bộ kiểm thử `tests/test_cleaning.py` dùng dữ liệu nhỏ, so sánh trực tiếp byte đầu ra khi thay đổi kích thước khối và kiểm tra các tình huống vi phạm khóa, phân vùng hoặc thứ tự nhóm.
+
+Các phép so sánh trên kiểm tra tính toàn vẹn và khả năng tái lập trong phạm vi đã thử, không chứng minh dữ liệu giống bộ Kaggle gốc hoặc mọi giá trị đúng lịch sử thực tế. Kiểm tra miền, khóa ngoại và cấu trúc giỏ cung cấp bằng chứng riêng về các ràng buộc được xét; ý nghĩa lịch sử của các trường tái dựng vẫn phụ thuộc giả định thứ tự dòng. Phép ghép kiểm tra train bảo toàn 1.384.617 dòng thuộc 131.209 giỏ. Hồ sơ `verification.json` lưu kết quả để sử dụng cho giai đoạn tiếp theo.
+
+
+
+## Phân tích thống kê mô tả
+
+### Phạm vi mẫu và đơn vị thống kê
+
+Phân tích mô tả sử dụng riêng tập reference đã nghiệm thu từ Master theo phân hoạch người dùng cố định (seed 42, PCG64). Tập này gồm **39.363 người dùng và 39.363 giỏ train**, với **415.053 dòng sản phẩm–đơn hàng**; quan sát được 28.742 sản phẩm, 21 ngành và 134 quầy. Mỗi người chỉ có một giỏ train trong thiết kế hiện hành. Reference giữ toàn bộ thành phần của từng giỏ, kể cả giỏ một sản phẩm; không lọc Top-N trước thống kê và không dùng fit, validation hoặc test để lựa chọn phân tích.
+
+Bảng cấp giỏ dùng một dòng mỗi đơn để mô tả kích thước, độ đa dạng và thuộc tính thời gian. Bảng cấp dòng dùng lượt xuất hiện sản phẩm trong đơn để mô tả cơ cấu danh mục. Giá trị thiếu được giữ nguyên; thống kê định lượng tính trên quan sát hợp lệ và công bố mẫu số. Bảng giỏ được đối chiếu với reference trước khi xuất thống kê; quy tắc chia tập đã trình bày ở Chương 2.
+
+### Đặc điểm thống kê của giỏ hàng
+
+Hai bảng dưới tách thông tin chất lượng/phân tán và năm con số để bảo đảm cỡ chữ 12 pt. Độ lệch chuẩn mẫu sử dụng ddof = 1; phân vị nội suy tuyến tính. Khoảng cách ngày giữ quy tắc giới hạn mã hóa tại 30 của dữ liệu nguồn.
+
+```{=latex}
+\begingroup
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{2.3cm}@{}}
+\caption{Số quan sát hợp lệ, tỷ lệ thiếu và mức phân tán của reference}\label{tbl-ref-quality-dispersion}\\
+\toprule
+Biến & N hợp lệ & Thiếu (\%) & Mean & Std \\
+\midrule
+\endfirsthead
+\toprule
+Biến & N hợp lệ & Thiếu (\%) & Mean & Std \\
+\midrule
+\endhead
+Sản phẩm/giỏ & 39.363 & 0,00 & 10,54 & 7,94 \\
+Ngành/giỏ & 39.363 & 0,00 & 4,88 & 2,66 \\
+Quầy/giỏ & 39.363 & 0,00 & 7,55 & 5,01 \\
+Khoảng cách (ngày) & 32.787 & 16,71 & 16,98 & 10,68 \\
+\bottomrule
+\end{longtable}
+\endgroup
+```
+
+*Nguồn: Nhóm tổng hợp từ tập reference; 39.363 giỏ và 415.053 dòng sản phẩm–đơn hàng. Thống kê khoảng cách đơn dùng 32.787 giỏ hợp lệ.*
+
+
+```{=latex}
+\begingroup
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.8cm}@{}}
+\caption{Năm con số của các biến định lượng cấp giỏ reference}\label{tbl-ref-five-numbers}\\
+\toprule
+Biến & Min & Q1 & Median & Q3 & Max \\
+\midrule
+\endfirsthead
+\toprule
+Biến & Min & Q1 & Median & Q3 & Max \\
+\midrule
+\endhead
+Sản phẩm/giỏ & 1 & 5 & 9 & 14 & 77 \\
+Ngành/giỏ & 1 & 3 & 5 & 7 & 16 \\
+Quầy/giỏ & 1 & 4 & 7 & 10 & 39 \\
+Khoảng cách (ngày) & 0 & 7 & 15 & 30 & 30 \\
+\bottomrule
+\end{longtable}
+\endgroup
+```
+
+*Nguồn: Nhóm tổng hợp từ tập reference; 39.363 giỏ và 415.053 dòng sản phẩm–đơn hàng. Thống kê khoảng cách đơn dùng 32.787 giỏ hợp lệ.*
+
+Giỏ reference có trung vị 9 sản phẩm, trong khi trung bình là 10,54; Q1 = 5 và Q3 = 14. Độ lệch 1,47 và độ nhọn dư (excess kurtosis) 3,20 bổ sung bằng chứng về phân phối lệch phải với phần đuôi lớn. Có 2.118 giỏ một sản phẩm (5,38%). Kích thước quan sát trải từ 1 đến 77 sản phẩm; các số này mô tả giỏ, không xác định loại hộ gia đình hay mục đích mua hàng.
+
+Trên riêng reference, IQR = 9, hàng rào là [-8,5; 27,5]. Có 1.578 giỏ (4,01%) vượt hàng rào. Toàn bộ được giữ lại vì cờ thống kê không tự chứng minh lỗi giao dịch. Kết quả này có mẫu số reference, khác kiểm toán toàn Master ở mục 3.3; số liệu chi tiết nằm trong bảng đối soát tương ứng.
+
+Khoảng cách đơn hàng có 32.787 quan sát hợp lệ, trung vị 15 ngày và Q3 bằng 30. Mốc 30 có giới hạn mã hóa, nên không diễn giải thành khoảng cách thực chính xác cho mọi đơn ở ngưỡng này. Tần số ngày, giờ và nhóm giờ được xuất đầy đủ trong bảng đối soát tương ứng, gồm các mã không có quan sát và nhóm thiếu; tỷ lệ trên toàn mẫu (`all_pct`) tách khỏi tỷ lệ trên phần hợp lệ (`valid_pct`).
+
+Cụ thể, mã ngày thiếu 11.074 giỏ (28,13%); giờ đặt hàng thiếu 6.541 giỏ (16,62%). Mã ngày giữ 0–6, không tự ánh xạ thành tên thứ. Các khác biệt theo thời gian được phân tích tiếp ở mục 3.5.
+
+### Cơ cấu ngành/quầy và mức tập trung sản phẩm
+
+Các phép tổng hợp nhóm theo ID ổn định; tên thiếu chỉ được hiển thị thành “Chưa có tên (ID=...)”, không làm mất nhóm. Các bảng tổng hợp ngành và quầy giữ đủ danh mục nguồn, báo số dòng, số giỏ, tỷ trọng dòng, độ phủ giỏ và số `reordered` hợp lệ/thiếu. Tỷ lệ mua lại quan sát được chỉ lấy số dòng có `reordered = 1` chia cho số dòng có `reordered` hợp lệ; không coi các ô thiếu là chưa mua lại.
+
+Bảng rút gọn chọn 10 ngành có nhiều dòng nhất, phá hòa bằng ID tăng dần; phần còn lại được tổng hợp lại trên các dòng và hợp các giỏ tương ứng.
+
+```{=latex}
+\begingroup
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.8cm}@{}}
+\caption{Cơ cấu ngành hàng trên reference: Top-10 và phần còn lại}\label{tbl-ref-department-structure}\\
+\toprule
+Ngành & Số dòng & Dòng (\%) & Phủ giỏ (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Ngành & Số dòng & Dòng (\%) & Phủ giỏ (\%) \\
+\midrule
+\endhead
+produce & 122.514 & 29,52 & 73,95 \\
+dairy eggs & 65.299 & 15,73 & 66,76 \\
+snacks & 35.647 & 8,59 & 43,73 \\
+beverages & 34.189 & 8,24 & 46,89 \\
+frozen & 30.080 & 7,25 & 38,90 \\
+pantry & 24.261 & 5,85 & 36,06 \\
+bakery & 14.560 & 3,51 & 27,60 \\
+canned goods & 14.056 & 3,39 & 22,59 \\
+deli & 13.376 & 3,22 & 24,72 \\
+dry goods pasta & 11.345 & 2,73 & 19,47 \\
+Các ngành còn lại & 49.726 & 11,98 & 55,85 \\
+\bottomrule
+\end{longtable}
+\endgroup
+```
+
+*Nguồn: Nhóm tổng hợp từ tập reference; 39.363 giỏ và 415.053 dòng sản phẩm–đơn hàng. Thống kê khoảng cách đơn dùng 32.787 giỏ hợp lệ.*
+
+Ngành produce có 122.514 lượt xuất hiện, chiếm 29,52% dòng và hiện diện trong 29.108 giỏ (73,95%). Tỷ trọng dòng các ngành cộng thành 100%, nhưng độ phủ có thể cộng vượt 100% vì một giỏ chứa nhiều ngành. Nhóm “còn lại” phủ 55,85% giỏ; con số này được tính từ hợp giỏ, không cộng độ phủ từng ngành. Lượt xuất hiện không phải số đơn vị bán hay doanh thu. Các nhãn nguồn `other` và `missing` được giữ nguyên, với giới hạn diễn giải về nội dung ngành.
+
+Popularity của sản phẩm là số giỏ chứa sản phẩm chia cho 39.363 giỏ reference. Xếp hạng giảm theo popularity, phá hòa bằng ID sản phẩm tăng dần. Các mốc Top-N đã chốt trước được dùng để mô tả hai chỉ tiêu riêng: tỷ trọng dòng thuộc danh mục và tỷ lệ giỏ có ít nhất một sản phẩm thuộc danh mục.
+
+```{=latex}
+\begingroup
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{2.8cm}@{}}
+\caption{Tỷ trọng dòng và độ phủ giỏ theo các mốc Top-N}\label{tbl-ref-top-n}\\
+\toprule
+Top-N & Số dòng & Dòng (\%) & Số giỏ & Phủ giỏ (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Top-N & Số dòng & Dòng (\%) & Số giỏ & Phủ giỏ (\%) \\
+\midrule
+\endhead
+10 & 28.676 & 6,91 & 17.933 & 45,56 \\
+50 & 67.693 & 16,31 & 24.801 & 63,01 \\
+100 & 94.565 & 22,78 & 28.212 & 71,67 \\
+500 & 174.136 & 41,96 & 34.089 & 86,60 \\
+1.000 & 218.767 & 52,71 & 36.041 & 91,56 \\
+\bottomrule
+\end{longtable}
+\endgroup
+```
+
+*Nguồn: Nhóm tổng hợp từ tập reference; 39.363 giỏ và 415.053 dòng sản phẩm–đơn hàng. Thống kê khoảng cách đơn dùng 32.787 giỏ hợp lệ.*
+
+Top-1.000 sản phẩm chiếm 52,71% dòng nhưng phủ 91,56% giỏ. Vẫn còn 196.286 dòng (47,29%) nằm ngoài nhóm này. Một giỏ được “phủ” có thể đồng thời chứa nhiều sản phẩm ngoài Top-N; vì vậy độ phủ giỏ cao không chứng minh danh mục đã giữ gần hết thành phần giỏ. Các con số chỉ cung cấp căn cứ cho lưới cấu hình trên validation ở Chương 4, chưa chốt N hoặc ngưỡng support và chưa chứng minh hiệu quả gợi ý.
+
+Các quầy có nhiều lượt xuất hiện nhất được trình bày theo ID để bảo toàn các nhóm thiếu tên. Bảng đầy đủ 134 quầy được lưu cùng dữ liệu kết quả; độ phủ giữa các quầy có thể chồng lấn.
+
+| ID quầy | Số dòng | Dòng (%) | Phủ giỏ (%) |
+|---|---|---|---|
+| 24 | 45.157 | 10,88 | 54,86 |
+| 83 | 45.111 | 10,87 | 44,98 |
+| 123 | 23.482 | 5,66 | 38,22 |
+| 120 | 16.481 | 3,97 | 25,02 |
+| 21 | 12.647 | 3,05 | 23,93 |
+| 115 | 10.946 | 2,64 | 20,55 |
+| 84 | 9.726 | 2,34 | 22,24 |
+| 107 | 9.397 | 2,26 | 17,68 |
+| 91 | 7.858 | 1,89 | 17,13 |
+| 112 | 7.093 | 1,71 | 16,40 |
+
+: Mười quầy có nhiều dòng sản phẩm nhất trên reference {#tbl-ref-top-aisles}
+
+*Nguồn: Nhóm tổng hợp trên 415.053 dòng và 39.363 giỏ reference.*
+
+## Trực quan hóa dữ liệu và Phát hiện Insight kinh doanh
+
+```{=latex}
+\FloatBarrier
+```
+
+### Phân phối kích thước giỏ hàng
+
+![Phân phối kích thước giỏ reference: histogram bin rộng một sản phẩm và boxplot giữ các điểm ngoài râu. Nguồn: Nhóm tổng hợp từ 39.363 giỏ và 415.053 dòng của tập reference.](<assets/chuong3/fig-ref-basket-distribution.pdf>){#fig-ref-basket-distribution width=16cm fig-pos=htbp}
+
+Histogram thể hiện tần số từng kích thước nguyên trên toàn khoảng quan sát. Boxplot dùng râu 1,5 × IQR; các điểm ngoài râu vẫn thuộc phân tích. Trung vị 9, Q1–Q3 là 5–14 sản phẩm; phần đuôi phải giải thích vì sao mean lớn hơn median. Các điểm trùng kích thước có thể chồng nhau trên boxplot, nên số giỏ bị gắn cờ được đọc từ bảng kiểm toán, không đếm số chấm trên hình.
+
+```{=latex}
+\FloatBarrier
+```
+
+### Cơ cấu ngành hàng và đường tích lũy sản phẩm
+
+![Tỷ trọng dòng của Top-10 ngành và phần còn lại; đường tỷ trọng dòng tích lũy theo thứ hạng sản phẩm. Nguồn: Nhóm tổng hợp từ 39.363 giỏ và 415.053 dòng của tập reference.](<assets/chuong3/fig-ref-category-concentration.pdf>){#fig-ref-category-concentration width=16cm fig-pos=htbp}
+
+Đường tích lũy đạt 100% trên 28.742 sản phẩm quan sát; thứ hạng theo popularity giảm dần, phá hòa bằng ID tăng dần. Các mốc Top-N chỉ mô tả tỷ trọng dòng, không phải doanh thu hay quyết định cắt danh mục. Chưa kết luận quy luật 80–20 từ hình này.
+
+```{=latex}
+\FloatBarrier
+```
+
+### Nhịp đặt hàng và kích thước giỏ theo thời gian
+
+
+![Tần số giờ đặt đơn và mã ngày trên reference Nguồn: Nhóm tổng hợp từ reference; 39.363 giỏ, trong đó 32.822 giỏ có giờ và 28.289 giỏ có mã ngày.](assets/chuong3/fig-ref-time-frequency.pdf){#fig-ref-time-frequency width=16cm fig-pos=htbp}
+
+@fig-ref-time-frequency tách quan sát thiếu khỏi các giá trị hợp lệ. Mã ngày 0–6 được giữ nguyên vì chưa có căn cứ ánh xạ thành tên thứ. Tần số phản ánh số giỏ trong mẫu, không phải lượng bán của toàn thị trường. Có 6.541 giỏ thiếu giờ và 11.074 giỏ thiếu ngày; không gán thời điểm giả cho các giỏ này.
+
+![Kích thước giỏ theo mã ngày và khung giờ Nguồn: Nhóm tổng hợp từ reference; ô ngày × khung giờ dùng 23.549 giỏ đủ hai biến, 15.814 giỏ thiếu ít nhất một biến. Phân nhóm chỉ theo giờ dùng 32.822 giỏ.](assets/chuong3/fig-ref-time-basket-size.pdf){#fig-ref-time-basket-size width=16cm fig-pos=htbp}
+
+@fig-ref-time-basket-size trình bày trung vị và phân bố thay vì chỉ so sánh trung bình. Ô không có quan sát giữ giá trị thiếu; nhóm dưới 30 giỏ chỉ dùng tham khảo. Trung vị khung 18–23 là 8 sản phẩm, các khung khác là 9; khoảng tứ phân vị chồng lấn rõ. Đây là khác biệt mô tả nhỏ, chưa chứng minh thời điểm làm thay đổi quy mô giỏ.
+
+```{=latex}
+\FloatBarrier
+```
+
+### Tương quan giữa các đặc trưng giỏ hàng
+
+![Tương quan Spearman giữa các đặc trưng giỏ hàng Nguồn: Nhóm tính từ reference; các cặp biến đếm dùng 39.363 giỏ, cặp có khoảng cách đơn dùng 32.787 giỏ.](assets/chuong3/fig-ref-corr-spearman.pdf){#fig-ref-corr-spearman width=16cm fig-pos=htbp}
+
+Trong @fig-ref-corr-spearman, hệ số giữa số sản phẩm và số ngành là 0,863; giữa số sản phẩm và số quầy là 0,946; giữa số ngành và số quầy là 0,936. Giỏ có nhiều sản phẩm có nhiều cơ hội bao phủ danh mục, nên tương quan này có thành phần cấu trúc và chưa chứng minh một cơ chế hành vi riêng. Các hệ số với khoảng cách đơn chỉ khoảng 0,001–0,010, không cho thấy quan hệ đơn điệu đáng kể về độ lớn. Spearman là thước đo chính do phân phối lệch; Pearson cho các liên hệ cùng chiều và được lưu để đối chiếu; không chọn hệ số lớn hơn để kết luận. Các đặc trưng quy mô và độ đa dạng cần được kiểm tra tính dư thừa khi xây dựng mô hình ở Chương 4.
+
+```{=latex}
+\FloatBarrier
+```
+
+### Mức đồng mua giữa các ngành
+
+![Lift đồng mua giữa 21 ngành hàng; đường chéo được ẩn Nguồn: Nhóm tính từ 39.363 giỏ reference, bao gồm cả giỏ không có hai ngành đang xét.](assets/chuong3/fig-ref-department-lift.pdf){#fig-ref-department-lift width=16cm fig-pos=htbp}
+
+Lift được tính bằng $P(A\cap B)/[P(A)P(B)]$. Giá trị lớn hơn 1 cho biết hai ngành xuất hiện cùng nhau nhiều hơn mức kỳ vọng theo độc lập, nhưng cần đọc cùng số giỏ đồng mua và support. Ma trận đối xứng; mỗi cặp chỉ được tính một lần khi tổng hợp, loại đường chéo, thu được $21\times20/2=210$ cặp.
+
+Chú giải ID trong @fig-ref-department-lift: 1 frozen; 2 other; 3 bakery; 4 produce; 5 alcohol; 6 international; 7 beverages; 8 pets; 9 dry goods pasta; 10 bulk; 11 personal care; 12 meat seafood; 13 pantry; 14 breakfast; 15 canned goods; 16 dairy eggs; 17 household; 18 babies; 19 snacks; 20 deli; 21 missing. Các nhãn other và missing được giữ nguyên theo nguồn.
+
+```{=latex}
+\FloatBarrier
+```
+
+### Năm phát hiện và hàm ý kinh doanh
+
+**I1 — Giỏ nhỏ chiếm ưu thế, nhưng có đuôi dài.** Trên 39.363 giỏ, trung vị là 9 sản phẩm, Q1–Q3 là 5–14; 1.578 giỏ (4,01%) vượt rào 27,5 và 2.118 giỏ (5,38%) chỉ có một sản phẩm. Điều này gợi ý thiết kế gợi ý mua kèm ngắn, đồng thời có phương án dự phòng theo độ phổ biến khi ngữ cảnh giỏ quá ít. So sánh chất lượng gợi ý theo nhóm kích thước giỏ là hướng phát triển, chưa được thực hiện trong Chương 4. Không dùng độ lớn giỏ để suy ra thu nhập, loại hộ gia đình hoặc coi các giỏ lớn là sai dữ liệu.
+
+**I2 — Hai ngành phổ biến tạo nhiều điểm tiếp cận.** Produce chiếm 29,52% trong 415.053 dòng và hiện diện ở 73,95% giỏ; dairy eggs chiếm 15,73% dòng và phủ 66,76% giỏ. Vì thường có mặt trong ngữ cảnh mua, hai ngành có thể là vị trí thử nghiệm hiển thị gợi ý, nhưng cần so với phương án phổ biến chung. Độ phủ giữa các ngành chồng lấn; lượt xuất hiện không đo doanh thu, lợi nhuận hay mức sẵn lòng mua thêm.
+
+**I3 — Danh mục phổ biến có độ phủ rộng nhưng bỏ sót nhiều lượt mua.** Top-1.000 chứa 218.767/415.053 dòng (52,71%) và chạm tới 36.041/39.363 giỏ (91,56%); vẫn còn 196.286 dòng (47,29%) ngoài danh mục. Thu hẹp ứng viên có thể giảm chi phí tính toán nhưng làm mất các sản phẩm ít phổ biến. Chương 4 cần đánh giá đồng thời chất lượng và độ phủ khi thay đổi quy mô danh mục. Độ phủ giỏ cao không có nghĩa giữ đủ sản phẩm trong giỏ; các tỷ lệ mô tả này cũng không phải Recall đo trên nhiệm vụ dự đoán.
+
+**I4 — Chênh lệch quy mô theo giờ nhỏ.** Khung 18–23 có 6.077 giỏ, trung vị 8 và Q1–Q3 là 5–14; các khung 00–05, 06–11 và 12–17 có lần lượt 617, 10.346 và 15.782 giỏ, đều có trung vị 9. Q1–Q3 là 5–14, riêng 06–11 là 5–15. Chênh lệch một sản phẩm và độ chồng lấn lớn chưa tạo cơ sở mạnh để tách cấu hình gợi ý theo giờ chỉ dựa trên quy mô giỏ. Có thể giữ cấu hình chung làm mốc và chỉ kiểm tra lợi ích bổ sung của thời gian trong đánh giá sau. Có 6.541/39.363 giỏ (16,62%) thiếu giờ; phân tích chưa kiểm định khác biệt và chưa kiểm soát thành phần người mua.
+
+**I5 — Đồng mua dương phổ biến, cần so với mức nền.** Bakery và dairy eggs cùng xuất hiện trong 8.916/39.363 giỏ (22,65%); xác suất có dairy eggs là 82,06% khi có bakery, so với 60,92% khi không có bakery, chênh 21,14 điểm phần trăm. Tuy nhiên, 182/210 cặp ngành có lift lớn hơn 1 và lift trung vị là 1,225. Lift của H1, H2 và H3 lần lượt là 1,229; 1,412; 1,190, ở khoảng phân vị 51; 80; 39 của các cặp (tỷ lệ cặp có lift không lớn hơn giá trị đang xét). H1 gần mức giữa, H2 nổi hơn tương đối nhưng không phải bằng chứng về hiệu quả gợi ý. Giỏ nhiều ngành tạo cơ hội đồng mua ngay cả khi không có quan hệ bổ trợ trực tiếp. Vì vậy, nên kiểm tra luật cấp sản phẩm và so với mốc phổ biến ở Chương 4; chưa đề xuất triển khai chỉ từ heatmap ngành.
+
+*Nguồn cho I1–I5: Các bảng thống kê, độ phủ Top-N, phân nhóm giờ và bảng đồng mua của cùng tập reference. Các hành động trên là đề xuất cần thử nghiệm, chưa phải kết quả kinh doanh.*
+
+## Kiểm định giả thuyết thống kê sơ bộ
+
+```{=latex}
+\FloatBarrier
+```
+
+### Giả thuyết và điều kiện áp dụng
+
+Ba cặp được cố định trong cấu hình trước lượt kiểm định: H1 bakery–dairy eggs; H2 dry goods pasta–pantry; H3 produce–meat seafood. Đây không phải đăng ký trước độc lập và không khẳng định nhóm chưa từng xem dữ liệu. Với mỗi cặp, giả thuyết không là hai chỉ báo hiện diện ngành độc lập; giả thuyết đối là có liên hệ. Mỗi quan sát là một giỏ/người trên reference, N = 39.363, bao gồm cả giỏ không chứa hai ngành.
+
+Bảng 2 × 2 được lập từ bốn trạng thái hiện diện. Dùng Pearson Chi-square không hiệu chỉnh Yates khi mọi tần số kỳ vọng ít nhất 5; bảng thưa sẽ dùng Fisher hai phía, biến hằng không kiểm định. Tần số kỳ vọng nhỏ nhất của H1–H3 lần lượt là 3.612,01; 2.763,75; 1.901,04, nên cả ba đáp ứng điều kiện Chi-square. Hiệu chỉnh Holm cho họ ba kiểm định với mức ý nghĩa 0,05. Cramér’s V được tính bằng $V=\sqrt{\chi^2/N}$ cho bảng 2 × 2 và không mang dấu. Một giỏ/người hạn chế đếm lặp, nhưng không bảo đảm mẫu đại diện cho toàn thị trường.
+
+```{=latex}
+\FloatBarrier
+```
+
+### Kết quả và chiều liên hệ
+
+| Cặp | χ² (df = 1) | p Holm | V | Chênh lệch (điểm %) |
+|---|---|---|---|---|
+| H1 | 1.584,256 | < 0,001 | 0,201 | 21,14 |
+| H2 | 910,419 | < 0,001 | 0,152 | 18,44 |
+| H3 | 913,934 | < 0,001 | 0,152 | 13,49 |
+
+: Kiểm định và mức liên hệ của ba cặp ngành, N = 39.363 {#tbl-ref-hypotheses}
+
+*Nguồn: Nhóm tính từ bảng hiện diện ngành của tập reference. Cả p thô và p sau Holm đều < 0,001; p của H1 nhỏ hơn mức máy tính biểu diễn được nên báo theo ngưỡng, không ghi p = 0. Chênh lệch là P(B khi có A) trừ P(B khi không có A), theo thứ tự ngành trong H1–H3.*
+
+Cả ba giả thuyết độc lập bị bác bỏ sau Holm. Tỷ lệ có ngành B khi có/không có ngành A lần lượt là 82,06%/60,92% (H1), 50,91%/32,47% (H2), và 22,05%/8,56% (H3). Số giỏ đồng mua tương ứng là 8.916; 3.902; 6.419. Kết quả cho thấy chiều liên hệ dương trong mẫu, nhưng không xác lập chiều tác động.
+
+```{=latex}
+\FloatBarrier
+```
+
+### Diễn giải và giới hạn
+
+V nằm trong khoảng 0,152–0,201. Theo mốc tham khảo của Cohen cho bảng 2 × 2 (0,1 nhỏ; 0,3 vừa), đây là các liên hệ nhỏ [@cohen1988]; các mốc này chỉ là quy ước, cần đọc cùng bối cảnh ứng dụng. Với N lớn, p rất nhỏ không đồng nghĩa hiệu quả kinh doanh lớn. H1 có V lớn nhất trong ba cặp, trong khi H2 có lift cao hơn: hai chỉ tiêu đo các khía cạnh khác nhau nên không dùng thay thế nhau.
+
+Kích thước giỏ là yếu tố có thể gây nhiễu: giỏ lớn dễ chứa đồng thời nhiều ngành. Mức nền 182/210 cặp có lift > 1 và trung vị 1,225 ở mục 3.5 cho thấy liên hệ dương không riêng ba cặp đã chọn. So sánh này cung cấp bối cảnh mô tả, không thay thế kiểm định đã điều chỉnh theo kích thước giỏ. Phân tích chưa kiểm soát yếu tố này, chưa chứng minh nhân quả, tính bổ trợ hay lợi ích của một hệ thống gợi ý. Kết quả chỉ định hướng việc kiểm tra luật cấp sản phẩm, đánh giá trên tập tách biệt và so với mốc phổ biến trong Chương 4.
+
+# XÂY DỰNG MÔ HÌNH VÀ ĐÁNH GIÁ HIỆU NĂNG {#sec-mo-hinh}
+
+```{=latex}
+\FloatBarrier
+```
+
+Chương này trả lời câu hỏi nghiên cứu 3 và 4. Mục 4.1 và 4.2 biến bài toán hoàn thiện giỏ hàng thành bài toán phân loại và nêu cách chia dữ liệu tránh rò rỉ; mục 4.3 so sánh Apriori với FP-Growth và chọn cấu hình bốn phương pháp trên validation; mục 4.4 báo cáo kết quả trên tập test sau khi khóa lựa chọn; mục 4.5 diễn giải đặc trưng; mục 4.6 thảo luận. Kết quả ở mục 4.4 lấy từ một lượt chấm test duy nhất; các số validation chỉ nêu để đối chiếu.
+
+## Kỹ thuật tạo lập và Lựa chọn đặc trưng (Feature Engineering)
+
+Nhóm mô phỏng việc giỏ còn thiếu bằng cách che $h=\min(k-1,\max(1,\lfloor0{,}2k\rfloor))$ sản phẩm của giỏ có $k\ge2$ sản phẩm (mục 2.3, seed 42 với mã đơn). Trung bình mỗi giỏ đủ điều kiện bị che khoảng 2,0 sản phẩm và còn khoảng 9,1 sản phẩm quan sát ở cả fit, validation và test. Một dòng dữ liệu phân loại là một cặp giỏ–ứng viên, trong đó ứng viên thuộc danh mục $C$ gồm 1.000 sản phẩm phổ biến nhất của reference và chưa có trong phần quan sát $O_j$. Nhãn $y=1$ khi ứng viên thuộc phần bị che $H_j$, và $y=0$ khi sản phẩm không thuộc giỏ đầy đủ; nhãn 0 chỉ có nghĩa là chưa mua trong giỏ đang xét, không có nghĩa là không thích.
+
+Bảy đặc trưng được tạo từ độ phổ biến và luật học trên reference cùng phần quan sát của giỏ (@tbl-c4-features). Ba đặc trưng về luật bằng 0 khi không có luật khớp, để bước điền giá trị thiếu không biến ứng viên không có luật thành ứng viên có luật trung bình.
+
+| Đặc trưng | Loại | Cách tính cho một ứng viên |
+|--------------------|----------|------------------------------------------|
+| Độ phổ biến | Số | Tỷ lệ giỏ reference chứa ứng viên |
+| Số luật khớp | Số | Số luật khớp có hậu đề là ứng viên |
+| Confidence lớn nhất | Số | Confidence cao nhất trong các luật khớp |
+| Lift lớn nhất | Số | Lift cao nhất trong các luật khớp |
+| Cỡ giỏ quan sát | Số | Số sản phẩm phân biệt còn nhìn thấy |
+| Số món cùng ngành | Số | Số sản phẩm quan sát cùng ngành với ứng viên |
+| Ngành ứng viên | Danh nghĩa | Mã ngành, mã hóa bằng các cột chỉ báo |
+
+: Bảy đặc trưng của một cặp giỏ–ứng viên {#tbl-c4-features}
+
+*Nguồn: Nhóm xây dựng theo mục 2.4; công thức trong `basket_features` của `m4_common.py`. Luật khớp khi giỏ quan sát chứa toàn bộ tiền đề và hậu đề là ứng viên.*
+
+Nhóm kiểm soát rò rỉ bằng ba quy tắc: thống kê chỉ học từ reference, phần bị che chỉ dùng tạo nhãn và chấm điểm; mã khách, mã sản phẩm và kích thước giỏ đầy đủ (tiết lộ số sản phẩm đã che) bị loại khỏi đầu vào; tham số điền thiếu, mã hóa và chuẩn hóa chỉ fit trên tập fit [@sklearn_pitfalls].
+
+Ba biến luật cùng phụ thuộc một tập luật khớp nên gần như tương quan hoàn toàn (Spearman từ 0,999 đến 1,000 trên mẫu fit sau lấy mẫu âm). Vì vậy nhóm đánh giá chúng theo nhóm bằng phép bỏ nhóm trên validation. Bỏ cả ba biến luật làm Recall@10 của Logistic Regression (LR) giảm từ 0,0923 xuống 0,0759 (khoảng 17,7%) và của Random Forest (RF) từ 0,0971 xuống 0,0788 (khoảng 18,9%). Bỏ hai biến về ngành (số món cùng ngành và ngành ứng viên) gần như không đổi Recall@10 (LR 0,0925; RF 0,0956). Trong thiết kế này, thông tin đồng mua đóng góp rõ hơn thông tin ngành; kết quả dùng để diễn giải bộ đặc trưng, không dùng để chọn lại đặc trưng sau khi khóa.
+
+## Chuẩn hóa và Phân chia tập dữ liệu huấn luyện / kiểm tra
+
+Nhóm dùng phân hoạch theo người dùng đã lập ở Chương 3 (seed 42): reference 30%, fit 30%, validation 20%, test 20%. Mỗi người có đúng một giỏ train nên bốn tập không giao nhau. Reference cung cấp độ phổ biến, danh mục và luật; fit học tiền xử lý và hai classifier; validation chọn cấu hình, ngưỡng và phương pháp chính; test chỉ dùng đánh giá cuối sau khi khóa (@tbl-c4-splits).
+
+| Chỉ tiêu | Reference | Fit | Validation | Test |
+|------------------------------------|-----------:|-----------:|-----------:|-----------:|
+| Số người dùng (giỏ) theo phân hoạch | 39.363 | 39.363 | 26.241 | 26.242 |
+| Giỏ một sản phẩm, không che | — | 1.975 | 1.387 | 1.365 |
+| Giỏ đủ điều kiện (k ≥ 2) | — | 37.388 | 24.854 | 24.877 |
+| Sản phẩm bị che | — | 75.006 | 49.130 | 49.473 |
+| Phần bị che thuộc danh mục, gộp (%) | — | 52,30 | 52,48 | 52,47 |
+| Cặp giỏ–ứng viên trước lấy mẫu | — | 37.209.316 | 24.736.527 | 24.758.284 |
+| Tỷ lệ nhãn dương trước lấy mẫu (%) | — | 0,1054 | 0,1042 | 0,1048 |
+
+: Quy mô phân hoạch và mẫu ứng viên với danh mục 1.000 sản phẩm {#tbl-c4-splits}
+
+*Nguồn: Nhóm tính từ `dataset_description.csv` (fit, validation), `results_test.json`, `classifier_metrics_test.csv` và `basket_metrics_test.csv` (test). Giỏ một sản phẩm của test bằng 26.242 trừ 24.877. Dấu — là chỉ tiêu không áp dụng.*
+
+Phép che được lưu cố định theo seed và mã đơn để mọi phương pháp dùng cùng phần quan sát và phần che. Ở tập fit, mỗi giỏ giữ mọi ứng viên dương và tối đa 20 ứng viên âm lấy không hoàn lại (seed 43), nên mẫu huấn luyện có 786.986 dòng với 39.226 dòng dương (4,98%) thay vì 0,105%; ở validation và test, mọi ứng viên được chấm, không lấy mẫu âm. Vì lấy mẫu âm làm đổi tỷ lệ dương, điểm của classifier chỉ dùng xếp hạng, chưa coi là xác suất mua đã hiệu chỉnh. Hai classifier dùng chung `Pipeline` và `ColumnTransformer`: nhánh số điền trung vị (và chuẩn hóa riêng cho LR), nhánh ngành điền giá trị phổ biến nhất, mã hóa chỉ báo và bỏ qua mức chưa gặp. Danh mục chỉ chứa 19 trong 21 ngành (không có ngành 2 và 8) nên có 19 cột chỉ báo. Recall tính trên toàn bộ sản phẩm bị che kể cả ngoài danh mục; Precision luôn chia cho $K$.
+
+## Huấn luyện các mô hình Machine Learning
+
+### Apriori và FP-Growth
+
+Nhóm biểu diễn 39.363 giỏ reference thành ma trận Boolean thưa; giỏ không chứa sản phẩm nào của danh mục vẫn nằm trong mẫu số support. Apriori [@agrawal1994] (chế độ tiết kiệm bộ nhớ) và FP-Growth [@han2000] nhận cùng ma trận, cùng ngưỡng support và độ dài tập tối đa; luật có hậu đề một sản phẩm và đạt ngưỡng confidence được giữ lại [@mlxtend_rules].
+
+Cấu hình luật được chọn trong lưới 24 cấu hình (danh mục 500, 1.000, 2.000; tối thiểu 20 hoặc 50 giỏ; độ dài 2 hoặc 3; confidence 0,05 hoặc 0,1) bằng Recall@10 của phương pháp luật trên validation, dung sai hòa 0,002 và ưu tiên cấu hình nhỏ hơn. Cấu hình cao nhất tuyệt đối đạt 0,0944 (danh mục 2.000, độ dài 3); nhóm chọn danh mục 1.000, 20 giỏ, độ dài 2, confidence 0,05 vì chênh 0,0012 nằm trong dung sai. Cấu hình này sinh 6.669 luật và đạt Recall@10 là 0,0932, so với 0,0752 của phương pháp độ phổ biến. Trần Recall@10 tăng theo danh mục (0,4104; 0,5211; 0,6363) nhưng Recall@10 của luật tăng rất ít vì sản phẩm thêm vào là sản phẩm ít phổ biến. Ba tham số luật đã chọn đều ở cạnh dưới của lưới nên kết luận chỉ áp dụng trong phạm vi lưới.
+
+Chi phí khai phá được đo ở cấu hình đã chọn và cấu hình lớn nhất của lưới; mỗi thuật toán chạy ba lần, mỗi lần trong một tiến trình mới (@tbl-c4-mining).
+
+| Danh mục / độ dài | Thuật toán | Itemset / luật | Khai phá (giây) | RAM đỉnh (MiB) |
+|---------------|-----------|---------------:|------------:|------------:|
+| 1.000 / 2 | Apriori | 7.730 / 6.669 | 3,698 | 199,6 |
+| 1.000 / 2 | FP-Growth | 7.730 / 6.669 | 0,903 | 188,8 |
+| 2.000 / 3 | Apriori | 11.314 / 13.918 | 19,809 | 280,2 |
+| 2.000 / 3 | FP-Growth | 11.314 / 13.918 | 1,389 | 211,9 |
+
+: Chi phí khai phá trên hai cấu hình, trung vị ba lượt {#tbl-c4-mining}
+
+*Nguồn: Nhóm đo bằng `m4_benchmark_mining.py`; `mining_benchmark_N1000_c20_l2.csv`, `mining_benchmark_N2000_c20_l3.csv`, `itemset_equivalence_*.json`. Thời gian khai phá ba lượt dao động 3,613 đến 3,761 giây (Apriori) và 0,894 đến 0,948 giây (FP-Growth) ở cấu hình đầu; 19,687 đến 22,388 giây và 1,204 đến 1,443 giây ở cấu hình sau.*
+
+Hai thuật toán cho cùng tập itemset với support lệch lớn nhất bằng 0, nên cùng số luật. Thời gian khai phá của FP-Growth thấp hơn khoảng 4,1 lần ở cấu hình đã chọn và khoảng 14,3 lần ở cấu hình lớn nhất; RAM đỉnh thấp hơn khoảng 11 MiB và 68 MiB. Dựng ma trận (khoảng 0,03 giây) và sinh luật (0,08 đến 0,19 giây) nhỏ so với khai phá; sinh luật của FP-Growth chậm hơn khoảng 0,06 đến 0,08 giây nhưng không đổi kết luận. Kết quả áp dụng cho hai cấu hình và máy đã đo; chất lượng gợi ý của bộ luật được đánh giá ở mục 4.4.
+
+### Logistic Regression và Random Forest
+
+LR dùng điều chuẩn L2, bộ giải `lbfgs`, tối đa 1.000 vòng lặp và $C\in\{0{,}01;0{,}1;1;10\}$ [@hosmer2013]. RF dùng 300 cây, số đặc trưng mỗi lần chia bằng căn bậc hai tổng số đặc trưng, seed 42, độ sâu tối đa 10 hoặc 20 và số mẫu tối thiểu tại lá 20 hoặc 100 [@breiman2001]; cả hai không dùng trọng số lớp vì đã lấy mẫu âm. Mô hình được cài đặt bằng scikit-learn [@pedregosa2011]. Cấu hình được chọn bằng Recall@10 validation; các cấu hình cách mức cao nhất không quá 0,002 được coi là hòa và ưu tiên thời gian suy luận thấp hơn; ngưỡng phân loại tối đa hóa F1 trên validation và không đổi thứ tự xếp hạng (@tbl-c4-grid-b).
+
+| Mô hình | Cấu hình | Recall@10 validation | Suy luận (giây) | Chọn |
+|--------|--------------------|---------------:|---------------:|------|
+| LR | C = 0,01 | 0,0923 | 15,86 | |
+| LR | C = 0,1 | 0,0923 | 15,31 | Có |
+| LR | C = 1 | 0,0924 | 17,45 | |
+| LR | C = 10 | 0,0924 | 15,56 | |
+| RF | độ sâu 10, lá 20 | 0,0976 | 48,07 | |
+| RF | độ sâu 10, lá 100 | 0,0971 | 47,87 | Có |
+| RF | độ sâu 20, lá 20 | 0,0990 | 86,31 | |
+| RF | độ sâu 20, lá 100 | 0,0983 | 79,42 | |
+
+: Lưới cấu hình giai đoạn B trên validation {#tbl-c4-grid-b}
+
+*Nguồn: Nhóm tính từ `validation_grid_B.csv`. Suy luận là thời gian chấm toàn bộ 24.736.527 cặp validation; việc xét hòa dùng giá trị đủ độ chính xác.*
+
+Bốn giá trị $C$ của LR gần như bằng nhau nên chọn $C=0{,}1$ theo thời gian suy luận. Với RF, cấu hình tốt nhất (độ sâu 20, lá 20: 0,0990) hơn cấu hình đã chọn 0,0019, nằm trong dung sai 0,002, nên chọn độ sâu 10, lá 100 với 47,87 giây thay cho 86,31 giây. Ngưỡng F1 trên validation là 0,73128 cho LR và 0,57771 cho RF. Phương pháp chính được chọn bằng Recall@10 validation lớn nhất: RF (0,0971), hơn Rules (0,0932) và LR (0,0923) vượt dung sai hòa. Nhóm ghi phương pháp chính, cấu hình, ngưỡng và mã băm SHA-256 của mã nguồn, cấu hình và dữ liệu vào một tệp khóa; hai thành viên cùng duyệt trước khi mở tập test. Chương trình chấm test từ chối chạy nếu thiếu hai xác nhận hoặc nếu bất kỳ tệp khóa nào đã đổi, chỉ cho chấm một lần, và chạy RF một luồng để kết quả tái lập từng chữ số.
+
+## So sánh hiệu năng mô hình qua các chỉ số đo lường
+
+Bốn phương pháp được chấm trên cùng 24.877 giỏ test đủ điều kiện, 49.473 sản phẩm bị che và cùng danh mục 1.000 sản phẩm: Popularity xếp theo độ phổ biến; Rules xếp theo confidence lớn nhất rồi độ phổ biến; LR và RF xếp theo điểm của classifier; hòa phá bằng mã sản phẩm tăng dần (@tbl-c4-ranking).
+
+| Phương pháp | P@5 | R@5 | P@10 | R@10 | HR@10 |
+|---|---:|---:|---:|---:|---:|
+| Popularity | 0,0199 | 0,0509 | 0,0149 | 0,0755 | 0,1393 |
+| Rules | 0,0249 | 0,0650 | 0,0181 | 0,0924 | 0,1655 |
+| LR | 0,0235 | 0,0614 | 0,0178 | 0,0910 | 0,1627 |
+| RF | 0,0257 | 0,0677 | 0,0187 | 0,0971 | 0,1708 |
+| Recall@10 trần | | | | 0,5198 | |
+
+: Chỉ số xếp hạng trên tập test, danh mục 1.000 sản phẩm {#tbl-c4-ranking}
+
+*Nguồn: Nhóm tính từ `ranking_metrics_test.csv` (24.877 giỏ). Recall tính trên toàn bộ sản phẩm bị che kể cả ngoài danh mục; Precision chia cho K. Trần là trung bình theo giỏ của min(|H ∩ C|, 10)/|H|.*
+
+RF có Recall@10 cao nhất (0,0971), Popularity thấp nhất (0,0755); Rules đạt 0,0924 và LR đạt 0,0910, nên thứ tự Popularity, LR, Rules, RF trùng với validation (0,0752; 0,0923; 0,0932; 0,0971). Trần Recall@10 là 0,5198: khoảng một nửa sản phẩm bị che nằm ngoài danh mục nên không phương pháp nào có thể trúng; RF đạt khoảng 18,7% trần và Popularity khoảng 14,5%. Có 66,0% giỏ test có ít nhất một sản phẩm bị che nằm trong danh mục; 8.449 giỏ còn lại (34,0%) không thể trúng. HR@10 của RF là 0,1708, nghĩa là 17,1% giỏ có sản phẩm bị che trong Top-10 và 82,9% giỏ không có. @fig-c4-recall-k cho Recall@K với $K$ từ 1 đến 10: ở $K=1$, RF và Rules cùng đạt 0,0218 (Popularity 0,0145; LR 0,0179), và khoảng cách giữa RF với các phương pháp còn lại mở rộng dần khi $K$ tăng.
+
+![Recall@K của bốn phương pháp trên tập test và đường trần. Nguồn: Nhóm tính từ `recall_at_k_test.csv`; khung trên là Recall trần, khung dưới phóng to bốn phương pháp.](assets/chuong4/fig-recall-at-k-test.pdf){#fig-c4-recall-k width=16cm fig-pos=htbp}
+
+Kiểm định chính dùng bootstrap ghép cặp theo người dùng (2.000 lần, seed 42) trên chênh lệch Recall@10 giữa RF và Popularity: 0,0216 với khoảng tin cậy percentile 95% [0,0192; 0,0239]. Cận dưới lớn hơn 0 nên có bằng chứng RF cải thiện so với Popularity trên test. Hai so sánh bổ trợ cho cùng hướng: RF cao hơn Rules 0,0047 [0,0031; 0,0063], và LR thấp hơn RF 0,0061 [−0,0077; −0,0044]; các so sánh này không dùng để đổi phương pháp chính sau khi mở test.
+
+Với phân loại, LR và RF được chấm trên toàn bộ 24.758.284 cặp ứng viên của test, trong đó 25.958 cặp dương (0,105%), tại ngưỡng đã chọn trên validation (@tbl-c4-classifier và @tbl-c4-confusion). Accuracy gần 1 chỉ phản ánh lớp âm áp đảo nên cần đọc cùng Precision, Recall, F1 và Average Precision [@sklearn_ap]; ROC-AUC và Average Precision tính trên toàn bộ điểm, không lấy trung bình theo lô.
+
+| Mô hình | Ngưỡng | Accuracy | Precision | Recall | F1 | ROC-AUC | AP |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| LR | 0,73128 | 0,99735 | 0,04803 | 0,08113 | 0,06034 | 0,78832 | 0,01401 |
+| RF | 0,57771 | 0,99738 | 0,05383 | 0,09034 | 0,06746 | 0,81353 | 0,01685 |
+
+: Chỉ số phân loại trên tập test tại ngưỡng F1 của validation {#tbl-c4-classifier}
+
+*Nguồn: Nhóm tính từ `classifier_metrics_test.csv`; 24.758.284 cặp, 25.958 cặp dương.*
+
+| Mô hình | TN | FP | FN | TP |
+|---|---:|---:|---:|---:|
+| LR | 24.690.586 | 41.740 | 23.852 | 2.106 |
+| RF | 24.691.109 | 41.217 | 23.613 | 2.345 |
+
+: Ma trận nhầm lẫn trên tập test {#tbl-c4-confusion}
+
+*Nguồn: Nhóm tính từ `confusion_matrix_test.csv`. TN: âm đoán âm; FP: âm đoán dương; FN: dương đoán âm; TP: dương đoán dương.*
+
+RF cao hơn LR ở mọi chỉ số phân loại (ROC-AUC 0,8135 so với 0,7883; Average Precision 0,0169 so với 0,0140). Precision dưới 6% và Recall dưới 10% của cả hai mô hình phản ánh bài toán rất mất cân bằng và việc đoán đúng sản phẩm bị che vốn khó.
+
+## Phân tích độ quan trọng của đặc trưng và Diễn giải mô hình
+
+Nhóm tính permutation importance cho LR và RF ở cấu hình đã chọn trên 5.000 giỏ validation (seed 44) với toàn bộ 4.976.269 cặp ứng viên của các giỏ đó; mỗi biến được hoán vị 10 lần, đo mức giảm Average Precision (nền 0,01386 với LR; 0,01649 với RF), ngành được hoán vị như một biến trước khi mã hóa. Phân tích dùng validation, không dùng test (@fig-c4-importance).
+
+![Mức giảm Average Precision khi hoán vị từng đặc trưng (LR ở trên, RF ở dưới). Nguồn: Nhóm tính từ `importance.csv` trên 5.000 giỏ validation; thanh sai số là độ lệch chuẩn qua 10 lần hoán vị.](assets/chuong4/fig-importance.pdf){#fig-c4-importance width=16cm fig-pos=htbp}
+
+Với LR, hoán vị độ phổ biến làm Average Precision giảm nhiều nhất (0,0037), rồi lift lớn nhất (0,0025). Với RF, biến quan trọng nhất là confidence lớn nhất (0,0048), rồi số luật khớp (0,0024) và lift lớn nhất (0,0021). Ngành ứng viên có tác động nhỏ nhất ở cả hai mô hình (0,00015 với LR; 0,00057 với RF). Thanh sai số nhỏ so với độ chênh giữa các biến đầu bảng nên thứ hạng ổn định trên mẫu này; vì ba biến luật gần như tương quan hoàn toàn, kết luận chắc chắn hơn là phép bỏ nhóm ở mục 4.1, theo đó nhóm luật đóng góp nhiều nhất.
+
+Hệ số LR trên thang chuẩn hóa cho biết tăng một độ lệch chuẩn của biến làm log-odds đổi bằng hệ số khi giữ các biến khác. Cả sáu biến số đều dương: cỡ giỏ quan sát 0,308; số món cùng ngành 0,261; độ phổ biến 0,252; lift lớn nhất 0,193; confidence lớn nhất 0,141; số luật khớp 0,088. Hệ số dương của cỡ giỏ phù hợp với cơ chế che nhiều sản phẩm hơn ở giỏ lớn; đây là liên hệ trong bài toán giả lập, chưa phải bằng chứng về xác suất mua thật. Mã hóa chỉ báo giữ đủ các mức ngành (không bỏ một nhóm chuẩn); hệ số từng cột được đọc cùng hệ số chặn và điều chuẩn. Trong bộ hệ số đã fit, thấp nhất là dry goods pasta (−0,432) và snacks (−0,408), còn deli là ngành duy nhất dương (0,057); nên so hai ngành bằng hiệu hệ số, không gọi một ngành là nhóm chuẩn bị loại. RF không có hệ số hồi quy. Độ quan trọng và hệ số mô tả điều mô hình dựa vào, không chứng minh quan hệ nhân quả.
+
+Nhóm chọn trước theo quy tắc hai giỏ validation minh họa: giỏ có mã đơn nhỏ nhất có luật khớp (đơn 36) và không có luật khớp (đơn 5858). Ở cả hai giỏ, bốn phương pháp không trúng sản phẩm bị che nào trong Top-5. Ở đơn 36, Rules và RF đưa các sản phẩm phổ biến như Organic Baby Spinach và Organic Strawberries lên đầu, giống danh sách theo độ phổ biến; ở đơn 5858, Rules quay về thứ tự theo độ phổ biến còn RF xen vào hai loại nước uống. Một số `product_name` trống trong Master (ví dụ mã 13176 và 47626) nên bảng ví dụ để trống tên thay vì đoán. Hai ví dụ chỉ minh họa cách hệ thống làm việc, không đại diện cho toàn bộ kết quả.
+
+## Thảo luận kết quả thực nghiệm
+
+**Câu hỏi 3.** Apriori và FP-Growth cho cùng tập itemset và support ở cả hai cấu hình đã đo; FP-Growth nhanh hơn khoảng 4,1 đến 14,3 lần ở khâu khai phá với RAM đỉnh thấp hơn, và khoảng cách tăng theo kích thước danh mục và độ dài tập. Với dữ liệu và máy của nhóm, dùng FP-Growth cho lưới 12 tổ hợp là hợp lý; kết quả không suy rộng cho mọi máy hay ngưỡng.
+
+**Câu hỏi 4.** Trên test, cả ba phương pháp dùng thông tin giỏ đều cao hơn Popularity. RF cao hơn Popularity 0,0216 Recall@10 (khoảng 28,6% tương đối) với khoảng tin cậy 95% không chứa 0; Rules cao hơn khoảng 22,3% và LR khoảng 20,5% nhưng thấp hơn Rules và RF. Thứ tự phương pháp nhất quán giữa test và validation; một lượt chia chưa đủ để loại trừ nguy cơ quá khớp hoặc xác nhận độ ổn định ngoài mẫu này. Giá trị tuyệt đối thấp (dưới 0,1) có hai lý do: nửa số sản phẩm bị che nằm ngoài danh mục nên trần chỉ là 0,5198, và mỗi giỏ chỉ che khoảng hai sản phẩm giữa hàng nghìn ứng viên. So với trần, RF đạt khoảng 18,7%; đây là đặc điểm của bài toán chứ không chỉ của mô hình.
+
+**Chi phí và lợi ích.** Trên validation, chấm 24,7 triệu cặp mất 5,77 giây (Popularity), 6,19 giây (Rules), 15,59 giây (LR) và 63,55 giây (RF). RF chậm hơn Rules khoảng 10 lần để đổi lấy cải thiện khoảng 5,1% tương đối (0,0971 so với 0,0924) trên test. Cải thiện có ý nghĩa thống kê nhưng nhỏ về độ lớn, nên chọn giữa Rules và RF là quyết định cân bằng chất lượng và chi phí, cơ sở của thử nghiệm A/B ở Chương 5. Phép bỏ nhóm và độ quan trọng cho thấy thông tin đồng mua đóng góp nhiều nhất; LR dựa nhiều vào độ phổ biến còn RF dựa nhiều vào confidence của luật, gợi ý RF khai thác tốt hơn tương tác giữa độ phổ biến và độ chắc của luật.
+
+**Giới hạn.** Phần che ngẫu nhiên không tái hiện trình tự thêm hàng; nhãn 0 là chưa mua trong giỏ; bốn phương pháp so trên cùng một danh mục nên kết luận có điều kiện; nhóm dùng một lượt chia, một seed, ba tham số luật ở mức thấp nhất của lưới (N = 1.000 ở giữa) và điểm classifier chưa hiệu chỉnh. Dữ liệu không có giá bán, lợi nhuận hay lịch sử hiển thị gợi ý, nên cải thiện Recall@10 là bằng chứng ngoại tuyến để đề xuất thử nghiệm, không chứng minh tăng doanh thu. Thời gian và RAM phụ thuộc máy và phiên bản thư viện nêu ở mục 2.5.
+
+# KHUYẾN NGHỊ QUẢN TRỊ VÀ KẾT LUẬN {#sec-ket-luan}
+
+## Đề xuất giải pháp và Chiến lược kinh doanh cho doanh nghiệp
+
+Kết quả trả lời câu hỏi nghiên cứu 5 theo hướng triển khai có kiểm chứng: sử dụng thông tin giỏ đang tạo để đề xuất sản phẩm, lấy luật đồng mua làm nền và thử nghiệm tầng xếp hạng RF khi chi phí cho phép. Trên cùng 24.877 giỏ test, Recall@10 của RF đạt 0,0971, cao hơn Popularity 0,0216, với khoảng tin cậy bootstrap 95% [0,0192; 0,0239]. Tuy nhiên, HR@10 của RF chỉ đạt 17,08%; phần lớn giỏ chưa có sản phẩm che được tìm thấy trong Top-10. Vì vậy, cải thiện ngoại tuyến là căn cứ thử nghiệm, chưa đủ để cam kết hiệu quả thương mại.
+
+| Bằng chứng | Khuyến nghị | Điều kiện áp dụng |
+|:-------------------------|:-------------------------|:-------------------------|
+| RF hơn Rules 0,0047 Recall@10; CI 95% [0,0031; 0,0063], so sánh bổ trợ | Dùng luật làm nền; thử tầng xếp hạng RF | RF chậm khoảng 10,3 lần khi chấm theo lô validation (63,55/6,19 giây) |
+| 88,38% giỏ validation có luật khớp; 11,62% không có | Dự phòng theo độ phổ biến khi thiếu luật hoặc ngữ cảnh | Đây là độ phủ luật trên validation, không phải tỷ lệ thành công của gợi ý |
+| Produce phủ 73,95% giỏ reference; dairy eggs phủ 66,76% | Ưu tiên thử vị trí gợi ý trong các ngành có độ phủ cao | Độ phủ không đo giá trị đơn hàng hay lợi nhuận |
+| Ba cặp có V từ 0,152 đến 0,201; dry goods pasta–pantry có lift 1,412, phân vị 80 | Ưu tiên thử dry goods pasta–pantry | Hai cặp còn lại chỉ thử khi có lý do kinh doanh riêng; không suy ra nhân quả |
+| Trần Recall@10 test là 0,5198 với Top-1.000 | Giữ danh mục hiện tại làm mốc; nghiên cứu thêm ứng viên ít phổ biến | Mở rộng danh mục chưa bảo đảm xếp hạng tốt hơn |
+
+: Từ bằng chứng thực nghiệm đến khuyến nghị triển khai {#tbl-c5-khuyen-nghi}
+
+*Nguồn: Mục 3.4–3.6, @tbl-c4-ranking; `paired_bootstrap_test.csv`, `rule_coverage.json` và `department_summary.csv`.*
+
+Chênh lệch RF so với Rules là so sánh bổ trợ, chưa hiệu chỉnh đa so sánh; khoảng tin cậy không chứa 0 nhưng độ lớn nhỏ. Căn cứ xác nhận chính cho RF là phép so với Popularity.
+
+**Khung hòa vốn cho việc dùng RF thay Rules.** Dữ liệu Instacart không có giá bán, giá vốn hay biên lợi nhuận, nên bài không quy đổi kết quả ra tiền mà đặt khung hòa vốn có tham số. Lợi ích ròng mỗi giỏ của việc thay Rules bằng RF là
+
+$$
+\text{Lợi ích ròng mỗi giỏ}=\Delta H\times p\times m-\Delta c,
+$$
+
+trong đó:
+
+- $\Delta H\approx0{,}00627$ là số sản phẩm bị che mà RF xếp trúng Top-10 nhiều hơn Rules ở mỗi giỏ, tính bằng $10\times(0{,}018740-0{,}018113)$ từ P@10 (@tbl-c4-ranking), tương đương khoảng 6,3 sản phẩm trên 1.000 giỏ. Đây là ước lượng điểm của một so sánh bổ trợ; nếu quy theo hai đầu khoảng tin cậy 95% của chênh lệch Recall@10 [0,0031; 0,0063] thì $\Delta H$ nằm khoảng 0,004 đến 0,008.
+- $p$ là xác suất khách thêm vào giỏ một sản phẩm được gợi ý trúng; chỉ đo được bằng thử nghiệm A/B.
+- $m$ là biên lợi nhuận gộp bình quân trên một sản phẩm.
+- $\Delta c$ là chi phí điện toán chênh thêm mỗi giỏ. Thời gian chấm validation theo lô, gồm tạo đặc trưng và xếp hạng, là 63,55 giây với RF và 6,19 giây với Rules trên 24.854 giỏ, tức khoảng 2,56 và 0,25 ms mỗi giỏ; chênh $\Delta t\approx2{,}3$ ms mỗi giỏ (tỷ số $63{,}55/6{,}19\approx10{,}3$ lần). Đây không phải độ trễ một yêu cầu trực tuyến.
+
+Điều kiện hòa vốn là $p\times m\ge\Delta c/\Delta H$. Để minh họa, giả định đơn giá 0,05 USD cho một vCPU-giờ (giả định của nhóm, không phải số đo): một triệu giỏ cần thêm khoảng 2.308 giây thời gian thực; RF được đo với `n_jobs=-1` trên máy 16 luồng nên thời gian CPU nằm giữa một và 16 lần giá trị này, tức chi phí chênh khoảng 0,03 đến 0,5 USD mỗi triệu giỏ, trong khi RF trúng thêm khoảng 6.300 sản phẩm. Mỗi sản phẩm trúng thêm chỉ cần mang lại khoảng $5\times10^{-6}$ đến $8\times10^{-5}$ USD là đã bù chi phí điện toán.
+
+Vì vậy chi phí điện toán nhiều khả năng không phải điểm nghẽn. Điểm nghẽn nằm ở độ trễ phục vụ theo từng yêu cầu, chưa được đo, và ở chi phí cố định $F$ để vận hành mô hình (giám sát, huấn luyện lại, phát hiện trôi dữ liệu), trước một mức tăng nhỏ với khoảng tin cậy rộng. Điều kiện đầy đủ là $N_{\text{giỏ}}\times\Delta H\times p\times m>N_{\text{giỏ}}\times\Delta c+F$. Nghiên cứu không có $p$, $m$ và $F$ nên không kết luận RF đáng đầu tư; thử nghiệm A/B phải đo $p$ và $\Delta H$ thực, và nếu không đạt hòa vốn thì giữ Rules.
+
+Phép bỏ nhóm đặc trưng củng cố vai trò của luật: Recall@10 validation của RF giảm từ 0,0971 xuống 0,0788 khi bỏ ba biến luật. Điều này ủng hộ giữ thông tin đồng mua trong hệ thống, chưa chứng minh kiến trúc nào tối ưu cho mọi doanh nghiệp.
+
+Các phát hiện EDA giúp lựa chọn nội dung thử nghiệm. I1 cho thấy giỏ nhỏ chiếm ưu thế; danh sách gợi ý nên ngắn và tránh lặp sản phẩm đã có. I2 cung cấp căn cứ ưu tiên vị trí hiển thị theo độ phủ ngành; I3 cho thấy cần theo dõi phần lượt mua nằm ngoài danh mục phổ biến, thay vì đồng nhất độ phủ giỏ với khả năng giữ đủ sản phẩm. I4 chưa đủ cơ sở tách cấu hình theo giờ vì phân phối kích thước giỏ chồng lấn và còn thiếu giờ đặt đơn. Theo I5 và kiểm định sau Holm, bakery–dairy eggs, dry goods pasta–pantry và produce–meat seafood có lift lần lượt 1,229; 1,412; 1,190, ở phân vị xấp xỉ 51; 80; 39 theo tỷ lệ cặp có lift không vượt giá trị đang xét. So với trung vị 1,225 của 210 cặp, nên ưu tiên thử dry goods pasta–pantry; bakery–dairy eggs gần trung vị, còn produce–meat seafood thấp hơn trung vị nên chỉ thử khi có lý do kinh doanh riêng. Đồng mua dương vốn phổ biến, nên không chọn cặp chỉ vì lift lớn hơn 1.
+
+## Lộ trình triển khai ứng dụng thực tế
+
+**Bước 1 — Hoàn tất nền ngoại tuyến.** Nhóm đã có dữ liệu làm sạch, phân hoạch theo người dùng, benchmark, chọn cấu hình trên validation và kết quả test sau khóa. Các tệp cấu hình, mã băm và kết quả được giữ để kiểm chứng; không dùng test để chọn lại mô hình. Đây là đầu vào kỹ thuật, chưa phải một hệ thống đã triển khai tại doanh nghiệp.
+
+**Bước 2 — Thử nghiệm kín.** Hệ thống chạy trên luồng giỏ thật nhưng chưa hiển thị gợi ý, ghi thời điểm, ứng viên và độ trễ. Bộ phận kỹ thuật kiểm tra sản phẩm hết hàng, dữ liệu thiếu, mức tải và khả năng quay về Rules hoặc Popularity khi lỗi. Giai đoạn này giúp kiểm tra vận hành và khả năng dự báo hành vi quan sát, không đo được tác động của việc hiển thị gợi ý.
+
+**Bước 3 — Thử nghiệm A/B có kiểm soát.** Phân ngẫu nhiên theo người dùng vào ba nhánh Popularity, Rules và RF, giữ nhất quán vị trí hiển thị và điều kiện phục vụ. Theo khung thử nghiệm trực tuyến [@kohavi2020], cần chọn trước một chỉ tiêu chính, chẳng hạn tỷ lệ thêm sản phẩm được gợi ý vào giỏ; giá trị đơn hàng trung bình là chỉ tiêu kinh doanh bổ sung. Cỡ mẫu xác định từ mức nền thực tế và mức cải thiện tối thiểu có ý nghĩa, thời lượng bao phủ chu kỳ tuần. Quy tắc dừng, cách xử lý nhiều so sánh và ngưỡng rào chắn phải được định trước, tránh chọn chỉ tiêu có lợi sau khi xem kết quả.
+
+{{< pagebreak >}}
+
+| Nhóm | Chỉ tiêu và cách theo dõi |
+|:----------------|:------------------------------------------------------|
+| Chính | Tỷ lệ phiên có thêm sản phẩm gợi ý trong số phiên được hiển thị; phân tích theo nhánh người dùng |
+| Kinh doanh và bổ trợ | Giá trị đơn hàng trung bình; tỷ lệ nhấp; số sản phẩm mỗi giỏ; tỷ lệ sản phẩm có ít nhất một lượt được gợi ý trong danh mục đủ điều kiện |
+| Rào chắn | Độ trễ p95; doanh thu mỗi phiên; tỷ lệ bỏ hoặc phản ánh gợi ý; mức đa dạng sản phẩm |
+| Ngoại tuyến | Recall@10, HR@10, độ phủ luật và trần Recall trên bộ giỏ giữ lại mới |
+
+: Chỉ tiêu đề xuất cho thử nghiệm và giám sát {#tbl-c5-kpi tbl-colwidths="[25,75]"}
+
+*Nguồn: Nhóm đề xuất từ giới hạn của thực nghiệm. Đây là kế hoạch đo trong tương lai; nghiên cứu hiện tại chưa đo doanh thu, tỷ lệ nhấp hay độ phủ danh mục được gợi ý.*
+
+**Bước 4 — Mở rộng có điều kiện.** Chỉ chuyển sang RF nếu cải thiện chỉ tiêu chính đạt tiêu chuẩn đặt trước và không vi phạm rào chắn; nếu chưa đạt, tiếp tục phương án đơn giản hơn hoặc điều chỉnh trên dữ liệu phát triển mới. Nhóm kinh doanh duyệt nội dung và lợi ích, nhóm kỹ thuật chịu trách nhiệm độ trễ và phục hồi, người phụ trách dữ liệu theo dõi thiếu dữ liệu, thay đổi độ phổ biến, mùa vụ và chất lượng gợi ý. Cập nhật luật, danh mục và mô hình cần có phiên bản, đánh giá trên dữ liệu mới và khả năng quay lại phiên bản trước.
+
+## Hạn chế của nghiên cứu và Đạo đức dữ liệu
+
+**Giới hạn suy rộng.** Dữ liệu thuộc một nguồn bán lẻ và được bổ sung nhiễu theo học phần; mỗi người chỉ có một giỏ train trong phạm vi nghiên cứu. Phép che ngẫu nhiên mô phỏng hoàn thiện giỏ, không tái hiện thứ tự thêm hàng thật; thứ tự được tái dựng ở bước làm sạch là một giả định đã công bố. Một phân hoạch và một bộ seed chưa cho biết độ ổn định qua nhiều thời kỳ. Nhãn 0 nghĩa là sản phẩm không nằm trong giỏ, không chứng minh khách hàng không thích. Dữ liệu thiếu giá, lợi nhuận và lịch sử hiển thị nên không thể suy ra tác động nhân quả hay doanh thu.
+
+**Giới hạn mô hình.** Các phương pháp dùng chung Top-1.000 nên so sánh có điều kiện trên cùng danh mục. Có 8.449 giỏ test không có sản phẩm che nào thuộc danh mục, khiến mọi phương pháp đều không thể trúng ở các giỏ này. Ba tham số luật (tối thiểu 20 giỏ, độ dài tối đa 2, confidence tối thiểu 0,05) ở mức thấp nhất của lưới; N = 1.000 nằm giữa {500; 1.000; 2.000}. Nghiên cứu không chứng minh tối ưu ngoài phạm vi đã khảo sát. Lấy mẫu âm trên fit làm đổi tỷ lệ lớp, nên điểm LR/RF chưa được coi là xác suất mua đã hiệu chỉnh. Thời gian và RAM phụ thuộc phần cứng, thư viện và cách xử lý theo lô; độ quan trọng đặc trưng chịu ảnh hưởng của tương quan, không phải bằng chứng nhân quả.
+
+{{< pagebreak >}}
+
+**Đạo đức và trách nhiệm.** Danh mục theo độ phổ biến có nguy cơ tiếp tục ưu tiên sản phẩm vốn được mua nhiều và hạn chế khả năng tiếp cận sản phẩm ít phổ biến. Cần đo thêm độ phủ và đa dạng bên cạnh độ chính xác [@kaminskas2016]; nghiên cứu hiện tại chưa đánh giá công bằng giữa các nhóm khách hàng. Mã người dùng được giả danh vẫn không loại bỏ nguy cơ suy luận thông tin nhạy cảm từ giỏ hàng. Trong triển khai đề xuất, chỉ tài khoản phân tích được phân quyền mới truy cập mã giả danh; nếu doanh nghiệp tạo bảng ánh xạ định danh, bảng đó được tách khỏi giỏ và chỉ người quản trị được ủy quyền giữ khóa. Cần ghi nhật ký truy cập, dùng dữ liệu tự tạo hoặc đã loại định danh trực tiếp cho thử nghiệm, giới hạn thời gian lưu và thiết kế cơ chế từ chối gợi ý, tiếp nhận yêu cầu xóa dữ liệu. Đây là yêu cầu triển khai tương lai, chưa phải các chức năng đã xây dựng trong đồ án. Không suy luận thu nhập, sức khỏe hoặc loại hộ gia đình chỉ từ kích thước và thành phần giỏ. Con người chịu trách nhiệm duyệt nội dung, xử lý phản ánh và giám sát hệ thống; hồ sơ mã, cấu hình, hash và khóa trước test giúp minh bạch quá trình đánh giá.
+
+## Hướng phát triển trong tương lai và Kết luận
+
+Hướng phát triển ưu tiên là bổ sung ứng viên ít phổ biến, mô hình hóa trình tự khi có lịch sử tương tác phù hợp, hiệu chỉnh điểm xác suất và đánh giá riêng theo nhóm kích thước giỏ trên dữ liệu phát triển. Cần kiểm tra qua nhiều thời kỳ và bộ chia để đánh giá độ ổn định, sau đó thực hiện thử nghiệm A/B theo lộ trình trên. Đây là các hướng chưa triển khai trong phạm vi đồ án.
+
+Đối với câu hỏi 1, nghiên cứu xây dựng quy trình làm sạch và ghép sáu bảng thành Master, kèm đối soát quan hệ và hồ sơ tối ưu kiểu dữ liệu ở Chương 3. Đối với câu hỏi 2, mẫu reference có trung vị 9 sản phẩm/giỏ, produce và dairy eggs phủ rộng; 182 trong 210 cặp ngành có lift lớn hơn 1, nhưng ba liên hệ đã kiểm định chỉ có cỡ hiệu ứng nhỏ. Các kết quả mô tả hỗ trợ đặt giả thuyết kinh doanh, không thay thế thử nghiệm.
+
+Đối với câu hỏi 3, Apriori và FP-Growth cho cùng itemset và support ở hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy đã đo. Đối với câu hỏi 4, RF đạt Recall@10 test 0,0971, vượt Popularity 0,0216; chênh lệch với Rules là 0,0047 trong so sánh bổ trợ chưa hiệu chỉnh đa so sánh. LR không vượt Rules. Trần 0,5198 cho thấy danh mục ứng viên còn giới hạn đáng kể chất lượng tối đa. Đối với câu hỏi 5, giải pháp đề xuất là sử dụng luật đồng mua, thử RF theo lợi ích và chi phí, duy trì dự phòng độ phổ biến và giám sát chất lượng lẫn quyền riêng tư. Kết quả hiện tại xác nhận hiệu quả ngoại tuyến trong thiết kế đã khảo sát; cần thử nghiệm thực tế trước khi kết luận về doanh thu.
+
+
+# TÀI LIỆU THAM KHẢO {.unnumbered}
+
+::: {#refs}
+:::

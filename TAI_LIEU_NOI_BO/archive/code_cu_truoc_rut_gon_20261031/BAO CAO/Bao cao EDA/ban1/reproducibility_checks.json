@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "summary_csv_json_byte_identical": true,
+  "run_from": "TLCK parent of thesis directory",
+  "outputs": {
+    "BAO CAO/Bao cao EDA/aisle_summary.csv": "ac4b0066880f9515b8f9e19a9d9a77ab8b66453c1e360228e214805f85d3aced",
+    "BAO CAO/Bao cao EDA/categorical_frequencies.csv": "584dde90006422de568e8c4718a9a85e27899439543e8ce8c62fc30179960b28",
+    "BAO CAO/Bao cao EDA/department_display.csv": "060e0473ae95cc233e7a018ec6f6c951284dd862cc42c14ef58532fffb769781",
+    "BAO CAO/Bao cao EDA/department_summary.csv": "d95ad78332d08d0f187fec755554b3158e0e565f61e3197bbbd91ca42555c85b",
+    "BAO CAO/Bao cao EDA/eda_summary.csv": "be5a4ffdf732de13ed8d86391060eb168318cf223046b04205aa690ca55863fa",
+    "BAO CAO/Bao cao EDA/product_popularity.csv": "936640b9cc186e312745a5ad2835a58119d6ac51f525bbc10069ed9e6bb3ace9",
+    "BAO CAO/Bao cao EDA/sample_overview.csv": "0d4f8874808b05e790e8e2125ba2d1b81b31c48001e925eaabdd472792c851bd",
+    "BAO CAO/Bao cao EDA/top_n_coverage.csv": "cb8d29a5af9c4b94b0679cd83d20024783348e9911c344c963ae1508d90b04db",
+    "BAO CAO/Bao cao EDA/reference_outliers.json": "e2d7aea1eecea867f1adc67a728d33add6c573e00fa75c72e99731aa5df9300a"
+  }
+}

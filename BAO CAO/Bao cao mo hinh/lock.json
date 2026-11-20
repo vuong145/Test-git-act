@@ -1,0 +1,62 @@
+{
+  "locked_at": "2026-11-04T16:10:47",
+  "main_method": "RF",
+  "stage_A": {
+    "top_n": 1000,
+    "min_count": 20,
+    "max_len": 2,
+    "min_confidence": 0.05,
+    "rules": 6669,
+    "popularity_recall_at_10": 0.07524927103868119,
+    "rules_recall_at_10": 0.09318108808834646,
+    "ceiling_recall_at_10": 0.521060455709808
+  },
+  "validation": {
+    "Popularity": {
+      "params": "",
+      "recall_at_10": 0.0752492710386811,
+      "inference_seconds": 5.76655909998226
+    },
+    "Rules": {
+      "params": "",
+      "recall_at_10": 0.0931810880883464,
+      "inference_seconds": 6.189890400011791
+    },
+    "LR": {
+      "params": "{'C': 0.1}",
+      "recall_at_10": 0.0923166283882868,
+      "inference_seconds": 15.588513499998951
+    },
+    "RF": {
+      "params": "{'max_depth': 10, 'min_samples_leaf': 100}",
+      "recall_at_10": 0.0971460210747649,
+      "inference_seconds": 63.55208400002448
+    }
+  },
+  "f1_threshold": {
+    "LR": 0.7312827512437302,
+    "RF": 0.5777123663354883
+  },
+  "approvals": {
+    "Phong": true,
+    "Vuong": true
+  },
+  "files": {
+    "configs/m4_model.json": "1350c3ebc27b53464f3e5e3555ff23d45acbdafc843146e3106660c2ca2e604d",
+    "scripts/m4_test.py": "e9e2e4f7a439751ab898a01e93bde6a818ed8de2532510585eb5d3be34f3b8fd",
+    "scripts/m4_common.py": "bed59411f67f4191a19abda1075b76d3a051df4cde6ecb57f7c1b73ea0eece1a",
+    "scripts/m4_classifier.py": "ac9f4a565b7ace24ade78f373c420383d76943423a9939a1a1d006bf05f376d4",
+    "scripts/project_io.py": "d55bbb39512c478b7667e1a8f3d4b3829fdf2210cef67810836d5f7db1f99cb2",
+    "requirements.txt": "79edb2c0752acb09da19838d85f10d889db6a8c89189eb916b10b282d1eac522",
+    "configs/m2_plot_style.json": "8d1d3bdfb8b26e2c5915733d7be2a074d6dc2c66b0d4311d4e3cf36b239f1e62",
+    "DATA/Data phai sinh/M4/hashes.json": "af4871803db58b3b379e6da3c0142b717b2a928907307be4cc0b8d594b84c734",
+    "DATA/Data đã làm sạch/master_train.parquet": "2741c97001e6588a565c8e81771c9fb3e1e3c5edc9018dfeed879eb600473935",
+    "DATA/Data phai sinh/M4/masked_baskets.parquet": "fe4dfec0a9b1f3789c5228c7cab90eaabcf1e10434d84c83f50cf164d0bf61a2",
+    "DATA/Data phai sinh/M4/catalog.parquet": "345d462c113a985e9138023356a9e18457f4c5ccc1bfd24606bf36232376d03e",
+    "DATA/Data phai sinh/M4/rules_grid.parquet": "b510993c71e202a1baddf6bf8194818b9ef017f071de24d55ed77ce2b5c68d92",
+    "DATA/Data phai sinh/M4/features_fit.parquet": "8393a5f2d74f806450f1565e2c18c25ba25c8b53389bf2496739e07675b75abe",
+    "DATA/Data phai sinh/M4/pipeline_lr.joblib": "e712fac34c1b7e9a7646d3291422349b330ffbc089bab5c6577cddd05838408f",
+    "DATA/Data phai sinh/M4/pipeline_rf.joblib": "281cdbf69c63e2dc3c2924dda6c327a34424630e531e46ea27ccc7f43782dc4e",
+    "BAO CAO/Bao cao mo hinh/validation_methods.csv": "c9db65855b3722f398d9965726f78c2dff841146518b1d801b63685cb979a2e5"
+  }
+}

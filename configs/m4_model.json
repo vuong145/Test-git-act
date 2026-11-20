@@ -1,0 +1,17 @@
+{
+  "data_dir": "DATA/Data phai sinh/M4",
+  "report_dir": "BAO CAO/Bao cao mo hinh",
+  "seeds": {"mask": 42, "negative": 43, "importance": 44, "bootstrap": 42},
+  "hidden_share": 0.2,
+  "k_values": [5, 10],
+  "grid_A": {"top_n": [500, 1000, 2000], "min_count": [20, 50],
+             "min_confidence": [0.05, 0.10], "max_len": [2, 3]},
+  "grid_B": {"lr_C": [0.01, 0.1, 1, 10],
+             "rf_max_depth": [10, 20], "rf_min_samples_leaf": [20, 100], "rf_n_estimators": 300},
+  "tie_tolerance": 0.002,
+  "negatives_per_basket": 20,
+  "batch_size": 2000,
+  "pilot_baskets": 2000,
+  "bootstrap_n": 2000,
+  "benchmark": {"runs": 3, "timeout_s": 900, "trial": {"top_n": 500, "min_count": 50, "max_len": 2}}
+}

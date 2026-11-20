@@ -1,0 +1,61 @@
+{
+  "assigned_to": "Lê Văn Vương (MSSV: 2521001118)",
+  "assigned_tables": [
+    "aisles",
+    "departments",
+    "order_products__prior"
+  ],
+  "input_dir": "../../DATA/Data đã làm nhiễu",
+  "output_dir": "../../DATA/Data đã làm sạch",
+  "report_dir": "../../BAO CAO/Bao cao lam sach/vuong",
+  "chunksize": 250000,
+  "missing_tokens": [
+    "",
+    "null",
+    "none",
+    "nan",
+    "na",
+    "n/a",
+    "?",
+    "-",
+    "chưa rõ"
+  ],
+  "missing_tokens_by_column": {
+    "aisles.aisle": [
+      "",
+      "null",
+      "none",
+      "nan",
+      "na",
+      "n/a",
+      "?",
+      "-",
+      "chưa rõ",
+      "unknown"
+    ]
+  },
+  "expected_rows": {
+    "aisles": 134,
+    "departments": 21,
+    "order_products__prior": 32434489
+  },
+  "expected_baskets": {
+    "order_products__prior": 3214874
+  },
+  "reconstruct_sequences_from_preserved_row_order": true,
+  "expected_source_sha256": {
+    "aisles": "ffa1ddce6395a6e808d239d104ab920eb20f2e169bbc538043e1e3191ce1f987",
+    "departments": "3d6a3f2a87ec3ccc61afea2044061017da733decda17de3beb2583dc4a1fc520",
+    "order_products__prior": "2cc2d226d9adcb1bd9381b681844a51d911a5ddc64910def71379e9b32d4f8c3",
+    "order_products__train": "37530a6ecdbe40ebbd923b2b294580dd2cfd414285659b2df71363389b696071",
+    "orders": "fbbbc436ddffefc7f609a540916e9728e81d86b8105bbaff79f3cb4dbc76269b",
+    "products": "c02c3f5c7ddbbf83b87b8b360923d81ca3a1d9fd83c6e719123cdc9d077fb7ba"
+  },
+  "expected_sequence_actions": {
+    "order_products__prior": {
+      "sequence_filled_unusable": 6005160,
+      "sequence_corrected_observed": 762067,
+      "sequence_observed_consistent": 25667262
+    }
+  }
+}

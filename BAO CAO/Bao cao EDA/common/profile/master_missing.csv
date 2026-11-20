@@ -1,0 +1,16 @@
+column,missing,missing_pct,denominator,unit
+order_id,0,0.0,1384617,train product-order row
+product_id,0,0.0,1384617,train product-order row
+add_to_cart_order,0,0.0,1384617,train product-order row
+reordered,420771,30.388981212855253,1384617,train product-order row
+user_id,0,0.0,1384617,train product-order row
+eval_set,0,0.0,1384617,train product-order row
+order_number,0,0.0,1384617,train product-order row
+order_dow,389536,28.133122733579036,1384617,train product-order row
+order_hour_of_day,227767,16.449819697432574,1384617,train product-order row
+days_since_prior_order,233086,16.8339692492581,1384617,train product-order row
+product_name,207404,14.979160302090758,1384617,train product-order row
+aisle_id,0,0.0,1384617,train product-order row
+department_id,0,0.0,1384617,train product-order row
+aisle,454974,32.85919499760583,1384617,train product-order row
+department,0,0.0,1384617,train product-order row

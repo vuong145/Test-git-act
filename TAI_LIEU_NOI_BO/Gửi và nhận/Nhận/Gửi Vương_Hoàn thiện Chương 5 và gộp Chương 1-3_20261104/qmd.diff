@@ -1,0 +1,145 @@
+--- truoc
++++ sau
+@@ -183,7 +183,7 @@
+ 
+ # TÓM TẮT ĐỒ ÁN {.unnumbered}
+ 
+-Nghiên cứu xây dựng quy trình gợi ý sản phẩm mua kèm trong khi khách hàng đang tạo giỏ, từ dữ liệu Instacart đa bảng được bổ sung nhiễu theo yêu cầu học phần. Sáu bảng được làm sạch và tích hợp; dữ liệu được phân hoạch theo người dùng thành reference, fit, validation và test để tách việc học thống kê, huấn luyện, lựa chọn cấu hình và đánh giá cuối. Bài toán hoàn thiện giỏ được mô phỏng bằng cách che một phần sản phẩm, sau đó so sánh Popularity, luật kết hợp, Logistic Regression và Random Forest trên cùng danh mục ứng viên. Apriori và FP-Growth cho cùng itemset và support tại hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy thực nghiệm. Lựa chọn cấu hình thực hiện trên validation, còn tập test được chấm sau khi khóa. Trên 24.877 giỏ test đủ điều kiện, Random Forest đạt Recall@10 bằng 0,0971, cao hơn Popularity 0,0216 với khoảng tin cậy bootstrap 95% [0,0192; 0,0239], và cao hơn Rules 0,0047. Tuy nhiên, trần Recall@10 của danh mục Top-1.000 chỉ đạt 0,5198, cho thấy giới hạn đáng kể ở khâu tạo ứng viên. Nghiên cứu đề xuất sử dụng luật đồng mua làm nền, thử nghiệm tầng xếp hạng Random Forest theo cân bằng chất lượng và chi phí, đồng thời dự phòng bằng độ phổ biến. Lộ trình triển khai gồm thử nghiệm kín, A/B theo người dùng và giám sát chất lượng, đa dạng cùng quyền riêng tư. Kết quả phản ánh hiệu quả ngoại tuyến trong một thiết kế che giỏ và một phân hoạch; chưa chứng minh khả năng tăng doanh thu hoặc tác động nhân quả trong vận hành thực tế.
++Nghiên cứu xây dựng quy trình gợi ý sản phẩm mua kèm trong khi khách hàng đang tạo giỏ, từ dữ liệu Instacart đa bảng được bổ sung nhiễu theo yêu cầu học phần. Sáu bảng được làm sạch và tích hợp; dữ liệu được phân hoạch theo người dùng thành reference, fit, validation và test để tách việc học thống kê, huấn luyện, lựa chọn cấu hình và đánh giá cuối. Bài toán hoàn thiện giỏ được mô phỏng bằng cách che một phần sản phẩm, sau đó so sánh Popularity, luật kết hợp, Logistic Regression và Random Forest trên cùng danh mục ứng viên. Apriori và FP-Growth cho cùng itemset và support tại hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy thực nghiệm. Lựa chọn cấu hình thực hiện trên validation, còn tập test được chấm sau khi khóa. Trên 24.877 giỏ test đủ điều kiện, Random Forest đạt Recall@10 bằng 0,0971, cao hơn Popularity 0,0216 với khoảng tin cậy bootstrap 95% [0,0192; 0,0239], và cao hơn Rules 0,0047 trong so sánh bổ trợ chưa hiệu chỉnh đa so sánh. Tuy nhiên, trần Recall@10 của danh mục Top-1.000 chỉ đạt 0,5198, cho thấy giới hạn đáng kể ở khâu tạo ứng viên. Nghiên cứu đề xuất sử dụng luật đồng mua làm nền, thử nghiệm tầng xếp hạng Random Forest theo cân bằng chất lượng và chi phí, đồng thời dự phòng bằng độ phổ biến. Lộ trình triển khai gồm thử nghiệm kín, A/B theo người dùng và giám sát chất lượng, đa dạng cùng quyền riêng tư. Kết quả phản ánh hiệu quả ngoại tuyến trong một thiết kế che giỏ và một phân hoạch; chưa chứng minh khả năng tăng doanh thu hoặc tác động nhân quả trong vận hành thực tế.
+ 
+ ```{=latex}
+ \clearpage
+@@ -333,7 +333,7 @@
+ 
+ ## Môi trường thực nghiệm và Công cụ lập trình Python
+ 
+-Môi trường được ghi theo từng lượt, không đồng nhất giữa các giai đoạn. Hồ sơ M1 ghi Python 3.12.10, pandas 3.0.3 và PyArrow 24.0.0. Gói G0 nhận từ Vương ghi Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3. Môi trường kiểm chứng tại Phong dùng Python 3.12.10, các thư viện M2 theo `requirements-m2-lock.txt`; khác biệt bản vá Python được ghi trong hồ sơ mới. Số benchmark M1 trong bản này vẫn thuộc môi trường lịch sử. Các số liệu Chương 4 lấy từ lượt chạy trên máy Vương dùng `.venv-m2`, Windows 11, RAM 24 GB và phiên bản khóa trong `requirements.txt`; việc kiểm chứng trên máy Phong không thay thế các lượt đo này.
++Mọi lượt chạy chính thức, gồm làm sạch, bảng Master, benchmark M1, chia tập, thống kê, kiểm định và các giai đoạn của Chương 4, dùng cùng một môi trường `.venv-m2` trên một máy (Windows 11, RAM 24 GB): Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3, khóa trong `requirements.txt`. Bảng Master được tạo lần đầu ngày 20/10/2026 trong một môi trường Python khác (3.12.10, pandas 3.0.3, PyArrow 24.0.0) và tạo lại ngày 04/11/2026 trong `.venv-m2`; hai bản giống nhau từng ô, chỉ khác byte do phiên bản PyArrow. Benchmark M1 được đo lại trong `.venv-m2` cùng ngày. Máy của Phong dùng Python 3.12.10 (khác bản vá) để phát triển và kiểm chứng, không sinh số liệu trong bài.
+ 
+ pandas/NumPy xử lý bảng; PyArrow lưu Parquet; SciPy hỗ trợ kiểm định; mlxtend và scikit-learn phục vụ giai đoạn mô hình; Matplotlib/Seaborn xuất hình 300 DPI. Mã nguồn tổ chức theo mô-đun; kiểm tra cú pháp và kiểm thử được ghi theo phiên, chưa coi đó là chứng nhận tuân thủ toàn bộ PEP 8. Nhật ký tại gốc ghi đúng công cụ và thao tác thực tế theo P-D-M-V. Quarto quản lý tham chiếu, trích dẫn APA 7 và biên dịch PDF. Mã nguồn và nhật ký làm việc được nộp riêng, không đưa toàn văn vào phụ lục của bản tiểu luận.
+ 
+@@ -576,9 +576,9 @@
+    * Mã băm SHA-256 của chuỗi cặp khóa trùng khớp tuyệt đối với đầu vào ban đầu.
+    * Nội dung giá trị và vị trí mặt nạ thiếu bảo toàn 100% giữa trước ghi và sau đọc.
+    * Các biến phân loại giữ nguyên nhãn thực và `null` thực tế, không chứa các nhãn rác (`Unknown`, `nan`, `<NA>`).
+-5. **Xuất bản từng tệp:** Sau khi kiểm chứng, chương trình sao chép sang tệp tạm cạnh mỗi đích, gọi `flush`/`fsync`, kiểm tra SHA-256 của bản sao rồi dùng `os.replace` để thay thế đích. Hai vị trí là `Data đã làm sạch/master_train.parquet` và bản sao tại `Data đã làm sạch/Bảng master TLCK/master_train.parquet`, tính từ thư mục bài. Thay thế nguyên tử áp dụng cho từng tệp, không phải giao dịch đồng thời cho hai bản và các báo cáo JSON/CSV. Nếu xuất bản bản thứ hai thất bại, bản thứ nhất có thể đã được cập nhật; cần chạy lại và đối chiếu hash trước sử dụng.
+-
+-Hồ sơ `master_verification.json` của lượt chạy ngày 20/10/2026 ghi trạng thái `PASSED`, kích thước 16,21 MiB (16.992.331 byte) và mã băm SHA-256 của Master đã lưu. SHA-256 là mã băm kiểm tra toàn vẹn, không phải chữ ký số xác thực tác giả. Cơ chế xuất bản hiện hành được kiểm tra riêng trên bản sao đầy đủ của năm CSV: 13 tiêu chí đều đạt, hai bản xuất bản giống nhau và Master tạo lại khớp chính xác giá trị/vị trí thiếu với bản hiện có. Hồ sơ `m1_revision_checks.json` trong thư mục báo cáo kiểm tra lưu môi trường và hash mã nguồn của lượt hồi quy này; kết quả không thay thế các số đo benchmark ban đầu.
++5. **Xuất bản từng tệp:** Sau khi kiểm chứng, chương trình sao chép sang tệp tạm cạnh mỗi đích, gọi `flush`/`fsync`, kiểm tra SHA-256 của bản sao rồi dùng `os.replace` để thay thế đích. Đích xuất bản là `DATA/Data đã làm sạch/master_train.parquet`, tính từ thư mục bài. Thay thế nguyên tử áp dụng cho tệp Parquet, không phải giao dịch đồng thời cho Parquet và các báo cáo JSON/CSV; cần đối chiếu hash trước sử dụng.
++
++Hồ sơ `master_verification.json` của lượt chạy ngày 04/11/2026 trong `.venv-m2` ghi trạng thái `PASSED`, kích thước 16,21 MiB (16.992.331 byte) và mã băm SHA-256 của Master đã lưu. SHA-256 là mã băm kiểm tra toàn vẹn, không phải chữ ký số xác thực tác giả. Ở lượt này 13 tiêu chí đều đạt. Theo biên bản đồng bộ của Vương ngày 04/11, Master tạo lại khớp chính xác từng ô (giá trị và vị trí thiếu, cả hai chế độ đọc) với bản tạo lần đầu ngày 20/10/2026 trong môi trường khác; hai tệp chỉ khác byte vì được ghi bằng hai phiên bản PyArrow. Hồ sơ `m1_revision_checks.json` trong thư mục báo cáo kiểm tra lưu môi trường và hash mã nguồn của lượt hồi quy ngày 20/10/2026.
+ 
+ ### Đánh giá hiệu năng thực nghiệm đa chiều (Benchmark)
+ 
+@@ -603,31 +603,31 @@
+ \midrule
+ \multicolumn{5}{@{}l}{\textbf{A. Tối ưu kiểu dữ liệu}} \\
+ Baseline rộng: hồ sơ tĩnh & 423,04 & --- & --- & --- \\
+-Thu hẹp kiểu & 50,10 & 491,98 & --- & 1,0952 \\
++Thu hẹp kiểu & 50,10 & 483,35 & --- & 1,1697 \\
+ \midrule
+ \multicolumn{5}{@{}l}{\textbf{B. Định dạng và đọc/ghi}} \\
+-Ghi CSV & --- & 292,66 & 118,86 & 8,8145 \\
+-Ghi Parquet & --- & 311,99 & 15,34 & 1,0504 \\
+-Đọc CSV & 51,11 & 250,99 & 118,86 & 5,9227 \\
+-Đọc Parquet & 51,11 & 294,12 & 15,34 & 0,1974 \\
++Ghi CSV & --- & 295,54 & 118,86 & 9,7270 \\
++Ghi Parquet & --- & 302,15 & 15,34 & 1,0131 \\
++Đọc CSV & 51,11 & 224,13 & 118,86 & 6,1819 \\
++Đọc Parquet & 51,11 & 299,08 & 15,34 & 0,2089 \\
+ \midrule
+ \multicolumn{5}{@{}l}{\textbf{C. Tái sử dụng Master}} \\
+-Nạp 5 CSV và ghép & 50,10 & 404,25 & --- & 7,8016 \\
+-Đọc Master Parquet & 51,11 & 299,70 & --- & 0,1911 \\
++Nạp 5 CSV và ghép & 50,10 & 394,59 & --- & 9,3488 \\
++Đọc Master Parquet & 51,11 & 290,02 & --- & 0,2033 \\
+ \bottomrule
+ \end{tabular}
+ \par\vspace{4pt}
+-\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: data\_benchmark.csv của script m1\_benchmark.py.} RAM DF, RSS đỉnh và dung lượng đĩa tính bằng MiB; thời gian tính bằng giây. Baseline rộng là hồ sơ bộ nhớ tĩnh được dựng lại.}
++\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: data\_benchmark.csv, lượt 04/11/2026 của script m1\_benchmark.py.} RAM DF, RSS đỉnh và dung lượng đĩa tính bằng MiB; thời gian tính bằng giây. Baseline rộng là hồ sơ bộ nhớ tĩnh được dựng lại.}
+ \end{minipage}
+ ```
+ 
+ Phân tích kết quả thực nghiệm tại Bảng \ref{tbl-data-benchmark} mang lại các kết luận kỹ thuật quan trọng:
+ 
+-1. **Tối ưu kiểu dữ liệu (A):** Bộ nhớ DataFrame giảm từ 423,04 xuống 50,10 MiB, tương ứng **88,16%**, với thời gian trung vị 1,0952 giây. Đây không phải mức giảm RAM đỉnh tiến trình: trong lúc chuyển kiểu, bản rộng và bản tối ưu cùng tồn tại; Peak RSS quan sát được là 491,98 MiB.
+-2. **Hiệu quả định dạng Parquet so với CSV (Thực nghiệm B):** Nhờ cơ chế nén cột theo khối Snappy và lưu trữ từ điển (dictionary encoding), tệp Parquet chỉ chiếm 15,34 MiB trên đĩa, thu nhỏ **7,75 lần** so với tệp CSV đối chứng (118,86 MiB). Tốc độ ghi đĩa của Parquet nhanh hơn **8,39 lần** (1,0504 giây so với 8,8145 giây). Đặc biệt, tốc độ đọc dữ liệu của Parquet vượt trội gấp **30,00 lần** (0,1974 giây so với 5,9227 giây của CSV, tính chính xác từ tỷ số $5{,}9227 / 0{,}1974 \approx 30{,}00$) trong khi cả hai đều tải ra cùng một cấu trúc DataFrame 51,11 MiB chuẩn xác.
+-3. **Tái sử dụng Master (C):** Đọc Master đã chuẩn bị mất 0,1911 giây, Peak RSS 299,70 MiB; nạp năm CSV và ghép lại mất 7,8016 giây, Peak RSS 404,25 MiB. Tỷ số thời gian là **40,82 lần**, chênh lệch Peak RSS là 104,55 MiB. Phép đo không bao gồm chi phí tạo Master lần đầu và không đại diện cho pipeline xây Master có đầy đủ kiểm tra miền, mã băm, đối soát từng ô và xuất bản.
+-
+-Parquet có đánh đổi bộ nhớ: ở B, Peak RSS khi đọc là 294,12 MiB so với 250,99 MiB của CSV; khi ghi là 311,99 so với 292,66 MiB. Vì vậy, nhanh hơn và nhỏ hơn trên đĩa không đồng nghĩa với RAM đỉnh luôn thấp hơn. Ba lượt ghi CSV dao động 7,8226--9,4738 giây, ghi Parquet 1,0254--1,0791 giây; đọc CSV 5,7871--5,9759 giây và đọc Parquet 0,1914--0,2071 giây. Các tỷ số phụ thuộc dữ liệu, kiểu, thư viện và cache của lượt đo.
++1. **Tối ưu kiểu dữ liệu (A):** Bộ nhớ DataFrame giảm từ 423,04 xuống 50,10 MiB, tương ứng **88,16%** theo công thức $(1-50{,}10/423{,}04)\times100$. Thời gian trung vị là 1,1697 giây. Trong lúc chuyển kiểu, bản rộng và bản tối ưu cùng tồn tại; Peak RSS 483,35 MiB không phải mức bộ nhớ DataFrame sau tối ưu.
++2. **Hiệu quả Parquet so với CSV (B):** Tệp Parquet chiếm 15,34 MiB, so với 118,86 MiB của CSV; tỷ số dung lượng là $118{,}86/15{,}34 \approx 7{,}75$ lần. Ghi Parquet mất 1,0131 giây, so với 9,7270 giây của CSV; tỷ số thời gian $9{,}7270/1{,}0131 \approx 9{,}60$ lần. Đọc Parquet mất 0,2089 giây, so với 6,1819 giây của CSV; tỷ số $6{,}1819/0{,}2089 \approx 29{,}59$ lần. Cả hai cách đọc được chuẩn hóa về cùng cấu trúc DataFrame 51,11 MiB.
++3. **Tái sử dụng Master (C):** Đọc Master đã chuẩn bị mất 0,2033 giây, Peak RSS 290,02 MiB; nạp năm CSV và ghép lại mất 9,3488 giây, Peak RSS 394,59 MiB. Tỷ số thời gian $9{,}3488/0{,}2033 \approx 45{,}99$ lần; chênh RSS $394{,}59-290{,}02=104{,}57$ MiB. Phép đo không bao gồm chi phí tạo Master lần đầu, kiểm tra miền, mã băm, đối soát từng ô và xuất bản.
++
++Parquet có đánh đổi bộ nhớ: ở B, Peak RSS khi đọc là 299,08 MiB so với 224,13 MiB của CSV; khi ghi là 302,15 so với 295,54 MiB. Nhanh hơn và nhỏ hơn trên đĩa không đồng nghĩa RAM đỉnh thấp hơn. Ba lượt ghi CSV dao động 9,6451--10,7859 giây, ghi Parquet 1,0021--1,0232 giây; đọc CSV 6,0317--6,6182 giây và đọc Parquet 0,1876--0,3120 giây. Đây là lượt đo ngày 04/11/2026, phụ thuộc dữ liệu, kiểu, thư viện và cache của máy thực nghiệm.
+ 
+ Kết quả hỗ trợ tái sử dụng `master_train.parquet` cho các bước sau, nhưng chưa chứng minh hiệu năng của EDA hay mô hình. Cần chia tập theo thiết kế trước EDA định hướng mô hình; chỉ reference được dùng để học thống kê và luật. Hai lệnh M1 hiện xác định thư mục từ vị trí script, nhận tùy chọn đường dẫn tương đối theo thư mục bài và có chế độ `--check-inputs`; các đường dẫn tuyệt đối trong hồ sơ cũ được giữ như dấu vết của lượt chạy, không phải cấu hình vận hành.
+ 
+@@ -1213,7 +1213,7 @@
+ 
+ **Chi phí và lợi ích.** Trên validation, chấm 24,7 triệu cặp mất 5,77 giây (Popularity), 6,19 giây (Rules), 15,59 giây (LR) và 63,55 giây (RF). RF chậm hơn Rules khoảng 10 lần để đổi lấy cải thiện khoảng 5,1% tương đối (0,0971 so với 0,0924) trên test. Cải thiện có ý nghĩa thống kê nhưng nhỏ về độ lớn, nên chọn giữa Rules và RF là quyết định cân bằng chất lượng và chi phí, cơ sở của thử nghiệm A/B ở Chương 5. Phép bỏ nhóm và độ quan trọng cho thấy thông tin đồng mua đóng góp nhiều nhất; LR dựa nhiều vào độ phổ biến còn RF dựa nhiều vào confidence của luật, gợi ý RF khai thác tốt hơn tương tác giữa độ phổ biến và độ chắc của luật.
+ 
+-**Giới hạn.** Phần che ngẫu nhiên không tái hiện trình tự thêm hàng; nhãn 0 là chưa mua trong giỏ; bốn phương pháp so trên cùng một danh mục nên kết luận có điều kiện; nhóm dùng một lượt chia, một seed, cấu hình luật ở cạnh dưới của lưới và điểm classifier chưa hiệu chỉnh. Dữ liệu không có giá bán, lợi nhuận hay lịch sử hiển thị gợi ý, nên cải thiện Recall@10 là bằng chứng ngoại tuyến để đề xuất thử nghiệm, không chứng minh tăng doanh thu. Thời gian và RAM phụ thuộc máy và phiên bản thư viện nêu ở mục 2.5.
++**Giới hạn.** Phần che ngẫu nhiên không tái hiện trình tự thêm hàng; nhãn 0 là chưa mua trong giỏ; bốn phương pháp so trên cùng một danh mục nên kết luận có điều kiện; nhóm dùng một lượt chia, một seed, ba tham số luật ở mức thấp nhất của lưới (N = 1.000 ở giữa) và điểm classifier chưa hiệu chỉnh. Dữ liệu không có giá bán, lợi nhuận hay lịch sử hiển thị gợi ý, nên cải thiện Recall@10 là bằng chứng ngoại tuyến để đề xuất thử nghiệm, không chứng minh tăng doanh thu. Thời gian và RAM phụ thuộc máy và phiên bản thư viện nêu ở mục 2.5.
+ 
+ # KHUYẾN NGHỊ QUẢN TRỊ VÀ KẾT LUẬN {#sec-ket-luan}
+ 
+@@ -1223,19 +1223,19 @@
+ 
+ | Bằng chứng | Khuyến nghị | Điều kiện áp dụng |
+ |:-------------------------|:-------------------------|:-------------------------|
+-| RF hơn Rules 0,0047 Recall@10 trên test; khoảng tin cậy 95% [0,0031; 0,0063] | Dùng luật đồng mua làm nền; thử RF để xếp hạng ứng viên | So lợi ích với chi phí và độ trễ thực tế |
++| RF hơn Rules 0,0047 Recall@10; CI 95% [0,0031; 0,0063], so sánh bổ trợ | Dùng luật làm nền; thử tầng xếp hạng RF | RF chậm khoảng 10,3 lần khi chấm theo lô validation (63,55/6,19 giây) |
+ | 88,38% giỏ validation có luật khớp; 11,62% không có | Dự phòng theo độ phổ biến khi thiếu luật hoặc ngữ cảnh | Đây là độ phủ luật trên validation, không phải tỷ lệ thành công của gợi ý |
+ | Produce phủ 73,95% giỏ reference; dairy eggs phủ 66,76% | Ưu tiên thử vị trí gợi ý trong các ngành có độ phủ cao | Độ phủ không đo giá trị đơn hàng hay lợi nhuận |
+-| Ba cặp ngành được kiểm định có V từ 0,152 đến 0,201 | Thử nội dung gợi ý cho các cặp ngành như giả thuyết kinh doanh | Liên hệ nhỏ; không khẳng định bổ trợ hay nhân quả |
++| Ba cặp có V từ 0,152 đến 0,201; dry goods pasta–pantry có lift 1,412, phân vị 80 | Ưu tiên thử dry goods pasta–pantry | Hai cặp còn lại chỉ thử khi có lý do kinh doanh riêng; không suy ra nhân quả |
+ | Trần Recall@10 test là 0,5198 với Top-1.000 | Giữ danh mục hiện tại làm mốc; nghiên cứu thêm ứng viên ít phổ biến | Mở rộng danh mục chưa bảo đảm xếp hạng tốt hơn |
+ 
+ : Từ bằng chứng thực nghiệm đến khuyến nghị triển khai {#tbl-c5-khuyen-nghi}
+ 
+ *Nguồn: Mục 3.4–3.6, @tbl-c4-ranking; `paired_bootstrap_test.csv`, `rule_coverage.json` và `department_summary.csv`.*
+ 
+-Chênh lệch RF so với Rules có ý nghĩa thống kê nhưng nhỏ về độ lớn. Thời gian chấm toàn bộ ứng viên validation là 63,55 giây với RF và 6,19 giây với Rules, chênh khoảng 10,3 lần. Đây là thời gian xử lý theo lô trên máy thực nghiệm, không phải độ trễ một yêu cầu trực tuyến; cần đo lại dưới tải thật trước khi quyết định phục vụ. Phép bỏ nhóm đặc trưng củng cố vai trò của luật: Recall@10 validation của RF giảm từ 0,0971 xuống 0,0788 khi bỏ ba biến luật. Điều này ủng hộ giữ thông tin đồng mua trong hệ thống, chưa chứng minh kiến trúc nào tối ưu cho mọi doanh nghiệp.
+-
+-Các phát hiện EDA giúp lựa chọn nội dung thử nghiệm. I1 cho thấy giỏ nhỏ chiếm ưu thế; danh sách gợi ý nên ngắn và tránh lặp sản phẩm đã có. I2 cung cấp căn cứ ưu tiên vị trí hiển thị theo độ phủ ngành; I3 cho thấy cần theo dõi phần lượt mua nằm ngoài danh mục phổ biến, thay vì đồng nhất độ phủ giỏ với khả năng giữ đủ sản phẩm. I4 chưa đủ cơ sở tách cấu hình theo giờ vì phân phối kích thước giỏ chồng lấn và còn thiếu giờ đặt đơn. Theo I5 và kiểm định sau Holm, có thể thử bakery–dairy eggs, dry goods pasta–pantry và produce–meat seafood; lift lần lượt 1,229; 1,412; 1,190 cần đọc cùng trung vị 1,225 của toàn bộ 210 cặp. Đồng mua dương vốn phổ biến, nên không chọn cặp chỉ vì lift lớn hơn 1.
++Chênh lệch RF so với Rules là so sánh bổ trợ, chưa hiệu chỉnh đa so sánh; khoảng tin cậy không chứa 0 nhưng độ lớn nhỏ. Căn cứ xác nhận chính cho RF là phép so với Popularity. Thời gian chấm toàn bộ ứng viên validation là 63,55 giây với RF và 6,19 giây với Rules, tỷ số $63{,}55/6{,}19 \approx 10{,}3$ lần. Đây là thời gian xử lý theo lô trên máy thực nghiệm, không phải độ trễ một yêu cầu trực tuyến; cần đo lại dưới tải thật trước khi quyết định phục vụ. Phép bỏ nhóm đặc trưng củng cố vai trò của luật: Recall@10 validation của RF giảm từ 0,0971 xuống 0,0788 khi bỏ ba biến luật. Điều này ủng hộ giữ thông tin đồng mua trong hệ thống, chưa chứng minh kiến trúc nào tối ưu cho mọi doanh nghiệp.
++
++Các phát hiện EDA giúp lựa chọn nội dung thử nghiệm. I1 cho thấy giỏ nhỏ chiếm ưu thế; danh sách gợi ý nên ngắn và tránh lặp sản phẩm đã có. I2 cung cấp căn cứ ưu tiên vị trí hiển thị theo độ phủ ngành; I3 cho thấy cần theo dõi phần lượt mua nằm ngoài danh mục phổ biến, thay vì đồng nhất độ phủ giỏ với khả năng giữ đủ sản phẩm. I4 chưa đủ cơ sở tách cấu hình theo giờ vì phân phối kích thước giỏ chồng lấn và còn thiếu giờ đặt đơn. Theo I5 và kiểm định sau Holm, bakery–dairy eggs, dry goods pasta–pantry và produce–meat seafood có lift lần lượt 1,229; 1,412; 1,190, ở phân vị xấp xỉ 51; 80; 39 theo tỷ lệ cặp có lift không vượt giá trị đang xét. So với trung vị 1,225 của 210 cặp, nên ưu tiên thử dry goods pasta–pantry; bakery–dairy eggs gần trung vị, còn produce–meat seafood thấp hơn trung vị nên chỉ thử khi có lý do kinh doanh riêng. Đồng mua dương vốn phổ biến, nên không chọn cặp chỉ vì lift lớn hơn 1.
+ 
+ ## Lộ trình triển khai ứng dụng thực tế
+ 
+@@ -1243,7 +1243,7 @@
+ 
+ **Bước 2 — Thử nghiệm kín.** Hệ thống chạy trên luồng giỏ thật nhưng chưa hiển thị gợi ý, ghi thời điểm, ứng viên và độ trễ. Bộ phận kỹ thuật kiểm tra sản phẩm hết hàng, dữ liệu thiếu, mức tải và khả năng quay về Rules hoặc Popularity khi lỗi. Giai đoạn này giúp kiểm tra vận hành và khả năng dự báo hành vi quan sát, không đo được tác động của việc hiển thị gợi ý.
+ 
+-**Bước 3 — Thử nghiệm A/B có kiểm soát.** Phân ngẫu nhiên theo người dùng vào ba nhánh Popularity, Rules và RF, giữ nhất quán vị trí hiển thị và điều kiện phục vụ. Chọn trước một chỉ tiêu chính, chẳng hạn tỷ lệ thêm sản phẩm được gợi ý vào giỏ; giá trị đơn hàng trung bình là chỉ tiêu kinh doanh bổ sung. Cỡ mẫu xác định từ mức nền thực tế và mức cải thiện tối thiểu có ý nghĩa, thời lượng bao phủ chu kỳ tuần. Quy tắc dừng, cách xử lý nhiều so sánh và ngưỡng rào chắn phải được định trước, tránh chọn chỉ tiêu có lợi sau khi xem kết quả.
++**Bước 3 — Thử nghiệm A/B có kiểm soát.** Phân ngẫu nhiên theo người dùng vào ba nhánh Popularity, Rules và RF, giữ nhất quán vị trí hiển thị và điều kiện phục vụ. Theo khung thử nghiệm trực tuyến [@kohavi2020], cần chọn trước một chỉ tiêu chính, chẳng hạn tỷ lệ thêm sản phẩm được gợi ý vào giỏ; giá trị đơn hàng trung bình là chỉ tiêu kinh doanh bổ sung. Cỡ mẫu xác định từ mức nền thực tế và mức cải thiện tối thiểu có ý nghĩa, thời lượng bao phủ chu kỳ tuần. Quy tắc dừng, cách xử lý nhiều so sánh và ngưỡng rào chắn phải được định trước, tránh chọn chỉ tiêu có lợi sau khi xem kết quả.
+ 
+ {{< pagebreak >}}
+ 
+@@ -1264,9 +1264,11 @@
+ 
+ **Giới hạn suy rộng.** Dữ liệu thuộc một nguồn bán lẻ và được bổ sung nhiễu theo học phần; mỗi người chỉ có một giỏ train trong phạm vi nghiên cứu. Phép che ngẫu nhiên mô phỏng hoàn thiện giỏ, không tái hiện thứ tự thêm hàng thật; thứ tự được tái dựng ở bước làm sạch là một giả định đã công bố. Một phân hoạch và một bộ seed chưa cho biết độ ổn định qua nhiều thời kỳ. Nhãn 0 nghĩa là sản phẩm không nằm trong giỏ, không chứng minh khách hàng không thích. Dữ liệu thiếu giá, lợi nhuận và lịch sử hiển thị nên không thể suy ra tác động nhân quả hay doanh thu.
+ 
+-**Giới hạn mô hình.** Các phương pháp dùng chung Top-1.000 nên so sánh có điều kiện trên cùng danh mục. Có 8.449 giỏ test không có sản phẩm che nào thuộc danh mục, khiến mọi phương pháp đều không thể trúng ở các giỏ này. Cấu hình luật được chọn nằm ở cạnh dưới của lưới; nghiên cứu không chứng minh tối ưu ngoài phạm vi đã khảo sát. Lấy mẫu âm trên fit làm đổi tỷ lệ lớp, nên điểm LR/RF chưa được coi là xác suất mua đã hiệu chỉnh. Thời gian và RAM phụ thuộc phần cứng, thư viện và cách xử lý theo lô; độ quan trọng đặc trưng chịu ảnh hưởng của tương quan, không phải bằng chứng nhân quả.
+-
+-**Đạo đức và trách nhiệm.** Danh mục theo độ phổ biến có nguy cơ tiếp tục ưu tiên sản phẩm vốn được mua nhiều và hạn chế khả năng tiếp cận sản phẩm ít phổ biến. Khi triển khai cần đo độ phủ, đa dạng và cơ hội hiển thị; chưa thể khẳng định hệ thống hiện tại công bằng giữa các nhóm khách hàng. Mã người dùng được giả danh vẫn không loại bỏ nguy cơ suy luận thông tin nhạy cảm từ giỏ hàng. Doanh nghiệp cần tối thiểu hóa dữ liệu, giới hạn truy cập và thời gian lưu, giải thích mục đích sử dụng và cung cấp cơ chế từ chối gợi ý. Không suy luận thu nhập, sức khỏe hoặc loại hộ gia đình chỉ từ kích thước và thành phần giỏ. Con người chịu trách nhiệm duyệt nội dung, xử lý phản ánh và giám sát hệ thống; hồ sơ mã, cấu hình, hash và khóa trước test giúp minh bạch quá trình đánh giá.
++**Giới hạn mô hình.** Các phương pháp dùng chung Top-1.000 nên so sánh có điều kiện trên cùng danh mục. Có 8.449 giỏ test không có sản phẩm che nào thuộc danh mục, khiến mọi phương pháp đều không thể trúng ở các giỏ này. Ba tham số luật (tối thiểu 20 giỏ, độ dài tối đa 2, confidence tối thiểu 0,05) ở mức thấp nhất của lưới; N = 1.000 nằm giữa {500; 1.000; 2.000}. Nghiên cứu không chứng minh tối ưu ngoài phạm vi đã khảo sát. Lấy mẫu âm trên fit làm đổi tỷ lệ lớp, nên điểm LR/RF chưa được coi là xác suất mua đã hiệu chỉnh. Thời gian và RAM phụ thuộc phần cứng, thư viện và cách xử lý theo lô; độ quan trọng đặc trưng chịu ảnh hưởng của tương quan, không phải bằng chứng nhân quả.
++
++{{< pagebreak >}}
++
++**Đạo đức và trách nhiệm.** Danh mục theo độ phổ biến có nguy cơ tiếp tục ưu tiên sản phẩm vốn được mua nhiều và hạn chế khả năng tiếp cận sản phẩm ít phổ biến. Cần đo thêm độ phủ và đa dạng bên cạnh độ chính xác [@kaminskas2016]; nghiên cứu hiện tại chưa đánh giá công bằng giữa các nhóm khách hàng. Mã người dùng được giả danh vẫn không loại bỏ nguy cơ suy luận thông tin nhạy cảm từ giỏ hàng. Trong triển khai đề xuất, chỉ tài khoản phân tích được phân quyền mới truy cập mã giả danh; nếu doanh nghiệp tạo bảng ánh xạ định danh, bảng đó được tách khỏi giỏ và chỉ người quản trị được ủy quyền giữ khóa. Cần ghi nhật ký truy cập, dùng dữ liệu tự tạo hoặc đã loại định danh trực tiếp cho thử nghiệm, giới hạn thời gian lưu và thiết kế cơ chế từ chối gợi ý, tiếp nhận yêu cầu xóa dữ liệu. Đây là yêu cầu triển khai tương lai, chưa phải các chức năng đã xây dựng trong đồ án. Không suy luận thu nhập, sức khỏe hoặc loại hộ gia đình chỉ từ kích thước và thành phần giỏ. Con người chịu trách nhiệm duyệt nội dung, xử lý phản ánh và giám sát hệ thống; hồ sơ mã, cấu hình, hash và khóa trước test giúp minh bạch quá trình đánh giá.
+ 
+ ## Hướng phát triển trong tương lai và Kết luận
+ 
+@@ -1274,7 +1276,7 @@
+ 
+ Đối với câu hỏi 1, nghiên cứu xây dựng quy trình làm sạch và ghép sáu bảng thành Master, kèm đối soát quan hệ và hồ sơ tối ưu kiểu dữ liệu ở Chương 3. Đối với câu hỏi 2, mẫu reference có trung vị 9 sản phẩm/giỏ, produce và dairy eggs phủ rộng; 182 trong 210 cặp ngành có lift lớn hơn 1, nhưng ba liên hệ đã kiểm định chỉ có cỡ hiệu ứng nhỏ. Các kết quả mô tả hỗ trợ đặt giả thuyết kinh doanh, không thay thế thử nghiệm.
+ 
+-Đối với câu hỏi 3, Apriori và FP-Growth cho cùng itemset và support ở hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy đã đo. Đối với câu hỏi 4, RF đạt Recall@10 test 0,0971, vượt Popularity 0,0216 và Rules 0,0047; LR không vượt Rules. Trần 0,5198 cho thấy danh mục ứng viên còn giới hạn đáng kể chất lượng tối đa. Đối với câu hỏi 5, giải pháp đề xuất là sử dụng luật đồng mua, thử RF theo lợi ích và chi phí, duy trì dự phòng độ phổ biến và giám sát chất lượng lẫn quyền riêng tư. Kết quả hiện tại xác nhận hiệu quả ngoại tuyến trong thiết kế đã khảo sát; cần thử nghiệm thực tế trước khi kết luận về doanh thu.
++Đối với câu hỏi 3, Apriori và FP-Growth cho cùng itemset và support ở hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy đã đo. Đối với câu hỏi 4, RF đạt Recall@10 test 0,0971, vượt Popularity 0,0216; chênh lệch với Rules là 0,0047 trong so sánh bổ trợ chưa hiệu chỉnh đa so sánh. LR không vượt Rules. Trần 0,5198 cho thấy danh mục ứng viên còn giới hạn đáng kể chất lượng tối đa. Đối với câu hỏi 5, giải pháp đề xuất là sử dụng luật đồng mua, thử RF theo lợi ích và chi phí, duy trì dự phòng độ phổ biến và giám sát chất lượng lẫn quyền riêng tư. Kết quả hiện tại xác nhận hiệu quả ngoại tuyến trong thiết kế đã khảo sát; cần thử nghiệm thực tế trước khi kết luận về doanh thu.
+ 
+ 
+ # TÀI LIỆU THAM KHẢO {.unnumbered}

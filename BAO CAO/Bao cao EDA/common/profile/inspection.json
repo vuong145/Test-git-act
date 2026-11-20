@@ -1,0 +1,12 @@
+{
+  "scope": "Basic inspection trace, not completed section 3.4",
+  "master_shape": [
+    1384617,
+    15
+  ],
+  "reference_baskets_shape": [
+    39363,
+    9
+  ],
+  "canonical_split_sha256": "7f8017d16d1ff27e2cfe83c1bd12e1cf33d144bef4fc86953b83e72d28671a13"
+}

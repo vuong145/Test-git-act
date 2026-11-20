@@ -1,0 +1,201 @@
+﻿table,column,status,record_1based,raw,clean
+products,product_id,trimmed,8,  8,8
+products,product_id,trimmed,30,  30,30
+products,product_id,trimmed,45, 45,45
+products,product_id,trimmed,53, 53,53
+products,product_id,trimmed,65, 65,65
+products,product_name,trimmed,10,  Sparkling Orange Juice & Prickly Pear Beverage,Sparkling Orange Juice & Prickly Pear Beverage
+products,product_name,trimmed,11,  Peach Mango Juice,Peach Mango Juice
+products,product_name,trimmed,12,Chocolate Fudge Layer Cake   ,Chocolate Fudge Layer Cake
+products,product_name,trimmed,17,  Rendered Duck Fat,Rendered Duck Fat
+products,product_name,trimmed,21,Small & Medium Dental Dog Treats   ,Small & Medium Dental Dog Treats
+products,product_name,missing_token,4,null,
+products,product_name,missing_token,13,chưa rõ,
+products,product_name,missing_token,14,None,
+products,product_name,missing_token,19,?,
+products,product_name,missing_token,36,NULL,
+products,aisle_id,trimmed,38,  100,100
+products,aisle_id,trimmed,60, 9,9
+products,aisle_id,trimmed,71,  111,111
+products,aisle_id,trimmed,87,  94,94
+products,aisle_id,trimmed,95, 66,66
+products,department_id,trimmed,4, 1,1
+products,department_id,trimmed,16,  19,19
+products,department_id,trimmed,24,  11,11
+products,department_id,trimmed,34,  14,14
+products,department_id,trimmed,46, 1,1
+orders,order_id,trimmed,1, 2539329,2539329
+orders,order_id,trimmed,17, 1199898,1199898
+orders,order_id,trimmed,62, 776265,776265
+orders,order_id,trimmed,104, 2618231,2618231
+orders,order_id,trimmed,131,  2514324,2514324
+orders,user_id,trimmed,5,  1,1
+orders,user_id,trimmed,17,  2,2
+orders,user_id,trimmed,85, 10,10
+orders,user_id,trimmed,97,  11,11
+orders,user_id,trimmed,100, 12,12
+orders,eval_set,invalid_label,3,  pri,
+orders,eval_set,invalid_label,12,  pri,
+orders,eval_set,invalid_label,16,  pri,
+orders,eval_set,invalid_label,23,  pri,
+orders,eval_set,invalid_label,31,  pri,
+orders,eval_set,case_normalized,7,PRIOR,prior
+orders,eval_set,case_normalized,17,PRIOR,prior
+orders,eval_set,case_normalized,24,PRIOR,prior
+orders,eval_set,case_normalized,30,PRIOR,prior
+orders,eval_set,case_normalized,36,PRIOR,prior
+orders,eval_set,missing_token,5,?,
+orders,eval_set,missing_token,9,,
+orders,eval_set,missing_token,29,NULL,
+orders,eval_set,missing_token,34,N/A,
+orders,eval_set,missing_token,41,NULL,
+orders,eval_set,trimmed,45,test ,test
+orders,eval_set,trimmed,153,test ,test
+orders,eval_set,trimmed,480,test ,test
+orders,eval_set,trimmed,534,test ,test
+orders,eval_set,trimmed,589,test ,test
+orders,order_number,missing_token,5,None,
+orders,order_number,missing_token,6,,
+orders,order_number,missing_token,9,?,
+orders,order_number,missing_token,13,N/A,
+orders,order_number,missing_token,16,None,
+orders,order_number,out_of_domain,8,9999,
+orders,order_number,out_of_domain,15,-1,
+orders,order_number,out_of_domain,17,-6.0,
+orders,order_number,out_of_domain,23,9999,
+orders,order_number,out_of_domain,24,9999,
+orders,order_number,suffix_unresolved,2,2 VND,
+orders,order_number,suffix_unresolved,120,4 USD,
+orders,order_number,suffix_unresolved,131,1 USD,
+orders,order_number,suffix_unresolved,156,3 VND,
+orders,order_number,suffix_unresolved,162,2 VND,
+orders,order_number,invalid_format,143,13 đ,
+orders,order_number,invalid_format,176,16 đ,
+orders,order_number,invalid_format,178,18 đ,
+orders,order_number,invalid_format,451,2 đ,
+orders,order_number,invalid_format,458,9 đ,
+orders,order_number,numeric_format_normalized,757,60.0,60
+orders,order_number,numeric_format_normalized,1131,60.0,60
+orders,order_number,numeric_format_normalized,1167,80.0,80
+orders,order_number,numeric_format_normalized,1479,10.0,10
+orders,order_number,numeric_format_normalized,1677,20.0,20
+orders,order_dow,missing_token,3,-,
+orders,order_dow,missing_token,6,N/A,
+orders,order_dow,missing_token,30,?,
+orders,order_dow,missing_token,36,null,
+orders,order_dow,missing_token,37,null,
+orders,order_dow,suffix_unresolved,1,2 %,
+orders,order_dow,suffix_unresolved,2,3 %,
+orders,order_dow,suffix_unresolved,12,2 kg,
+orders,order_dow,suffix_unresolved,13,5 kg,
+orders,order_dow,suffix_unresolved,16,3 VND,
+orders,order_dow,out_of_domain,20,20.0,
+orders,order_dow,out_of_domain,24,9999,
+orders,order_dow,out_of_domain,38,-1,
+orders,order_dow,out_of_domain,62,-1,
+orders,order_dow,out_of_domain,80,-1,
+orders,order_dow,invalid_format,109,0 đ,
+orders,order_dow,invalid_format,112,6 đ,
+orders,order_dow,invalid_format,149,5 đ,
+orders,order_dow,invalid_format,245,3 đ,
+orders,order_dow,invalid_format,323,4 đ,
+orders,order_dow,numeric_format_normalized,81,0.0,0
+orders,order_dow,numeric_format_normalized,399,0.0,0
+orders,order_dow,numeric_format_normalized,537,0.0,0
+orders,order_dow,numeric_format_normalized,904,-0.0,0
+orders,order_dow,numeric_format_normalized,1660,0.0,0
+orders,order_hour_of_day,missing_token,7,,
+orders,order_hour_of_day,missing_token,17,None,
+orders,order_hour_of_day,missing_token,22,-,
+orders,order_hour_of_day,missing_token,25,NULL,
+orders,order_hour_of_day,missing_token,33,,
+orders,days_since_prior_order,numeric_format_normalized,3,21.0,21.0
+orders,days_since_prior_order,numeric_format_normalized,4,29.0,29.0
+orders,days_since_prior_order,numeric_format_normalized,5,28.0,28.0
+orders,days_since_prior_order,numeric_format_normalized,8,14.0,14.0
+orders,days_since_prior_order,numeric_format_normalized,9,0.0,0.0
+orders,days_since_prior_order,missing_token,1,nan,
+orders,days_since_prior_order,missing_token,2,,
+orders,days_since_prior_order,missing_token,6,null,
+orders,days_since_prior_order,missing_token,7,,
+orders,days_since_prior_order,missing_token,10,,
+orders,order_number,sequence_filled_unusable,2,,2
+orders,order_number,sequence_filled_unusable,5,,5
+orders,order_number,sequence_filled_unusable,6,,6
+orders,order_number,sequence_filled_unusable,8,,8
+orders,order_number,sequence_filled_unusable,9,,9
+orders,order_number,sequence_corrected_observed,757,60,6
+orders,order_number,sequence_corrected_observed,1131,60,6
+orders,order_number,sequence_corrected_observed,1167,80,8
+orders,order_number,sequence_corrected_observed,1479,10,1
+orders,order_number,sequence_corrected_observed,1677,20,2
+order_products__train,order_id,trimmed,13, 36,36
+order_products__train,order_id,trimmed,23,  38,38
+order_products__train,order_id,trimmed,55,  98,98
+order_products__train,order_id,trimmed,63,  98,98
+order_products__train,order_id,trimmed,66,  98,98
+order_products__train,product_id,trimmed,5,  43633,43633
+order_products__train,product_id,trimmed,7,  47209,47209
+order_products__train,product_id,trimmed,17, 11913,11913
+order_products__train,product_id,trimmed,20,  21616,21616
+order_products__train,product_id,trimmed,22, 32433,32433
+order_products__train,add_to_cart_order,missing_token,2,,
+order_products__train,add_to_cart_order,missing_token,3,-,
+order_products__train,add_to_cart_order,missing_token,8,?,
+order_products__train,add_to_cart_order,missing_token,11,,
+order_products__train,add_to_cart_order,missing_token,14,N/A,
+order_products__train,add_to_cart_order,suffix_unresolved,7,7 kg,
+order_products__train,add_to_cart_order,suffix_unresolved,16,8 USD,
+order_products__train,add_to_cart_order,suffix_unresolved,63,31 kg,
+order_products__train,add_to_cart_order,suffix_unresolved,70,38 VND,
+order_products__train,add_to_cart_order,suffix_unresolved,76,44 VND,
+order_products__train,add_to_cart_order,out_of_domain,66,-1,
+order_products__train,add_to_cart_order,out_of_domain,69,-1,
+order_products__train,add_to_cart_order,out_of_domain,104,-1,
+order_products__train,add_to_cart_order,out_of_domain,131,-1,
+order_products__train,add_to_cart_order,out_of_domain,147,-1,
+order_products__train,add_to_cart_order,invalid_format,98,6 đ,
+order_products__train,add_to_cart_order,invalid_format,140,2 đ,
+order_products__train,add_to_cart_order,invalid_format,196,1 đ,
+order_products__train,add_to_cart_order,invalid_format,290,1 đ,
+order_products__train,add_to_cart_order,invalid_format,385,3 đ,
+order_products__train,add_to_cart_order,numeric_format_normalized,60,28000.0,28000
+order_products__train,add_to_cart_order,numeric_format_normalized,91,1000.0,1000
+order_products__train,add_to_cart_order,numeric_format_normalized,310,40.0,40
+order_products__train,add_to_cart_order,numeric_format_normalized,427,50.0,50
+order_products__train,add_to_cart_order,numeric_format_normalized,515,40.0,40
+order_products__train,reordered,missing_token,5,None,
+order_products__train,reordered,missing_token,11,N/A,
+order_products__train,reordered,missing_token,14,,
+order_products__train,reordered,missing_token,17,None,
+order_products__train,reordered,missing_token,20,N/A,
+order_products__train,reordered,suffix_unresolved,10,1 kg,
+order_products__train,reordered,suffix_unresolved,31,1 %,
+order_products__train,reordered,suffix_unresolved,38,1 %,
+order_products__train,reordered,suffix_unresolved,49,1 kg,
+order_products__train,reordered,suffix_unresolved,62,1 kg,
+order_products__train,reordered,out_of_domain,54,-1,
+order_products__train,reordered,out_of_domain,94,-1,
+order_products__train,reordered,out_of_domain,117,-1,
+order_products__train,reordered,out_of_domain,127,-1,
+order_products__train,reordered,out_of_domain,162,9999,
+order_products__train,reordered,invalid_format,24,0 đ,
+order_products__train,reordered,invalid_format,63,1 đ,
+order_products__train,reordered,invalid_format,147,0 đ,
+order_products__train,reordered,invalid_format,186,0 đ,
+order_products__train,reordered,invalid_format,243,1 đ,
+order_products__train,reordered,numeric_format_normalized,423,0.0,0
+order_products__train,reordered,numeric_format_normalized,540,0.0,0
+order_products__train,reordered,numeric_format_normalized,758,0.0,0
+order_products__train,reordered,numeric_format_normalized,760,-0.0,0
+order_products__train,reordered,numeric_format_normalized,978,0.0,0
+order_products__train,add_to_cart_order,sequence_filled_unusable,2,,2
+order_products__train,add_to_cart_order,sequence_filled_unusable,3,,3
+order_products__train,add_to_cart_order,sequence_filled_unusable,7,,7
+order_products__train,add_to_cart_order,sequence_filled_unusable,8,,8
+order_products__train,add_to_cart_order,sequence_filled_unusable,11,,3
+order_products__train,add_to_cart_order,sequence_corrected_observed,58,9999,26
+order_products__train,add_to_cart_order,sequence_corrected_observed,60,28000,28
+order_products__train,add_to_cart_order,sequence_corrected_observed,91,1000,10
+order_products__train,add_to_cart_order,sequence_corrected_observed,102,9999,10
+order_products__train,add_to_cart_order,sequence_corrected_observed,116,9999,2

@@ -1,0 +1,307 @@
+--- Vuong
++++ Phong
+@@ -152,15 +152,19 @@
+ | RAM | Bộ nhớ truy cập ngẫu nhiên |
+ | ML | Học máy |
+ | PRJ | Mã đề tài |
+-| ERD | Sơ đồ quan hệ thực thể |
++| ERD | Sơ đồ thực thể và quan hệ |
+ | IQR | Khoảng tứ phân vị |
+ | LR | Hồi quy logistic |
+ | RF | Rừng ngẫu nhiên |
++| CI | Khoảng tin cậy |
+ | ROC-AUC | Diện tích dưới đường cong ROC |
+-| CI | Khoảng tin cậy |
++| AP | Average Precision; độ chính xác trung bình |
+ | CRISP-DM | Quy trình chuẩn liên ngành cho khai phá dữ liệu |
++| RSS | Bộ nhớ vật lý tiến trình đang sử dụng |
++| CSV | Tệp văn bản phân tách bằng dấu phẩy |
++| NA | Giá trị thiếu hoặc không áp dụng |
+ | API | Giao diện lập trình ứng dụng |
+-| A/B | Thử nghiệm so sánh hai phương án |
++| A/B | Thử nghiệm đối chứng giữa hai phương án |
+ 
+ ```{=latex}
+ \clearpage
+@@ -328,7 +332,9 @@
+ 
+ ## Môi trường thực nghiệm và Công cụ lập trình Python
+ 
+-Thực nghiệm được thiết kế cho máy Windows, RAM 24 GB. pandas xử lý bảng và chunking; NumPy tính toán; SciPy/pandas sparse biểu diễn thưa; PyArrow lưu Parquet; mlxtend khai phá luật; scikit-learn xây pipeline; SciPy kiểm định; Matplotlib/Seaborn tạo biểu đồ 300 DPI. Phiên bản Python, thư viện, CPU, seed và cấu hình được ghi theo lần chạy. Ép kiểu, kích thước khối và danh mục được chọn qua pilot, đánh giá bằng RAM/thời gian thực đo. Mã nguồn tổ chức theo mô-đun; mức tuân thủ PEP 8 cần được kiểm tra bằng linter trước khi nộp; nhật ký tại thư mục gốc ghi theo P-D-M-V, nêu đúng công cụ hỗ trợ và các bước tự kiểm chứng trong từng phiên. Quarto quản lý báo cáo, tham chiếu chéo và trích dẫn APA 7. Hồ sơ M1 ngày 20/10 ghi Python 3.12.10, pandas 3.0.3, NumPy 2.5.1 và PyArrow 24.0.0; hồ sơ này không ghi phiên bản SciPy. G0 ngày 29/10 chạy Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3, với môi trường khóa riêng. Đây là hai môi trường khác nhau; số benchmark M1 vẫn gắn với lượt đo M1. Các requirements chỉ đặt ngưỡng phiên bản tối thiểu của cleaning không phải bản khóa môi trường.
++Môi trường được ghi theo từng lượt, không đồng nhất giữa các giai đoạn. Hồ sơ M1 ghi Python 3.12.10, pandas 3.0.3 và PyArrow 24.0.0. Gói G0 nhận từ Vương ghi Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3. Môi trường kiểm chứng tại Phong dùng Python 3.12.10, các thư viện M2 theo `requirements-m2-lock.txt`; khác biệt bản vá Python được ghi trong hồ sơ mới. Số benchmark M1 vẫn thuộc môi trường lịch sử.
++
++pandas/NumPy xử lý bảng; PyArrow lưu Parquet; SciPy hỗ trợ kiểm định; mlxtend và scikit-learn phục vụ giai đoạn mô hình; Matplotlib/Seaborn xuất hình 300 DPI. Mã nguồn tổ chức theo mô-đun; kiểm tra cú pháp và kiểm thử được ghi theo phiên, chưa coi đó là chứng nhận tuân thủ toàn bộ PEP 8. Nhật ký tại gốc ghi đúng công cụ và thao tác thực tế theo P-D-M-V. Quarto quản lý tham chiếu, trích dẫn APA 7 và biên dịch PDF.
+ 
+ ```{=latex}
+ \clubpenalty=\SavedClubPenalty
+@@ -350,11 +356,11 @@
+ Bộ dữ liệu bao gồm sáu tệp CSV có mối quan hệ ràng buộc thông qua các mã định danh. Bảng \ref{tbl-quy-mo-6-tep} thống kê kích thước, đơn vị quan sát và khóa của từng tệp theo kết quả kiểm toán kỹ thuật. Cần lưu ý rằng các khái niệm khóa chính và khóa ngoại ở đây mô tả các ràng buộc quan hệ được kiểm tra và thực thi bằng chương trình phân tích; bản thân định dạng CSV thuần văn bản không tự bảo đảm các ràng buộc toàn vẹn này.
+ 
+ ```{=latex}
+-\begin{table}[H]
++\begin{minipage}{\textwidth}
+ \centering
+ \normalsize
+ \setlength{\tabcolsep}{3pt}
+-\caption{Quy mô và đơn vị quan sát của sáu tệp dữ liệu}
++\captionof{table}{Quy mô và đơn vị quan sát của sáu tệp dữ liệu}
+ \label{tbl-quy-mo-6-tep}
+ \begin{tabular}{@{}p{2cm}rrp{3.6cm}p{5.5cm}@{}}
+ \toprule
+@@ -370,7 +376,7 @@
+ \end{tabular}
+ \par\vspace{4pt}
+ \parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: Báo cáo kiểm toán đầu vào sáu CSV.} Chi tiết prior và train lần lượt là order\_products\_\_prior và order\_products\_\_train.}
+-\end{table}
++\end{minipage}
+ ```
+ 
+ Tổng quy mô lưu trữ của sáu tệp đạt **37.290.032 dòng**, phản ánh số lượng bản ghi ở nhiều cấp quan sát khác nhau chứ không phải số giao dịch độc lập. Riêng bảng `orders` quản lý 3.421.083 đơn hàng của 206.209 người dùng khác nhau. Hai bảng chi tiết chứa tổng cộng 33.819.106 cặp đơn--sản phẩm, thuộc 3.214.874 đơn hàng lịch sử (`prior`) và 131.209 đơn hàng thuộc tập huấn luyện (`train`). Ngoài ra, 75.000 đơn hàng thuộc tập kiểm thử (`test`) của nguồn không có chi tiết sản phẩm công khai trong dữ liệu.
+@@ -382,11 +388,11 @@
+ Về mặt chức năng cơ sở dữ liệu, sáu tệp được phân thành ba nhóm rõ rệt: nhóm danh mục tra cứu (`aisles`, `departments`, `products`), nhóm thông tin đầu đơn (`orders`) và nhóm chi tiết giỏ hàng (`order_products__prior`, `order_products__train`). Cách phân rã chuẩn hóa này giúp tối ưu hóa lưu trữ, tách biệt thông tin tĩnh của sản phẩm khỏi các giao dịch phát sinh theo thời gian. Bảng \ref{tbl-tu-dien-tom-tat} hệ thống hóa ý nghĩa nghiệp vụ của các thuộc tính.
+ 
+ ```{=latex}
+-\begin{table}[H]
++\begin{minipage}{\textwidth}
+ \centering
+ \normalsize
+ \setlength{\tabcolsep}{3pt}
+-\caption{Từ điển dữ liệu tóm tắt của các nhóm bảng}
++\captionof{table}{Từ điển dữ liệu tóm tắt của các nhóm bảng}
+ \label{tbl-tu-dien-tom-tat}
+ \begin{tabular}{@{}p{2cm}p{5.5cm}p{7.5cm}@{}}
+ \toprule
+@@ -408,7 +414,7 @@
+ \end{tabular}
+ \par\vspace{4pt}
+ \parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: Lược đồ sáu CSV và tài liệu Instacart (2017).}}
+-\end{table}
++\end{minipage}
+ ```
+ 
+ Các mã định danh mang bản chất phân loại danh nghĩa (nominal) dù được biểu diễn ở dạng số nguyên. Thuộc tính `reordered` chỉ ghi nhận người dùng đã từng mua sản phẩm hay chưa, không đồng nhất với nhãn mục tiêu của bài toán gợi ý giỏ hàng. Nhóm nghiên cứu giữ nguyên mã hóa thứ 0--6 và giờ 0--23, không tự ý gán nhãn thứ khi chưa có quy ước chính thức từ nguồn.
+@@ -473,16 +479,16 @@
+ 3. **Lượt 3:** Ghép với bảng `aisles.csv` qua khóa `aisle_id` để bổ sung tên quầy kệ (`aisle`).
+ 4. **Lượt 4:** Ghép với bảng `departments.csv` qua khóa `department_id` để bổ sung tên ngành hàng (`department`).
+ 
+-Các phép nối dùng `DataFrame.merge`, tương ứng API `pd.merge` của pandas. Mỗi phép ghép dùng `how="left"` để giữ các dòng bên trái, `validate="many_to_one"` để từ chối khóa trùng ở bảng cha, `indicator=True` để kiểm tra mức khớp và `sort=False` để không sắp xếp lại khóa. Thứ tự dòng được kiểm chứng riêng bằng chuỗi cặp khóa. Phần ghép và ghi train thực hiện qua sáu khối, tối đa 250.000 dòng/khối. Tuy nhiên, chương trình còn lưu các khối trước ghi, hợp nhất thành `df_before` và đọc toàn bộ Parquet thành `df_read` để đối soát. `pd.concat(..., ignore_index=True)` hợp nhất danh sách khối orders và các khối train trước ghi; số khối orders khác số khối train. Tổng số dòng và chuỗi khóa được đối chiếu sau hợp nhất. Bước kiểm tra miền đầu vào cũng đọc toàn bảng. Vì vậy, đây là ghép/ghi theo khối kết hợp kiểm chứng toàn bảng trong RAM, không phải pipeline có bộ nhớ giới hạn ở một khối.
++Mỗi phép ghép dùng `how="left"` để giữ các dòng bên trái, `validate="many_to_one"` để từ chối khóa trùng ở bảng cha, `indicator=True` để kiểm tra mức khớp và `sort=False` để không sắp xếp lại khóa. Thứ tự dòng được kiểm chứng riêng bằng chuỗi cặp khóa. Phần ghép và ghi train thực hiện qua sáu khối, tối đa 250.000 dòng/khối. Tuy nhiên, chương trình còn lưu các khối trước ghi, hợp nhất thành `df_before` và đọc toàn bộ Parquet thành `df_read` để đối soát. Bước kiểm tra miền đầu vào cũng đọc toàn bảng. Vì vậy, đây là ghép/ghi theo khối kết hợp kiểm chứng toàn bảng trong RAM, không phải pipeline có bộ nhớ giới hạn ở một khối.
+ 
+ Trước mỗi lượt ghép, tính duy nhất và tính toàn vẹn (không chứa giá trị `null`) của khóa trên bảng bên phải được kiểm tra tiên quyết. Sau mỗi lượt ghép, thuật toán lập tức xác thực năm điều kiện: (1) biến `_merge` phải đạt 100% nhãn `both`, tuyệt đối không có dòng `left_only` (không có khóa ngoại mồ côi); (2) số dòng trước và sau ghép hoàn toàn không đổi; (3) không phát sinh các cột trùng tên ngoài dự kiến (hậu tố `_x`, `_y`); (4) chuỗi cặp khóa `(order_id, product_id)` không bị xáo trộn; (5) xóa bỏ cột `_merge` sau khi ghi nhận nhật ký kiểm toán. Toàn bộ chuỗi cặp khóa được đối chiếu xuyên suốt qua mã băm SHA-256 với giá trị ban đầu là `584d45ca6677ea0f...`.
+ 
+ ```{=latex}
+-\begin{table}[H]
++\begin{minipage}{\textwidth}
+ \centering
+ \normalsize
+ \setlength{\tabcolsep}{3pt}
+-\caption{Kiểm toán bốn phép ghép nối bảng Master}
++\captionof{table}{Kiểm toán bốn phép ghép nối bảng Master}
+ \label{tbl-join-audit}
+ \begin{tabular}{@{}p{2cm}p{3cm}rrr@{}}
+ \toprule
+@@ -496,10 +502,12 @@
+ \end{tabular}
+ \par\vspace{4pt}
+ \parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: join\_audit.csv của pipeline M1.} Cả bốn lượt bảo toàn chuỗi cặp khóa; tỷ lệ khớp là 100\%.}
+-\end{table}
++\end{minipage}
+ ```
+ 
+ Kết quả tại Bảng \ref{tbl-join-audit} khẳng định 100% bản ghi giao dịch trong tập huấn luyện đều tìm thấy thông tin tương ứng trong các bảng danh mục mà không làm thất thoát, nhân bản dòng hay xáo trộn trật tự chuỗi khóa.
++
++Các phép ghép sử dụng `DataFrame.merge` (API tương ứng `pd.merge`) với điều kiện nhiều–một và kiểm tra số dòng. `pd.concat(..., ignore_index=True)` nối các khối của cùng bảng: `orders_chunks` tạo `df_orders`, còn `chunks_before` tạo bảng đối soát `df_before`; số khối phụ thuộc kích thước khối, không đồng nhất với số tệp nguồn. Các kiểm tra bảo toàn dòng/khóa được thực hiện sau ghép; không nối prior và train theo mã sản phẩm.
+ 
+ ### Hợp đồng kiểu dữ liệu và Kiểm chứng thực nghiệm trước–sau thu hẹp kiểu
+ 
+@@ -513,14 +521,14 @@
+   * `department_id` ($[1; 21]$) nằm gọn trong giới hạn của `int8` ($-128$ đến $127$).
+ * **Xử lý thuộc tính khuyết thiếu và phân loại:** Các cột số nguyên chứa ô thiếu (`reordered`, `order_dow`, `order_hour_of_day`) được định dạng `Int8` (nullable integer của pandas) để duy trì nguyên vẹn các ô `null` mà không bị ép buộc thay thế thành số 0. Bốn biến định tính (`eval_set`, `product_name`, `aisle`, `department`) được chuyển sang `category`, giữ nguyên các giá trị thiếu thực tế (mã danh mục `-1`), tuyệt đối không chèn nhãn nhân tạo "Unknown" làm sai lệch phân phối.
+ 
+-Nhóm đối soát giá trị và mặt nạ thiếu giữa `df_before` và `df_read` trên 1.384.617 dòng, 15 cột. Kiểm tra hồi quy độc lập xác nhận phép bằng chính xác trên toàn bộ dữ liệu, bao gồm cột ngày, và xác nhận Master tạo lại tương đương Master đã lưu. Bảng \ref{tbl-master-schema} trình bày lược đồ của lượt chạy ban đầu. Cột “Sau ghép” tương ứng `raw_merged_dtype`; “Bản đối soát” tương ứng `dtype_before_write`, lấy từ bản ghép các khối; `product_name` trở về `string` khi ghép các khối có tập category khác nhau, dù từng khối được chuyển sang category trước khi ghi.
+-
+-```{=latex}
+-\begin{table}[H]
++Nhóm đối soát giá trị và mặt nạ thiếu giữa `df_before` và `df_read` trên 1.384.617 dòng, 15 cột. Cột “Sau đọc” trong bảng lược đồ tương ứng `pd.read_parquet(..., dtype_backend="numpy_nullable")`; chế độ đọc mặc định có thể trả dtype khác khi cột số nguyên có thiếu. Kiểm tra riêng hai chế độ đọc xác nhận giá trị và mặt nạ thiếu giống nhau; không dùng tên dtype đơn lẻ để kết luận dữ liệu thay đổi. Kiểm tra hồi quy độc lập xác nhận phép bằng chính xác trên toàn bộ dữ liệu, bao gồm cột ngày, và xác nhận Master tạo lại tương đương Master đã lưu. Bảng \ref{tbl-master-schema} trình bày lược đồ của lượt chạy ban đầu. Cột “Sau ghép” tương ứng `raw_merged_dtype`; “Bản đối soát” tương ứng `dtype_before_write`, lấy từ bản ghép các khối; `product_name` trở về `string` khi ghép các khối có tập category khác nhau, dù từng khối được chuyển sang category trước khi ghi.
++
++```{=latex}
++\begin{minipage}{\textwidth}
+ \centering
+ \normalsize
+ \setlength{\tabcolsep}{3pt}
+-\caption{Kiểu dữ liệu và số ô thiếu của 15 thuộc tính Master}
++\captionof{table}{Kiểu dữ liệu và số ô thiếu của 15 thuộc tính Master}
+ \label{tbl-master-schema}
+ \begin{tabular}{@{}p{4.8cm}p{2.1cm}p{2.3cm}p{2.1cm}r@{}}
+ \toprule
+@@ -544,13 +552,13 @@
+ \bottomrule
+ \end{tabular}
+ \par\vspace{4pt}
+-\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: master\_schema.csv của pipeline M1.} Số ô thiếu và vị trí thiếu trước/sau bằng nhau; cả 15 cột đạt kiểm tra bảo toàn giá trị. Bản đối soát là dữ liệu ghép các khối; cột Sau đọc dùng chế độ numpy\_nullable của pandas.}
+-\end{table}
+-```
+-
+-Toàn bộ 15/15 thuộc tính đều đạt tỷ lệ bảo toàn 100% về vị trí các ô khuyết thiếu và giá trị dữ liệu. Cột “Sau đọc” tại Bảng \ref{tbl-master-schema} dùng `pd.read_parquet` với `dtype_backend="numpy_nullable"`; G0 dùng chế độ đọc mặc định và lưu dtype thực đọc trong data contract. Khác tên dtype không tự chứng minh khác giá trị hoặc mặt nạ thiếu. Số thiếu ở mục 3.2 đếm trên dòng sản phẩm–đơn của Master train; mục 3.3 đếm trên từng bảng nguồn; mục 3.4 sẽ báo theo reference và đơn vị ghi ở mỗi bảng. Vì vậy các số đếm và tỷ lệ có mẫu số khác nhau.
+-
+-Bảng phân tích Master chính thức giữ lại 207.404 ô khuyết thiếu ở thuộc tính `product_name` và 454.974 ô khuyết thiếu ở `aisle`. Sự gia tăng số ô thiếu của `product_name` từ 6.923 bản ghi danh mục lên 207.404 dòng giao dịch phản ánh đúng thực tế một mã sản phẩm bị khuyết tên xuất hiện lặp lại trong nhiều đơn hàng khác nhau.
++\parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: master\_schema.csv của pipeline M1.} Số ô thiếu và vị trí thiếu trước/sau bằng nhau; cả 15 cột đạt kiểm tra bảo toàn giá trị. Bản đối soát là dữ liệu ghép các khối dùng để so với kết quả đọc Parquet.}
++\end{minipage}
++```
++
++Toàn bộ 15/15 thuộc tính đều đạt tỷ lệ bảo toàn 100% về vị trí các ô khuyết thiếu và giá trị dữ liệu. Bảng phân tích Master chính thức giữ lại 207.404 ô khuyết thiếu ở thuộc tính `product_name` và 454.974 ô khuyết thiếu ở `aisle`. Sự gia tăng số ô thiếu của `product_name` từ 6.923 bản ghi danh mục lên 207.404 dòng giao dịch phản ánh đúng thực tế một mã sản phẩm bị khuyết tên xuất hiện lặp lại trong nhiều đơn hàng khác nhau.
++
++Số thiếu ở mục 3.2 được đếm trên dòng sản phẩm–đơn của Master train; mục 3.3 đếm trên từng bảng nguồn. Phần thống kê 3.4 sẽ báo theo reference và cấp quan sát ghi tại mỗi bảng. Thuộc tính đơn lặp theo số sản phẩm trong Master, nên không so trực tiếp các tỷ lệ thiếu giữa ba phạm vi này. Script `m1_inspect_artifact.py` lưu `shape`, `info(memory_usage="deep")`, tỷ lệ `isna().mean()*100` và dtype của hai chế độ đọc để kiểm chứng cấu trúc; đây không phải lượt benchmark mới.
+ 
+ ### Quy trình 5 bước xuất bản và Chứng thực tệp Parquet
+ 
+@@ -582,11 +590,11 @@
+ * **Ba lượt đo:** Mỗi phép đo chạy ba lần trên Windows 11; metadata ghi CPU AMD (`AuthenticAMD`, 8 nhân vật lý/16 luồng) và tổng RAM 23,31 GiB được hệ thống nhận diện, máy có RAM danh định 24 GB. Bảng báo trung vị; kết quả phản ánh môi trường warm-cache, không phải tốc độ đọc từ thiết bị trong điều kiện cold-cache.
+ 
+ ```{=latex}
+-\begin{table}[H]
++\begin{minipage}{\textwidth}
+ \centering
+ \normalsize
+ \setlength{\tabcolsep}{3pt}
+-\caption{Hiệu năng bộ nhớ và lưu trữ: trung vị ba lượt đo}
++\captionof{table}{Hiệu năng bộ nhớ và lưu trữ: trung vị ba lượt đo}
+ \label{tbl-data-benchmark}
+ \begin{tabular}{@{}p{5cm}rrrr@{}}
+ \toprule
+@@ -609,7 +617,7 @@
+ \end{tabular}
+ \par\vspace{4pt}
+ \parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: data\_benchmark.csv của script m1\_benchmark.py.} RAM DF, RSS đỉnh và dung lượng đĩa tính bằng MiB; thời gian tính bằng giây. Baseline rộng là hồ sơ bộ nhớ tĩnh được dựng lại.}
+-\end{table}
++\end{minipage}
+ ```
+ 
+ Phân tích kết quả thực nghiệm tại Bảng \ref{tbl-data-benchmark} mang lại các kết luận kỹ thuật quan trọng:
+@@ -641,20 +649,20 @@
+ 5. **Không tự động xóa ngoại lai bằng ngưỡng thống kê đơn lẻ:** Các giỏ hàng lớn và vị trí sản phẩm bất thường được kiểm tra theo các ràng buộc cấu trúc; kiểm tra này không xác minh toàn bộ hành vi mua sắm thực tế. Nhóm không sử dụng quy tắc biên IQR hay độ lệch chuẩn làm căn cứ duy nhất để loại bỏ giao dịch hợp lệ.
+ 6. **Bảo toàn nguyên vẹn lược đồ (schema) của sáu tệp CSV sạch:** Toàn bộ kết quả kiểm toán, cờ cảnh báo và chỉ số kiểm tra được lưu trữ trong báo cáo chất lượng độc lập; tuyệt đối không tự ý bổ sung các cột phụ (như `is_outlier_cart_pos`) vào sáu tệp CSV sạch đầu ra nhằm bảo đảm tính tương thích với mọi hệ thống hạ tầng tiếp nhận.
+ 
+-Quyết định giữ thiếu được áp dụng theo phạm vi: tên sản phẩm/quầy giữ NA để bảo toàn mã và liên kết; giờ, mã ngày và cờ mua lại không hợp lệ giữ NA vì thiếu căn cứ khôi phục; khoảng cách ngày ở đơn đầu là thiếu có cấu trúc, còn các đơn sau giữ thiếu khi mất thông tin. Không điền mean/mode vào sáu CSV sạch vì sẽ bổ sung giá trị không quan sát và thay đổi phân phối. Nhãn ngành `missing` là nhãn nguồn; “Chưa có tên (ID=...)” chỉ là cách hiển thị. Nếu classifier cần điền thiếu, tham số điền chỉ học trên classifier fit.
++**Quyết định xử lý thiếu theo vai trò thuộc tính.** Khóa thiếu hoặc mâu thuẫn làm dừng kiểm chứng, không sinh mã thay thế. Khoảng cách trước đơn đầu giữ NA vì không áp dụng; các giá trị hành vi chưa xác định được cũng giữ NA, không điền mean/mode làm thay đổi phân phối. Tên sản phẩm thiếu vẫn giữ mã và giao dịch; khi trình bày có thể dùng nhãn “Chưa có tên (ID=...)” ở lớp báo cáo, không ghi đè CSV. Nhãn ngành `missing` có sẵn là giá trị nguồn, không phải nhãn mới do điền khuyết. Nếu classifier cần imputation, tham số điền chỉ được học trên classifier_fit, không trên validation/test.
+ 
+ ### Phân loại các vấn đề chất lượng dữ liệu
+ 
+-Từ các báo cáo kiểm kê dữ liệu, kiểm tra khóa và đối chiếu với tập chuẩn, các khiếm khuyết trên tập dữ liệu thô được quy hoạch thành bốn nhóm bệnh lý chính: (i) lỗi bề mặt định dạng như khoảng trắng thừa (`" 1"`, `"banana "`) và sai lệch kiểu ký tự; (ii) giá trị thiếu chuẩn hoặc token chuỗi giả lập thiếu; (iii) giá trị vi phạm miền hợp lệ (số âm, chuỗi kèm đơn vị đo); và (iv) mâu thuẫn về trình tự logic hoặc phân vùng nghiệp vụ. Các số liệu được nêu dưới đây là **số lượng phát hiện kiểm toán trên tập đầu vào nhiễu**, làm cơ sở định lượng quy mô thách thức cần xử lý.
++Từ các báo cáo kiểm kê dữ liệu, kiểm tra khóa và đối chiếu với tập chuẩn, các khiếm khuyết trên tập dữ liệu thô được quy hoạch thành bốn nhóm vấn đề chính: (i) lỗi bề mặt định dạng như khoảng trắng thừa (`" 1"`, `"banana "`) và sai lệch kiểu ký tự; (ii) giá trị thiếu chuẩn hoặc token chuỗi giả lập thiếu; (iii) giá trị vi phạm miền hợp lệ (số âm, chuỗi kèm đơn vị đo); và (iv) mâu thuẫn về trình tự logic hoặc phân vùng nghiệp vụ. Các số liệu được nêu dưới đây là **số lượng phát hiện kiểm toán trên tập đầu vào nhiễu**, làm cơ sở định lượng quy mô thách thức cần xử lý.
+ 
+ ### Làm sạch bảng `orders`
+ 
+ Bảng `orders` giữ vai trò bảng điều phối trung tâm, ghi nhận thông tin thời gian và định danh cho 3.421.083 đơn hàng của 206.209 người dùng khác nhau. Đây là bảng chịu mức độ nhiễu loạn phức tạp nhất, được xử lý qua từng lớp thuộc tính:
+ 
+ * **Chuẩn hóa khóa định danh:** Toàn bộ khoảng trắng đầu/cuối được làm sạch khỏi `order_id` và `user_id` trước khi thiết lập quan hệ liên kết. Sau chuẩn hóa, thuật toán xác nhận khóa chính `order_id` đạt tính duy nhất tuyệt đối ($100\%$).
+-* **Khôi phục nhãn phân vùng `eval_set`:** Parser cleaning ghi nhận 314.925 token thiếu (`missing_token`) và 498.404 nhãn không hợp lệ (`invalid_label`), tổng cộng **813.329 ô không dùng được sau parse ban đầu**. Hai nhóm loại trừ nhau theo trạng thái trong `cleaning_summary.csv`; tổng khớp cột `unusable_after_initial_parse` của `before_after.csv`. Nhóm áp dụng thuật toán xác định tư cách thành viên (*membership verification*): các mã đơn xuất hiện trong `order_products__prior` được khôi phục chính xác về nhãn `prior` (3.214.874 đơn); các mã đơn xuất hiện trong `order_products__train` được khôi phục về nhãn `train` (131.209 đơn). Đúng 75.000 đơn hàng không thuộc hai bảng chi tiết trên được định danh là phân vùng `test` sau khi kiểm chứng chặt chẽ tính độc lập và toàn vẹn của phân hoạch. Thuật toán không gán nhãn `test` tùy tiện chỉ dựa trên trạng thái thiếu.
++* **Khôi phục nhãn phân vùng `eval_set`:** Parser cleaning ghi nhận 314.925 token thiếu (`missing_token`) và 498.404 nhãn không hợp lệ (`invalid_label`), tổng cộng **813.329 ô không dùng được sau parse ban đầu**. Hai nhóm loại trừ nhau theo trạng thái trong `cleaning_summary.csv`; tổng khớp cột `unusable_after_initial_parse` của `before_after.csv`. Nhóm áp dụng thuật toán xác định tư cách thành viên (*membership verification*): các mã đơn xuất hiện trong `order_products__prior` được xác định thuộc phân vùng `prior` (tổng cộng 3.214.874 đơn); các mã đơn xuất hiện trong `order_products__train` thuộc phân vùng `train` (tổng cộng 131.209 đơn). Đây là quy mô phân vùng sau xử lý, không phải số nhãn được sửa. Hồ sơ `relational_summary.csv` ghi nhận 764.250 nhãn được khôi phục về `prior`, 31.140 về `train` và 17.939 được suy ra là `test`, tổng cộng 813.329 nhãn. Đúng 75.000 đơn hàng không thuộc hai bảng chi tiết trên được định danh là phân vùng `test` sau khi kiểm chứng chặt chẽ tính độc lập và toàn vẹn của phân hoạch. Thuật toán không gán nhãn `test` tùy tiện chỉ dựa trên trạng thái thiếu.
+ * **Xử lý số thứ tự đơn hàng `order_number`:** Biến ghi số thứ tự đơn hàng, bắt đầu từ 1. Đầu vào chứa 798.715 token thiếu và tổng cộng 1.233.938 ô không thể sử dụng trực tiếp sau parse ban đầu. Nhóm áp dụng quy trình tái dựng dựa trên thứ tự bản ghi tương đối của từng người dùng theo giả định kỹ thuật rằng thứ tự dòng trong tệp nguồn được bảo tồn. Để kiểm soát an toàn dữ liệu, hàm xử lý thiết lập cơ chế kiểm tra ngắt quãng: nếu phát hiện một nhóm người dùng bị xuất hiện lặp lại ngắt quãng hoặc vượt giới hạn biên cho phép, pipeline sẽ ném ngoại lệ dừng thực thi (`raise ValueError`) chứ không âm thầm gán thiếu để lướt qua lỗi. Kết quả kiểm toán thực tế xác nhận toàn bộ 3.421.083 đơn hàng đều vượt qua cổng kiểm soát và được tái dựng thành chuỗi liên tục bắt đầu từ 1.
+-* **Kiểm tra miền giá trị `order_dow` và `order_hour_of_day`:** Miền hợp lệ được chốt nghiêm ngặt: thứ trong tuần $\in [0, 6]$ và giờ trong ngày $\in [0, 23]$. Khi gặp các chuỗi ký tự bất thường kèm hậu tố lạ như `"2 %"`, mã nguồn hiện hành không tự ý bóc tách phần số nhằm tránh nguy cơ suy đoán sai lệch bản chất dữ liệu; thay vào đó, hệ thống đánh dấu cờ cảnh báo `suffix_unresolved` và chuyển thành giá trị khuyết thiếu chuẩn (`pd.NA`). Chỉ các giá trị sau khi chuẩn hóa chuỗi và ép kiểu số nguyên nằm trọn vẹn trong miền hợp lệ mới được nghiệm thu (2.455.802 ô hợp lệ ở `order_dow` và 2.865.536 ô ở `order_hour_of_day`). Biến `order_dow` được giữ nguyên mã số nguyên, không tự ý gán nhãn ngày tháng cụ thể khi chưa có quy chuẩn xác minh từ nhà cung cấp dữ liệu. Không áp dụng `pd.to_datetime` cho các mã này vì dữ liệu không cung cấp ngày lịch; chuyển mã ngày hoặc giờ thành ngày giả sẽ làm sai ý nghĩa.
++* **Kiểm tra miền giá trị `order_dow` và `order_hour_of_day`:** Miền hợp lệ được chốt nghiêm ngặt: thứ trong tuần $\in [0, 6]$ và giờ trong ngày $\in [0, 23]$. Khi gặp các chuỗi ký tự bất thường kèm hậu tố lạ như `"2 %"`, mã nguồn hiện hành không tự ý bóc tách phần số nhằm tránh nguy cơ suy đoán sai lệch bản chất dữ liệu; thay vào đó, hệ thống đánh dấu cờ cảnh báo `suffix_unresolved` và chuyển thành giá trị khuyết thiếu chuẩn (`pd.NA`). Chỉ các giá trị sau khi chuẩn hóa chuỗi và ép kiểu số nguyên nằm trọn vẹn trong miền hợp lệ mới được nghiệm thu (2.455.802 ô hợp lệ ở `order_dow` và 2.865.536 ô ở `order_hour_of_day`). Biến `order_dow` được giữ nguyên mã số nguyên, không tự ý gán nhãn ngày tháng cụ thể khi chưa có quy chuẩn xác minh từ nhà cung cấp dữ liệu. Không áp dụng `pd.to_datetime` cho mã ngày 0–6 hoặc giờ 0–23: dữ liệu không có ngày lịch, tháng và năm đủ để tạo mốc thời gian; chuyển chúng thành ngày giả sẽ làm sai ý nghĩa.
+ * **Xử lý khoảng cách giữa các đơn hàng `days_since_prior_order`:** Kiểm kê đầu vào ghi nhận 753.252 ô thiếu. Về mặt bản chất nghiệp vụ, biến này không áp dụng cho đơn hàng đầu tiên của mỗi người dùng ($order\_number = 1$, chiếm đúng 206.209 bản ghi), do đó bắt buộc phải giữ nguyên giá trị `NA`, tuyệt đối không điền giá trị 0 (vì 0 mang ngữ nghĩa đặt hàng lại ngay trong cùng ngày) hoặc điền trung bình. Đối với 547.043 đơn hàng tiếp theo bị mất thông tin do nhiễu mà không thể suy luận chắc chắn từ dữ liệu thời gian khác, nhóm bảo toàn trạng thái thiếu và ghi nhận giới hạn này vào báo cáo kiểm toán.
+ 
+ ### Làm sạch bảng `products`
+@@ -667,15 +675,15 @@
+ 
+ Hai bảng danh mục quầy kệ (`aisles` - 134 dòng) và ngành hàng (`departments` - 21 dòng) được làm sạch khoảng trắng trên cả khóa chính và tên hiển thị. Tại bảng `aisles`, 40 token thiếu được chuẩn hóa về `NA` (tương ứng tỷ lệ thiếu 29,85%). Nhóm đặc biệt lưu ý không chuyển đổi chuỗi có nội dung literal `"missing"` thành giá trị `null` một cách tùy tiện, vì đây là nhãn danh mục thực tế của bộ dữ liệu Instacart; việc hiển thị thành "Chưa xác định" chỉ được thực hiện ở lớp báo cáo, không làm sai lệch ngữ nghĩa trường dữ liệu nguồn.
+ 
+-### Làm sạch hai bảng chi tiết giao dịch
+-
+-Kiểm tra `duplicated()` không phát hiện khóa giao dịch trùng trong đầu ra nghiệm thu, nên số giao dịch bị xóa vì trùng là 0; pipeline dừng nếu gặp khóa trùng thay vì tự xóa dòng có thuộc tính mâu thuẫn. Ở G0, `drop_duplicates()` trên cặp người–đơn dùng tạo bảng định danh, không phải xóa giao dịch trùng. `DataFrame.join` gắn thuộc tính đơn đã xác minh vào bảng cấp giỏ theo chỉ mục khóa, với kiểm tra một–một.
++### Làm sạch hai bảng chi tiết prior và train
+ 
+ Hai bảng chi tiết giao dịch phản ánh cấu trúc giỏ hàng thực tế thông qua khóa ghép `(order_id, product_id)`. Báo cáo kiểm toán xác nhận sau khi chuẩn hóa định dạng mã, không phát sinh bất kỳ bản ghi trùng lặp nào trên cặp khóa chính này.
+ 
+ * **Xử lý thuộc tính vị trí nhặt hàng `add_to_cart_order`:** Thuộc tính này là số nguyên dương ($\ge 1$). Đầu vào `prior` chứa 3.223.158 token thiếu và 6.005.160 ô không dùng được sau parse ban đầu; đầu vào `train` có tương ứng 348.739 token thiếu và 525.773 ô không dùng được sau parse ban đầu. Một giá trị như `9999` vẫn có thể qua kiểm tra số nguyên dương ban đầu nhưng không phù hợp vị trí trong giỏ; vì vậy không đồng nhất lỗi vị trí với số ô không dùng được sau parse. Bước tái dựng đối chiếu cả giá trị đã parse: sửa 762.067 vị trí quan sát được ở prior và 67.880 ở train theo giả định thứ tự dòng, ngoài các ô được điền sau parse. Các số này được ghi riêng trong `relational_summary.csv`. Quy trình tái dựng vị trí nhặt hàng được triển khai tuần tự theo thứ tự dòng bản ghi liên tục của từng mã đơn hàng. Kích thước giỏ hàng lớn nhất quan sát được là 145 sản phẩm ở `prior` và 80 sản phẩm ở `train`; không phát hiện vi phạm các ràng buộc cấu trúc đã kiểm tra ở các giỏ này. Nhóm giữ nguyên thành phần giỏ vì kích thước lớn tự nó chưa đủ chứng minh lỗi ghi nhận.
+ * **Xử lý cờ mua lại `reordered`:** Biến nhận giá trị nhị phân $\{0, 1\}$. Đầu vào `prior` ghi nhận 5.438.428 token thiếu và 9.049.308 ô không dùng được sau parse ban đầu; bảng `train` ghi nhận tương ứng 211.571 token thiếu và 420.771 ô không dùng được sau parse ban đầu. Các giá trị hợp lệ 0 và 1 được bảo tồn; các giá trị âm hoặc chuỗi kèm đơn vị đo không rõ nguồn gốc (như `"1 kg"`, `"0 USD"`) được hệ thống đánh dấu và chuyển thành giá trị thiếu chuẩn (`pd.NA`). Do `reordered` không phải nhãn mục tiêu của bài toán hoàn thiện giỏ hàng trong đề tài, việc khuyết thiếu ở biến này không dẫn đến việc loại bỏ dòng giao dịch tương ứng.
+ 
++Kiểm tra `duplicated(["order_id", "product_id"])` không phát hiện khóa giao dịch trùng trong đầu ra nghiệm thu, nên số dòng giao dịch bị xóa vì trùng là 0. Pipeline dừng khi phát hiện vi phạm khóa thay vì tự chọn một dòng bằng `drop_duplicates`. Ở G0, `drop_duplicates` trên cặp `(user_id, order_id)` tạo bảng người–giỏ phục vụ kiểm tra phân hoạch; đó là thay đổi cấp biểu diễn, không phải loại giao dịch lỗi. Hai thao tác được phân biệt trong hồ sơ.
++
+ ### Kiểm tra tính nhất quán của lịch sử đơn hàng
+ 
+ Báo cáo kiểm toán chuỗi đơn hàng ban đầu ghi nhận 189.577 người dùng có chuỗi `order_number` bị đứt đoạn hoặc thiếu điểm xuất phát. Nhóm nhấn mạnh đây là **kết quả kiểm toán trực tiếp trên tập dữ liệu đầu vào nhiễu** khi tồn tại nhiều giá trị âm, rác và khuyết thiếu chưa qua xử lý, chứ chưa đủ bằng chứng khẳng định nguyên nhân là do cắt cụt lịch sử tự nhiên. 
+@@ -684,14 +692,14 @@
+ 
+ ### Tổng hợp quy tắc làm sạch và Đối soát thực chứng Trước --- Sau
+ 
+-Nhằm minh chứng năng lực kiểm soát dữ liệu bài bản và đáp ứng yêu cầu thẩm định thực nghiệm của Rubric Trụ cột II, @tbl-dq-rules tổng hợp toàn bộ quy tắc kỹ thuật và điều kiện nghiệm thu trên sáu bảng, trong khi @tbl-dq-before-after công bố số liệu đối soát định lượng Before -- After thực tế được trích xuất trực tiếp từ tệp kiểm toán chuẩn `before_after.csv`.
+-
+-```{=latex}
+-\begin{table}[H]
++Nhằm minh chứng năng lực kiểm soát dữ liệu bài bản và đáp ứng yêu cầu thẩm định thực nghiệm của Rubric Trụ cột II, Bảng \ref{tbl-dq-rules} tổng hợp toàn bộ quy tắc kỹ thuật và điều kiện nghiệm thu trên sáu bảng, trong khi Bảng \ref{tbl-dq-before-after} công bố số liệu đối soát định lượng Before -- After thực tế được trích xuất trực tiếp từ tệp kiểm toán chuẩn `before_after.csv`.
++
++```{=latex}
++\begin{minipage}{\textwidth}
+ \centering
+ \normalsize
+ \setlength{\tabcolsep}{4pt}
+-\caption{Quy tắc xử lý và kiểm chứng chất lượng sáu bảng nguồn}
++\captionof{table}{Quy tắc xử lý và kiểm chứng chất lượng sáu bảng nguồn}
+ \label{tbl-dq-rules}
+ \begin{tabular}{@{}p{2cm}p{5.7cm}p{7.3cm}@{}}
+ \toprule
+@@ -712,17 +720,17 @@
+ \end{tabular}
+ \par\vspace{4pt}
+ \parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: Hồ sơ kiểm toán cleaning: before\_after.csv, relational\_summary.csv và verification.json.}}
+-\end{table}
++\end{minipage}
+ ```
+ 
+ Quầy, Ngành, Sản phẩm, Đơn hàng lần lượt là `aisles`, `departments`, `products`, `orders`; hai bảng chi tiết là `order_products__prior` và `order_products__train`.
+ 
+ ```{=latex}
+-\begin{table}[H]
++\begin{minipage}{\textwidth}
+ \centering
+ \normalsize
+ \setlength{\tabcolsep}{4pt}
+-\caption{Đối soát thiếu và giá trị không dùng được trước--sau xử lý}
++\captionof{table}{Đối soát thiếu và giá trị không dùng được trước--sau xử lý}
+ \label{tbl-dq-before-after}
+ \begin{tabular}{@{}p{4.5cm}rrrr@{}}
+ \toprule
+@@ -744,11 +752,7 @@
+ \end{tabular}
+ \par\vspace{4pt}
+ \parbox{\textwidth}{\raggedright\normalsize\textit{Nguồn: before\_after.csv; tỷ lệ được tính trong missingness\_summary.csv bằng script kiểm toán bổ trợ.}}
+-\end{table}
+-```
+-
+-```{=latex}
+-\clearpage
++\end{minipage}
+ ```
+ 
+ “Thiếu đầu” là số token thiếu theo parser. “K.dùng đầu” là `unusable_after_initial_parse`, gồm cả thiếu, sai định dạng, hậu tố chưa phân giải, ngoài miền và nhãn không hợp lệ; không cộng cột này với “Thiếu đầu”. “Tỷ lệ” là số ô thiếu cuối chia tổng dòng bảng nguồn. CSV bổ trợ lưu cả tỷ lệ thiếu đầu và cuối cho mọi cột; các cột khóa không liệt kê trong bảng đều có tỷ lệ thiếu cuối bằng 0.
+@@ -761,8 +765,6 @@
+ 
+ Script kiểm toán bổ trợ `m1_quality_summary.py` nằm trong thư mục `scripts/`. Kết quả được lưu trong báo cáo `basket_quality_summary.json`, kèm hash Master, phiên bản thư viện và quy tắc phân vị. Đây là kiểm toán chất lượng toàn bảng, không dùng ngưỡng IQR này để chọn đặc trưng, lọc mẫu hay điều chỉnh mô hình. EDA định hướng mô hình ở mục 3.4--3.6 chỉ thực hiện trên reference sau chia tập. Việc tái dựng vị trí sản phẩm và giữ giỏ lớn không làm thay đổi tập sản phẩm của giỏ.
+ 
+-Kiểm tra bổ trợ dùng `df.shape`, `df.info(memory_usage="deep")` và `df.isna().mean()*100` để lưu quy mô, bộ nhớ và tỷ lệ thiếu. Script `m2_profile_inputs.py` tách báo cáo thiếu cấp dòng Master khỏi cấp giỏ reference, đồng thời xuất `describe()` trên các biến định lượng của bảng giỏ. Đây là dấu vết kiểm tra đầu vào, chưa thay thế thống kê, hình và insight hoàn chỉnh của mục 3.4–3.6.
+-
+ ### Đóng gói dữ liệu sạch và Kiểm soát khả năng tái lập
+ 
+ Toàn bộ quy trình làm sạch được đóng gói thành các module thực thi tự động trong thư mục `scripts/cleaning/`, xử lý luồng dữ liệu lớn theo khối (`chunksize = 250.000`) để giảm lượng dữ liệu nạp mỗi lần; các cấu trúc tra cứu vẫn chiếm RAM và các kiểm tra quan hệ dùng SQLite trên đĩa. Kết quả xuất bản gồm đúng sáu tệp CSV sạch độc lập đặt tại `Data đã làm sạch/`, duy trì lược đồ nguyên bản và cấu trúc giao dịch gốc.
+@@ -779,7 +781,7 @@
+ 
+ ## Trực quan hóa dữ liệu và Phát hiện Insight kinh doanh
+ 
+-[Chờ hình và insight từ reference sau khi hai nhánh EDA được nghiệm thu; không sử dụng hình giả lập.]
++Phần này chờ hình và insight định lượng từ reference sau khi các nhánh EDA được nghiệm thu. Hình thử font và dữ liệu giả lập không được dùng làm kết quả nghiên cứu.
+ 
+ ## Kiểm định giả thuyết thống kê sơ bộ
+ 
+@@ -847,8 +849,8 @@
+ 
+ # TOÀN VĂN MÃ NGUỒN PYTHON SẠCH THEO CHUẨN PEP 8
+ 
+-[Phụ lục toàn văn mã nguồn sẽ được xuất từ code thực tế sau khi hoàn tất các chương còn lại và chạy lint. Bản làm việc hiện tại chưa phải hồ sơ nộp hoàn chỉnh.]
++Phụ lục toàn văn mã nguồn chưa hoàn tất vì các giai đoạn EDA và mô hình còn đang phát triển. Danh mục API và nơi triển khai hiện hành được lưu trong `Chung/Hướng dẫn chung/DOI_CHIEU_API.md`. Mã nguồn thực tế đi cùng workspace; danh mục này không thay thế yêu cầu đưa toàn văn code vào phụ lục khi nộp. Không sử dụng code minh họa như kết quả triển khai.
+ 
+ # NHẬT KÝ LÀM VIỆC VỚI ANTIGRAVITY IDE
+ 
+-Nhật ký chuẩn đặt tại gốc workspace TLCK, ghi đúng công cụ thực tế (bao gồm Codex khi được sử dụng), không gán mọi thao tác cho Antigravity hoặc cho từng sinh viên khi chưa xác nhận. Khi đóng gói hồ sơ nộp phải giữ nhật ký tại gốc và bổ sung trích xuất các phiên thực tế vào phụ lục này; không dùng đường dẫn ngoài thay cho trích xuất bắt buộc.
++Nhật ký đầy đủ được lưu tại gốc project, ghi theo từng phiên và công cụ thực tế. Trích phiên 29/10/2026 của Phong: yêu cầu tiếp nhận gói chung và sửa các vấn đề trước 3.4; Codex hỗ trợ đối chiếu hash, sửa cổng kiểm chứng G0, cấu hình và render. Phần bóc tách xác định rủi ro trạng thái kiểm chứng cũ; phần thử lỗi dùng fixture để thay acceptance, config, output, môi trường và mô phỏng phiên bị ngắt; phần nghiệm thu lưu kết quả kiểm thử và hồ sơ lượt chạy riêng. Phiên này không được ghi thành công việc G0 lịch sử của Vương. Các kết quả EDA và mô hình chưa chạy vẫn được ghi là còn chờ.

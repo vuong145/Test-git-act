@@ -1,0 +1,43 @@
+test_catalog_rank_ties_and_denominator (test_m4_data.CatalogAndRulesTests.test_catalog_rank_ties_and_denominator) ... ok
+test_empty_rows_kept_and_algorithms_agree (test_m4_data.CatalogAndRulesTests.test_empty_rows_kept_and_algorithms_agree) ... ok
+test_support_gap_detects_small_difference_and_missing_itemset (test_m4_data.CatalogAndRulesTests.test_support_gap_detects_small_difference_and_missing_itemset) ... ok
+test_worst_gap_checks_every_run_not_only_the_first (test_m4_data.CatalogAndRulesTests.test_worst_gap_checks_every_run_not_only_the_first) ... ok
+test_hidden_items_do_not_change_features (test_m4_data.FeatureTests.test_hidden_items_do_not_change_features) ... ok
+test_metrics_by_hand_and_empty_candidates (test_m4_data.FeatureTests.test_metrics_by_hand_and_empty_candidates) ... ok
+test_negative_sampling_keeps_positives (test_m4_data.FeatureTests.test_negative_sampling_keeps_positives) ... ok
+test_rule_features_by_hand_and_no_rule_is_zero (test_m4_data.FeatureTests.test_rule_features_by_hand_and_no_rule_is_zero) ... ok
+test_ties_break_by_product_id (test_m4_data.FeatureTests.test_ties_break_by_product_id) ... ok
+test_rule_metrics_by_hand (test_m4_data.MaskConfigTests.test_rule_metrics_by_hand) ... ok
+test_stored_mask_must_match_config (test_m4_data.MaskConfigTests.test_stored_mask_must_match_config) ... ok
+test_hidden_count_and_partition (test_m4_data.MaskTests.test_hidden_count_and_partition) ... ok
+test_same_seed_and_order_same_mask (test_m4_data.MaskTests.test_same_seed_and_order_same_mask) ... ok
+test_synthetic_mining_and_classifier_pipeline (test_m4_environment.M4EnvironmentTests.test_synthetic_mining_and_classifier_pipeline)
+Thu vien khai pha, tien xu ly va hai classifier chay tren fixture. ... ok
+test_lock_rejects_tampering_missing_approval_and_repeat (test_m4_gate.GateTests.test_lock_rejects_tampering_missing_approval_and_repeat) ... ok
+test_synthetic_scoring_outputs_and_primary_self_comparison (test_m4_gate.GateTests.test_synthetic_scoring_outputs_and_primary_self_comparison) ... ok
+test_coefficients_reconstruct_log_odds (test_m4_interpret.InterpretTests.test_coefficients_reconstruct_log_odds) ... ok
+test_importance_reproducible_and_model_unchanged (test_m4_interpret.InterpretTests.test_importance_reproducible_and_model_unchanged) ... ok
+test_reject_one_class_importance (test_m4_interpret.InterpretTests.test_reject_one_class_importance) ... ok
+test_sampling_keeps_whole_baskets (test_m4_interpret.InterpretTests.test_sampling_keeps_whole_baskets) ... ok
+test_ablation_columns (test_m4_model.ModelTests.test_ablation_columns) ... ok
+test_bootstrap_matches_seeded_reference (test_m4_model.ModelTests.test_bootstrap_matches_seeded_reference) ... ok
+test_bootstrap_pairing_and_edges (test_m4_model.ModelTests.test_bootstrap_pairing_and_edges) ... ok
+test_f1_threshold_exhaustive (test_m4_model.ModelTests.test_f1_threshold_exhaustive) ... ok
+test_grid_selects_fastest_within_tolerance (test_m4_model.ModelTests.test_grid_selects_fastest_within_tolerance) ... ok
+test_metrics_by_hand (test_m4_model.ModelTests.test_metrics_by_hand) ... ok
+test_preprocessing_fit_only_and_unknown_category (test_m4_model.ModelTests.test_preprocessing_fit_only_and_unknown_category) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 2.190s
+
+OK
+            P@5   R@5  P@10  R@10  HR@10  R@10_ceiling
+method                                                
+Popularity  0.2  0.75   0.1  0.75    1.0          0.75
+Rules       0.2  0.75   0.1  0.75    1.0          0.75
+LR          0.2  0.75   0.1  0.75    1.0          0.75
+RF          0.2  0.75   0.1  0.75    1.0          0.75 
+     method   baseline  n_users  repeats  seed  difference  ci_low  ci_high  improved  primary
+Popularity Popularity        2       20    42         0.0     0.0      0.0     False     True
+Popularity      Rules        2       20    42         0.0     0.0      0.0     False    False
+        LR         RF        2       20    42         0.0     0.0      0.0     False    False

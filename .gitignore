@@ -1,0 +1,17 @@
+# Dữ liệu (khoảng 1,46 GiB) nộp riêng qua Google Drive; danh sách SHA-256 ở DATA_SHA256.txt
+/DATA/
+
+# Môi trường Python và bộ đệm
+.venv*/
+__pycache__/
+*.pyc
+.mplcache/
+
+# Tệp sinh khi render PDF hoặc chạy thử
+*.build.pdf
+*.tex
+.quarto/
+/BAO CAO/Bao cao lam sach/logs/render_pdf.log
+pilot/
+/output/
+/thu_validation/

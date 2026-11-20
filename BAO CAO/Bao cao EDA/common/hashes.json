@@ -1,0 +1,54 @@
+{
+  "files": {
+    "DATA/Data đã làm sạch/master_train.parquet": "2741c97001e6588a565c8e81771c9fb3e1e3c5edc9018dfeed879eb600473935",
+    "DATA/Data phai sinh/M2/split_manifest.parquet": "2d6106e5c722b509bb13adb6fde7b16189322f0bca6a4339552d771fb3b6c4e9",
+    "DATA/Data phai sinh/M2/reference.parquet": "708345868d6981cfec99791acfe74a51bd730b39d146174fedcaabc415ebddc0",
+    "DATA/Data phai sinh/M2/basket_summary.parquet": "acb8519c6228607b9931276fcc3f7b01cff6a8c5830a0c66c751b8c391307809",
+    "DATA/Data phai sinh/M2/department_lookup.csv": "e6829cea3da95ec22eeb4e0294094a68b929f3bcfda48fdd7d1e33403110fc43",
+    "configs/hypotheses_config.json": "468fe9e5dd7c3b105ec1c26d406b22932bcbf99c24aebac5163fda1a52aaa258"
+  },
+  "counts": {
+    "master_rows": 1384617,
+    "users": 131209,
+    "reference_rows": 415053,
+    "split_users": {
+      "fit": 39363,
+      "reference": 39363,
+      "test": 26242,
+      "validation": 26241
+    },
+    "reference_baskets": 39363,
+    "reference_users": 39363,
+    "departments": 21
+  },
+  "canonical_split_sha256": "7f8017d16d1ff27e2cfe83c1bd12e1cf33d144bef4fc86953b83e72d28671a13",
+  "reference_dtypes": {
+    "order_id": "int32",
+    "product_id": "int32",
+    "add_to_cart_order": "int16",
+    "reordered": "float64",
+    "user_id": "int32",
+    "eval_set": "category",
+    "order_number": "int16",
+    "order_dow": "float64",
+    "order_hour_of_day": "float64",
+    "days_since_prior_order": "float32",
+    "product_name": "category",
+    "aisle_id": "int16",
+    "department_id": "int8",
+    "aisle": "category",
+    "department": "category"
+  },
+  "basket_dtypes": {
+    "order_id": "int32",
+    "basket_size": "int64",
+    "n_departments": "int64",
+    "n_aisles": "int64",
+    "user_id": "int32",
+    "order_dow": "float64",
+    "order_hour_of_day": "float64",
+    "days_since_prior_order": "float32",
+    "hour_band": "category"
+  },
+  "parquet_reader": "pd.read_parquet mặc định, không đổi dtype_backend"
+}

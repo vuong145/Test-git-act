@@ -1,0 +1,71 @@
+{
+  "check": "03_foreign_keys",
+  "status": "completed",
+  "scope": "all CSV records; no sampling",
+  "results": {
+    "aisles": {
+      "valid_rows": 134,
+      "distinct_ids": 134,
+      "duplicate_extra_primary_keys": 0
+    },
+    "departments": {
+      "valid_rows": 21,
+      "distinct_ids": 21,
+      "duplicate_extra_primary_keys": 0
+    },
+    "products": {
+      "valid_rows": 49688,
+      "aisle_id_matched": 49688,
+      "department_id_matched": 49688,
+      "distinct_ids": 49688,
+      "duplicate_extra_primary_keys": 0
+    },
+    "orders": {
+      "rows": 3421083
+    },
+    "prior": {
+      "rows": 32434489,
+      "order_matched": 32434489,
+      "product_matched": 32434489,
+      "eval_set_mismatch": 12019100,
+      "rows_with_both_parents": 32434489,
+      "examples_missing_parent": []
+    },
+    "train": {
+      "rows": 1384617,
+      "order_matched": 1384617,
+      "product_matched": 1384617,
+      "rows_with_both_parents": 1384617,
+      "eval_set_mismatch": 513961,
+      "examples_missing_parent": []
+    },
+    "note": "Unmatched means absent from supplied files, not necessarily absent from the full source. Duplicate order IDs stop this check; resolve check 02 first. Parent uniqueness is audited in check 02."
+  },
+  "input_files": {
+    "aisles": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương1.csv",
+      "bytes": 2316
+    },
+    "departments": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương2.csv",
+      "bytes": 277
+    },
+    "products": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương6.csv",
+      "bytes": 2022747
+    },
+    "orders": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương5.csv",
+      "bytes": 113084083
+    },
+    "order_products__prior": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương3.csv",
+      "bytes": 614106632
+    },
+    "order_products__train": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương4.csv",
+      "bytes": 26763333
+    }
+  },
+  "seconds": 774.67
+}

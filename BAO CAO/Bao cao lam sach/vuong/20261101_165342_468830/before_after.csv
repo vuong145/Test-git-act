@@ -1,0 +1,9 @@
+﻿table,column,missing_tokens_before,unusable_after_initial_parse,missing_final,nonmissing_final
+aisles,aisle_id,0,0,0,134
+aisles,aisle,40,40,40,94
+departments,department_id,0,0,0,21
+departments,department,0,0,0,21
+order_products__prior,order_id,0,0,0,32434489
+order_products__prior,product_id,0,0,0,32434489
+order_products__prior,add_to_cart_order,3223158,6005160,0,32434489
+order_products__prior,reordered,5438428,9049308,9049308,23385181

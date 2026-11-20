@@ -1,0 +1,17 @@
+﻿table,column,status,cells
+aisles,aisle,missing,40
+aisles,aisle,nonmissing,94
+aisles,aisle_id,missing,0
+aisles,aisle_id,nonmissing,134
+departments,department,missing,0
+departments,department,nonmissing,21
+departments,department_id,missing,0
+departments,department_id,nonmissing,21
+order_products__prior,add_to_cart_order,missing,0
+order_products__prior,add_to_cart_order,nonmissing,32434489
+order_products__prior,order_id,missing,0
+order_products__prior,order_id,nonmissing,32434489
+order_products__prior,product_id,missing,0
+order_products__prior,product_id,nonmissing,32434489
+order_products__prior,reordered,missing,9049308
+order_products__prior,reordered,nonmissing,23385181

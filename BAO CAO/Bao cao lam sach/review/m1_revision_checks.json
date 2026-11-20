@@ -1,0 +1,52 @@
+{
+  "status": "PASSED",
+  "master_rows": 1384617,
+  "master_columns": 15,
+  "exact_values_and_nulls_match_existing_master": true,
+  "all_13_checks_pass": true,
+  "two_published_copies_identical": true,
+  "benchmark_readers_equivalent": true,
+  "worker_subprocess_pass": true,
+  "python": "3.12.14",
+  "pandas": "3.0.1",
+  "checked_at": "2026-10-20T19:30:43.953773+07:00",
+  "scope": "Independent regression run on copies of all five clean CSV inputs; original master and benchmark results unchanged.",
+  "path_base": "thesis directory (parent of scripts/)",
+  "pyarrow": "26.0.0",
+  "psutil": "7.2.2",
+  "portability_and_publication_tests": 7,
+  "source_sha256": {
+    "scripts/m1_common.py": "6688874c2ca983a642002db09d902e172207aad7a44c22848ebdff6b37907671",
+    "scripts/m1_build_master.py": "2743cf4782aa7cec5a20b7461ee113278c49bd5f3b460d2d67c5a1fa47e5d022",
+    "scripts/m1_benchmark.py": "71a18ddadb483f7d1adf03ba56bed9ea8df962eb8648628d309cdae949d5f223",
+    "tests/test_m1_portability.py": "cf030c950e0f8024b8ba90b869c1892d0fac238c41a8f2c48f0788654d2c226c"
+  },
+  "input_sha256": {
+    "order_products__train.csv": {
+      "path": "Data đã làm sạch/order_products__train.csv",
+      "sha256": "4c8075f043a15a21864ef6df4bf909b2f90fa09806a2da4e8a177d236fa5244d",
+      "size_bytes": 25643997
+    },
+    "orders.csv": {
+      "path": "Data đã làm sạch/orders.csv",
+      "sha256": "9b52535e14f0be7af6e732714bb33a1d2c5895e175b18b59c4105821da6b5890",
+      "size_bytes": 107930997
+    },
+    "products.csv": {
+      "path": "Data đã làm sạch/products.csv",
+      "sha256": "fb88d475cd4ef475fd229ee146fd2e20b8e11f123cd959c6ed408dc12e63fa96",
+      "size_bytes": 2002554
+    },
+    "aisles.csv": {
+      "path": "Data đã làm sạch/aisles.csv",
+      "sha256": "7190515349247784f15d83b7d860b0757c98e805c97a3e14487b8c70337ad747",
+      "size_bytes": 2165
+    },
+    "departments.csv": {
+      "path": "Data đã làm sạch/departments.csv",
+      "sha256": "d075b04a7b1bf5e5eda0a566776f63b1c2c545d135645ae6ad9e6b29b21380d0",
+      "size_bytes": 295
+    }
+  },
+  "original_master_sha256": "669ef3f9274611c382fd451e172f8fc2f37daea94dc10cb1e6745d88f03ef17d"
+}

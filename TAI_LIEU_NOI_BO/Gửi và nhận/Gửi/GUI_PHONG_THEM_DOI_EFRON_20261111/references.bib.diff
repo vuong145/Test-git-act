@@ -1,0 +1,12 @@
+--- Chung/archive/truoc-them-doi-efron-20261111/references.bib	2026-11-11 16:39:00.244759100 +0700
++++ 2521001118_Nhom01_TieuLuan/references.bib	2026-11-11 17:07:59.033199600 +0700
+@@ -180,7 +180,8 @@
+   year = {1979},
+   volume = {7},
+   number = {1},
+-  pages = {1--26}
++  pages = {1--26},
++  doi = {10.1214/aos/1176344552}
+ }
+ 
+ @techreport{chapman2000,

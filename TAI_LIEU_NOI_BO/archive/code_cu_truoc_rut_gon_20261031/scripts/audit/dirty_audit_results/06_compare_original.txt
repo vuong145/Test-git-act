@@ -1,0 +1,713 @@
+{
+  "check": "06_compare_original",
+  "status": "completed",
+  "scope": "all rows; paired original versus dirty",
+  "interpretation": [
+    "Original is a reference, not proof of real-world truth.",
+    "Comparison pairs record positions and verifies numeric primary/composite key equality BEFORE comparing other fields.",
+    "On mismatched positions, non-key fields are NOT compared. Mismatches may be key edits, inserted/deleted rows, or sorting; no inference of exact cause.",
+    "If alignment_complete is false, change counts cover aligned rows ONLY. Do not use as a complete difference audit.",
+    "Plausible-but-different values passed a local domain check; relational/history checks may still detect them.",
+    "Numeric suffix removal is NOT automatically safe. No repair is performed.",
+    "Unknown/missing-like text may need domain review; literal category name missing is preserved."
+  ],
+  "results": {
+    "aisles": {
+      "clean_file": "aisles.csv",
+      "dirty_file": "01_2521001118_PRJ08_Lê Văn Vương1.csv",
+      "clean_bytes": 2603,
+      "dirty_bytes": 2316,
+      "counts": {
+        "clean_rows": 134,
+        "dirty_rows": 134,
+        "aligned_rows": 134,
+        "changed_cells_on_aligned_rows": 102,
+        "changed_aligned_rows": 92,
+        "identical_aligned_rows": 42
+      },
+      "by_column": {
+        "aisle": {
+          "changed_cells": 88,
+          "categories": {
+            "information_replaced_by_missing": 40,
+            "case_only_review_display_or_category": 11,
+            "outer_whitespace_only": 36,
+            "changed_text_or_category": 1
+          },
+          "examples": [
+            {
+              "key": {
+                "aisle_id": "1"
+              },
+              "before": "prepared soups salads",
+              "after": "?",
+              "kind": "information_replaced_by_missing"
+            },
+            {
+              "key": {
+                "aisle_id": "2"
+              },
+              "before": "specialty cheeses",
+              "after": "chưa rõ",
+              "kind": "information_replaced_by_missing"
+            }
+          ]
+        },
+        "aisle_id": {
+          "changed_cells": 14,
+          "categories": {
+            "outer_whitespace_only": 14
+          },
+          "examples": [
+            {
+              "key": {
+                "aisle_id": "4"
+              },
+              "before": "4",
+              "after": " 4",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "aisle_id": "8"
+              },
+              "before": "8",
+              "after": "  8",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        }
+      },
+      "alignment_examples": [],
+      "alignment_complete": true
+    },
+    "departments": {
+      "clean_file": "departments.csv",
+      "dirty_file": "01_2521001118_PRJ08_Lê Văn Vương2.csv",
+      "clean_bytes": 270,
+      "dirty_bytes": 277,
+      "counts": {
+        "clean_rows": 21,
+        "dirty_rows": 21,
+        "aligned_rows": 21,
+        "changed_cells_on_aligned_rows": 5,
+        "changed_aligned_rows": 4,
+        "identical_aligned_rows": 17
+      },
+      "by_column": {
+        "department": {
+          "changed_cells": 4,
+          "categories": {
+            "outer_whitespace_only": 2,
+            "case_only_review_display_or_category": 2
+          },
+          "examples": [
+            {
+              "key": {
+                "department_id": "1"
+              },
+              "before": "frozen",
+              "after": "frozen   ",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "department_id": "6"
+              },
+              "before": "international",
+              "after": "INTERNATIONAL",
+              "kind": "case_only_review_display_or_category"
+            }
+          ]
+        },
+        "department_id": {
+          "changed_cells": 1,
+          "categories": {
+            "outer_whitespace_only": 1
+          },
+          "examples": [
+            {
+              "key": {
+                "department_id": "6"
+              },
+              "before": "6",
+              "after": " 6",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        }
+      },
+      "alignment_examples": [],
+      "alignment_complete": true
+    },
+    "products": {
+      "clean_file": "products.csv",
+      "dirty_file": "01_2521001118_PRJ08_Lê Văn Vương6.csv",
+      "clean_bytes": 2166953,
+      "dirty_bytes": 2022747,
+      "counts": {
+        "clean_rows": 49688,
+        "dirty_rows": 49688,
+        "aligned_rows": 49688,
+        "identical_aligned_rows": 18218,
+        "changed_cells_on_aligned_rows": 38182,
+        "changed_aligned_rows": 31470
+      },
+      "by_column": {
+        "product_name": {
+          "changed_cells": 26256,
+          "categories": {
+            "case_only_review_display_or_category": 9596,
+            "information_replaced_by_missing": 6923,
+            "outer_whitespace_only": 9737
+          },
+          "examples": [
+            {
+              "key": {
+                "product_id": "2"
+              },
+              "before": "All-Seasons Salt",
+              "after": "all-seasons salt",
+              "kind": "case_only_review_display_or_category"
+            },
+            {
+              "key": {
+                "product_id": "4"
+              },
+              "before": "Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce",
+              "after": "null",
+              "kind": "information_replaced_by_missing"
+            }
+          ]
+        },
+        "department_id": {
+          "changed_cells": 3931,
+          "categories": {
+            "outer_whitespace_only": 3931
+          },
+          "examples": [
+            {
+              "key": {
+                "product_id": "4"
+              },
+              "before": "1",
+              "after": " 1",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "product_id": "16"
+              },
+              "before": "19",
+              "after": "  19",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        },
+        "product_id": {
+          "changed_cells": 3935,
+          "categories": {
+            "outer_whitespace_only": 3935
+          },
+          "examples": [
+            {
+              "key": {
+                "product_id": "8"
+              },
+              "before": "8",
+              "after": "  8",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "product_id": "30"
+              },
+              "before": "30",
+              "after": "  30",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        },
+        "aisle_id": {
+          "changed_cells": 4060,
+          "categories": {
+            "outer_whitespace_only": 4060
+          },
+          "examples": [
+            {
+              "key": {
+                "product_id": "38"
+              },
+              "before": "100",
+              "after": "  100",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "product_id": "60"
+              },
+              "before": "9",
+              "after": " 9",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        }
+      },
+      "alignment_examples": [],
+      "alignment_complete": true
+    },
+    "orders": {
+      "clean_file": "orders.csv",
+      "dirty_file": "01_2521001118_PRJ08_Lê Văn Vương5.csv",
+      "clean_bytes": 108968645,
+      "dirty_bytes": 113084083,
+      "counts": {
+        "clean_rows": 3421083,
+        "dirty_rows": 3421083,
+        "aligned_rows": 3421083,
+        "changed_cells_on_aligned_rows": 5293603,
+        "changed_aligned_rows": 2869522,
+        "identical_aligned_rows": 551561
+      },
+      "by_column": {
+        "order_id": {
+          "changed_cells": 273617,
+          "categories": {
+            "outer_whitespace_only": 273617
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "2539329"
+              },
+              "before": "2539329",
+              "after": " 2539329",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "order_id": "1199898"
+              },
+              "before": "1199898",
+              "after": " 1199898",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        },
+        "order_dow": {
+          "changed_cells": 972541,
+          "categories": {
+            "original_number_plus_suffix_NOT_auto_repair": 313280,
+            "information_replaced_by_missing": 463331,
+            "changed_to_invalid_value": 188670,
+            "numeric_value_preserved_format_changed": 7260
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "2539329"
+              },
+              "before": "2",
+              "after": "2 %",
+              "kind": "original_number_plus_suffix_NOT_auto_repair"
+            },
+            {
+              "key": {
+                "order_id": "2398795"
+              },
+              "before": "3",
+              "after": "3 %",
+              "kind": "original_number_plus_suffix_NOT_auto_repair"
+            }
+          ]
+        },
+        "days_since_prior_order": {
+          "changed_cells": 702961,
+          "categories": {
+            "missing_token_representation": 155918,
+            "information_replaced_by_missing": 547043
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "2539329"
+              },
+              "before": "",
+              "after": "nan",
+              "kind": "missing_token_representation"
+            },
+            {
+              "key": {
+                "order_id": "2398795"
+              },
+              "before": "15.0",
+              "after": "",
+              "kind": "information_replaced_by_missing"
+            }
+          ]
+        },
+        "order_number": {
+          "changed_cells": 1238711,
+          "categories": {
+            "original_number_plus_suffix_NOT_auto_repair": 139221,
+            "information_replaced_by_missing": 798715,
+            "changed_to_invalid_value": 296002,
+            "changed_to_plausible_but_different_value": 4773
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "2398795"
+              },
+              "before": "2",
+              "after": "2 VND",
+              "kind": "original_number_plus_suffix_NOT_auto_repair"
+            },
+            {
+              "key": {
+                "order_id": "431534"
+              },
+              "before": "5",
+              "after": "None",
+              "kind": "information_replaced_by_missing"
+            }
+          ]
+        },
+        "eval_set": {
+          "changed_cells": 1277194,
+          "categories": {
+            "invalid_eval_label": 453999,
+            "information_replaced_by_missing": 359330,
+            "case_only_review_display_or_category": 453886,
+            "outer_whitespace_only": 9979
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "473747"
+              },
+              "before": "prior",
+              "after": "  pri",
+              "kind": "invalid_eval_label"
+            },
+            {
+              "key": {
+                "order_id": "431534"
+              },
+              "before": "prior",
+              "after": "?",
+              "kind": "information_replaced_by_missing"
+            }
+          ]
+        },
+        "user_id": {
+          "changed_cells": 273032,
+          "categories": {
+            "outer_whitespace_only": 273032
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "431534"
+              },
+              "before": "1",
+              "after": "  1",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "order_id": "1199898"
+              },
+              "before": "2",
+              "after": "  2",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        },
+        "order_hour_of_day": {
+          "changed_cells": 555547,
+          "categories": {
+            "information_replaced_by_missing": 555547
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "550135"
+              },
+              "before": "09",
+              "after": "",
+              "kind": "information_replaced_by_missing"
+            },
+            {
+              "key": {
+                "order_id": "1199898"
+              },
+              "before": "09",
+              "after": "None",
+              "kind": "information_replaced_by_missing"
+            }
+          ]
+        }
+      },
+      "alignment_examples": [],
+      "alignment_complete": true
+    },
+    "order_products__prior": {
+      "clean_file": "order_products__prior.csv",
+      "dirty_file": "01_2521001118_PRJ08_Lê Văn Vương3.csv",
+      "clean_bytes": 577550706,
+      "dirty_bytes": 614106632,
+      "counts": {
+        "clean_rows": 32434489,
+        "dirty_rows": 32434489,
+        "aligned_rows": 32434489,
+        "changed_cells_on_aligned_rows": 21165278,
+        "changed_aligned_rows": 16876829,
+        "identical_aligned_rows": 15557660
+      },
+      "by_column": {
+        "order_id": {
+          "changed_cells": 2596677,
+          "categories": {
+            "outer_whitespace_only": 2596677
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "2",
+                "product_id": "33120"
+              },
+              "before": "2",
+              "after": "  2",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "order_id": "4",
+                "product_id": "26434"
+              },
+              "before": "4",
+              "after": "  4",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        },
+        "reordered": {
+          "changed_cells": 9209345,
+          "categories": {
+            "original_number_plus_suffix_NOT_auto_repair": 1569397,
+            "information_replaced_by_missing": 5438428,
+            "changed_to_invalid_value": 2041483,
+            "numeric_value_preserved_format_changed": 160037
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "2",
+                "product_id": "28985"
+              },
+              "before": "1",
+              "after": "1 kg",
+              "kind": "original_number_plus_suffix_NOT_auto_repair"
+            },
+            {
+              "key": {
+                "order_id": "2",
+                "product_id": "9327"
+              },
+              "before": "0",
+              "after": "0 USD",
+              "kind": "original_number_plus_suffix_NOT_auto_repair"
+            }
+          ]
+        },
+        "add_to_cart_order": {
+          "changed_cells": 6767227,
+          "categories": {
+            "original_number_plus_suffix_NOT_auto_repair": 2170087,
+            "information_replaced_by_missing": 3223158,
+            "changed_to_plausible_but_different_value": 762067,
+            "changed_to_invalid_value": 611915
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "3",
+                "product_id": "24838"
+              },
+              "before": "2",
+              "after": "2 kg",
+              "kind": "original_number_plus_suffix_NOT_auto_repair"
+            },
+            {
+              "key": {
+                "order_id": "3",
+                "product_id": "21903"
+              },
+              "before": "4",
+              "after": "?",
+              "kind": "information_replaced_by_missing"
+            }
+          ]
+        },
+        "product_id": {
+          "changed_cells": 2592029,
+          "categories": {
+            "outer_whitespace_only": 2592029
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "3",
+                "product_id": "17704"
+              },
+              "before": "17704",
+              "after": "  17704",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "order_id": "10",
+                "product_id": "14992"
+              },
+              "before": "14992",
+              "after": "  14992",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        }
+      },
+      "alignment_examples": [],
+      "alignment_complete": true
+    },
+    "order_products__train": {
+      "clean_file": "order_products__train.csv",
+      "dirty_file": "01_2521001118_PRJ08_Lê Văn Vương4.csv",
+      "clean_bytes": 24680147,
+      "dirty_bytes": 26763333,
+      "counts": {
+        "clean_rows": 1384617,
+        "dirty_rows": 1384617,
+        "aligned_rows": 1384617,
+        "identical_aligned_rows": 462178,
+        "changed_cells_on_aligned_rows": 1243611,
+        "changed_aligned_rows": 922439
+      },
+      "by_column": {
+        "add_to_cart_order": {
+          "changed_cells": 593653,
+          "categories": {
+            "information_replaced_by_missing": 348739,
+            "original_number_plus_suffix_NOT_auto_repair": 115527,
+            "changed_to_plausible_but_different_value": 67880,
+            "changed_to_invalid_value": 61507
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "1",
+                "product_id": "11109"
+              },
+              "before": "2",
+              "after": "",
+              "kind": "information_replaced_by_missing"
+            },
+            {
+              "key": {
+                "order_id": "1",
+                "product_id": "10246"
+              },
+              "before": "3",
+              "after": "-",
+              "kind": "information_replaced_by_missing"
+            }
+          ]
+        },
+        "product_id": {
+          "changed_cells": 110575,
+          "categories": {
+            "outer_whitespace_only": 110575
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "1",
+                "product_id": "43633"
+              },
+              "before": "43633",
+              "after": "  43633",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "order_id": "1",
+                "product_id": "47209"
+              },
+              "before": "47209",
+              "after": "  47209",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        },
+        "reordered": {
+          "changed_cells": 428783,
+          "categories": {
+            "information_replaced_by_missing": 211571,
+            "original_number_plus_suffix_NOT_auto_repair": 126722,
+            "changed_to_invalid_value": 82478,
+            "numeric_value_preserved_format_changed": 8012
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "1",
+                "product_id": "43633"
+              },
+              "before": "1",
+              "after": "None",
+              "kind": "information_replaced_by_missing"
+            },
+            {
+              "key": {
+                "order_id": "36",
+                "product_id": "19660"
+              },
+              "before": "1",
+              "after": "1 kg",
+              "kind": "original_number_plus_suffix_NOT_auto_repair"
+            }
+          ]
+        },
+        "order_id": {
+          "changed_cells": 110600,
+          "categories": {
+            "outer_whitespace_only": 110600
+          },
+          "examples": [
+            {
+              "key": {
+                "order_id": "36",
+                "product_id": "46620"
+              },
+              "before": "36",
+              "after": " 36",
+              "kind": "outer_whitespace_only"
+            },
+            {
+              "key": {
+                "order_id": "38",
+                "product_id": "28842"
+              },
+              "before": "38",
+              "after": "  38",
+              "kind": "outer_whitespace_only"
+            }
+          ]
+        }
+      },
+      "alignment_examples": [],
+      "alignment_complete": true
+    }
+  },
+  "seconds": 656.8
+}

@@ -1,0 +1,15 @@
+--- chot_07-11/scripts/m2_plot_univariate.py
++++ hien_tai_11-11/scripts/m2_plot_univariate.py
+@@ -37,2 +37,4 @@
+     percent = FuncFormatter(lambda v, _: f"{100*v:.0f}%")
++    # Dấu chấm phân cách hàng nghìn cho khớp lời văn và Hình 3.4 (11/11).
++    thousands = FuncFormatter(lambda v, _: f"{int(v):,}".replace(",", "."))
+     n_label = f"{len(sizes):,}".replace(",", ".")
+@@ -44,2 +46,3 @@
+     axes[0].set(ylabel="Số giỏ", title=f"(a) Phân phối kích thước giỏ (N = {n_label})")
++    axes[0].yaxis.set_major_formatter(thousands)
+     axes[1].boxplot(sizes, orientation="horizontal", whis=1.5, showfliers=True,
+@@ -71,2 +74,3 @@
+     axes[1].yaxis.set_major_formatter(percent)
++    axes[1].xaxis.set_major_formatter(thousands)
+     save_figure(plt, fig, figures, "fig-ref-category-concentration", style)

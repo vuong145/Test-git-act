@@ -1,0 +1,27 @@
+[phong] SHA-256: toàn bộ 6 nguồn nhiễu
+orders: 250,000
+orders: 500,000
+orders: 750,000
+orders: 1,000,000
+orders: 1,250,000
+orders: 1,500,000
+orders: 1,750,000
+orders: 2,000,000
+orders: 2,250,000
+orders: 2,500,000
+orders: 2,750,000
+orders: 3,000,000
+orders: 3,250,000
+orders: 3,421,083
+Kiểm tra cấu trúc thứ tự đơn theo khách...
+order_products__train: 250,000
+order_products__train: 500,000
+order_products__train: 750,000
+order_products__train: 1,000,000
+order_products__train: 1,250,000
+order_products__train: 1,384,617
+order_products__train: kiểm tra giỏ toàn bảng trên đĩa...
+Đọc kiểm chứng CSV cuối: products
+Đọc kiểm chứng CSV cuối: orders
+Đọc kiểm chứng CSV cuối: order_products__train
+[phong] HOÀN TẤT: C:\Users\Vuong\Documents\Obsidian Vault\Data\Python for DS\TLCK\2521001118_Nhom01_TieuLuan\Bao cao lam sach\phong\20261019_194910_280249

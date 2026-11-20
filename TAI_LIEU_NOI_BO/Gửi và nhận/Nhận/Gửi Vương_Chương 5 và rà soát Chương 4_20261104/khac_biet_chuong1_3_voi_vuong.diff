@@ -1,0 +1,66 @@
+--- Phong
++++ Vuong
+@@ -333,7 +333,7 @@
+ 
+ ## Môi trường thực nghiệm và Công cụ lập trình Python
+ 
+-Môi trường được ghi theo từng lượt, không đồng nhất giữa các giai đoạn. Hồ sơ M1 ghi Python 3.12.10, pandas 3.0.3 và PyArrow 24.0.0. Gói G0 nhận từ Vương ghi Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3. Môi trường kiểm chứng tại Phong dùng Python 3.12.10, các thư viện M2 theo `requirements-m2-lock.txt`; khác biệt bản vá Python được ghi trong hồ sơ mới. Số benchmark M1 vẫn thuộc môi trường lịch sử.
++Mọi lượt chạy chính thức, gồm làm sạch, bảng Master, benchmark M1, chia tập, thống kê, kiểm định và các giai đoạn của Chương 4, dùng cùng một môi trường `.venv-m2` trên một máy (Windows 11, RAM 24 GB): Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3, khóa trong `requirements.txt`. Bảng Master được tạo lần đầu ngày 20/10/2026 trong một môi trường Python khác (3.12.10, pandas 3.0.3, PyArrow 24.0.0) và tạo lại ngày 04/11/2026 trong `.venv-m2`; hai bản giống nhau từng ô, chỉ khác byte do phiên bản PyArrow. Benchmark M1 được đo lại trong `.venv-m2` cùng ngày. Máy của Phong dùng Python 3.12.10 (khác bản vá) để phát triển và kiểm chứng, không sinh số liệu trong bài.
+ 
+ pandas/NumPy xử lý bảng; PyArrow lưu Parquet; SciPy hỗ trợ kiểm định; mlxtend và scikit-learn phục vụ giai đoạn mô hình; Matplotlib/Seaborn xuất hình 300 DPI. Mã nguồn tổ chức theo mô-đun; kiểm tra cú pháp và kiểm thử được ghi theo phiên, chưa coi đó là chứng nhận tuân thủ toàn bộ PEP 8. Nhật ký tại gốc ghi đúng công cụ và thao tác thực tế theo P-D-M-V. Quarto quản lý tham chiếu, trích dẫn APA 7 và biên dịch PDF.
+ 
+@@ -576,9 +576,9 @@
+    * Mã băm SHA-256 của chuỗi cặp khóa trùng khớp tuyệt đối với đầu vào ban đầu.
+    * Nội dung giá trị và vị trí mặt nạ thiếu bảo toàn 100% giữa trước ghi và sau đọc.
+    * Các biến phân loại giữ nguyên nhãn thực và `null` thực tế, không chứa các nhãn rác (`Unknown`, `nan`, `<NA>`).
+-5. **Xuất bản từng tệp:** Sau khi kiểm chứng, chương trình sao chép sang tệp tạm cạnh mỗi đích, gọi `flush`/`fsync`, kiểm tra SHA-256 của bản sao rồi dùng `os.replace` để thay thế đích. Hai vị trí là `Data đã làm sạch/master_train.parquet` và bản sao tại `Data đã làm sạch/Bảng master TLCK/master_train.parquet`, tính từ thư mục bài. Thay thế nguyên tử áp dụng cho từng tệp, không phải giao dịch đồng thời cho hai bản và các báo cáo JSON/CSV. Nếu xuất bản bản thứ hai thất bại, bản thứ nhất có thể đã được cập nhật; cần chạy lại và đối chiếu hash trước sử dụng.
+-
+-Hồ sơ `master_verification.json` của lượt chạy ngày 20/10/2026 ghi trạng thái `PASSED`, kích thước 16,21 MiB (16.992.331 byte) và mã băm SHA-256 của Master đã lưu. SHA-256 là mã băm kiểm tra toàn vẹn, không phải chữ ký số xác thực tác giả. Cơ chế xuất bản hiện hành được kiểm tra riêng trên bản sao đầy đủ của năm CSV: 13 tiêu chí đều đạt, hai bản xuất bản giống nhau và Master tạo lại khớp chính xác giá trị/vị trí thiếu với bản hiện có. Hồ sơ `m1_revision_checks.json` trong thư mục báo cáo kiểm tra lưu môi trường và hash mã nguồn của lượt hồi quy này; kết quả không thay thế các số đo benchmark ban đầu.
++5. **Xuất bản từng tệp:** Sau khi kiểm chứng, chương trình sao chép sang tệp tạm cạnh mỗi đích, gọi `flush`/`fsync`, kiểm tra SHA-256 của bản sao rồi dùng `os.replace` để thay thế đích. Đích xuất bản là `DATA/Data đã làm sạch/master_train.parquet`, tính từ thư mục bài. Thay thế nguyên tử áp dụng cho tệp Parquet, không phải giao dịch đồng thời cho Parquet và các báo cáo JSON/CSV; cần đối chiếu hash trước sử dụng.
++
++Hồ sơ `master_verification.json` của lượt chạy ngày 04/11/2026 trong `.venv-m2` ghi trạng thái `PASSED`, kích thước 16,21 MiB (16.992.331 byte) và mã băm SHA-256 của Master đã lưu. SHA-256 là mã băm kiểm tra toàn vẹn, không phải chữ ký số xác thực tác giả. Ở lượt này 13 tiêu chí đều đạt. Master tạo lại khớp chính xác từng ô (giá trị và vị trí thiếu, cả hai chế độ đọc) với bản tạo lần đầu ngày 20/10/2026 trong môi trường khác; hai tệp chỉ khác byte vì được ghi bằng hai phiên bản PyArrow. Hồ sơ `m1_revision_checks.json` trong thư mục báo cáo kiểm tra lưu môi trường và hash mã nguồn của lượt hồi quy ngày 20/10/2026.
+ 
+ ### Đánh giá hiệu năng thực nghiệm đa chiều (Benchmark)
+ 
+@@ -603,17 +603,17 @@
+ \midrule
+ \multicolumn{5}{@{}l}{\textbf{A. Tối ưu kiểu dữ liệu}} \\
+ Baseline rộng: hồ sơ tĩnh & 423,04 & --- & --- & --- \\
+-Thu hẹp kiểu & 50,10 & 491,98 & --- & 1,0952 \\
++Thu hẹp kiểu & 50,10 & 483,35 & --- & 1,1697 \\
+ \midrule
+ \multicolumn{5}{@{}l}{\textbf{B. Định dạng và đọc/ghi}} \\
+-Ghi CSV & --- & 292,66 & 118,86 & 8,8145 \\
+-Ghi Parquet & --- & 311,99 & 15,34 & 1,0504 \\
+-Đọc CSV & 51,11 & 250,99 & 118,86 & 5,9227 \\
+-Đọc Parquet & 51,11 & 294,12 & 15,34 & 0,1974 \\
++Ghi CSV & --- & 295,54 & 118,86 & 9,7270 \\
++Ghi Parquet & --- & 302,15 & 15,34 & 1,0131 \\
++Đọc CSV & 51,11 & 224,13 & 118,86 & 6,1819 \\
++Đọc Parquet & 51,11 & 299,08 & 15,34 & 0,2089 \\
+ \midrule
+ \multicolumn{5}{@{}l}{\textbf{C. Tái sử dụng Master}} \\
+-Nạp 5 CSV và ghép & 50,10 & 404,25 & --- & 7,8016 \\
+-Đọc Master Parquet & 51,11 & 299,70 & --- & 0,1911 \\
++Nạp 5 CSV và ghép & 50,10 & 394,59 & --- & 9,3488 \\
++Đọc Master Parquet & 51,11 & 290,02 & --- & 0,2033 \\
+ \bottomrule
+ \end{tabular}
+ \par\vspace{4pt}
+@@ -623,11 +623,11 @@
+ 
+ Phân tích kết quả thực nghiệm tại Bảng \ref{tbl-data-benchmark} mang lại các kết luận kỹ thuật quan trọng:
+ 
+-1. **Tối ưu kiểu dữ liệu (A):** Bộ nhớ DataFrame giảm từ 423,04 xuống 50,10 MiB, tương ứng **88,16%**, với thời gian trung vị 1,0952 giây. Đây không phải mức giảm RAM đỉnh tiến trình: trong lúc chuyển kiểu, bản rộng và bản tối ưu cùng tồn tại; Peak RSS quan sát được là 491,98 MiB.
+-2. **Hiệu quả định dạng Parquet so với CSV (Thực nghiệm B):** Nhờ cơ chế nén cột theo khối Snappy và lưu trữ từ điển (dictionary encoding), tệp Parquet chỉ chiếm 15,34 MiB trên đĩa, thu nhỏ **7,75 lần** so với tệp CSV đối chứng (118,86 MiB). Tốc độ ghi đĩa của Parquet nhanh hơn **8,39 lần** (1,0504 giây so với 8,8145 giây). Đặc biệt, tốc độ đọc dữ liệu của Parquet vượt trội gấp **30,00 lần** (0,1974 giây so với 5,9227 giây của CSV, tính chính xác từ tỷ số $5{,}9227 / 0{,}1974 \approx 30{,}00$) trong khi cả hai đều tải ra cùng một cấu trúc DataFrame 51,11 MiB chuẩn xác.
+-3. **Tái sử dụng Master (C):** Đọc Master đã chuẩn bị mất 0,1911 giây, Peak RSS 299,70 MiB; nạp năm CSV và ghép lại mất 7,8016 giây, Peak RSS 404,25 MiB. Tỷ số thời gian là **40,82 lần**, chênh lệch Peak RSS là 104,55 MiB. Phép đo không bao gồm chi phí tạo Master lần đầu và không đại diện cho pipeline xây Master có đầy đủ kiểm tra miền, mã băm, đối soát từng ô và xuất bản.
+-
+-Parquet có đánh đổi bộ nhớ: ở B, Peak RSS khi đọc là 294,12 MiB so với 250,99 MiB của CSV; khi ghi là 311,99 so với 292,66 MiB. Vì vậy, nhanh hơn và nhỏ hơn trên đĩa không đồng nghĩa với RAM đỉnh luôn thấp hơn. Ba lượt ghi CSV dao động 7,8226--9,4738 giây, ghi Parquet 1,0254--1,0791 giây; đọc CSV 5,7871--5,9759 giây và đọc Parquet 0,1914--0,2071 giây. Các tỷ số phụ thuộc dữ liệu, kiểu, thư viện và cache của lượt đo.
++1. **Tối ưu kiểu dữ liệu (A):** Bộ nhớ DataFrame giảm từ 423,04 xuống 50,10 MiB, tương ứng **88,16%**, với thời gian trung vị 1,1697 giây. Đây không phải mức giảm RAM đỉnh tiến trình: trong lúc chuyển kiểu, bản rộng và bản tối ưu cùng tồn tại; Peak RSS quan sát được là 483,35 MiB.
++2. **Hiệu quả định dạng Parquet so với CSV (Thực nghiệm B):** Nhờ cơ chế nén cột theo khối Snappy và lưu trữ từ điển (dictionary encoding), tệp Parquet chỉ chiếm 15,34 MiB trên đĩa, thu nhỏ **7,75 lần** so với tệp CSV đối chứng (118,86 MiB). Tốc độ ghi đĩa của Parquet nhanh hơn **9,60 lần** (1,0131 giây so với 9,7270 giây). Đặc biệt, tốc độ đọc dữ liệu của Parquet vượt trội gấp **29,59 lần** (0,2089 giây so với 6,1819 giây của CSV, tính từ tỷ số $6{,}1819 / 0{,}2089 \approx 29{,}59$) trong khi cả hai đều tải ra cùng một cấu trúc DataFrame 51,11 MiB chuẩn xác.
++3. **Tái sử dụng Master (C):** Đọc Master đã chuẩn bị mất 0,2033 giây, Peak RSS 290,02 MiB; nạp năm CSV và ghép lại mất 9,3488 giây, Peak RSS 394,59 MiB. Tỷ số thời gian là **45,99 lần**, chênh lệch Peak RSS là 104,57 MiB. Phép đo không bao gồm chi phí tạo Master lần đầu và không đại diện cho pipeline xây Master có đầy đủ kiểm tra miền, mã băm, đối soát từng ô và xuất bản.
++
++Parquet có đánh đổi bộ nhớ: ở B, Peak RSS khi đọc là 299,08 MiB so với 224,13 MiB của CSV; khi ghi là 302,15 so với 295,54 MiB. Vì vậy, nhanh hơn và nhỏ hơn trên đĩa không đồng nghĩa với RAM đỉnh luôn thấp hơn. Ba lượt ghi CSV dao động 9,6451--10,7859 giây, ghi Parquet 1,0021--1,0232 giây; đọc CSV 6,0317--6,6182 giây và đọc Parquet 0,1876--0,3120 giây. Các tỷ số phụ thuộc dữ liệu, kiểu, thư viện và cache của lượt đo.
+ 
+ Kết quả hỗ trợ tái sử dụng `master_train.parquet` cho các bước sau, nhưng chưa chứng minh hiệu năng của EDA hay mô hình. Cần chia tập theo thiết kế trước EDA định hướng mô hình; chỉ reference được dùng để học thống kê và luật. Hai lệnh M1 hiện xác định thư mục từ vị trí script, nhận tùy chọn đường dẫn tương đối theo thư mục bài và có chế độ `--check-inputs`; các đường dẫn tuyệt đối trong hồ sơ cũ được giữ như dấu vết của lượt chạy, không phải cấu hình vận hành.
+ 

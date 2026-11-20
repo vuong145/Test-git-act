@@ -1,0 +1,61 @@
+ac4b0066880f9515b8f9e19a9d9a77ab8b66453c1e360228e214805f85d3aced *BAO CAO/Bao cao EDA/aisle_summary.csv
+ab2d4bd71ab3ea093ce08509b53f95467a305064109568ef8bf86defeb757a74 *BAO CAO/Bao cao EDA/ban2/correlation_pair_n.csv
+867ee3561bbabe5aac5572d917338753d0c8b1fd35deef27db4eb3f9300e6ab4 *BAO CAO/Bao cao EDA/ban2/correlation_pearson.csv
+075e7acb0a82451bb5654153c1bd5d699ed3fdbf485972fd57e30cc93c82ca42 *BAO CAO/Bao cao EDA/ban2/correlation_spearman.csv
+2bf5d7eb3d7b1b1cb44181d499b921d0d7fcb5dfd2f7f3207331dfc966e9c05d *BAO CAO/Bao cao EDA/ban2/department_pair_summary.csv
+e362e7bcaaa7aa89cd3b93f698abc558ac65c65ff84afa641516549be5a80b6c *BAO CAO/Bao cao EDA/ban2/hashes.json
+759047417a97b6ac6d1aa02bc92a3c899e6c55d09cea751c57ee614107ef1505 *BAO CAO/Bao cao EDA/ban2/hour_band_summary.csv
+ee20cd127667368f230dd13278fdd50dfdb21e5ca6800d040fa9da27bf23957b *BAO CAO/Bao cao EDA/ban2/hypotheses.csv
+ef85a343a859128ea2cfaaf3a8f69ff55abbe5533f535f215917d2b6688992ab *BAO CAO/Bao cao EDA/ban2/hypotheses_details.json
+8655356525228b425b7761d1b6d3c20cdb5b255283eb173b97bd6fe8ed308c8c *BAO CAO/Bao cao EDA/ban2/lift_baseline.csv
+a995396a3ce2eb57f2097604ddeb94d95ba2b6a222aa9763d58ef73c9e35bece *BAO CAO/Bao cao EDA/ban2/time_pivot_count.csv
+2d71dd02b284772d89841a11f58c98d883aa5c77b2d74cf158480420a97e27ac *BAO CAO/Bao cao EDA/ban2/time_pivot_median.csv
+8a14dbf3d8197750ade163a1a5e98da7e1f07e0c716716c6d61dcb42fc6a4f0a *BAO CAO/Bao cao EDA/ban2/time_pivot_small_group.csv
+584dde90006422de568e8c4718a9a85e27899439543e8ce8c62fc30179960b28 *BAO CAO/Bao cao EDA/categorical_frequencies.csv
+e7553bb6ce8c7fe5827b042312d42588995ff972741dc1498988308e8931fb2a *BAO CAO/Bao cao EDA/common/hashes.json
+076e991401d1a56d1a4557aff5737368c2fae8fca0cee4686cce61ed8d1aef39 *BAO CAO/Bao cao EDA/common/profile/inspection.json
+478c6f63d6d1c053748a23db6ca12ef8b88cf7a6316c8c26b83def411a207153 *BAO CAO/Bao cao EDA/common/profile/master_info.txt
+577eca55a98a06cde7bcda983ff0f3f557ba55358eaf381c22993a58559dc67e *BAO CAO/Bao cao EDA/common/profile/master_missing.csv
+046027cf8730fa6ebee336894108caa00d6794f605894d084ba17317b13a31b7 *BAO CAO/Bao cao EDA/common/profile/reference_describe.csv
+9c7e2385419a25d6911bf2f2f3baca2f44489ffd689b76b6bfba6325c47635df *BAO CAO/Bao cao EDA/common/profile/reference_missing.csv
+060e0473ae95cc233e7a018ec6f6c951284dd862cc42c14ef58532fffb769781 *BAO CAO/Bao cao EDA/department_display.csv
+d95ad78332d08d0f187fec755554b3158e0e565f61e3197bbbd91ca42555c85b *BAO CAO/Bao cao EDA/department_summary.csv
+be5a4ffdf732de13ed8d86391060eb168318cf223046b04205aa690ca55863fa *BAO CAO/Bao cao EDA/eda_summary.csv
+530c8ac6b60c957ace209c61a760f20cde8a91ec82118f7ccdfc8dda7c6511ac *BAO CAO/Bao cao EDA/figures/ban1/fig-ref-basket-distribution.pdf
+fda0214f77d7813f109f23b43ba308a9f73109b457518d64532e8a3b50efed0a *BAO CAO/Bao cao EDA/figures/ban1/fig-ref-basket-distribution.png
+903f833ec39dcdd358a3389320371a3238b4ee3ddf77492cc9664e539d3c9e93 *BAO CAO/Bao cao EDA/figures/ban1/fig-ref-category-concentration.pdf
+c9ed99e796df93ece52b96121f4536e6078bb0590761f047dcbf4eabd785857c *BAO CAO/Bao cao EDA/figures/ban1/fig-ref-category-concentration.png
+c33a77d611278d04804b925ae5d8577d56ccb545e72647b5389911f92bd77cf8 *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-pearson.pdf
+df57666ff652e1438a7406a33004d26a8a5b5c01b41c001740f61d871ea15d16 *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-pearson.png
+e4f5dba7a9672aebc8ec7cae9a791c11f7e51c26696288b19a69790c6ea6622f *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-spearman.pdf
+950e952c3257105b9fca1a1321e10edf7b1d71e54f8e559d01fde415cf1d163d *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-spearman.png
+22027662c43829ac8db7ecba76b15a9239924a6d151f556103d8272f61856bb6 *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-department-lift.pdf
+6592a159560c656937f4162684a0a6eabd536d5b418daaacd9b9fcfbed0656aa *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-department-lift.png
+726a61aa8d25adb7b0ad26b92119a14bbaba2469b3a9257d56defc8d6d027021 *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-time-basket-size.pdf
+2ae81d1264fbfe1efb93ff853879ada01537cd4bb3dc14f3086ec45559453dd5 *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-time-basket-size.png
+ef3ce8289f79f58ea6509c5cf94a17ced3b43aad78828443825f0ec85d735188 *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-time-frequency.pdf
+c53ada17acebbbd560c1f576f4b64b602b2caa5eb592b1a270ead554d32f81f2 *BAO CAO/Bao cao EDA/figures/ban2/fig-ref-time-frequency.png
+b58629628cb2b0bfee2f2c229cb7003878a630e324425a6c9001c7f4df8e4c03 *BAO CAO/Bao cao EDA/plot_data/ban1/basket_boxplot_values.csv
+939f72a93e85a23c53919d201cf9b6e2e5611aecad5f753155cb7f092b1e0250 *BAO CAO/Bao cao EDA/plot_data/ban1/basket_histogram.csv
+1e7367679854766b8429071f651fc485438ed1b20893219d2bf27590d870f775 *BAO CAO/Bao cao EDA/plot_data/ban1/department_top10_remaining.csv
+e8e004d7e6569b57b40f5db3c81d8010f6b7b70f00dc753df855b4e716ca6e88 *BAO CAO/Bao cao EDA/plot_data/ban1/product_cumulative.csv
+0868096d852d475bc808b602830932e9ea9bd2537a353cd644613a751d6fa08d *BAO CAO/Bao cao EDA/plot_data/ban1/top_n_annotations.csv
+ab2d4bd71ab3ea093ce08509b53f95467a305064109568ef8bf86defeb757a74 *BAO CAO/Bao cao EDA/plot_data/ban2/correlation_pair_n.csv
+867ee3561bbabe5aac5572d917338753d0c8b1fd35deef27db4eb3f9300e6ab4 *BAO CAO/Bao cao EDA/plot_data/ban2/correlation_pearson.csv
+075e7acb0a82451bb5654153c1bd5d699ed3fdbf485972fd57e30cc93c82ca42 *BAO CAO/Bao cao EDA/plot_data/ban2/correlation_spearman.csv
+e6829cea3da95ec22eeb4e0294094a68b929f3bcfda48fdd7d1e33403110fc43 *BAO CAO/Bao cao EDA/plot_data/ban2/department_labels.csv
+2bf5d7eb3d7b1b1cb44181d499b921d0d7fcb5dfd2f7f3207331dfc966e9c05d *BAO CAO/Bao cao EDA/plot_data/ban2/department_pair_summary.csv
+759047417a97b6ac6d1aa02bc92a3c899e6c55d09cea751c57ee614107ef1505 *BAO CAO/Bao cao EDA/plot_data/ban2/hour_band_summary.csv
+7952ede3753289b1cf2ca74efcd098d324d1cff12033cfa26407c79c74f792c3 *BAO CAO/Bao cao EDA/plot_data/ban2/order_dow_frequency.csv
+b112368b0b615b9301ad432ea5574bdc8d596721a88432edcd59f9ed96f058cd *BAO CAO/Bao cao EDA/plot_data/ban2/order_hour_of_day_frequency.csv
+a995396a3ce2eb57f2097604ddeb94d95ba2b6a222aa9763d58ef73c9e35bece *BAO CAO/Bao cao EDA/plot_data/ban2/time_pivot_count.csv
+2d71dd02b284772d89841a11f58c98d883aa5c77b2d74cf158480420a97e27ac *BAO CAO/Bao cao EDA/plot_data/ban2/time_pivot_median.csv
+936640b9cc186e312745a5ad2835a58119d6ac51f525bbc10069ed9e6bb3ace9 *BAO CAO/Bao cao EDA/product_popularity.csv
+e2d7aea1eecea867f1adc67a728d33add6c573e00fa75c72e99731aa5df9300a *BAO CAO/Bao cao EDA/reference_outliers.json
+0d4f8874808b05e790e8e2125ba2d1b81b31c48001e925eaabdd472792c851bd *BAO CAO/Bao cao EDA/sample_overview.csv
+cb8d29a5af9c4b94b0679cd83d20024783348e9911c344c963ae1508d90b04db *BAO CAO/Bao cao EDA/top_n_coverage.csv
+acb8519c6228607b9931276fcc3f7b01cff6a8c5830a0c66c751b8c391307809 *DATA/Data phai sinh/M2/basket_summary.parquet
+e6829cea3da95ec22eeb4e0294094a68b929f3bcfda48fdd7d1e33403110fc43 *DATA/Data phai sinh/M2/department_lookup.csv
+229a29d4fe95e5bde12a01c13816da6c4857fee9045ea8d72972e0d4ed22599a *DATA/Data phai sinh/M2/department_presence.parquet
+708345868d6981cfec99791acfe74a51bd730b39d146174fedcaabc415ebddc0 *DATA/Data phai sinh/M2/reference.parquet
+2d6106e5c722b509bb13adb6fde7b16189322f0bca6a4339552d771fb3b6c4e9 *DATA/Data phai sinh/M2/split_manifest.parquet

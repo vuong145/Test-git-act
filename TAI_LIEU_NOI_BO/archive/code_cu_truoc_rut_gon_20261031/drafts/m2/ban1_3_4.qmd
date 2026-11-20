@@ -1,0 +1,141 @@
+<!-- Bản thảo Bạn 1; tích hợp từ gốc bài sau kiểm tra chéo. -->
+## Phân tích thống kê mô tả
+
+### Phạm vi mẫu và đơn vị thống kê
+
+Phân tích mô tả sử dụng riêng tập reference đã nghiệm thu từ Master theo phân hoạch người dùng cố định (seed 42, PCG64). Tập này gồm **39.363 người dùng và 39.363 giỏ train**, với **415.053 dòng sản phẩm–đơn hàng**; quan sát được 28.742 sản phẩm, 21 ngành và 134 quầy. Mỗi người chỉ có một giỏ train trong thiết kế hiện hành. Reference giữ toàn bộ thành phần của từng giỏ, kể cả giỏ một sản phẩm; không lọc Top-N trước thống kê và không dùng fit, validation hoặc test để lựa chọn phân tích.
+
+Bảng cấp giỏ dùng một dòng mỗi đơn để mô tả kích thước, độ đa dạng và thuộc tính thời gian. Bảng cấp dòng dùng lượt xuất hiện sản phẩm trong đơn để mô tả cơ cấu danh mục. Giá trị thiếu được giữ nguyên; thống kê định lượng tính trên quan sát hợp lệ và công bố mẫu số. Dữ liệu G0 được đọc qua cổng kiểm tra hash; bảng giỏ được dựng lại từ reference để đối chiếu chính xác trước khi xuất thống kê. Nguồn quy mô là `sample_overview.csv`; quy tắc chia tập đã trình bày ở Chương 2.
+
+### Đặc điểm thống kê của giỏ hàng
+
+Hai bảng dưới tách thông tin chất lượng/phân tán và năm con số để bảo đảm cỡ chữ 12 pt. Độ lệch chuẩn mẫu sử dụng ddof = 1; phân vị nội suy tuyến tính. Khoảng cách ngày giữ quy tắc giới hạn mã hóa tại 30 của dữ liệu nguồn.
+
+```{=latex}
+\begingroup
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{2.3cm}@{}}
+\caption{Số quan sát hợp lệ, tỷ lệ thiếu và mức phân tán của reference}\label{tbl-ref-quality-dispersion}\\
+\toprule
+Biến & N hợp lệ & Thiếu (\%) & Mean & Std \\
+\midrule
+\endfirsthead
+\toprule
+Biến & N hợp lệ & Thiếu (\%) & Mean & Std \\
+\midrule
+\endhead
+Sản phẩm/giỏ & 39.363 & 0,00 & 10,54 & 7,94 \\
+Ngành/giỏ & 39.363 & 0,00 & 4,88 & 2,66 \\
+Quầy/giỏ & 39.363 & 0,00 & 7,55 & 5,01 \\
+Khoảng cách (ngày) & 32.787 & 16,71 & 16,98 & 10,68 \\
+\bottomrule
+\end{longtable}
+\endgroup
+```
+
+*Nguồn: eda_summary.csv; mỗi biến có tổng cộng 39.363 giỏ. Đơn vị và mẫu số theo chú giải trong phần nội dung.*
+
+
+```{=latex}
+\begingroup
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.8cm}@{}}
+\caption{Năm con số của các biến định lượng cấp giỏ reference}\label{tbl-ref-five-numbers}\\
+\toprule
+Biến & Min & Q1 & Median & Q3 & Max \\
+\midrule
+\endfirsthead
+\toprule
+Biến & Min & Q1 & Median & Q3 & Max \\
+\midrule
+\endhead
+Sản phẩm/giỏ & 1 & 5 & 9 & 14 & 77 \\
+Ngành/giỏ & 1 & 3 & 5 & 7 & 16 \\
+Quầy/giỏ & 1 & 4 & 7 & 10 & 39 \\
+Khoảng cách (ngày) & 0 & 7 & 15 & 30 & 30 \\
+\bottomrule
+\end{longtable}
+\endgroup
+```
+
+*Nguồn: eda_summary.csv. Đơn vị và mẫu số theo chú giải trong phần nội dung.*
+
+Giỏ reference có trung vị 9 sản phẩm, trong khi trung bình là 10,54; Q1 = 5 và Q3 = 14. Độ lệch 1,47 và độ nhọn dư (excess kurtosis) 3,20 bổ sung bằng chứng về phân phối lệch phải với phần đuôi lớn. Có 2.118 giỏ một sản phẩm (5,38%). Kích thước quan sát trải từ 1 đến 77 sản phẩm; các số này mô tả giỏ, không xác định loại hộ gia đình hay mục đích mua hàng.
+
+Trên riêng reference, IQR = 9, hàng rào là [-8,5; 27,5]. Có 1.578 giỏ (4,01%) vượt hàng rào. Toàn bộ được giữ lại vì cờ thống kê không tự chứng minh lỗi giao dịch. Kết quả này có mẫu số reference, khác kiểm toán toàn Master ở mục 3.3; số liệu chi tiết nằm trong `reference_outliers.json`.
+
+Khoảng cách đơn hàng có 32.787 quan sát hợp lệ, trung vị 15 ngày và Q3 bằng 30. Mốc 30 có giới hạn mã hóa, nên không diễn giải thành khoảng cách thực chính xác cho mọi đơn ở ngưỡng này. Tần số ngày, giờ và nhóm giờ được xuất đầy đủ trong `categorical_frequencies.csv`, gồm các mã không có quan sát và nhóm thiếu; tỷ lệ trên toàn mẫu (`all_pct`) tách khỏi tỷ lệ trên phần hợp lệ (`valid_pct`).
+
+Cụ thể, mã ngày thiếu 11.074 giỏ (28,13%); giờ đặt hàng thiếu 6.541 giỏ (16,62%). Mã ngày giữ 0–6, không tự ánh xạ thành tên thứ. Phân tích nhóm thời gian và dashboard sẽ do nhánh đa biến thực hiện.
+
+### Cơ cấu ngành/quầy và mức tập trung sản phẩm
+
+Các phép tổng hợp nhóm theo ID ổn định; tên thiếu chỉ được hiển thị thành “Chưa có tên (ID=...)”, không làm mất nhóm. Hai bảng chi tiết `department_summary.csv` và `aisle_summary.csv` giữ đủ danh mục nguồn, báo số dòng, số giỏ, tỷ trọng dòng, độ phủ giỏ và số `reordered` hợp lệ/thiếu. Tỷ lệ mua lại quan sát được chỉ lấy số dòng có `reordered = 1` chia cho số dòng có `reordered` hợp lệ; không coi các ô thiếu là chưa mua lại.
+
+Bảng rút gọn chọn 10 ngành có nhiều dòng nhất, phá hòa bằng ID tăng dần; phần còn lại được tổng hợp lại trên các dòng và hợp các giỏ tương ứng.
+
+```{=latex}
+\begingroup
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.8cm}@{}}
+\caption{Cơ cấu ngành hàng trên reference: Top-10 và phần còn lại}\label{tbl-ref-department-structure}\\
+\toprule
+Ngành & Số dòng & Dòng (\%) & Phủ giỏ (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Ngành & Số dòng & Dòng (\%) & Phủ giỏ (\%) \\
+\midrule
+\endhead
+produce & 122.514 & 29,52 & 73,95 \\
+dairy eggs & 65.299 & 15,73 & 66,76 \\
+snacks & 35.647 & 8,59 & 43,73 \\
+beverages & 34.189 & 8,24 & 46,89 \\
+frozen & 30.080 & 7,25 & 38,90 \\
+pantry & 24.261 & 5,85 & 36,06 \\
+bakery & 14.560 & 3,51 & 27,60 \\
+canned goods & 14.056 & 3,39 & 22,59 \\
+deli & 13.376 & 3,22 & 24,72 \\
+dry goods pasta & 11.345 & 2,73 & 19,47 \\
+Các ngành còn lại & 49.726 & 11,98 & 55,85 \\
+\bottomrule
+\end{longtable}
+\endgroup
+```
+
+*Nguồn: department_display.csv; tỷ trọng trên 415.053 dòng, độ phủ trên 39.363 giỏ. Đơn vị và mẫu số theo chú giải trong phần nội dung.*
+
+Ngành produce có 122.514 lượt xuất hiện, chiếm 29,52% dòng và hiện diện trong 29.108 giỏ (73,95%). Tỷ trọng dòng các ngành cộng thành 100%, nhưng độ phủ có thể cộng vượt 100% vì một giỏ chứa nhiều ngành. Nhóm “còn lại” phủ 55,85% giỏ; con số này được tính từ hợp giỏ, không cộng độ phủ từng ngành. Lượt xuất hiện không phải số đơn vị bán hay doanh thu. Các nhãn nguồn `other` và `missing` được giữ nguyên, với giới hạn diễn giải về nội dung ngành.
+
+Popularity của sản phẩm là số giỏ chứa sản phẩm chia cho 39.363 giỏ reference. Xếp hạng giảm theo popularity, phá hòa bằng ID sản phẩm tăng dần. Các mốc Top-N đã chốt trước được dùng để mô tả hai chỉ tiêu riêng: tỷ trọng dòng thuộc danh mục và tỷ lệ giỏ có ít nhất một sản phẩm thuộc danh mục.
+
+```{=latex}
+\begingroup
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{2.8cm}@{}}
+\caption{Tỷ trọng dòng và độ phủ giỏ theo các mốc Top-N}\label{tbl-ref-top-n}\\
+\toprule
+Top-N & Số dòng & Dòng (\%) & Số giỏ & Phủ giỏ (\%) \\
+\midrule
+\endfirsthead
+\toprule
+Top-N & Số dòng & Dòng (\%) & Số giỏ & Phủ giỏ (\%) \\
+\midrule
+\endhead
+10 & 28.676 & 6,91 & 17.933 & 45,56 \\
+50 & 67.693 & 16,31 & 24.801 & 63,01 \\
+100 & 94.565 & 22,78 & 28.212 & 71,67 \\
+500 & 174.136 & 41,96 & 34.089 & 86,60 \\
+1.000 & 218.767 & 52,71 & 36.041 & 91,56 \\
+\bottomrule
+\end{longtable}
+\endgroup
+```
+
+*Nguồn: top_n_coverage.csv; mẫu số 415.053 dòng và 39.363 giỏ. Đơn vị và mẫu số theo chú giải trong phần nội dung.*
+
+Top-1.000 sản phẩm chiếm 52,71% dòng nhưng phủ 91,56% giỏ. Vẫn còn 196.286 dòng (47,29%) nằm ngoài nhóm này. Một giỏ được “phủ” có thể đồng thời chứa nhiều sản phẩm ngoài Top-N; vì vậy độ phủ giỏ cao không chứng minh danh mục đã giữ gần hết thành phần giỏ. Các con số chỉ cung cấp căn cứ cho lưới pilot Chương 4, chưa chốt N hoặc ngưỡng support và chưa chứng minh hiệu quả gợi ý.

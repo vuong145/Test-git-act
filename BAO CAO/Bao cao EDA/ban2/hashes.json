@@ -1,0 +1,16 @@
+{
+  "files": {
+    "BAO CAO/Bao cao EDA/ban2/time_pivot_median.csv": "2d71dd02b284772d89841a11f58c98d883aa5c77b2d74cf158480420a97e27ac",
+    "BAO CAO/Bao cao EDA/ban2/time_pivot_count.csv": "a995396a3ce2eb57f2097604ddeb94d95ba2b6a222aa9763d58ef73c9e35bece",
+    "BAO CAO/Bao cao EDA/ban2/time_pivot_small_group.csv": "8a14dbf3d8197750ade163a1a5e98da7e1f07e0c716716c6d61dcb42fc6a4f0a",
+    "BAO CAO/Bao cao EDA/ban2/hour_band_summary.csv": "759047417a97b6ac6d1aa02bc92a3c899e6c55d09cea751c57ee614107ef1505",
+    "BAO CAO/Bao cao EDA/ban2/correlation_spearman.csv": "075e7acb0a82451bb5654153c1bd5d699ed3fdbf485972fd57e30cc93c82ca42",
+    "BAO CAO/Bao cao EDA/ban2/correlation_pearson.csv": "867ee3561bbabe5aac5572d917338753d0c8b1fd35deef27db4eb3f9300e6ab4",
+    "BAO CAO/Bao cao EDA/ban2/correlation_pair_n.csv": "ab2d4bd71ab3ea093ce08509b53f95467a305064109568ef8bf86defeb757a74",
+    "BAO CAO/Bao cao EDA/ban2/department_pair_summary.csv": "2bf5d7eb3d7b1b1cb44181d499b921d0d7fcb5dfd2f7f3207331dfc966e9c05d",
+    "BAO CAO/Bao cao EDA/ban2/lift_baseline.csv": "8655356525228b425b7761d1b6d3c20cdb5b255283eb173b97bd6fe8ed308c8c",
+    "DATA/Data phai sinh/M2/department_presence.parquet": "229a29d4fe95e5bde12a01c13816da6c4857fee9045ea8d72972e0d4ed22599a"
+  },
+  "N_baskets": 39363,
+  "N_rows": 415053
+}

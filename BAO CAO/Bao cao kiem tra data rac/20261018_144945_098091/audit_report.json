@@ -1,0 +1,740 @@
+{
+  "status": "completed_checks_review_required",
+  "version": "1.0",
+  "assumptions_user_supplied": {
+    "no_rows_deleted_or_shuffled_during_corruption": true,
+    "original_row_order_matches_purchase_order": "NOT CONFIRMED",
+    "no_original_clean_dataset_allowed": true,
+    "only_last_eval_labels_erased": "user claim; checked against observed data"
+  },
+  "source_files": {
+    "aisles": {
+      "name": "aisles.csv",
+      "bytes": 2316,
+      "mtime_ns": 1792022634588032800,
+      "sha256": "ffa1ddce6395a6e808d239d104ab920eb20f2e169bbc538043e1e3191ce1f987"
+    },
+    "departments": {
+      "name": "departments.csv",
+      "bytes": 277,
+      "mtime_ns": 1792022638015853000,
+      "sha256": "3d6a3f2a87ec3ccc61afea2044061017da733decda17de3beb2583dc4a1fc520"
+    },
+    "products": {
+      "name": "products.csv",
+      "bytes": 2022747,
+      "mtime_ns": 1792022836669334000,
+      "sha256": "c02c3f5c7ddbbf83b87b8b360923d81ca3a1d9fd83c6e719123cdc9d077fb7ba"
+    },
+    "orders": {
+      "name": "orders.csv",
+      "bytes": 113084083,
+      "mtime_ns": 1792022897122991200,
+      "sha256": "fbbbc436ddffefc7f609a540916e9728e81d86b8105bbaff79f3cb4dbc76269b"
+    },
+    "order_products__prior": {
+      "name": "order_products__prior.csv",
+      "bytes": 614106632,
+      "mtime_ns": 1792023211415899000,
+      "sha256": "2cc2d226d9adcb1bd9381b681844a51d911a5ddc64910def71379e9b32d4f8c3"
+    },
+    "order_products__train": {
+      "name": "order_products__train.csv",
+      "bytes": 26763333,
+      "mtime_ns": 1792022815212732600,
+      "sha256": "37530a6ecdbe40ebbd923b2b294580dd2cfd414285659b2df71363389b696071"
+    }
+  },
+  "name_lookup": {
+    "aisles_has_product_name_column": false,
+    "products_has_aisle_name_column": false,
+    "aisles_linked_to_multiple_products": 134,
+    "maximum_products_per_aisle": 1258,
+    "missing_aisle_names": 40,
+    "missing_product_names": 6923,
+    "missing_product_names_with_known_aisle_name": 4876,
+    "examples_one_aisle_multiple_product_names": [
+      {
+        "aisle_id": 61,
+        "products": [
+          {
+            "product_id": 1,
+            "product_name": "Chocolate Sandwich Cookies"
+          },
+          {
+            "product_id": 78,
+            "product_name": "Nutter Butter Cookie Bites Go-Pak"
+          },
+          {
+            "product_id": 102,
+            "product_name": "DANISH BUTTER COOKIES"
+          }
+        ]
+      },
+      {
+        "aisle_id": 104,
+        "products": [
+          {
+            "product_id": 2,
+            "product_name": "all-seasons salt"
+          },
+          {
+            "product_id": 144,
+            "product_name": "Coarse Grind Garlic Powder & Parsley Blend"
+          },
+          {
+            "product_id": 240,
+            "product_name": "Nature's Seasons Seasoning Blend"
+          }
+        ]
+      },
+      {
+        "aisle_id": 94,
+        "products": [
+          {
+            "product_id": 3,
+            "product_name": "Robust Golden Unsweetened Oolong Tea"
+          },
+          {
+            "product_id": 87,
+            "product_name": "Classics Earl Grey Tea"
+          },
+          {
+            "product_id": 97,
+            "product_name": "Organic Chamomile Lemon Tea"
+          }
+        ]
+      }
+    ],
+    "decision": "ID quầy chỉ tra được tên quầy. Không thể suy ra tên sản phẩm hoặc tên quầy đã mất từ ID đơn thuần. Không điền tên giả."
+  },
+  "relationships": {
+    "prior_train_overlapping_order_ids": 0,
+    "eval_label_vs_membership": [
+      {
+        "existing_label": "missing_or_invalid",
+        "membership": "neither",
+        "orders": 17939
+      },
+      {
+        "existing_label": "missing_or_invalid",
+        "membership": "prior",
+        "orders": 764250
+      },
+      {
+        "existing_label": "missing_or_invalid",
+        "membership": "train",
+        "orders": 31140
+      },
+      {
+        "existing_label": "prior",
+        "membership": "prior",
+        "orders": 2450624
+      },
+      {
+        "existing_label": "test",
+        "membership": "neither",
+        "orders": 57061
+      },
+      {
+        "existing_label": "train",
+        "membership": "train",
+        "orders": 100069
+      }
+    ],
+    "orders_in_neither_detail": 75000,
+    "neither_at_last_user_row": 75000,
+    "neither_with_missing_or_invalid_label": 17939,
+    "neither_missing_label_at_last_user_row": 17939,
+    "missing_or_invalid_eval_before_last_user_row": 764250,
+    "users_with_multiple_nonprior_orders": 0,
+    "test_inference_note": "Neither chỉ là ứng viên test. Cần đủ 2 bảng chi tiết, khóa hợp lệ, một đơn cuối/người và thứ tự orders được xác nhận. Last user row chưa tự chứng minh cuối theo thời gian."
+  },
+  "expected_rows_comparison": {
+    "aisles": {
+      "expected": 134,
+      "observed": 134,
+      "matches": true
+    },
+    "departments": {
+      "expected": 21,
+      "observed": 21,
+      "matches": true
+    },
+    "products": {
+      "expected": 49688,
+      "observed": 49688,
+      "matches": true
+    },
+    "orders": {
+      "expected": 3421083,
+      "observed": 3421083,
+      "matches": true
+    },
+    "order_products__prior": {
+      "expected": 32434489,
+      "observed": 32434489,
+      "matches": true
+    },
+    "order_products__train": {
+      "expected": 1384617,
+      "observed": 1384617,
+      "matches": true
+    }
+  },
+  "source_size_and_mtime_unchanged": true,
+  "elapsed_seconds": 313.58,
+  "temporary_db_bytes": 658616320,
+  "tables": {
+    "aisles": {
+      "rows": 134,
+      "columns": [
+        "aisle_id",
+        "aisle"
+      ],
+      "integrity": {}
+    },
+    "departments": {
+      "rows": 21,
+      "columns": [
+        "department_id",
+        "department"
+      ],
+      "integrity": {}
+    },
+    "products": {
+      "rows": 49688,
+      "columns": [
+        "product_id",
+        "product_name",
+        "aisle_id",
+        "department_id"
+      ],
+      "integrity": {}
+    },
+    "orders": {
+      "rows": 3421083,
+      "columns": [
+        "order_id",
+        "user_id",
+        "eval_set",
+        "order_number",
+        "order_dow",
+        "order_hour_of_day",
+        "days_since_prior_order"
+      ],
+      "integrity": {
+        "duplicate_order_id_extra_rows": 0,
+        "users_in_multiple_noncontiguous_segments": 0,
+        "duplicate_valid_user_order_number_extra_rows": 393,
+        "users_over_100_orders": 0
+      }
+    },
+    "order_products__prior": {
+      "rows": 32434489,
+      "columns": [
+        "order_id",
+        "product_id",
+        "add_to_cart_order",
+        "reordered"
+      ],
+      "integrity": {
+        "duplicate_order_product_extra_rows": 0,
+        "orders_in_multiple_noncontiguous_segments": 0,
+        "orphan_order_ids": 0,
+        "rows_with_orphan_order_id": 0
+      },
+      "baskets": 3214874,
+      "max_basket_rows": 145
+    },
+    "order_products__train": {
+      "rows": 1384617,
+      "columns": [
+        "order_id",
+        "product_id",
+        "add_to_cart_order",
+        "reordered"
+      ],
+      "integrity": {
+        "duplicate_order_product_extra_rows": 0,
+        "orders_in_multiple_noncontiguous_segments": 0,
+        "orphan_order_ids": 0,
+        "rows_with_orphan_order_id": 0
+      },
+      "baskets": 131209,
+      "max_basket_rows": 80
+    }
+  },
+  "sequence_checks": {
+    "orders": {
+      "contiguous_segments": 206209,
+      "rows": 3421083,
+      "unusable_ordinal_cells": 1233938,
+      "observed_ordinal_cells": 2187145,
+      "row_rank_matches": 2182372,
+      "row_rank_mismatches": 4773,
+      "segments_with_duplicate_ordinals": 392,
+      "segments_with_ordinal_exceeding_segment_size": 4117,
+      "segments_with_no_observed_ordinal": 525,
+      "segments_with_row_rank_contradiction": 4723,
+      "unusable_cells_in_segments_with_row_rank_contradiction": 30105,
+      "unusable_cells_in_segments_without_row_rank_contradiction": 1203833,
+      "segments_with_observed_evidence_and_no_contradiction": 200961,
+      "segments_with_one_algebraic_missing_slot_conditional": 24659
+    },
+    "order_products__prior": {
+      "contiguous_segments": 3214874,
+      "rows": 32434489,
+      "unusable_ordinal_cells": 6005160,
+      "observed_ordinal_cells": 26429329,
+      "row_rank_matches": 25667262,
+      "row_rank_mismatches": 762067,
+      "segments_with_duplicate_ordinals": 56693,
+      "segments_with_ordinal_exceeding_segment_size": 645236,
+      "segments_with_no_observed_ordinal": 36836,
+      "segments_with_row_rank_contradiction": 648064,
+      "unusable_cells_in_segments_with_row_rank_contradiction": 1668444,
+      "unusable_cells_in_segments_without_row_rank_contradiction": 4336716,
+      "segments_with_observed_evidence_and_no_contradiction": 2529974,
+      "segments_with_one_algebraic_missing_slot_conditional": 728332
+    },
+    "order_products__train": {
+      "contiguous_segments": 131209,
+      "rows": 1384617,
+      "unusable_ordinal_cells": 525773,
+      "observed_ordinal_cells": 858844,
+      "row_rank_matches": 790964,
+      "row_rank_mismatches": 67880,
+      "segments_with_duplicate_ordinals": 11244,
+      "segments_with_ordinal_exceeding_segment_size": 48790,
+      "segments_with_no_observed_ordinal": 4384,
+      "segments_with_row_rank_contradiction": 48861,
+      "unusable_cells_in_segments_with_row_rank_contradiction": 259506,
+      "unusable_cells_in_segments_without_row_rank_contradiction": 266267,
+      "segments_with_observed_evidence_and_no_contradiction": 77964,
+      "segments_with_one_algebraic_missing_slot_conditional": 16173
+    }
+  },
+  "missing_tokens_observed": [
+    {
+      "table": "aisles",
+      "column": "aisle",
+      "token": "",
+      "count": 6
+    },
+    {
+      "table": "aisles",
+      "column": "aisle",
+      "token": "?",
+      "count": 4
+    },
+    {
+      "table": "aisles",
+      "column": "aisle",
+      "token": "chưa rõ",
+      "count": 8
+    },
+    {
+      "table": "aisles",
+      "column": "aisle",
+      "token": "n/a",
+      "count": 3
+    },
+    {
+      "table": "aisles",
+      "column": "aisle",
+      "token": "none",
+      "count": 3
+    },
+    {
+      "table": "aisles",
+      "column": "aisle",
+      "token": "null",
+      "count": 10
+    },
+    {
+      "table": "aisles",
+      "column": "aisle",
+      "token": "unknown",
+      "count": 6
+    },
+    {
+      "table": "order_products__prior",
+      "column": "add_to_cart_order",
+      "token": "",
+      "count": 536742
+    },
+    {
+      "table": "order_products__prior",
+      "column": "add_to_cart_order",
+      "token": "-",
+      "count": 537752
+    },
+    {
+      "table": "order_products__prior",
+      "column": "add_to_cart_order",
+      "token": "?",
+      "count": 536818
+    },
+    {
+      "table": "order_products__prior",
+      "column": "add_to_cart_order",
+      "token": "n/a",
+      "count": 536912
+    },
+    {
+      "table": "order_products__prior",
+      "column": "add_to_cart_order",
+      "token": "none",
+      "count": 537357
+    },
+    {
+      "table": "order_products__prior",
+      "column": "add_to_cart_order",
+      "token": "null",
+      "count": 537577
+    },
+    {
+      "table": "order_products__prior",
+      "column": "reordered",
+      "token": "",
+      "count": 906721
+    },
+    {
+      "table": "order_products__prior",
+      "column": "reordered",
+      "token": "-",
+      "count": 906258
+    },
+    {
+      "table": "order_products__prior",
+      "column": "reordered",
+      "token": "?",
+      "count": 907796
+    },
+    {
+      "table": "order_products__prior",
+      "column": "reordered",
+      "token": "n/a",
+      "count": 905652
+    },
+    {
+      "table": "order_products__prior",
+      "column": "reordered",
+      "token": "none",
+      "count": 907083
+    },
+    {
+      "table": "order_products__prior",
+      "column": "reordered",
+      "token": "null",
+      "count": 904918
+    },
+    {
+      "table": "order_products__train",
+      "column": "add_to_cart_order",
+      "token": "",
+      "count": 58261
+    },
+    {
+      "table": "order_products__train",
+      "column": "add_to_cart_order",
+      "token": "-",
+      "count": 58220
+    },
+    {
+      "table": "order_products__train",
+      "column": "add_to_cart_order",
+      "token": "?",
+      "count": 57880
+    },
+    {
+      "table": "order_products__train",
+      "column": "add_to_cart_order",
+      "token": "n/a",
+      "count": 58305
+    },
+    {
+      "table": "order_products__train",
+      "column": "add_to_cart_order",
+      "token": "none",
+      "count": 58147
+    },
+    {
+      "table": "order_products__train",
+      "column": "add_to_cart_order",
+      "token": "null",
+      "count": 57926
+    },
+    {
+      "table": "order_products__train",
+      "column": "reordered",
+      "token": "",
+      "count": 35259
+    },
+    {
+      "table": "order_products__train",
+      "column": "reordered",
+      "token": "-",
+      "count": 34958
+    },
+    {
+      "table": "order_products__train",
+      "column": "reordered",
+      "token": "?",
+      "count": 35546
+    },
+    {
+      "table": "order_products__train",
+      "column": "reordered",
+      "token": "n/a",
+      "count": 35191
+    },
+    {
+      "table": "order_products__train",
+      "column": "reordered",
+      "token": "none",
+      "count": 35263
+    },
+    {
+      "table": "order_products__train",
+      "column": "reordered",
+      "token": "null",
+      "count": 35354
+    },
+    {
+      "table": "orders",
+      "column": "days_since_prior_order",
+      "token": "",
+      "count": 128503
+    },
+    {
+      "table": "orders",
+      "column": "days_since_prior_order",
+      "token": "-",
+      "count": 83489
+    },
+    {
+      "table": "orders",
+      "column": "days_since_prior_order",
+      "token": "?",
+      "count": 83175
+    },
+    {
+      "table": "orders",
+      "column": "days_since_prior_order",
+      "token": "n/a",
+      "count": 82791
+    },
+    {
+      "table": "orders",
+      "column": "days_since_prior_order",
+      "token": "nan",
+      "count": 125900
+    },
+    {
+      "table": "orders",
+      "column": "days_since_prior_order",
+      "token": "none",
+      "count": 83512
+    },
+    {
+      "table": "orders",
+      "column": "days_since_prior_order",
+      "token": "null",
+      "count": 165882
+    },
+    {
+      "table": "orders",
+      "column": "eval_set",
+      "token": "",
+      "count": 44745
+    },
+    {
+      "table": "orders",
+      "column": "eval_set",
+      "token": "?",
+      "count": 45036
+    },
+    {
+      "table": "orders",
+      "column": "eval_set",
+      "token": "chưa rõ",
+      "count": 45431
+    },
+    {
+      "table": "orders",
+      "column": "eval_set",
+      "token": "n/a",
+      "count": 44857
+    },
+    {
+      "table": "orders",
+      "column": "eval_set",
+      "token": "none",
+      "count": 45247
+    },
+    {
+      "table": "orders",
+      "column": "eval_set",
+      "token": "null",
+      "count": 89609
+    },
+    {
+      "table": "orders",
+      "column": "eval_set",
+      "token": "unknown",
+      "count": 44405
+    },
+    {
+      "table": "orders",
+      "column": "order_dow",
+      "token": "",
+      "count": 77163
+    },
+    {
+      "table": "orders",
+      "column": "order_dow",
+      "token": "-",
+      "count": 77821
+    },
+    {
+      "table": "orders",
+      "column": "order_dow",
+      "token": "?",
+      "count": 76816
+    },
+    {
+      "table": "orders",
+      "column": "order_dow",
+      "token": "n/a",
+      "count": 76550
+    },
+    {
+      "table": "orders",
+      "column": "order_dow",
+      "token": "none",
+      "count": 77377
+    },
+    {
+      "table": "orders",
+      "column": "order_dow",
+      "token": "null",
+      "count": 77604
+    },
+    {
+      "table": "orders",
+      "column": "order_hour_of_day",
+      "token": "",
+      "count": 79411
+    },
+    {
+      "table": "orders",
+      "column": "order_hour_of_day",
+      "token": "-",
+      "count": 79809
+    },
+    {
+      "table": "orders",
+      "column": "order_hour_of_day",
+      "token": "?",
+      "count": 79452
+    },
+    {
+      "table": "orders",
+      "column": "order_hour_of_day",
+      "token": "n/a",
+      "count": 79103
+    },
+    {
+      "table": "orders",
+      "column": "order_hour_of_day",
+      "token": "none",
+      "count": 79356
+    },
+    {
+      "table": "orders",
+      "column": "order_hour_of_day",
+      "token": "null",
+      "count": 158416
+    },
+    {
+      "table": "orders",
+      "column": "order_number",
+      "token": "",
+      "count": 133053
+    },
+    {
+      "table": "orders",
+      "column": "order_number",
+      "token": "-",
+      "count": 132849
+    },
+    {
+      "table": "orders",
+      "column": "order_number",
+      "token": "?",
+      "count": 133192
+    },
+    {
+      "table": "orders",
+      "column": "order_number",
+      "token": "n/a",
+      "count": 133436
+    },
+    {
+      "table": "orders",
+      "column": "order_number",
+      "token": "none",
+      "count": 133100
+    },
+    {
+      "table": "orders",
+      "column": "order_number",
+      "token": "null",
+      "count": 133085
+    },
+    {
+      "table": "products",
+      "column": "product_name",
+      "token": "",
+      "count": 869
+    },
+    {
+      "table": "products",
+      "column": "product_name",
+      "token": "?",
+      "count": 887
+    },
+    {
+      "table": "products",
+      "column": "product_name",
+      "token": "chưa rõ",
+      "count": 862
+    },
+    {
+      "table": "products",
+      "column": "product_name",
+      "token": "n/a",
+      "count": 925
+    },
+    {
+      "table": "products",
+      "column": "product_name",
+      "token": "none",
+      "count": 864
+    },
+    {
+      "table": "products",
+      "column": "product_name",
+      "token": "null",
+      "count": 1628
+    },
+    {
+      "table": "products",
+      "column": "product_name",
+      "token": "unknown",
+      "count": 888
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<class 'pandas.DataFrame'>
+RangeIndex: 1384617 entries, 0 to 1384616
+Data columns (total 15 columns):
+ #   Column                  Non-Null Count    Dtype   
+---  ------                  --------------    -----   
+ 0   order_id                1384617 non-null  int32   
+ 1   product_id              1384617 non-null  int32   
+ 2   add_to_cart_order       1384617 non-null  int16   
+ 3   reordered               963846 non-null   float64 
+ 4   user_id                 1384617 non-null  int32   
+ 5   eval_set                1384617 non-null  category
+ 6   order_number            1384617 non-null  int16   
+ 7   order_dow               995081 non-null   float64 
+ 8   order_hour_of_day       1156850 non-null  float64 
+ 9   days_since_prior_order  1151531 non-null  float32 
+ 10  product_name            1177213 non-null  category
+ 11  aisle_id                1384617 non-null  int16   
+ 12  department_id           1384617 non-null  int8    
+ 13  aisle                   929643 non-null   category
+ 14  department              1384617 non-null  category
+dtypes: category(4), float32(1), float64(3), int16(3), int32(3), int8(1)
+memory usage: 73.6 MB

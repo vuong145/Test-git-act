@@ -1,0 +1,105 @@
+--- ban_chinh/2521001118_Nhom01_TieuLuan.qmd
++++ de_xuat/2521001118_Nhom01_TieuLuan.qmd
+@@ -231,3 +231,3 @@
+ 1. **Dữ liệu, tuần 1:** Làm sạch sáu CSV; tạo bảng phân tích chính trên **1 triệu dòng sản phẩm–đơn hàng**, đối chiếu 1.384.617 dòng train. Đầu ra gồm bảng trước–sau và kiểm tra không trùng khóa, không khóa ngoại mồ côi, không mất/nhân dòng do ghép; thuộc tính còn thiếu và giả định khôi phục được công bố.
+-2. **Tài nguyên, tuần 2:** Áp dụng chunksize, tối ưu dtype và Parquet; lập bảng RAM đỉnh, thời gian, dung lượng trước–sau trên cùng dữ liệu và máy, kiểm tra kết quả tương đương. Báo cáo mức thay đổi thực đo, không mặc định mọi kỹ thuật đều cải thiện.
++2. **Tài nguyên, tuần 2:** Đọc theo khối (chunksize) để xử lý bảng prior 32,4 triệu dòng; tối ưu dtype và Parquet cho bảng Master; lập bảng RAM đỉnh, thời gian, dung lượng trước–sau trên cùng dữ liệu và máy, kiểm tra kết quả tương đương. Báo cáo mức thay đổi thực đo, không mặc định mọi kỹ thuật đều cải thiện.
+ 3. **EDA và khai phá, tuần 2:** Đúc kết **4–5 insight định lượng** kèm biểu đồ và ý nghĩa kinh doanh; kiểm định liên hệ ngành hàng. Chạy Apriori và FP-Growth trên cùng giao dịch, danh mục và ngưỡng; đối chiếu trực tiếp itemset và support, đồng thời benchmark lặp. Confidence và lift của luật được tính từ support theo cùng công thức, không phải hai phép đối chiếu độc lập đã thực hiện.
+@@ -291,3 +291,3 @@
+ 
+-Từ các hướng trên, nhu cầu kiểm chứng của đề tài là liệu luật đồng mua và classifier cải thiện gợi ý so với độ phổ biến trong điều kiện dữ liệu nhiễu và tài nguyên giới hạn. Nghiên cứu kết nối xử lý đa bảng, benchmark khai phá và đánh giá xếp hạng; không suy rộng kết quả công trình trước thành kết quả đồ án.
++Trên Instacart, @hu2020 cho thấy phương pháp dựa trên tần suất mua của từng người dùng (TIFU-KNN) nhiều lần vượt các mô hình học sâu dùng RNN; @li2023 ghi nhận tỷ lệ món mua lại 0,597 và phần lớn mức cải thiện của các phương pháp gần đây đến từ món mua lại. Hai công trình dự đoán giỏ kế tiếp; đồ án xét bài toán hoàn thiện giỏ hiện tại, kiểm chứng liệu luật đồng mua và classifier có cải thiện gợi ý so với độ phổ biến trong điều kiện dữ liệu nhiễu và tài nguyên giới hạn; không suy rộng kết quả công trình trước thành kết quả đồ án.
+ 
+@@ -346,3 +346,3 @@
+ 
+-pandas/NumPy xử lý bảng; PyArrow lưu Parquet; SciPy hỗ trợ kiểm định; mlxtend và scikit-learn phục vụ giai đoạn mô hình; Matplotlib/Seaborn xuất hình 300 DPI. Mã nguồn tổ chức theo mô-đun; kiểm tra cú pháp và kiểm thử được ghi theo phiên, chưa coi đó là chứng nhận tuân thủ toàn bộ PEP 8. Nhật ký tại gốc ghi đúng công cụ và thao tác thực tế theo P-D-M-V. Quarto quản lý tham chiếu, trích dẫn APA 7 và biên dịch PDF. Mã nguồn và nhật ký làm việc được nộp riêng, không đưa toàn văn vào phụ lục của bản tiểu luận.
++pandas/NumPy xử lý bảng; PyArrow lưu Parquet; SciPy hỗ trợ kiểm định; mlxtend và scikit-learn phục vụ giai đoạn mô hình; Matplotlib/Seaborn xuất hình 300 DPI. Mã nguồn tổ chức theo mô-đun; kiểm tra cú pháp và kiểm thử được ghi theo phiên, chưa coi đó là chứng nhận tuân thủ toàn bộ PEP 8. Nhật ký tại gốc ghi đúng công cụ và thao tác thực tế theo P-D-M-V. Quarto quản lý tham chiếu, trích dẫn APA 7 và biên dịch PDF. Mã nguồn và nhật ký được nộp riêng.
+ 
+@@ -427,3 +427,3 @@
+ 
+-Làm sạch và chuẩn hóa khóa (mục 3.3) được chạy trước khi ghép, vì khoảng trắng và sai định dạng khóa phải được xử lý trước khi kiểm tra quan hệ; thứ tự trình bày 3.2 rồi 3.3 theo đề cương, không phải thứ tự chạy.
++Làm sạch khóa (mục 3.3) chạy trước khi ghép, vì khoảng trắng và sai định dạng khóa phải được xử lý trước khi kiểm tra quan hệ.
+ 
+@@ -457,3 +457,3 @@
+ 
+-`pd.concat(..., ignore_index=True)` chỉ nối các khối của cùng một bảng; nhóm không nối prior với train. Phần ghép và ghi đi qua sáu khối, tối đa 250.000 dòng/khối; tuy vậy bước kiểm tra miền và đối soát vẫn đọc toàn bảng vào RAM. Bước có quy mô lớn nhất (prior 32.434.489 dòng) được đọc theo khối 250.000 dòng và kiểm tra quan hệ qua SQLite trên đĩa. Bước dựng Master giữ toàn bộ bản trước ghi và bản đọc lại để đối soát từng ô; nhóm chưa đo RSS đỉnh riêng của bước này.
++`pd.concat(..., ignore_index=True)` chỉ nối các khối của cùng một bảng; nhóm không nối prior với train. Bảng lớn nhất (prior 32.434.489 dòng, CSV 585,66 MiB) được đọc theo khối 250.000 dòng và kiểm tra quan hệ qua SQLite trên đĩa để chạy được trên máy 24 GB; lượt làm sạch ngày 01/11 xử lý prior cùng hai bảng nhỏ trong 600,79 giây (`run_report.json`). Bước dựng Master ghép và ghi qua sáu khối nhưng giữ toàn bộ bản trước ghi và bản đọc lại để đối soát từng ô. Nhóm chưa đo RSS đỉnh của hai bước này và chưa benchmark đọc theo khối so với đọc toàn bộ.
+ 
+@@ -509,3 +509,3 @@
+ 
+-Script `m1_benchmark.py` đo mỗi thao tác ba lần, mỗi lần trong một tiến trình Python mới. Thời gian đo bằng `perf_counter`; RSS đỉnh lấy mẫu bằng `psutil` mỗi 5 ms, nên có thể bỏ sót đỉnh rất ngắn. Hai nhánh đọc CSV và Parquet dùng cùng quy tắc nhận diện thiếu, được chuẩn hóa về cùng hợp đồng kiểu (51,11 MiB) và được kiểm chứng trùng từng giá trị; ghi và đọc dùng cùng tệp đối chứng (`master_benchmark.parquet` 15,34 MiB, `master_benchmark.csv` 118,86 MiB). Máy đo chạy Windows 11, CPU AMD 8 nhân/16 luồng, RAM 24 GB; bảng báo trung vị trong điều kiện bộ nhớ đệm hệ điều hành đã nóng.
++Script `m1_benchmark.py` đo mỗi thao tác ba lần, mỗi lần trong một tiến trình Python mới. Thời gian đo bằng `perf_counter`; RSS đỉnh lấy mẫu bằng `psutil` mỗi 5 ms, nên có thể bỏ sót đỉnh rất ngắn. Hai nhánh đọc CSV và Parquet dùng cùng quy tắc nhận diện thiếu, được chuẩn hóa về cùng hợp đồng kiểu (51,11 MiB) và được kiểm chứng trùng từng giá trị; ghi và đọc dùng cùng tệp đối chứng (`master_benchmark.parquet` 15,34 MiB, `master_benchmark.csv` 118,86 MiB). Máy đo (mục 2.5) có CPU AMD 8 nhân/16 luồng; bảng báo trung vị trong điều kiện bộ nhớ đệm hệ điều hành đã nóng.
+ 
+@@ -548,3 +548,3 @@
+ 
+-Đây là lượt đo ngày 04/11/2026, phụ thuộc dữ liệu, thư viện và bộ nhớ đệm của máy thực nghiệm. Kết quả ủng hộ việc dùng lại `master_train.parquet` cho các bước sau, nhưng chưa nói lên hiệu năng của EDA hay mô hình.
++Kết quả phụ thuộc thư viện và bộ nhớ đệm của máy đo; nó ủng hộ việc dùng lại `master_train.parquet` cho các bước sau, nhưng chưa nói lên hiệu năng của EDA hay mô hình.
+ 
+@@ -747,3 +747,3 @@
+ 
+-@fig-ref-time-basket-size so sánh trung vị và phân bố thay vì chỉ so trung bình. Trung vị khung 18--23 là 8 sản phẩm, các khung khác là 9, và khoảng tứ phân vị chồng lấn rõ; đây là khác biệt mô tả nhỏ. Ô dưới 30 giỏ (đánh dấu *) chỉ để tham khảo.
++@fig-ref-time-basket-size so sánh trung vị và phân bố thay vì chỉ so trung bình. Trung vị khung 18--23 là 8 sản phẩm, các khung khác là 9, và khoảng tứ phân vị chồng lấn rõ; đây là khác biệt mô tả nhỏ. Không ô nào dưới 30 giỏ nên không có ô đánh dấu *.
+ 
+@@ -947,3 +947,3 @@
+ 
+-**Câu hỏi 4.** Trên test, cả ba phương pháp dùng thông tin giỏ đều cao hơn Popularity. RF cao hơn Popularity 0,0216 Recall@10 (khoảng 28,6% tương đối) với khoảng tin cậy 95% không chứa 0; Rules cao hơn khoảng 22,3% và LR khoảng 20,5% nhưng thấp hơn Rules và RF. Giá trị tuyệt đối thấp (dưới 0,1) vì trần chỉ là 0,5198 và mỗi giỏ chỉ che khoảng hai sản phẩm giữa hàng nghìn ứng viên.
++**Câu hỏi 4.** Trên test, cả ba phương pháp dùng thông tin giỏ đều cao hơn Popularity. RF cao hơn Popularity 0,0216 Recall@10 (khoảng 28,6% tương đối) với khoảng tin cậy 95% không chứa 0; Rules cao hơn khoảng 22,3% và LR khoảng 20,5% (tỷ lệ tính từ giá trị chưa làm tròn), nhưng LR thấp hơn Rules và RF. Giá trị tuyệt đối thấp (dưới 0,1) vì trần chỉ là 0,5198 và mỗi giỏ chỉ che khoảng hai sản phẩm giữa hàng nghìn ứng viên.
+ 
+@@ -965,3 +965,3 @@
+ 
+-Kết quả trả lời câu hỏi nghiên cứu 5 theo hướng triển khai có kiểm chứng: sử dụng thông tin giỏ đang tạo để đề xuất sản phẩm, lấy luật đồng mua làm nền và thử nghiệm tầng xếp hạng RF khi chi phí cho phép. Trên cùng 24.877 giỏ test, Recall@10 của RF đạt 0,0971, cao hơn Popularity 0,0216, với khoảng tin cậy bootstrap 95% [0,0192; 0,0239]. Tuy nhiên, HR@10 của RF chỉ đạt 17,08%; phần lớn giỏ chưa có sản phẩm che được tìm thấy trong Top-10. Vì vậy, cải thiện ngoại tuyến là căn cứ thử nghiệm, chưa đủ để cam kết hiệu quả thương mại.
++Kết quả trả lời câu hỏi nghiên cứu 5 theo hướng triển khai có kiểm chứng: sử dụng thông tin giỏ đang tạo để đề xuất sản phẩm, lấy luật đồng mua làm nền và thử nghiệm tầng xếp hạng RF khi chi phí cho phép. Trên cùng 24.877 giỏ test, Recall@10 của RF đạt 0,0971, cao hơn Popularity 0,0216, với khoảng tin cậy bootstrap 95% [0,0192; 0,0239]. HR@10 của RF là 17,08%, tức phần lớn giỏ chưa có sản phẩm bị che trong Top-10. Mọi bằng chứng trong chương là kết quả ngoại tuyến trên một lần chia dữ liệu, dùng làm căn cứ thử nghiệm chứ chưa phải bằng chứng hiệu quả thương mại; các giới hạn được gom ở mục 5.3.
+ 
+@@ -972,3 +972,3 @@
+ | Produce phủ 73,95% giỏ reference; dairy eggs phủ 66,76% | Ưu tiên thử vị trí gợi ý trong các ngành có độ phủ cao | Độ phủ không đo giá trị đơn hàng hay lợi nhuận |
+-| Ba cặp có V từ 0,152 đến 0,201; dry goods pasta–pantry có lift 1,412, phân vị 80 | Ưu tiên thử dry goods pasta–pantry | Hai cặp còn lại chỉ thử khi có lý do kinh doanh riêng; không suy ra nhân quả |
++| Ba cặp có V từ 0,152 đến 0,201; dry goods pasta–pantry có lift 1,412, phân vị 80 | Ưu tiên thử dry goods pasta–pantry | Hai cặp còn lại chỉ thử khi có lý do kinh doanh riêng |
+ | Trần Recall@10 test là 0,5198 với Top-1.000 | Giữ danh mục hiện tại làm mốc; nghiên cứu thêm ứng viên ít phổ biến | Mở rộng danh mục chưa bảo đảm xếp hạng tốt hơn |
+@@ -989,12 +989,12 @@
+ 
+-- $\Delta H\approx0{,}00627$ là số sản phẩm bị che mà RF xếp trúng Top-10 nhiều hơn Rules ở mỗi giỏ, tính bằng $10\times(0{,}018740-0{,}018113)$ từ P@10 (@tbl-c4-ranking), tương đương khoảng 6,3 sản phẩm trên 1.000 giỏ. Đây là ước lượng điểm của một so sánh bổ trợ, đo ngoại tuyến trên tập test. Khoảng tin cậy 95% của chênh lệch Recall@10 [0,0031; 0,0063] không quy đổi trực tiếp sang $\Delta H$ được, vì Recall chia số trúng cho số sản phẩm bị che của từng giỏ.
++- $\Delta H\approx0{,}00627$ là số sản phẩm bị che mà RF xếp trúng Top-10 nhiều hơn Rules ở mỗi giỏ, tính bằng $10\times(0{,}018740-0{,}018113)$ từ P@10 (@tbl-c4-ranking), tương đương khoảng 6,3 sản phẩm trên 1.000 giỏ. Đây là ước lượng điểm trên tập test. Khoảng tin cậy 95% của chênh lệch Recall@10 [0,0031; 0,0063] không quy đổi trực tiếp sang $\Delta H$ được, vì Recall chia số trúng cho số sản phẩm bị che của từng giỏ.
+ - $p$ là xác suất khách thêm vào giỏ một sản phẩm được gợi ý trúng; chỉ đo được bằng thử nghiệm A/B.
+-- $m$ là biên lợi nhuận gộp bình quân trên một sản phẩm.
++- $m$ là biên lợi nhuận gộp tăng thêm trên một sản phẩm được gợi ý trúng. Sản phẩm bị che là món khách vốn định mua, nên một lần trúng có thể chỉ nhắc lại món đó thay vì tạo doanh thu mới; $\Delta H$ đo khả năng gợi ý trúng, không đo doanh thu tăng thêm. Phần tăng thêm chỉ đo được bằng thử nghiệm A/B có nhóm đối chứng.
+ - $\Delta c$ là chi phí điện toán chênh thêm mỗi giỏ. Thời gian chấm validation theo lô, gồm tạo đặc trưng và xếp hạng, là 63,55 giây với RF và 6,19 giây với Rules trên 24.854 giỏ, tức khoảng 2,56 và 0,25 ms mỗi giỏ; chênh $\Delta t\approx2{,}3$ ms mỗi giỏ (tỷ số $63{,}55/6{,}19\approx10{,}3$ lần). Đây không phải độ trễ một yêu cầu trực tuyến.
+ 
+-Điều kiện hòa vốn là $p\times m\ge\Delta c/\Delta H$. Để minh họa, nhóm dùng một kịch bản giả định (không phải số đo): thuê trọn một máy 16 vCPU với đơn giá 0,05 USD cho một vCPU-giờ, tức 0,80 USD mỗi giờ; thời gian chấm tăng tuyến tính theo số giỏ; máy thuê có hiệu năng tương đương máy đo (máy 16 luồng tại chỗ không mặc nhiên tương đương 16 vCPU thuê). Khi đó một triệu giỏ cần thêm khoảng 2.308 giây, tức 0,641 giờ máy, và chi phí thuê máy chênh lệch cho xử lý theo lô ước khoảng $0{,}641\times0{,}80\approx0{,}51$ USD mỗi triệu giỏ, chưa bao gồm vận hành, lưu trữ và phục vụ trực tuyến. Với khoảng 6.270 sản phẩm trúng thêm mỗi triệu giỏ, mức lợi ích kỳ vọng cần có trên mỗi sản phẩm trúng thêm ngoại tuyến để bù khoản này là khoảng $0{,}51/6.270\approx8{,}2\times10^{-5}$ USD theo mô hình giả định; đây không phải lợi nhuận trên một sản phẩm bán thêm thực tế. $\Delta H$ lấy từ tập test, còn thời gian lấy từ lượt chấm validation theo lô.
+-
+-Ngoài chi phí xử lý theo lô, hai yếu tố chưa được đo là độ trễ phục vụ theo từng yêu cầu và chi phí cố định $F$ để vận hành mô hình (giám sát, huấn luyện lại, phát hiện trôi dữ liệu), trong khi mức tăng chất lượng nhỏ. Điều kiện đầy đủ là $N_{\text{giỏ}}\times\Delta H\times p\times m>N_{\text{giỏ}}\times\Delta c+F$. Nghiên cứu không có $p$, $m$ và $F$ nên không kết luận RF đáng đầu tư; thử nghiệm A/B phải đo $p$ và $\Delta H$ thực, và nếu không đạt hòa vốn thì giữ Rules.
+-
+-Phép bỏ nhóm đặc trưng củng cố vai trò của luật: Recall@10 validation của RF giảm từ 0,0971 xuống 0,0788 khi bỏ ba biến luật. Điều này ủng hộ giữ thông tin đồng mua trong hệ thống, chưa chứng minh kiến trúc nào tối ưu cho mọi doanh nghiệp.
++Điều kiện hòa vốn là $p\times m\ge\Delta c/\Delta H$. Để minh họa, nhóm dùng một kịch bản giả định (không phải số đo): thuê trọn một máy 16 vCPU với đơn giá 0,05 USD cho một vCPU-giờ, tức 0,80 USD mỗi giờ; thời gian chấm tăng tuyến tính theo số giỏ; máy thuê có hiệu năng tương đương máy đo (máy 16 luồng tại chỗ không mặc nhiên tương đương 16 vCPU thuê). Khi đó một triệu giỏ cần thêm khoảng 2.308 giây, tức 0,641 giờ máy, và chi phí thuê máy chênh lệch cho xử lý theo lô ước khoảng $0{,}641\times0{,}80\approx0{,}51$ USD mỗi triệu giỏ, chưa bao gồm vận hành, lưu trữ và phục vụ trực tuyến. Với khoảng 6.270 sản phẩm trúng thêm mỗi triệu giỏ, mức lợi ích kỳ vọng cần có trên mỗi sản phẩm trúng thêm ngoại tuyến để bù khoản này là khoảng $0{,}51/6.270\approx8{,}2\times10^{-5}$ USD theo mô hình giả định. $\Delta H$ lấy từ tập test, còn thời gian lấy từ lượt chấm validation theo lô.
++
++Ngoài chi phí xử lý theo lô, hai yếu tố chưa được đo là độ trễ phục vụ theo từng yêu cầu và chi phí cố định $F$ để vận hành mô hình (giám sát, huấn luyện lại, phát hiện trôi dữ liệu), trong khi mức tăng chất lượng nhỏ. Điều kiện đầy đủ là $N_{\text{giỏ}}\times\Delta H\times p\times m>N_{\text{giỏ}}\times\Delta c+F$. Nghiên cứu không có $p$, $m$ và $F$ nên không kết luận RF đáng đầu tư; thử nghiệm A/B phải đo $p$, $m$ tăng thêm và $\Delta H$ thực, và nếu không đạt hòa vốn thì giữ Rules.
++
++Phép bỏ nhóm đặc trưng củng cố vai trò của luật: Recall@10 validation của RF giảm từ 0,0971 xuống 0,0788 khi bỏ ba biến luật. Điều này ủng hộ giữ thông tin đồng mua trong hệ thống.
+ 
+@@ -1004,3 +1004,3 @@
+ 
+-**Bước 1 — Hoàn tất nền ngoại tuyến.** Nhóm đã có dữ liệu làm sạch, phân hoạch theo người dùng, benchmark, chọn cấu hình trên validation và kết quả test sau khóa. Các tệp cấu hình, mã băm và kết quả được giữ để kiểm chứng; không dùng test để chọn lại mô hình. Đây là đầu vào kỹ thuật, chưa phải một hệ thống đã triển khai tại doanh nghiệp.
++**Bước 1 — Hoàn tất nền ngoại tuyến.** Nhóm đã có dữ liệu làm sạch, phân hoạch theo người dùng, benchmark, chọn cấu hình trên validation và kết quả test sau khóa. Các tệp cấu hình, mã băm và kết quả được giữ để kiểm chứng; không dùng test để chọn lại mô hình.
+ 
+@@ -1021,3 +1021,3 @@
+ 
+-*Nguồn: Nhóm đề xuất từ giới hạn của thực nghiệm. Đây là kế hoạch đo trong tương lai; nghiên cứu hiện tại chưa đo doanh thu, tỷ lệ nhấp hay độ phủ danh mục được gợi ý.*
++*Nguồn: Nhóm đề xuất từ giới hạn của thực nghiệm. Đây là kế hoạch đo trong tương lai.*
+ 
+@@ -1029,3 +1029,3 @@
+ 
+-**Giới hạn mô hình.** Các phương pháp dùng chung Top-1.000 nên so sánh có điều kiện trên cùng danh mục. Có 8.449 giỏ test không có sản phẩm che nào thuộc danh mục, khiến mọi phương pháp đều không thể trúng ở các giỏ này. Ba tham số luật (tối thiểu 20 giỏ, độ dài tối đa 2, confidence tối thiểu 0,05) ở mức thấp nhất của lưới; N = 1.000 nằm giữa {500; 1.000; 2.000}. Nghiên cứu không chứng minh tối ưu ngoài phạm vi đã khảo sát. Lấy mẫu âm trên fit làm đổi tỷ lệ lớp, nên điểm LR/RF chưa được coi là xác suất mua đã hiệu chỉnh. Thời gian và RAM phụ thuộc phần cứng, thư viện và cách xử lý theo lô; độ quan trọng đặc trưng chịu ảnh hưởng của tương quan, không phải bằng chứng nhân quả.
++**Giới hạn mô hình.** Các phương pháp dùng chung Top-1.000 nên so sánh có điều kiện trên cùng danh mục. Có 8.449 giỏ test không có sản phẩm che nào thuộc danh mục, khiến mọi phương pháp đều không thể trúng ở các giỏ này. Ba tham số luật (tối thiểu 20 giỏ, độ dài tối đa 2, confidence tối thiểu 0,05) ở mức thấp nhất của lưới; N = 1.000 nằm giữa {500; 1.000; 2.000}. Lấy mẫu âm trên fit làm đổi tỷ lệ lớp, nên điểm LR/RF chưa được coi là xác suất mua đã hiệu chỉnh. Thời gian và RAM phụ thuộc phần cứng, thư viện và cách xử lý theo lô; độ quan trọng đặc trưng chịu ảnh hưởng của tương quan, không phải bằng chứng nhân quả.
+ 
+@@ -1037,7 +1037,7 @@
+ 
+-Hướng phát triển ưu tiên là bổ sung ứng viên ít phổ biến, mô hình hóa trình tự khi có lịch sử tương tác phù hợp, hiệu chỉnh điểm xác suất và đánh giá riêng theo nhóm kích thước giỏ trên dữ liệu phát triển. Cần kiểm tra qua nhiều thời kỳ và bộ chia để đánh giá độ ổn định, sau đó thực hiện thử nghiệm A/B theo lộ trình trên. Đây là các hướng chưa triển khai trong phạm vi đồ án.
+-
+-Đối với câu hỏi 1, nghiên cứu xây dựng quy trình làm sạch và ghép sáu bảng thành Master, kèm đối soát quan hệ và hồ sơ tối ưu kiểu dữ liệu ở Chương 3. Đối với câu hỏi 2, mẫu reference có trung vị 9 sản phẩm/giỏ, produce và dairy eggs phủ rộng; 182 trong 210 cặp ngành có lift lớn hơn 1, nhưng ba liên hệ đã kiểm định chỉ có cỡ hiệu ứng nhỏ. Các kết quả mô tả hỗ trợ đặt giả thuyết kinh doanh, không thay thế thử nghiệm.
+-
+-Đối với câu hỏi 3, Apriori và FP-Growth cho cùng itemset và support ở hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy đã đo. Đối với câu hỏi 4, RF đạt Recall@10 test 0,0971, vượt Popularity 0,0216; chênh lệch với Rules là 0,0047 trong so sánh bổ trợ chưa hiệu chỉnh đa so sánh. LR không vượt Rules. Trần 0,5198 cho thấy danh mục ứng viên còn giới hạn đáng kể chất lượng tối đa. Đối với câu hỏi 5, giải pháp đề xuất là sử dụng luật đồng mua, thử RF theo lợi ích và chi phí, duy trì dự phòng độ phổ biến và giám sát chất lượng lẫn quyền riêng tư. Kết quả hiện tại xác nhận hiệu quả ngoại tuyến trong thiết kế đã khảo sát; cần thử nghiệm thực tế trước khi kết luận về doanh thu.
++Hướng phát triển ưu tiên là bổ sung ứng viên ít phổ biến, mô hình hóa trình tự khi có lịch sử tương tác phù hợp, hiệu chỉnh điểm xác suất và đánh giá riêng theo nhóm kích thước giỏ trên dữ liệu phát triển. Cần kiểm tra qua nhiều thời kỳ và bộ chia để đánh giá độ ổn định, sau đó thực hiện thử nghiệm A/B theo lộ trình trên.
++
++Đối với câu hỏi 1, sáu bảng được làm sạch và ghép thành Master 1.384.617 dòng × 15 cột, cả bốn phép ghép khớp 100%; tối ưu kiểu giảm 88,16% bộ nhớ DataFrame và Parquet đọc nhanh hơn CSV khoảng 29,59 lần trên máy đã đo. Đối với câu hỏi 2, mẫu reference có trung vị 9 sản phẩm/giỏ, produce và dairy eggs phủ rộng; 182 trong 210 cặp ngành có lift lớn hơn 1, nhưng ba liên hệ đã kiểm định chỉ có cỡ hiệu ứng nhỏ.
++
++Đối với câu hỏi 3, Apriori và FP-Growth cho cùng itemset và support ở hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy đã đo. Đối với câu hỏi 4, RF đạt Recall@10 test 0,0971, vượt Popularity 0,0216; hơn Rules 0,0047 trong so sánh bổ trợ (mục 5.1). LR không vượt Rules. Trần 0,5198 cho thấy danh mục ứng viên còn giới hạn đáng kể chất lượng tối đa. Đối với câu hỏi 5, giải pháp đề xuất là sử dụng luật đồng mua, thử RF theo lợi ích và chi phí, duy trì dự phòng độ phổ biến và giám sát chất lượng lẫn quyền riêng tư. Kết quả hiện tại xác nhận hiệu quả ngoại tuyến trong thiết kế đã khảo sát; cần thử nghiệm thực tế trước khi kết luận về doanh thu.
+ 

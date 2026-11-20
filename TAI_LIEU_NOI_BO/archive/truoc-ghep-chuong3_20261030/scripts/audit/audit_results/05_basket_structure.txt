@@ -1,0 +1,123 @@
+{
+  "check": "05_basket_structure",
+  "status": "completed",
+  "scope": "all CSV records; no sampling",
+  "results": {
+    "prior": {
+      "counts": {
+        "rows": 32434489,
+        "reordered_1": 13695977,
+        "valid_position_rows": 26204303,
+        "reordered_invalid_or_missing": 9209345,
+        "reordered_0": 9529167,
+        "invalid_cart_position_rows": 6230186,
+        "duplicate_position_extra_rows": 59266,
+        "baskets": 3214874,
+        "max_observed_basket_rows": 145,
+        "baskets_noncontiguous_or_invalid_positions": 2506391
+      },
+      "reorder_rate_valid_rows": 0.589705,
+      "position_examples": [
+        {
+          "order_id": 3,
+          "rows": 8,
+          "distinct_positions": 5,
+          "min_position": 1,
+          "max_position": 8
+        },
+        {
+          "order_id": 4,
+          "rows": 13,
+          "distinct_positions": 10,
+          "min_position": 2,
+          "max_position": 9999
+        },
+        {
+          "order_id": 5,
+          "rows": 26,
+          "distinct_positions": 21,
+          "min_position": 1,
+          "max_position": 26
+        },
+        {
+          "order_id": 6,
+          "rows": 3,
+          "distinct_positions": 2,
+          "min_position": 2,
+          "max_position": 3
+        },
+        {
+          "order_id": 7,
+          "rows": 2,
+          "distinct_positions": 1,
+          "min_position": 2,
+          "max_position": 2
+        }
+      ]
+    },
+    "train": {
+      "counts": {
+        "rows": 1384617,
+        "reordered_1": 572446,
+        "valid_position_rows": 848990,
+        "invalid_cart_position_rows": 535627,
+        "reordered_0": 383388,
+        "reordered_invalid_or_missing": 428783,
+        "duplicate_position_extra_rows": 14406,
+        "baskets": 131209,
+        "max_observed_basket_rows": 80,
+        "baskets_noncontiguous_or_invalid_positions": 121445
+      },
+      "reorder_rate_valid_rows": 0.598897,
+      "position_examples": [
+        {
+          "order_id": 1,
+          "rows": 8,
+          "distinct_positions": 4,
+          "min_position": 1,
+          "max_position": 6
+        },
+        {
+          "order_id": 36,
+          "rows": 8,
+          "distinct_positions": 4,
+          "min_position": 1,
+          "max_position": 5
+        },
+        {
+          "order_id": 38,
+          "rows": 9,
+          "distinct_positions": 8,
+          "min_position": 1,
+          "max_position": 9
+        },
+        {
+          "order_id": 96,
+          "rows": 7,
+          "distinct_positions": 5,
+          "min_position": 2,
+          "max_position": 7
+        },
+        {
+          "order_id": 98,
+          "rows": 49,
+          "distinct_positions": 29,
+          "min_position": 1,
+          "max_position": 9999
+        }
+      ]
+    },
+    "note": "Contiguous positions do NOT prove that the final basket was not truncated. No check can certify completeness without a full-source reference. Reordered is checked for 0/1 only, NOT against customer purchase history. Uses disk-backed SQLite; input row order does not matter."
+  },
+  "input_files": {
+    "order_products__prior": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương3.csv",
+      "bytes": 614106632
+    },
+    "order_products__train": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương4.csv",
+      "bytes": 26763333
+    }
+  },
+  "seconds": 382.44
+}

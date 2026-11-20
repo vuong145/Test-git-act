@@ -1,0 +1,61 @@
+{
+  "contract_version": 1,
+  "master": "DATA/Data đã làm sạch/master_train.parquet",
+  "clean_dir": "DATA/Data đã làm sạch",
+  "data_dir": "DATA/Data phai sinh/M2",
+  "report_dir": "BAO CAO/Bao cao EDA/common",
+  "hypotheses_config": "configs/hypotheses_config.json",
+  "min_group_n": 30,
+  "outputs": {
+    "tables": "BAO CAO/Bao cao EDA",
+    "ban1": "BAO CAO/Bao cao EDA/ban1",
+    "ban2": "BAO CAO/Bao cao EDA/ban2",
+    "figures": "BAO CAO/Bao cao EDA/figures",
+    "plot_data": "BAO CAO/Bao cao EDA/plot_data",
+    "drafts": "drafts/m2",
+    "figures_ban1": "BAO CAO/Bao cao EDA/figures/ban1",
+    "figures_ban2": "BAO CAO/Bao cao EDA/figures/ban2",
+    "plot_data_ban1": "BAO CAO/Bao cao EDA/plot_data/ban1",
+    "plot_data_ban2": "BAO CAO/Bao cao EDA/plot_data/ban2"
+  },
+  "seed": 42,
+  "rng": "PCG64",
+  "split_rule": "test=ceil(N/5);validation=floor(N/5);reference=floor(remaining/2);fit=remainder",
+  "slice_order": [
+    "test",
+    "reference",
+    "fit",
+    "validation"
+  ],
+  "expected_one_basket_per_user": true,
+  "quantile_interpolation": "linear",
+  "std_ddof": 1,
+  "kurtosis": "excess",
+  "iqr_multiplier": 1.5,
+  "hour_bins": [
+    0,
+    6,
+    12,
+    18,
+    24
+  ],
+  "hour_labels": [
+    "00–05",
+    "06–11",
+    "12–17",
+    "18–23"
+  ],
+  "top_n_grid": [
+    10,
+    50,
+    100,
+    500,
+    1000
+  ],
+  "correlation_columns": [
+    "basket_size",
+    "n_departments",
+    "n_aisles",
+    "days_since_prior_order"
+  ]
+}

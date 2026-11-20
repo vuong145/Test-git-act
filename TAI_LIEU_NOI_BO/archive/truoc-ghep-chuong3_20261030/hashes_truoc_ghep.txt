@@ -1,0 +1,196 @@
+64202cabd00772a6ac1ba149c529fa0384a08257c65f437f2abfd66ba4483a13  ./2521001118_Nhom01_TieuLuan.qmd
+ac4b0066880f9515b8f9e19a9d9a77ab8b66453c1e360228e214805f85d3aced  ./BAO CAO/Bao cao EDA/aisle_summary.csv
+b91923aa5f6e24eba794ae3ff887bc1fe8e88510b84a9c1a105f043ba0ba7954  ./BAO CAO/Bao cao EDA/ban1/document_checks.json
+25431a1f9cc2b6881987e4c384ca037fc4a4db7f9fdcee651ef0ab7f7f04fa81  ./BAO CAO/Bao cao EDA/ban1/draft_manifest.json
+0b767d724d61c9be9232835bf74a721effd39fdcffcb1319ef81029ae6870699  ./BAO CAO/Bao cao EDA/ban1/g0_package_compatibility.json
+33b20322fca68ae0baccb0bf057401d8b25c87e09fb63bab94a4c0c3e6d9fb3f  ./BAO CAO/Bao cao EDA/ban1/handoff_manifest.json
+2e3f0bb9cc47b74ddefdbf19075076bfff94850eebdd5a6be1c394d0f05ef6a4  ./BAO CAO/Bao cao EDA/ban1/plot_manifest.json
+95f96467b4c80421cd3436ccca8e0fe1d67d9934ab05d0fce2c778a9fc278b85  ./BAO CAO/Bao cao EDA/ban1/reproducibility_checks.json
+6dde7dd57f4c70f66b01fe61103d5b7cd3ae278145cb459474b6f12c9ab0d679  ./BAO CAO/Bao cao EDA/ban1/run_manifest.json
+8eb7c0024eab520ebea0f6946a1d7fcc3d35b5ab9263e567f3d6dace718127ef  ./BAO CAO/Bao cao EDA/ban1/summary_manifest.json
+fa3626032a54cd12c3fa413cf522f587d710c05a0e7cb84f51414bb5cef79e52  ./BAO CAO/Bao cao EDA/ban1/validation.json
+ab2d4bd71ab3ea093ce08509b53f95467a305064109568ef8bf86defeb757a74  ./BAO CAO/Bao cao EDA/ban2/correlation_pair_n.csv
+867ee3561bbabe5aac5572d917338753d0c8b1fd35deef27db4eb3f9300e6ab4  ./BAO CAO/Bao cao EDA/ban2/correlation_pearson.csv
+075e7acb0a82451bb5654153c1bd5d699ed3fdbf485972fd57e30cc93c82ca42  ./BAO CAO/Bao cao EDA/ban2/correlation_spearman.csv
+2bf5d7eb3d7b1b1cb44181d499b921d0d7fcb5dfd2f7f3207331dfc966e9c05d  ./BAO CAO/Bao cao EDA/ban2/department_pair_summary.csv
+19ef3008f24b0950419cea33030cef794194bf540c130cc08d2f2b262807f0f0  ./BAO CAO/Bao cao EDA/ban2/hashes.json
+759047417a97b6ac6d1aa02bc92a3c899e6c55d09cea751c57ee614107ef1505  ./BAO CAO/Bao cao EDA/ban2/hour_band_summary.csv
+ee20cd127667368f230dd13278fdd50dfdb21e5ca6800d040fa9da27bf23957b  ./BAO CAO/Bao cao EDA/ban2/hypotheses.csv
+ef85a343a859128ea2cfaaf3a8f69ff55abbe5533f535f215917d2b6688992ab  ./BAO CAO/Bao cao EDA/ban2/hypotheses_details.json
+d9b779f1c1c20958ad1bfc5ff48d170142bb68343cded11edc5cc3dca3c505c6  ./BAO CAO/Bao cao EDA/ban2/hypotheses_validation.json
+cfbc9f7907abd789ffd062f02c8357679ee5869bc413df5715194059e24805cf  ./BAO CAO/Bao cao EDA/ban2/insights_i4_i5.csv
+1591c81cc78173586241ab84ec8c41650112a753a57c97578235ce0e1a55b31c  ./BAO CAO/Bao cao EDA/ban2/lift_baseline.csv
+bf0117cadd489d6db36ea8ff226dc57594dfccdea01a70261280e92b5b2934fa  ./BAO CAO/Bao cao EDA/ban2/plots_validation.json
+a995396a3ce2eb57f2097604ddeb94d95ba2b6a222aa9763d58ef73c9e35bece  ./BAO CAO/Bao cao EDA/ban2/time_pivot_count.csv
+2d71dd02b284772d89841a11f58c98d883aa5c77b2d74cf158480420a97e27ac  ./BAO CAO/Bao cao EDA/ban2/time_pivot_median.csv
+8a14dbf3d8197750ade163a1a5e98da7e1f07e0c716716c6d61dcb42fc6a4f0a  ./BAO CAO/Bao cao EDA/ban2/time_pivot_small_group.csv
+584dde90006422de568e8c4718a9a85e27899439543e8ce8c62fc30179960b28  ./BAO CAO/Bao cao EDA/categorical_frequencies.csv
+d85c8d2bfcd58c16d707e572bc74f2b6a943053a82a0a8d2e1eab0b0fb3aafae  ./BAO CAO/Bao cao EDA/common/data_contract.json
+f49c8f7822bcc02d5076f04fbabc82f860e20b0bf16fe1e38f1be306bb19febf  ./BAO CAO/Bao cao EDA/common/environment_latest.json
+3072cfe3fe71aafdd0eee7f658436a706a13477375dc3050c2c63c3898208004  ./BAO CAO/Bao cao EDA/common/evidence_regression_checks.json
+5d42246a800f6c1d30b938783e25b0b512cb2760c99c871297b5fb54cb5780c4  ./BAO CAO/Bao cao EDA/common/foundation_manifest.json
+f501e12682109d8089dc8e15f025f816cf4f1cd08f28b3d0382ddd29968f6664  ./BAO CAO/Bao cao EDA/common/foundation_validation.json
+a92ee11be2a9aaa18642a2b1a82143454a2a228717ab8b6dc407966034dbcee1  ./BAO CAO/Bao cao EDA/common/hashes.json
+a7300c1495d81ba1dab1b18b6fc9ebc30f9fa5bba0053924269246168202eaca  ./BAO CAO/Bao cao EDA/common/history/before_evidence_fix_20261029/data_contract.json
+07e0404b9c7c28718413b08a3f379940e14cffd1aa5ed0934700bb15da9d224d  ./BAO CAO/Bao cao EDA/common/history/before_evidence_fix_20261029/environment_validation.json
+45a7ea1ea4df2be1e444d890274b3b7d39a502e9ee82387c04172d20fa8b7bc7  ./BAO CAO/Bao cao EDA/common/history/before_evidence_fix_20261029/foundation_acceptance.json
+e445853552e565ca404bf28dd02918eaef0d4f30e6a6e95c440ab3b75b3b8353  ./BAO CAO/Bao cao EDA/common/history/before_evidence_fix_20261029/foundation_manifest.json
+23d96cd4de480a1b66eab7950db9768ee7e5712c9b21a91b7a3272a5173709c6  ./BAO CAO/Bao cao EDA/common/history/before_evidence_fix_20261029/foundation_run.json
+8d2554f39366d8aa5ccdb9ff2d0fb686e73829c7a0926f246881424f80707e07  ./BAO CAO/Bao cao EDA/common/history/before_evidence_fix_20261029/foundation_validation.json
+684390b8e7447e441a2d736615ff07138c6e78da21ecdbea7a4b02695b17705f  ./BAO CAO/Bao cao EDA/common/history/before_evidence_fix_20261029/split_manifest.json
+5cd38fdbf847a7eae6831fb2f8c3a22c0b7f39eee577c3df1cd7d41beddd36fd  ./BAO CAO/Bao cao EDA/common/latest.json
+e5a962c8ea1ef281efc59b336a25f782d2ce4c33ebf63892e31f03cccb67d11e  ./BAO CAO/Bao cao EDA/common/pipeline_latest.json
+3a7ab333981297bda61182bf27cfdc7d27221f24bf190287fdf2d4d655d586b7  ./BAO CAO/Bao cao EDA/common/quality_latest.json
+69f3ad121f2bcb6d5d0cbc585530d8f3d11f10c5ac951ac10038e577f0d8e5eb  ./BAO CAO/Bao cao EDA/common/split_manifest.json
+060e0473ae95cc233e7a018ec6f6c951284dd862cc42c14ef58532fffb769781  ./BAO CAO/Bao cao EDA/department_display.csv
+d95ad78332d08d0f187fec755554b3158e0e565f61e3197bbbd91ca42555c85b  ./BAO CAO/Bao cao EDA/department_summary.csv
+be5a4ffdf732de13ed8d86391060eb168318cf223046b04205aa690ca55863fa  ./BAO CAO/Bao cao EDA/eda_summary.csv
+b58629628cb2b0bfee2f2c229cb7003878a630e324425a6c9001c7f4df8e4c03  ./BAO CAO/Bao cao EDA/plot_data/ban1/basket_boxplot_values.csv
+939f72a93e85a23c53919d201cf9b6e2e5611aecad5f753155cb7f092b1e0250  ./BAO CAO/Bao cao EDA/plot_data/ban1/basket_histogram.csv
+1e7367679854766b8429071f651fc485438ed1b20893219d2bf27590d870f775  ./BAO CAO/Bao cao EDA/plot_data/ban1/department_top10_remaining.csv
+e8e004d7e6569b57b40f5db3c81d8010f6b7b70f00dc753df855b4e716ca6e88  ./BAO CAO/Bao cao EDA/plot_data/ban1/product_cumulative.csv
+0868096d852d475bc808b602830932e9ea9bd2537a353cd644613a751d6fa08d  ./BAO CAO/Bao cao EDA/plot_data/ban1/top_n_annotations.csv
+ab2d4bd71ab3ea093ce08509b53f95467a305064109568ef8bf86defeb757a74  ./BAO CAO/Bao cao EDA/plot_data/ban2/correlation_pair_n.csv
+867ee3561bbabe5aac5572d917338753d0c8b1fd35deef27db4eb3f9300e6ab4  ./BAO CAO/Bao cao EDA/plot_data/ban2/correlation_pearson.csv
+075e7acb0a82451bb5654153c1bd5d699ed3fdbf485972fd57e30cc93c82ca42  ./BAO CAO/Bao cao EDA/plot_data/ban2/correlation_spearman.csv
+e6829cea3da95ec22eeb4e0294094a68b929f3bcfda48fdd7d1e33403110fc43  ./BAO CAO/Bao cao EDA/plot_data/ban2/department_labels.csv
+2bf5d7eb3d7b1b1cb44181d499b921d0d7fcb5dfd2f7f3207331dfc966e9c05d  ./BAO CAO/Bao cao EDA/plot_data/ban2/department_pair_summary.csv
+759047417a97b6ac6d1aa02bc92a3c899e6c55d09cea751c57ee614107ef1505  ./BAO CAO/Bao cao EDA/plot_data/ban2/hour_band_summary.csv
+7952ede3753289b1cf2ca74efcd098d324d1cff12033cfa26407c79c74f792c3  ./BAO CAO/Bao cao EDA/plot_data/ban2/order_dow_frequency.csv
+b112368b0b615b9301ad432ea5574bdc8d596721a88432edcd59f9ed96f058cd  ./BAO CAO/Bao cao EDA/plot_data/ban2/order_hour_of_day_frequency.csv
+a995396a3ce2eb57f2097604ddeb94d95ba2b6a222aa9763d58ef73c9e35bece  ./BAO CAO/Bao cao EDA/plot_data/ban2/time_pivot_count.csv
+2d71dd02b284772d89841a11f58c98d883aa5c77b2d74cf158480420a97e27ac  ./BAO CAO/Bao cao EDA/plot_data/ban2/time_pivot_median.csv
+936640b9cc186e312745a5ad2835a58119d6ac51f525bbc10069ed9e6bb3ace9  ./BAO CAO/Bao cao EDA/product_popularity.csv
+e2d7aea1eecea867f1adc67a728d33add6c573e00fa75c72e99731aa5df9300a  ./BAO CAO/Bao cao EDA/reference_outliers.json
+0d4f8874808b05e790e8e2125ba2d1b81b31c48001e925eaabdd472792c851bd  ./BAO CAO/Bao cao EDA/sample_overview.csv
+cb8d29a5af9c4b94b0679cd83d20024783348e9911c344c963ae1508d90b04db  ./BAO CAO/Bao cao EDA/top_n_coverage.csv
+f87c03477ca0145a4cae2682712b1ab5992e2e9370e7371d3c7c3a47ace249b5  ./BAO CAO/Bao cao kiem tra data rac/20261018_144945_098091/audit_report.json
+b923ec495e1fa255bd9dc3f56661dae1ee8aab10f51a1be65167aacaa26ec8b3  ./BAO CAO/Bao cao kiem tra data rac/20261018_144945_098091/column_profile.csv
+e0aa5a91762b0866c65eed428d33d47c83682b822b19cc26fbe8ab50726179dc  ./BAO CAO/Bao cao kiem tra data rac/20261018_144945_098091/config_used.json
+faf3a61f403759f7dec61b5abd70584de1797e5fc4b1f94323a5438f292fa5df  ./BAO CAO/Bao cao kiem tra data rac/20261018_144945_098091/examples.csv
+c7d4c8e1548f109f19ce5d29df152752e88e9fa73971a7c3f1eb38728b9e51ed  ./BAO CAO/Bao cao lam sach/basket_quality_summary.json
+5f050bc206f5c9407ecc1a65c2e4398210915fed8a5aebc3b9626b4f51667ff6  ./BAO CAO/Bao cao lam sach/before_after.csv
+96ea1a3cac96bb4fff93ec241cbc0fa00e865d971da77e43f48b2c3e59c7c386  ./BAO CAO/Bao cao lam sach/comparison_previous.csv
+f33464d9da3c85c722e1fa03054923cc4f049e15e8bd2a99a7542a3e04081ad7  ./BAO CAO/Bao cao lam sach/missingness_summary.csv
+aecf2a4c72b89dc8d2e1307c4808fd2c0b98d2f6d36ecd86179911177e299f25  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/before_after.csv
+1d1e6397194444a2d911257f670aaac78643edcb7bca166847795fea574fe705  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/cleaning_summary.csv
+792f1ffce895bf23a57b0b451101a21c923388bccb6da25ce01faf51426752da  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/comparison_previous.json
+fdadf4fffe36ca532ecee5fc27aba419d3b4dc5548090173354f6352740d9cda  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/config_used.json
+6bc7610f24c24f34fd06c9c639ce77091b878da9b8f96c4a0fbc4a3cb12df3b8  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/examples.csv
+a279a940f88c358bd7904254880844d92bacdc4fb0531f47279b07b780015c0f  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/final_column_summary.csv
+c11a012f61c0786216ec773e789c9e83a010cf58df3d59b571255eaec1773cf4  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/history_issue_examples.csv
+f4447d69e2913a5c44b533993dccb21fa72e2afa01e01e9108195238b08d311d  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/relational_summary.csv
+116e9836ce5024f1350325433dc178c8a0fb5b82dbbf065b001f4a276c3c8bd8  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/run_report.json
+f8c94348306bf0ffbcaa652781f04c235ba072b74c51fb4af1b8bd14a89a7cd9  ./BAO CAO/Bao cao lam sach/phong/20261019_194910_280249/train_basket_issue_examples.csv
+9cdf31d6de7a279f5449e1e94a407c1648167b12b6b17d48e666979c0b35ff6f  ./BAO CAO/Bao cao lam sach/phong/latest.json
+af7d89fe80a3668f03c7edae7aebdecc9a30446f9f9b3babe1e57d9f7578e538  ./BAO CAO/Bao cao lam sach/relational_summary.csv
+4cfda5583e3fc90bd74091955ad5985d84127089771a183ef150e6958ec4efd4  ./BAO CAO/Bao cao lam sach/review/chapters_before.qmd
+5dfc7a9850f71e80ea65317ba5e70954a192524588f379a993403efeb23f51ae  ./BAO CAO/Bao cao lam sach/review/current_20261029/document_checks.json
+70e09c04d893e6d8a6bafe2f75eb470c734912f26329f09056f8340b6e21ea7f  ./BAO CAO/Bao cao lam sach/review/document_checks.json
+ecd5caa6a14263a3cfd3386152daf59c837ed9cc92091d4c921614a500b0abfc  ./BAO CAO/Bao cao lam sach/review/m1_revision_checks.json
+43b5f6d88fc4ad7cb24a01e5b23e175d1c40e991e249d86402b7b79c6fde6fcd  ./BAO CAO/Bao cao lam sach/review/review_index.json
+0ece57414d926ae6f92bf70c950dd3d97a4f6b362a672fc5f03a307d255caf30  ./BAO CAO/Bao cao lam sach/review/section_3_3_checks.json
+c01ec2850ae02aa73dafc486caf2b0e6c940f129c4fcda63508eb15922d6f157  ./BAO CAO/Bao cao lam sach/review/tables_3_1_to_3_7_checks.json
+a7eed9fe5efca03f673b8b1427732d0c3c7c258bd47749bfc8b3e02da16b48d7  ./BAO CAO/Bao cao lam sach/verification.json
+48237b08f156ea2c41c8b68f1cfade20257445a04ab548bb6eb0fd29be98b57d  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/before_after.csv
+384e99c0ee892bf0d3213ea56d5bc12558a7bea225c7daeee30b4cdb7523afaa  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/cleaning_summary.csv
+c318e3720c37a3b3c57feef814c24976badbed83103e1da87e03dff32b68bf9a  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/comparison_previous.json
+8c700ca612b5ee1749a562def5e04ad48f01e532a0319e69328cfb08c9872e36  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/config_used.json
+3322606ec0d1457a09b0d5204f9928fed408b48bb0cb1d61865395b04fc6616f  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/examples.csv
+26969a7111dd54096dbffa353d4de4bbf84c5f66b206ba6064e9e5f362de3c68  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/final_column_summary.csv
+f8c94348306bf0ffbcaa652781f04c235ba072b74c51fb4af1b8bd14a89a7cd9  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/prior_basket_issue_examples.csv
+0125f6f7063e2bb66c3c35850b02eb6413b8e5072b6f5958144f0ffe0791eec2  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/relational_summary.csv
+bf510e617a0f9a674badb1dc81c0d97afa59efd1ad4e88241dbf6a048ec5c26e  ./BAO CAO/Bao cao lam sach/vuong/20261019_194900_259779/run_report.json
+e23428dc644f45c1a42009b12b61fd9d7930963ecad376bf14db0f49a27afb4f  ./BAO CAO/Bao cao lam sach/vuong/latest.json
+468fe9e5dd7c3b105ec1c26d406b22932bcbf99c24aebac5163fda1a52aaa258  ./configs/hypotheses_config.json
+f00865789fb5098caccef8ac7364f64fe2afe442d8c75f55f4b3c63e79c3e06e  ./configs/m2_eda.json
+8d1d3bdfb8b26e2c5915733d7be2a074d6dc2c66b0d4311d4e3cf36b239f1e62  ./configs/m2_plot_style.json
+9307deec8b6c5e28305ed9d37f6a8a9df36bdf981149da837963d78faa92b249  ./configs/render_resources.json
+acb8519c6228607b9931276fcc3f7b01cff6a8c5830a0c66c751b8c391307809  ./DATA/Data phai sinh/M2/basket_summary.parquet
+e6829cea3da95ec22eeb4e0294094a68b929f3bcfda48fdd7d1e33403110fc43  ./DATA/Data phai sinh/M2/department_lookup.csv
+229a29d4fe95e5bde12a01c13816da6c4857fee9045ea8d72972e0d4ed22599a  ./DATA/Data phai sinh/M2/department_presence.parquet
+708345868d6981cfec99791acfe74a51bd730b39d146174fedcaabc415ebddc0  ./DATA/Data phai sinh/M2/reference.parquet
+2d6106e5c722b509bb13adb6fde7b16189322f0bca6a4339552d771fb3b6c4e9  ./DATA/Data phai sinh/M2/split_manifest.parquet
+7190515349247784f15d83b7d860b0757c98e805c97a3e14487b8c70337ad747  ./DATA/Data đã làm sạch/aisles.csv
+a2fd0cf0d21816f0f71e61df4107e11b376dc699fc34beb1220ec26f8c8f29a1  ./DATA/Data đã làm sạch/Bảng master TLCK/data_benchmark.csv
+bd5df02de3bdc5c89a87ef1a12d792069b63c7222c62ab6b528d56ff889c8c89  ./DATA/Data đã làm sạch/Bảng master TLCK/data_benchmark_metadata.json
+1e190a8db3b9012c181788ae97d693f1ea22b3b759c1f30975a50f69c703c26b  ./DATA/Data đã làm sạch/Bảng master TLCK/join_audit.csv
+9e137539945b0c14ed406ec37f63d8897dd5ec686bfddbc6546ffc5d4027a594  ./DATA/Data đã làm sạch/Bảng master TLCK/master_benchmark.csv
+72e5a2ae5f92febb7f800348d863f9bec937ba18e7c80b1b44765b5d27461963  ./DATA/Data đã làm sạch/Bảng master TLCK/master_benchmark.parquet
+bffb0544b1a47f4ac3016a97604928750a60e040d63d9d59809fda54a80b05e2  ./DATA/Data đã làm sạch/Bảng master TLCK/master_dictionary.csv
+1cb9671fbdc59d8a8163f7568eab82c4b2bd0cfc7ec6d51412d07b53b66b0850  ./DATA/Data đã làm sạch/Bảng master TLCK/master_schema.csv
+669ef3f9274611c382fd451e172f8fc2f37daea94dc10cb1e6745d88f03ef17d  ./DATA/Data đã làm sạch/Bảng master TLCK/master_train.parquet
+24e7ef5afb750a43348b957424b8b9b26cc890ad3d165fe4f9998305ca5a1155  ./DATA/Data đã làm sạch/Bảng master TLCK/master_verification.json
+a2fd0cf0d21816f0f71e61df4107e11b376dc699fc34beb1220ec26f8c8f29a1  ./DATA/Data đã làm sạch/data_benchmark.csv
+bd5df02de3bdc5c89a87ef1a12d792069b63c7222c62ab6b528d56ff889c8c89  ./DATA/Data đã làm sạch/data_benchmark_metadata.json
+d075b04a7b1bf5e5eda0a566776f63b1c2c545d135645ae6ad9e6b29b21380d0  ./DATA/Data đã làm sạch/departments.csv
+669ef3f9274611c382fd451e172f8fc2f37daea94dc10cb1e6745d88f03ef17d  ./DATA/Data đã làm sạch/master_train.parquet
+24e7ef5afb750a43348b957424b8b9b26cc890ad3d165fe4f9998305ca5a1155  ./DATA/Data đã làm sạch/master_verification.json
+9b52535e14f0be7af6e732714bb33a1d2c5895e175b18b59c4105821da6b5890  ./DATA/Data đã làm sạch/orders.csv
+4c8075f043a15a21864ef6df4bf909b2f90fa09806a2da4e8a177d236fa5244d  ./DATA/Data đã làm sạch/order_products__train.csv
+fb88d475cd4ef475fd229ee146fd2e20b8e11f123cd959c6ed408dc12e63fa96  ./DATA/Data đã làm sạch/products.csv
+d21051c19559568934e6f40dd268bea71cbce990606605aa1b7b5b66fc16f349  ./drafts/m2/ban1_3_4.qmd
+a1415b1c01ebb4c1fe0acf93958e5bc33d47c472d17d03d6f860902e511889fd  ./drafts/m2/ban1_3_5_hinh_1_2.qmd
+d4815c081eba00a7950b271d99ac6f051d3b243b078ecc751b6d9f1962bdf804  ./drafts/m2/ban1_preview.qmd
+d5dfb992e2da0b5ebbfe451d372ae9dfd6855c4c2b384e758f491f8e51bfd36f  ./drafts/m2/ban2/ban2_3_5_hinh_3_5.qmd
+20ecbcf9bb994facf93723b6c8a92239400aafd58a09466b6e26e27e55b639c4  ./drafts/m2/ban2/ban2_3_5_insights.qmd
+e64b6f2def544ac285e370494e3e510f385e078e729505eb21fe5546ee2cf22a  ./drafts/m2/ban2/ban2_3_6.qmd
+436a685c59ab730856de7ac0eb23960ab841293a7aedd078e5f8671af9167bc5  ./scripts/audit/01_inventory.py
+8347ef919cd65d240c4df86721b219dbfeaf1dc7c24b519455dbd9ea1c7197a3  ./scripts/audit/02_primary_keys.py
+e89c4751f894ac67d29cc47a20cc9bf40df1097b27347152282d0649e6125c64  ./scripts/audit/03_foreign_keys.py
+56ef36997b13e8d608c2833456e43f09c8965e698a847743da88dab9bd80d760  ./scripts/audit/04_order_history.py
+2179ceae948c3c59b39d81226ae829b5198ab2f4e704ed685358c47971dbeed0  ./scripts/audit/05_basket_structure.py
+102a4ffeefaaf45afd2bcdecc33cf5c821ff97ae094d6076153cdf2d500e2543  ./scripts/audit/06_compare_original.py
+11bfa58d2940c408f3c77ca8c3b7534129a2e0ffeb680c1511c7bcdfa171fb61  ./scripts/audit/RUN_CHECKS.py
+e1fbb57488d8f498d03c88ffba2c2e0e854d399333999e82399dadc21b94ce17  ./scripts/cleaning/phong/config_phong.json
+400a129f85989171f57723e09fffafb76dd434dafda63b2f06bc6ce529b0b878  ./scripts/cleaning/phong/run_cleaning_phong.py
+0038d037b6d5cc191cea6a8309c94b5bad33707fffce58cfa324933fe072bc69  ./scripts/cleaning/phong/src/cleaning_rules.py
+6d4c9e494043e6fa5f004a81fdcfd1c42c5a8c22388bc3ac61ff03fea543190e  ./scripts/cleaning/phong/src/clean_dimensions.py
+d8f24a8ae26f1ed91f38682e2901acbf7a1bb543ec4b509543bdfc064835916a  ./scripts/cleaning/phong/src/clean_transactions.py
+2641e769afd6ab7f29e8ccf260a477bdc8fa90703bf877247ea58f0365318788  ./scripts/cleaning/phong/src/reconstruction.py
+a5ec9a377a63e121cda3161fd99e35a56980fc68a6f3cd5cba94f985be8def01  ./scripts/cleaning/phong/src/reporting.py
+fa855f0c06a9d86a67dae006c1a6b18f27f6b4ce893efe4ad75fded8886267af  ./scripts/cleaning/phong/src/runner.py
+eb5d13506259a050eefb88307eb12b90890fd6d2a94b1db0664cee0497593086  ./scripts/cleaning/phong/src/__init__.py
+d9e78b1171d7052879111f3bf69bc0a9a82e450e880d42f9123aa6e6fe2b0414  ./scripts/cleaning/vuong/config_vuong.json
+88a839f0fa150dc562934132db302d1fc2498498ef015fa58bc499d7d0aa9136  ./scripts/cleaning/vuong/run_cleaning_vuong.py
+0038d037b6d5cc191cea6a8309c94b5bad33707fffce58cfa324933fe072bc69  ./scripts/cleaning/vuong/src/cleaning_rules.py
+6d4c9e494043e6fa5f004a81fdcfd1c42c5a8c22388bc3ac61ff03fea543190e  ./scripts/cleaning/vuong/src/clean_dimensions.py
+d8f24a8ae26f1ed91f38682e2901acbf7a1bb543ec4b509543bdfc064835916a  ./scripts/cleaning/vuong/src/clean_transactions.py
+2641e769afd6ab7f29e8ccf260a477bdc8fa90703bf877247ea58f0365318788  ./scripts/cleaning/vuong/src/reconstruction.py
+a5ec9a377a63e121cda3161fd99e35a56980fc68a6f3cd5cba94f985be8def01  ./scripts/cleaning/vuong/src/reporting.py
+fa855f0c06a9d86a67dae006c1a6b18f27f6b4ce893efe4ad75fded8886267af  ./scripts/cleaning/vuong/src/runner.py
+eb5d13506259a050eefb88307eb12b90890fd6d2a94b1db0664cee0497593086  ./scripts/cleaning/vuong/src/__init__.py
+71a18ddadb483f7d1adf03ba56bed9ea8df962eb8648628d309cdae949d5f223  ./scripts/m1_benchmark.py
+2743cf4782aa7cec5a20b7461ee113278c49bd5f3b460d2d67c5a1fa47e5d022  ./scripts/m1_build_master.py
+66a5f188b44548369d8929fd3f4f35e7bd43294165d7d5debd2bd82a1dfb5815  ./scripts/m1_common.py
+da8470f93218757364521a67dc7037ea1896172b50b57b690fc363538213632b  ./scripts/m1_quality_summary.py
+d612ae6915b0d741a45c1abd845e2d91bda11b4439aade1298ee43fad5d013d1  ./scripts/m2_check_environment.py
+3ec5130abe3921750a3079b21f096d522a7db9cf4ed221d879e1c53f389327e5  ./scripts/m2_common.py
+54032ab57bffad547033eb58fe6c9a1e371511309df7cda38ce4139259fb9403  ./scripts/m2_data_hashes.py
+a5eb70ba068fae75ef1c86db05b1b5941d3c198a07b463ad57a86209299b18ca  ./scripts/m2_eda_multivariate.py
+93b3ce4aaf541e0c481cb7c689567052d844a7ed839d6c8870565ad65771edbc  ./scripts/m2_eda_summary.py
+fd98043e8a19a747a8252403571843c25124d512e7c0d08241ae4e4ab6177134  ./scripts/m2_evidence.py
+4c104ebcd748bd28b750a1e1310c65ebb938bbbd8c7897943642d5b31bb87a7a  ./scripts/m2_hypothesis_tests.py
+3a0dcbe4170558d1367379e365c5896be2bb1e77d79e03244db3cf370a913b95  ./scripts/m2_plot_multivariate.py
+7e7b779d12ad6dc4b9efd18622edb0fc1b9a06e7d0cdf55eba890fb97f51f730  ./scripts/m2_plot_univariate.py
+f0f0f8657f99217beea5114d8cc604716c0ac61521a34cb3e52f8d6e8fd37fd1  ./scripts/m2_prepare_reference.py
+456fe9858bf46d432e2f1fa68e50fddc830a3dde3c707d73c425de57af50004b  ./scripts/m2_profile_inputs.py
+0c03a6b258cc8c673f8700c7a798e52c0a74d85435474905f15e8778cd314fe9  ./scripts/m2_run_ban1.py
+78ba1748c9b43485d2ac5f3566b5795f29152ee66897132cabfc4853cfe985b5  ./scripts/m2_run_foundation.py
+cf361142745fd151bff894ca48b45d31e3cce7987157633321083e60077feacf  ./scripts/m2_split_data.py
+979a97fb0ebec31cf244dbbe4781009500a2d0c53fbde07288327b577e467d45  ./scripts/m2_verify_ban1.py
+4ccfded770bda2df53f86ff8a6b47ea2721196f8c543b390495de8e3b90b9628  ./scripts/m2_verify_foundation.py
+2f6d549f908e9a6078b74829b10cf1deb30e20e0e9f7705efa7736c86ebc105e  ./scripts/m2_write_ban1_drafts.py
+c300904c0748e51529b9b8eb265ffd2b8def6785e5c121c2c0238f54cc103de9  ./scripts/render_pdf.py
+781002e4f133c134b8b690c9a433d918a822013805685329be0c6e4bc9160805  ./scripts/run_cleaning_all.py
+0154ad9c9f5750571418c8e98558e5292e767b2020d8de049aa887f2d95d7b7c  ./scripts/summarize_cleaning.py
+6bbf7d958d4f4ef1ad0fe706d737b2e019d6a080416a97432538461ed82214ca  ./src/vi_du_phu_luc.py
+9168cb52a745265ceb251898b1db0cba46182da9280db4580c63103b963c6e47  ./tests/fixtures/m2_contingency_cases.json
+247688a76bf2fb807a2605712f312657423f970da309693b3fde99f378b54185  ./tests/test_cleaning.py
+185e591055fdc19b2caa2661d804b176547d3e6641a9977ff3778cab445a9ef0  ./tests/test_m1_portability.py
+811a8c75e798e9f31c56805c97f92f24b3a5b766615fbeca6ae0376989b68ef5  ./tests/test_m2_evidence.py
+6c58d03cef08690468f09436f50474c182e82464ea831ee6a4edf9617dce6a93  ./tests/test_m2_foundation.py
+a60d79ba7f1ba6c471608659d45067d0ed2d93584a7f6ac4f492af360ea3edf5  ./tests/test_m2_hypotheses.py
+8bdc10c618708ace36d3a572e016bbf890290515663fb72c318cfd19d6e359ff  ./tests/test_m2_multivariate.py
+e4be0b1173fc0480c6c5ca1177e3665fd93eb61e0712f17ea482627ce1495b74  ./tests/test_m2_summary.py
+ab606fce7375adf1914c9851a7dab0c557a04cec27694de6b3f31d62292faf7c  ./tests/test_render_resources.py

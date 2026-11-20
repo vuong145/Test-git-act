@@ -1,0 +1,178 @@
+{
+  "check": "01_inventory",
+  "status": "completed",
+  "scope": "all CSV records; no sampling",
+  "results": {
+    "aisles": {
+      "rows": 134,
+      "columns": 2,
+      "missing_tokens": {
+        "aisle": 40
+      },
+      "invalid_nonmissing": {},
+      "outer_spaces": {
+        "aisle_id": 14,
+        "aisle": 37
+      },
+      "examples": []
+    },
+    "departments": {
+      "rows": 21,
+      "columns": 2,
+      "missing_tokens": {},
+      "invalid_nonmissing": {},
+      "outer_spaces": {
+        "department": 2,
+        "department_id": 1
+      },
+      "examples": []
+    },
+    "products": {
+      "rows": 49688,
+      "columns": 4,
+      "missing_tokens": {
+        "product_name": 6923
+      },
+      "invalid_nonmissing": {},
+      "outer_spaces": {
+        "department_id": 3931,
+        "product_id": 3935,
+        "product_name": 9741,
+        "aisle_id": 4060
+      },
+      "examples": []
+    },
+    "orders": {
+      "rows": 3421083,
+      "columns": 7,
+      "missing_tokens": {
+        "days_since_prior_order": 753252,
+        "order_dow": 463331,
+        "eval_set": 359330,
+        "order_number": 798715,
+        "order_hour_of_day": 555547
+      },
+      "invalid_nonmissing": {
+        "order_dow": 509210,
+        "order_number": 439996,
+        "eval_set": 907885
+      },
+      "outer_spaces": {
+        "order_id": 273617,
+        "eval_set": 463978,
+        "user_id": 273032
+      },
+      "examples": [
+        {
+          "record": 1,
+          "column": "order_dow",
+          "value": "2 %"
+        },
+        {
+          "record": 2,
+          "column": "order_number",
+          "value": "2 VND"
+        },
+        {
+          "record": 2,
+          "column": "order_dow",
+          "value": "3 %"
+        }
+      ]
+    },
+    "order_products__prior": {
+      "rows": 32434489,
+      "columns": 4,
+      "missing_tokens": {
+        "reordered": 5438428,
+        "add_to_cart_order": 3223158
+      },
+      "invalid_nonmissing": {
+        "reordered": 3770917,
+        "add_to_cart_order": 3007028
+      },
+      "outer_spaces": {
+        "order_id": 2596677,
+        "product_id": 2592029
+      },
+      "examples": [
+        {
+          "record": 2,
+          "column": "reordered",
+          "value": "1 kg"
+        },
+        {
+          "record": 3,
+          "column": "reordered",
+          "value": "0 USD"
+        },
+        {
+          "record": 8,
+          "column": "reordered",
+          "value": "-1"
+        }
+      ]
+    },
+    "order_products__train": {
+      "rows": 1384617,
+      "columns": 4,
+      "missing_tokens": {
+        "add_to_cart_order": 348739,
+        "reordered": 211571
+      },
+      "invalid_nonmissing": {
+        "add_to_cart_order": 186888,
+        "reordered": 217212
+      },
+      "outer_spaces": {
+        "product_id": 110575,
+        "order_id": 110600
+      },
+      "examples": [
+        {
+          "record": 7,
+          "column": "add_to_cart_order",
+          "value": "7 kg"
+        },
+        {
+          "record": 10,
+          "column": "reordered",
+          "value": "1 kg"
+        },
+        {
+          "record": 16,
+          "column": "add_to_cart_order",
+          "value": "8 USD"
+        }
+      ]
+    },
+    "note": "The literal category name missing is NOT treated as a null. Integer fields reject 1.0; leading zeroes such as 08 are accepted. Missing-token counts are candidates, not deletion instructions."
+  },
+  "input_files": {
+    "aisles": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương1.csv",
+      "bytes": 2316
+    },
+    "departments": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương2.csv",
+      "bytes": 277
+    },
+    "products": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương6.csv",
+      "bytes": 2022747
+    },
+    "orders": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương5.csv",
+      "bytes": 113084083
+    },
+    "order_products__prior": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương3.csv",
+      "bytes": 614106632
+    },
+    "order_products__train": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương4.csv",
+      "bytes": 26763333
+    }
+  },
+  "seconds": 403.74
+}

@@ -1,0 +1,31 @@
+{
+  "status": "data_compatible_paths_differ_peer_confirmation_pending",
+  "files": {
+    "split_manifest.parquet": {
+      "package_sha256": "2d6106e5c722b509bb13adb6fde7b16189322f0bca6a4339552d771fb3b6c4e9",
+      "current_sha256": "2d6106e5c722b509bb13adb6fde7b16189322f0bca6a4339552d771fb3b6c4e9",
+      "byte_identical": true
+    },
+    "reference.parquet": {
+      "package_sha256": "708345868d6981cfec99791acfe74a51bd730b39d146174fedcaabc415ebddc0",
+      "current_sha256": "708345868d6981cfec99791acfe74a51bd730b39d146174fedcaabc415ebddc0",
+      "byte_identical": true
+    },
+    "basket_summary.parquet": {
+      "package_sha256": "acb8519c6228607b9931276fcc3f7b01cff6a8c5830a0c66c751b8c391307809",
+      "current_sha256": "acb8519c6228607b9931276fcc3f7b01cff6a8c5830a0c66c751b8c391307809",
+      "byte_identical": true
+    },
+    "department_lookup.csv": {
+      "package_sha256": "e6829cea3da95ec22eeb4e0294094a68b929f3bcfda48fdd7d1e33403110fc43",
+      "current_sha256": "e6829cea3da95ec22eeb4e0294094a68b929f3bcfda48fdd7d1e33403110fc43",
+      "byte_identical": true
+    }
+  },
+  "nonpath_eda_config_identical": true,
+  "package_data_dir": "Data phai sinh/M2",
+  "current_data_dir": "DATA/Data phai sinh/M2",
+  "package_report_dir": "Bao cao EDA/common",
+  "current_report_dir": "BAO CAO/Bao cao EDA/common",
+  "note": "Not proof of equal foundation manifest/config/code hashes. Do not overwrite peer G0."
+}

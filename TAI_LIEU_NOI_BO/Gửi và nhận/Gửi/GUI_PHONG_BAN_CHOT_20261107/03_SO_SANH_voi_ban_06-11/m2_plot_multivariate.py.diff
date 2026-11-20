@@ -1,0 +1,39 @@
+--- ban_06-11/scripts/m2_plot_multivariate.py
++++ ban_chot/scripts/m2_plot_multivariate.py
+@@ -24,3 +24,12 @@
+     import seaborn as sns
+-    from matplotlib.ticker import FuncFormatter
++    from matplotlib.ticker import FuncFormatter, ScalarFormatter
++
++    class Comma(ScalarFormatter):
++        """Nhãn trục số dùng dấu phẩy thập phân cho khớp lời văn (07/11)."""
++        def __call__(self, x, pos=None):
++            return super().__call__(x, pos).replace('.', ',')
++
++    def comma(value, spec):
++        return format(value, spec).replace('.', ',')
++
+     folder, figures = path(cfg['outputs']['ban2']), cfg['outputs']['figures_ban2']
+@@ -53,3 +62,3 @@
+     counts = pd.read_csv(folder/'time_pivot_count.csv', index_col=0)
+-    labels = median.map(lambda x: '' if pd.isna(x) else f'{x:g}').astype(str)
++    labels = median.map(lambda x: '' if pd.isna(x) else comma(x, 'g')).astype(str)
+     labels = labels.where(counts >= cfg['min_group_n'], labels+'*')
+@@ -57,3 +66,3 @@
+                 cbar=False)
+-    axes[0].set(title='(a) Median; * N<30', xlabel='Khung giờ', ylabel='Mã ngày')
++    axes[0].set(title='(a) Median', xlabel='Khung giờ', ylabel='Mã ngày')
+     axes[0].tick_params(axis='x', rotation=90)
+@@ -71,4 +80,6 @@
+         fig, ax = plt.subplots(figsize=(6.3, 3.3), layout='constrained')
+-        sns.heatmap(corr, vmin=-1, vmax=1, cmap='vlag', annot=True, fmt='.3f', xticklabels=names,
+-                    yticklabels=names, ax=ax, cbar_kws={'label': method.title()})
++        sns.heatmap(corr, vmin=-1, vmax=1, cmap='vlag', annot=corr.map(lambda v: comma(v, '.3f')),
++                    fmt='', xticklabels=names, yticklabels=names, ax=ax,
++                    cbar_kws={'label': method.title()})
++        ax.collections[0].colorbar.ax.yaxis.set_major_formatter(Comma())
+         ax.tick_params(axis='both', rotation=0)
+@@ -85,2 +96,3 @@
+                 yticklabels=[f'{i} {names[i]}' for i in lift.index])
++    ax.collections[0].colorbar.ax.yaxis.set_major_formatter(Comma())
+     ax.set(xlabel='ID ngành B', ylabel='')

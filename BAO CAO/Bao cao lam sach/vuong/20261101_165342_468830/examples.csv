@@ -1,0 +1,96 @@
+﻿table,column,status,record_1based,raw,clean
+aisles,aisle_id,trimmed,4, 4,4
+aisles,aisle_id,trimmed,8,  8,8
+aisles,aisle_id,trimmed,27, 27,27
+aisles,aisle_id,trimmed,30,  30,30
+aisles,aisle_id,trimmed,40, 40,40
+aisles,aisle,missing_token,1,?,
+aisles,aisle,missing_token,2,chưa rõ,
+aisles,aisle,missing_token,5,?,
+aisles,aisle,missing_token,6,chưa rõ,
+aisles,aisle,missing_token,8,NULL,
+aisles,aisle,trimmed,7,  packaged meat,packaged meat
+aisles,aisle,trimmed,10,kitchen supplies   ,kitchen supplies
+aisles,aisle,trimmed,11,cold flu allergy   ,cold flu allergy
+aisles,aisle,trimmed,13,  prepared meals,prepared meals
+aisles,aisle,trimmed,18,bulk dried fruits vegetables ,bulk dried fruits vegetables
+aisles,aisle,case_normalized,3,ENERGY GRANOLA BARS,energy granola bars
+aisles,aisle,case_normalized,17,BAKING INGREDIENTS,baking ingredients
+aisles,aisle,case_normalized,39,SEAFOOD COUNTER,seafood counter
+aisles,aisle,case_normalized,43,BUNS ROLLS,buns rolls
+aisles,aisle,case_normalized,51,PRESERVED DIPS SPREADS,preserved dips spreads
+departments,department_id,trimmed,6, 6,6
+departments,department,trimmed,1,frozen   ,frozen
+departments,department,trimmed,16,dairy eggs   ,dairy eggs
+departments,department,case_normalized,6,INTERNATIONAL,international
+departments,department,case_normalized,18,BABIES,babies
+order_products__prior,order_id,trimmed,1,  2,2
+order_products__prior,order_id,trimmed,19,  4,4
+order_products__prior,order_id,trimmed,20, 4,4
+order_products__prior,order_id,trimmed,22,  4,4
+order_products__prior,order_id,trimmed,23,  4,4
+order_products__prior,product_id,trimmed,12,  17704,17704
+order_products__prior,product_id,trimmed,88,  14992,14992
+order_products__prior,product_id,trimmed,106, 38888,38888
+order_products__prior,product_id,trimmed,131,  41890,41890
+order_products__prior,product_id,trimmed,132,  39475,39475
+order_products__prior,add_to_cart_order,missing_token,13,?,
+order_products__prior,add_to_cart_order,missing_token,15,N/A,
+order_products__prior,add_to_cart_order,missing_token,27,,
+order_products__prior,add_to_cart_order,missing_token,29,,
+order_products__prior,add_to_cart_order,missing_token,32,,
+order_products__prior,add_to_cart_order,suffix_unresolved,11,2 kg,
+order_products__prior,add_to_cart_order,suffix_unresolved,20,3 %,
+order_products__prior,add_to_cart_order,suffix_unresolved,37,7 USD,
+order_products__prior,add_to_cart_order,suffix_unresolved,46,16 %,
+order_products__prior,add_to_cart_order,suffix_unresolved,57,1 VND,
+order_products__prior,add_to_cart_order,out_of_domain,87,-1,
+order_products__prior,add_to_cart_order,out_of_domain,123,-1,
+order_products__prior,add_to_cart_order,out_of_domain,187,-1,
+order_products__prior,add_to_cart_order,out_of_domain,204,-1,
+order_products__prior,add_to_cart_order,out_of_domain,221,-1,
+order_products__prior,add_to_cart_order,invalid_format,82,5 đ,
+order_products__prior,add_to_cart_order,invalid_format,140,4 đ,
+order_products__prior,add_to_cart_order,invalid_format,230,11 đ,
+order_products__prior,add_to_cart_order,invalid_format,232,13 đ,
+order_products__prior,add_to_cart_order,invalid_format,243,2 đ,
+order_products__prior,add_to_cart_order,numeric_format_normalized,81,40.0,40
+order_products__prior,add_to_cart_order,numeric_format_normalized,269,100.0,100
+order_products__prior,add_to_cart_order,numeric_format_normalized,294,200.0,200
+order_products__prior,add_to_cart_order,numeric_format_normalized,524,600.0,600
+order_products__prior,add_to_cart_order,numeric_format_normalized,1037,7000.0,7000
+order_products__prior,reordered,missing_token,7,-,
+order_products__prior,reordered,missing_token,9,?,
+order_products__prior,reordered,missing_token,14,,
+order_products__prior,reordered,missing_token,22,None,
+order_products__prior,reordered,missing_token,33,,
+order_products__prior,reordered,out_of_domain,8,-1,
+order_products__prior,reordered,out_of_domain,10,9999,
+order_products__prior,reordered,out_of_domain,28,-1.0,
+order_products__prior,reordered,out_of_domain,31,100.0,
+order_products__prior,reordered,out_of_domain,32,9999,
+order_products__prior,reordered,suffix_unresolved,2,1 kg,
+order_products__prior,reordered,suffix_unresolved,3,0 USD,
+order_products__prior,reordered,suffix_unresolved,18,0 VND,
+order_products__prior,reordered,suffix_unresolved,67,1 USD,
+order_products__prior,reordered,suffix_unresolved,85,1 USD,
+order_products__prior,reordered,invalid_format,101,1 đ,
+order_products__prior,reordered,invalid_format,196,0 đ,
+order_products__prior,reordered,invalid_format,243,1 đ,
+order_products__prior,reordered,invalid_format,250,1 đ,
+order_products__prior,reordered,invalid_format,287,1 đ,
+order_products__prior,reordered,numeric_format_normalized,314,0.0,0
+order_products__prior,reordered,numeric_format_normalized,327,0.0,0
+order_products__prior,reordered,numeric_format_normalized,785,0.0,0
+order_products__prior,reordered,numeric_format_normalized,807,-0.0,0
+order_products__prior,reordered,numeric_format_normalized,911,0.0,0
+order_products__prior,add_to_cart_order,sequence_filled_unusable,11,,2
+order_products__prior,add_to_cart_order,sequence_filled_unusable,13,,4
+order_products__prior,add_to_cart_order,sequence_filled_unusable,15,,6
+order_products__prior,add_to_cart_order,sequence_filled_unusable,20,,3
+order_products__prior,add_to_cart_order,sequence_filled_unusable,27,,10
+order_products__prior,add_to_cart_order,sequence_corrected_observed,18,9999,1
+order_products__prior,add_to_cart_order,sequence_corrected_observed,81,40,4
+order_products__prior,add_to_cart_order,sequence_corrected_observed,180,9999,5
+order_products__prior,add_to_cart_order,sequence_corrected_observed,229,9999,10
+order_products__prior,add_to_cart_order,sequence_corrected_observed,269,100,1

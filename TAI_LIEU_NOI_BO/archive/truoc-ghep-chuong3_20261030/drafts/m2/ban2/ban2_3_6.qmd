@@ -1,0 +1,43 @@
+## Kiểm định giả thuyết thống kê sơ bộ
+
+### Giả thuyết và thiết kế
+
+Ba cặp ngành bakery–dairy eggs, dry goods pasta–pantry và produce–meat seafood được quy định trong cấu hình trước lượt phân tích này. Đây không phải đăng ký trước độc lập; không khẳng định người thực hiện chưa từng xem dữ liệu. H0 là hai chỉ báo hiện diện ngành độc lập; H1 là có liên hệ. Mỗi quan sát là một giỏ/người trong reference, N=39.363, gồm cả giỏ không có hai ngành. Dùng Pearson Chi-square không Yates khi mọi tần số kỳ vọng ≥5; nếu bảng thưa dùng Fisher hai phía; biến hằng không kiểm định. Holm áp dụng cho họ ba cặp, alpha=0,05. Cramér’s V được tính từ thống kê Pearson không Yates, không có dấu.
+
+### Kết quả
+
+| Cặp ngành | N | Phương pháp | p thô | p Holm | V |
+|---|---:|---|---|---|---:|
+| bakery / dairy eggs | 39363 | chi_square | < 0,001 | < 0,001 | 0.201 |
+| dry goods pasta / pantry | 39363 | chi_square | < 0,001 | < 0,001 | 0.152 |
+| produce / meat seafood | 39363 | chi_square | < 0,001 | < 0,001 | 0.152 |
+
+: Kiểm định liên hệ giữa ba cặp ngành trên reference {#tbl-ban2-hypothesis-tests}
+
+p dưới 0,001 được ghi theo ngưỡng (APA 7), không ghi p=0. Các số trong bảng được làm tròn để trình bày; quyết định dùng giá trị chưa làm tròn.
+
+| Cặp ngành (A / B) | P(B khi có A) | P(B khi không có A) | Chênh lệch (điểm %) | Lift |
+|---|---:|---:|---:|---:|
+| bakery / dairy eggs | 82.06% | 60.92% | 21.14 | 1.229 |
+| dry goods pasta / pantry | 50.91% | 32.47% | 18.44 | 1.412 |
+| produce / meat seafood | 22.05% | 8.56% | 13.49 | 1.190 |
+
+: Chiều và mức liên hệ giữa các ngành {#tbl-ban2-association-direction}
+
+H1: tần số kỳ vọng nhỏ nhất 3612.01; Pearson chi-square=1584.256; df=1. Số đồng mua n11=8916, support=22.65%.
+
+H2: tần số kỳ vọng nhỏ nhất 2763.75; Pearson chi-square=910.419; df=1. Số đồng mua n11=3902, support=9.91%.
+
+H3: tần số kỳ vọng nhỏ nhất 1901.04; Pearson chi-square=913.934; df=1. Số đồng mua n11=6419, support=16.31%.
+
+### Diễn giải và giới hạn
+
+bakery / dairy eggs: bác bỏ H0 sau hiệu chỉnh Holm.
+
+dry goods pasta / pantry: bác bỏ H0 sau hiệu chỉnh Holm.
+
+produce / meat seafood: bác bỏ H0 sau hiệu chỉnh Holm.
+
+Các liên hệ chưa điều chỉnh kích thước giỏ; giỏ lớn có nhiều cơ hội chứa cả hai ngành. p nhỏ không chứng minh giá trị kinh doanh lớn, quan hệ nhân quả hoặc hiệu quả gợi ý. Một giỏ/người tránh đếm lặp người, nhưng không chứng minh tính đại diện thị trường. Phân tích cấp ngành này tạo câu hỏi cho khai phá luật cấp sản phẩm ở Chương 4, chưa phải kết quả Apriori/FP-Growth.
+
+Nguồn: `BAO CAO/Bao cao EDA/ban2/hypotheses.csv`. Bảng đếm/kỳ vọng đầy đủ nằm trong hypotheses_details.json.

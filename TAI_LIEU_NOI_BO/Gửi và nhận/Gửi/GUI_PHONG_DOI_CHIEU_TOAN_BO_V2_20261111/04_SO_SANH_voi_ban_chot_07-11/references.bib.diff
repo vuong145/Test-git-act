@@ -1,0 +1,64 @@
+--- chot_07-11/references.bib
++++ hien_tai_11-11/references.bib
+@@ -2,3 +2,3 @@
+   title={Scikit-learn: Machine learning in Python},
+-  author={Pedregosa, Fabian and Varoquaux, Ga{\"e}l and Gramfort, Alexandre and Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and Blondel, Mathieu and Prettenhofer, Peter and Weiss, Ron and Dubourg, Vincent and others},
++  author={Pedregosa, Fabian and Varoquaux, Ga{\"e}l and Gramfort, Alexandre and Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and Blondel, Mathieu and Prettenhofer, Peter and Weiss, Ron and Dubourg, Vincent and Vanderplas, Jake and Passos, Alexandre and Cournapeau, David and Brucher, Matthieu and Perrot, Matthieu and Duchesnay, {\'E}douard},
+   journal={Journal of Machine Learning Research},
+@@ -117,3 +117,3 @@
+  author = {Cohen, Jacob},
+- title = {Statistical Power Analysis for the Behavioral Sciences},
++ title = {Statistical power analysis for the behavioral sciences},
+  year = {1988},
+@@ -126,3 +126,3 @@
+   author = {Kohavi, Ron and Tang, Diane and Xu, Ya},
+-  title = {Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing},
++  title = {Trustworthy online controlled experiments: A practical guide to {A/B} testing},
+   year = {2020},
+@@ -134,3 +134,3 @@
+   author = {Kaminskas, Marius and Bridge, Derek},
+-  title = {Diversity, Serendipity, Novelty, and Coverage: A Survey and Empirical Analysis of Beyond-Accuracy Objectives in Recommender Systems},
++  title = {Diversity, serendipity, novelty, and coverage: A survey and empirical analysis of beyond-accuracy objectives in recommender systems},
+   year = {2016},
+@@ -139,3 +139,3 @@
+   number = {1},
+-  eid = {2},
++  pages = {Article 2},
+   doi = {10.1145/2926720}
+@@ -163 +163,36 @@
+ }
++
++@article{holm1979,
++  author = {Holm, Sture},
++  title = {A simple sequentially rejective multiple test procedure},
++  journal = {Scandinavian Journal of Statistics},
++  year = {1979},
++  volume = {6},
++  number = {2},
++  pages = {65--70},
++  url = {https://www.jstor.org/stable/4615733}
++}
++
++@article{efron1979,
++  author = {Efron, Bradley},
++  title = {Bootstrap methods: Another look at the jackknife},
++  journal = {The Annals of Statistics},
++  year = {1979},
++  volume = {7},
++  number = {1},
++  pages = {1--26}
++}
++
++@techreport{chapman2000,
++  author = {Chapman, Pete and Clinton, Julian and Kerber, Randy and Khabaza, Thomas and Reinartz, Thomas and Shearer, Colin and Wirth, R{\"u}diger},
++  title = {{CRISP-DM} 1.0: Step-by-step data mining guide},
++  institution = {SPSS Inc.},
++  year = {2000}
++}
++
++@online{sklearn_permutation,
++  author = {{Scikit-learn developers}},
++  title = {Permutation feature importance},
++  url = {https://scikit-learn.org/stable/modules/permutation_importance.html},
++  urldate = {2026-11-11}
++}

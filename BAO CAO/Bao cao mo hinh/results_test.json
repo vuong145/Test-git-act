@@ -1,0 +1,18 @@
+{
+  "split": "test",
+  "baskets": 24877,
+  "candidate_pairs": 24758284,
+  "main_method": "RF",
+  "lock_locked_at": "2026-11-04T16:10:47",
+  "lock_sha256": "e38b04f22b66438a737597753ef4007cd694adbe809ca62ac9fdfd734dfdb1b7",
+  "outputs": {
+    "basket_metrics_test.csv": "9164041d6e3a703673b9f1c0b88143452981ce48dab84ed13a87463d59bda218",
+    "classifier_metrics_test.csv": "7477687e1ec4267d0d0f6c27204c107f20b5fa26755fb71eac5363f1b12cb43a",
+    "confusion_matrix_test.csv": "e351f9c4a237feae58bc56ace34448b49eafac87506c73ca7d27d9bfb22769e4",
+    "figures/fig-recall-at-k-test.pdf": "e9cdd18853365fba9aa2199b72ead9bccbf3ac9d82f75349b7a069b8bbda407d",
+    "figures/fig-recall-at-k-test.png": "d87fbd01c8221dace4f7811a54c0a02b4ada04b99b55c92eedd3a6b406f48369",
+    "paired_bootstrap_test.csv": "f427dacc65e794d3094d93c87b4978ab5dc69497e114dbae1fe062a2b8d27c05",
+    "ranking_metrics_test.csv": "069e888ce0981eab157864b0676b622571bb1b480f3805ece7a4887d5932ed47",
+    "recall_at_k_test.csv": "a01cf2e1f8d965e77b41de43a3cd99e445c1d5974e5d2af83a2b4412b705eb10"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "reference baskets only",
+  "n_baskets": 39363,
+  "q1": 5.0,
+  "q3": 14.0,
+  "iqr": 9.0,
+  "lower_fence": -8.5,
+  "upper_fence": 27.5,
+  "flagged_baskets": 1578,
+  "flagged_rate": 0.040088407895739656,
+  "flagged_pct": 4.0088407895739655,
+  "decision": "retain all baskets",
+  "quantile_interpolation": "linear"
+}

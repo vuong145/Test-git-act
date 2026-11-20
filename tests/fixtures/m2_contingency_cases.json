@@ -1,0 +1,12 @@
+{
+  "scope": "Synthetic hand-checkable fixtures only; never thesis results",
+  "axis_order": "rows A=0,1; columns B=0,1",
+  "cases": [
+    {"name": "independent", "counts": [[10, 10], [10, 10]], "N": 40, "method": "chi_square", "expected": [[10, 10], [10, 10]], "chi2": 0, "p": 1, "V": 0},
+    {"name": "association", "counts": [[30, 10], [10, 30]], "N": 80, "method": "chi_square", "expected": [[20, 20], [20, 20]], "chi2": 20, "V": 0.5, "difference_pp": 50},
+    {"name": "sparse", "counts": [[1, 0], [0, 1]], "N": 2, "method": "fisher", "expected": [[0.5, 0.5], [0.5, 0.5]], "p": 1},
+    {"name": "constant", "counts": [[10, 5], [0, 0]], "N": 15, "method": "not_testable", "p": null, "V": null}
+  ],
+  "holm": {"p_raw": [0.01, 0.04, 0.03], "p_adjusted": [0.03, 0.06, 0.06]},
+  "holm_with_untestable": {"internal_p": [0.01, 1.0, 0.03], "internal_adjusted": [0.03, 1.0, 0.06], "reported_adjusted": [0.03, null, 0.06]}
+}

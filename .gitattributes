@@ -1,0 +1,5 @@
+# Giữ nguyên từng byte của mọi tệp: Git không đổi ký tự xuống dòng (CRLF/LF)
+# khi commit hay khi tải về, bất kể cấu hình core.autocrlf của máy.
+# Cần thiết vì BAO CAO/Bao cao mo hinh/lock.json và các hashes.json ghi SHA-256
+# của mã nguồn, cấu hình, requirements.txt và kết quả; đổi xuống dòng sẽ làm lệch hash.
+* -text

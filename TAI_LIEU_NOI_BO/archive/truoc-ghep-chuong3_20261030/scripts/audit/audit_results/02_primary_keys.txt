@@ -1,0 +1,91 @@
+{
+  "check": "02_primary_keys",
+  "status": "completed",
+  "scope": "all CSV records; no sampling",
+  "results": {
+    "aisles": {
+      "key": [
+        "aisle_id"
+      ],
+      "rows": 134,
+      "invalid_key_rows": 0,
+      "distinct_valid_keys": 134,
+      "duplicate_extra_rows": 0
+    },
+    "departments": {
+      "key": [
+        "department_id"
+      ],
+      "rows": 21,
+      "invalid_key_rows": 0,
+      "distinct_valid_keys": 21,
+      "duplicate_extra_rows": 0
+    },
+    "products": {
+      "key": [
+        "product_id"
+      ],
+      "rows": 49688,
+      "invalid_key_rows": 0,
+      "distinct_valid_keys": 49688,
+      "duplicate_extra_rows": 0
+    },
+    "orders": {
+      "key": [
+        "order_id"
+      ],
+      "rows": 3421083,
+      "invalid_key_rows": 0,
+      "distinct_valid_keys": 3421083,
+      "duplicate_extra_rows": 0
+    },
+    "order_products__prior": {
+      "key": [
+        "order_id",
+        "product_id"
+      ],
+      "rows": 32434489,
+      "invalid_key_rows": 0,
+      "distinct_valid_keys": 32434489,
+      "duplicate_extra_rows": 0
+    },
+    "order_products__train": {
+      "key": [
+        "order_id",
+        "product_id"
+      ],
+      "rows": 1384617,
+      "invalid_key_rows": 0,
+      "distinct_valid_keys": 1384617,
+      "duplicate_extra_rows": 0
+    },
+    "note": "Duplicate keys may have identical OR conflicting non-key values; no records are deleted. Numeric IDs are compared after whitespace/leading-zero normalization."
+  },
+  "input_files": {
+    "aisles": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương1.csv",
+      "bytes": 2316
+    },
+    "departments": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương2.csv",
+      "bytes": 277
+    },
+    "products": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương6.csv",
+      "bytes": 2022747
+    },
+    "orders": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương5.csv",
+      "bytes": 113084083
+    },
+    "order_products__prior": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương3.csv",
+      "bytes": 614106632
+    },
+    "order_products__train": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương4.csv",
+      "bytes": 26763333
+    }
+  },
+  "seconds": 353.08
+}

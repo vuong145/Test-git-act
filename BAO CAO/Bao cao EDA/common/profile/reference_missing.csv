@@ -1,0 +1,10 @@
+column,missing,missing_pct,denominator,unit
+order_id,0,0.0,39363,reference basket
+basket_size,0,0.0,39363,reference basket
+n_departments,0,0.0,39363,reference basket
+n_aisles,0,0.0,39363,reference basket
+user_id,0,0.0,39363,reference basket
+order_dow,11074,28.13301831669334,39363,reference basket
+order_hour_of_day,6541,16.617127759571172,39363,reference basket
+days_since_prior_order,6576,16.70604374666565,39363,reference basket
+hour_band,6541,16.617127759571172,39363,reference basket

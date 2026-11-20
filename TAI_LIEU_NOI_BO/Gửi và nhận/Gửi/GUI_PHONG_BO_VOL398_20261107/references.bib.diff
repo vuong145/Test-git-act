@@ -1,0 +1,10 @@
+--- Chung/archive/truoc-bo-vol398-20261107/references.bib	2026-11-07 13:30:11.634121100 +0700
++++ 2521001118_Nhom01_TieuLuan/references.bib	2026-11-07 13:49:56.837878700 +0700
+@@ -43,7 +43,6 @@
+ @book{hosmer2013,
+   title={Applied logistic regression},
+   author={Hosmer, David W and Lemeshow, Stanley and Sturdivant, Rodney X},
+-  volume={398},
+   year={2013},
+   edition={3rd},
+   publisher={John Wiley \& Sons}

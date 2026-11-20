@@ -1,0 +1,13 @@
+{
+  "max_file_bytes": 10485760,
+  "files": [],
+  "globs": [
+    "BAO CAO/Bao cao EDA/figures/**/*.png",
+    "BAO CAO/Bao cao EDA/figures/**/*.pdf",
+    "BAO CAO/Bao cao EDA/figures/**/*.svg",
+    "BAO CAO/Bao cao EDA/*.csv",
+    "BAO CAO/Bao cao EDA/*.json",
+    "BAO CAO/Bao cao EDA/*.tex"
+  ],
+  "note": "Only referenced/declared light resources are staged. Add explicit light exports from DATA/Data phai sinh to files; never copy the full data tree."
+}

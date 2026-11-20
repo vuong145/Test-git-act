@@ -1,0 +1,27 @@
+--- ban_chinh/references.bib
++++ de_xuat/references.bib
+@@ -142,2 +142,23 @@
+   doi = {10.1145/2926720}
+-}
++}
++
++@inproceedings{hu2020,
++  author = {Hu, Haoji and He, Xiangnan and Gao, Jinyang and Zhang, Zhi-Li},
++  title = {Modeling personalized item frequency information for next-basket recommendation},
++  booktitle = {Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval},
++  year = {2020},
++  pages = {1071--1080},
++  publisher = {Association for Computing Machinery},
++  doi = {10.1145/3397271.3401066}
++}
++
++@article{li2023,
++  author = {Li, Ming and Jullien, Sami and Ariannezhad, Mozhdeh and {de Rijke}, Maarten},
++  title = {A next basket recommendation reality check},
++  journal = {ACM Transactions on Information Systems},
++  volume = {41},
++  number = {4},
++  pages = {Article 116},
++  year = {2023},
++  doi = {10.1145/3587153}
++}

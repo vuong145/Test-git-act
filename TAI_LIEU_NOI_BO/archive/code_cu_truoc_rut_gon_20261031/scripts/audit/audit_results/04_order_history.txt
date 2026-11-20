@@ -1,0 +1,70 @@
+{
+  "check": "04_order_history",
+  "status": "completed",
+  "scope": "all CSV records; no sampling",
+  "results": {
+    "counts": {
+      "rows": 3421083,
+      "eval_prior": 2024105,
+      "first_order_missing_days": 131390,
+      "cannot_classify_first_order": 1105338,
+      "excluded_invalid_user_or_order_number": 1105338,
+      "eval_invalid": 1267215,
+      "later_order_has_days": 1805726,
+      "later_order_missing_days": 378629,
+      "eval_train": 82605,
+      "eval_test": 47158,
+      "users": 205883,
+      "users_sequence_gap_or_missing_start": 189577,
+      "users_terminal_not_last": 31362,
+      "users_order_number_above_100": 83113,
+      "users_duplicate_order_number": 30019,
+      "users_terminal_count_not_one": 118234
+    },
+    "examples": [
+      {
+        "user_id": 1,
+        "issues": [
+          "sequence_gap_or_missing_start",
+          "terminal_not_last"
+        ]
+      },
+      {
+        "user_id": 2,
+        "issues": [
+          "duplicate_order_number",
+          "sequence_gap_or_missing_start",
+          "terminal_not_last"
+        ]
+      },
+      {
+        "user_id": 3,
+        "issues": [
+          "sequence_gap_or_missing_start",
+          "terminal_not_last"
+        ]
+      },
+      {
+        "user_id": 4,
+        "issues": [
+          "sequence_gap_or_missing_start"
+        ]
+      },
+      {
+        "user_id": 5,
+        "issues": [
+          "sequence_gap_or_missing_start",
+          "terminal_count_not_one"
+        ]
+      }
+    ],
+    "note": "Sequence/terminal failures may be caused by a truncated sample. This check does not reconstruct timestamps or validate purchase histories against product detail."
+  },
+  "input_files": {
+    "orders": {
+      "name": "01_2521001118_PRJ08_Lê Văn Vương5.csv",
+      "bytes": 113084083
+    }
+  },
+  "seconds": 32.0
+}

@@ -1,0 +1,230 @@
+Gói GUI_PHONG_DONG_BO_100_20261111 — Vương gửi Phong — 11/11/2026 17:15
+Kiểm: sha256 từng tệp phải trùng cột đầu.
+
+eb3877563f4a1190d97649669c68e73ffbfb7fa30721c410626f9f0346246cd0      52627  DANH_SACH_380_TEP.tsv
+0eaa223e2f5a6a3bc6e778260ad1f6fe9b7e923036b75adf3fc62eb5bc59fbcb       2220  kiem_dong_bo.py
+9518a1d4b84ee3f2897ab2fc32e2305b0e9113c4adbff3eb2d8a9e4ce39e5fc5       2809  README_GUI_PHONG.md
+53cd16e365c8e5fa1a17c57cece0b1641615579752d2a7de5519564aa5a528ac      37805  SO_DO_THU_MUC_DONG_BO.txt
+ecc06a38391c0b21eb461215ab2c757d16ddcea0df9b411075af2f6577de21a6     968963  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/2521001118_Nhom01_TieuLuan.pdf
+79cf06b0bb10a86578076a7e9cb18ccc60b134a0ef333f34c0438a5c6afdce87     112160  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/2521001118_Nhom01_TieuLuan.qmd
+d410c634a94b37c48148d2ccd79d7695ed7299c4bc28f43f66b4beb9783c295b      42446  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/assets/chuong3/fig-ref-basket-distribution.pdf
+fba864640a8de35152ca2a8f15fea6a41d710e68e58627c68be9a696f908397a      39459  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/assets/chuong3/fig-ref-category-concentration.pdf
+867ee3561bbabe5aac5572d917338753d0c8b1fd35deef27db4eb3f9300e6ab4        398  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao EDA/ban2/correlation_pearson.csv
+e362e7bcaaa7aa89cd3b93f698abc558ac65c65ff84afa641516549be5a80b6c       1314  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao EDA/ban2/hashes.json
+8655356525228b425b7761d1b6d3c20cdb5b255283eb173b97bd6fe8ed308c8c        268  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao EDA/ban2/lift_baseline.csv
+d410c634a94b37c48148d2ccd79d7695ed7299c4bc28f43f66b4beb9783c295b      42446  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao EDA/figures/ban1/fig-ref-basket-distribution.pdf
+bad0559a18e4a6a37b532eacd10c279aa50fc167908e4249b9fc1d9937c4a1e8      92453  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao EDA/figures/ban1/fig-ref-basket-distribution.png
+fba864640a8de35152ca2a8f15fea6a41d710e68e58627c68be9a696f908397a      39459  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao EDA/figures/ban1/fig-ref-category-concentration.pdf
+98d2dbffb4655da769f6aa36cf80e90bf4e57c21d1dae01137adb99f9c6e394c     205169  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao EDA/figures/ban1/fig-ref-category-concentration.png
+867ee3561bbabe5aac5572d917338753d0c8b1fd35deef27db4eb3f9300e6ab4        398  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao EDA/plot_data/ban2/correlation_pearson.csv
+e0aa5a91762b0866c65eed428d33d47c83682b822b19cc26fbe8ab50726179dc        307  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao kiem tra data rac/20261018_144945_098091/config_used.json
+9eaec8be01f2aee334d325c0c2ecce58e879292bc0271550c99f871fb2a08065        992  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/basket_quality_summary.json
+aecf2a4c72b89dc8d2e1307c4808fd2c0b98d2f6d36ecd86179911177e299f25        773  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/20261101_165346_057637/before_after.csv
+1d1e6397194444a2d911257f670aaac78643edcb7bca166847795fea574fe705       2344  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/20261101_165346_057637/cleaning_summary.csv
+6bc7610f24c24f34fd06c9c639ce77091b878da9b8f96c4a0fbc4a3cb12df3b8      10727  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/20261101_165346_057637/examples.csv
+a279a940f88c358bd7904254880844d92bacdc4fb0531f47279b07b780015c0f       1225  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/20261101_165346_057637/final_column_summary.csv
+c11a012f61c0786216ec773e789c9e83a010cf58df3d59b571255eaec1773cf4         43  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/20261101_165346_057637/history_issue_examples.csv
+f4447d69e2913a5c44b533993dccb21fa72e2afa01e01e9108195238b08d311d        521  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/20261101_165346_057637/relational_summary.csv
+9698cd00e202251145e1c8de0c97b0bba695a24571901cd30b09265619f931b4       8318  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/20261101_165346_057637/run_report.json
+f8c94348306bf0ffbcaa652781f04c235ba072b74c51fb4af1b8bd14a89a7cd9         83  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/20261101_165346_057637/train_basket_issue_examples.csv
+afeab2b0be671507d37110144912611db523d23d5a3a9cbbc44aa1592d595c82         43  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/phong/latest.json
+ec9acba41336dbf5976062a0e592e01821bc52805dd8d200252b09bb88d2fb91       8336  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/verification.json
+48237b08f156ea2c41c8b68f1cfade20257445a04ab548bb6eb0fd29be98b57d        451  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/vuong/20261101_165342_468830/before_after.csv
+384e99c0ee892bf0d3213ea56d5bc12558a7bea225c7daeee30b4cdb7523afaa       1352  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/vuong/20261101_165342_468830/cleaning_summary.csv
+3322606ec0d1457a09b0d5204f9928fed408b48bb0cb1d61865395b04fc6616f       5816  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/vuong/20261101_165342_468830/examples.csv
+26969a7111dd54096dbffa353d4de4bbf84c5f66b206ba6064e9e5f362de3c68        698  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/vuong/20261101_165342_468830/final_column_summary.csv
+f8c94348306bf0ffbcaa652781f04c235ba072b74c51fb4af1b8bd14a89a7cd9         83  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/vuong/20261101_165342_468830/prior_basket_issue_examples.csv
+0125f6f7063e2bb66c3c35850b02eb6413b8e5072b6f5958144f0ffe0791eec2        253  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/vuong/20261101_165342_468830/relational_summary.csv
+8a033a1e738d46864ad5bc5ccc6290db0630814728fb1dffd7d6fc5753be8cf8       6830  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/vuong/20261101_165342_468830/run_report.json
+916295390ffefb24e10a17603fb7ab6fa6e1a40ddbce2763f944e2ece60f9eeb         43  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao lam sach/vuong/latest.json
+9164041d6e3a703673b9f1c0b88143452981ce48dab84ed13a87463d59bda218   14524022  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/basket_metrics_test.csv
+cf3c9fb6754407834e69879ab0a99346360f2b400e312389d1d036c9b1bf4bc7       7257  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/cai_thu_vien_20261101/chuong3_hash_sau_cai.sha
+cf3c9fb6754407834e69879ab0a99346360f2b400e312389d1d036c9b1bf4bc7       7257  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/cai_thu_vien_20261101/chuong3_hash_truoc_cai.sha
+ae102c2aae2f783779891b624bbb79cbdb5058ee7c9a202a0e42521265125265        379  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/cai_thu_vien_20261101/freeze_sau.txt
+81b627c0d4d4a449dd101e1b6cb1bb0759623b4ef8a0f834d6f50d93069cf4ff        258  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/cai_thu_vien_20261101/freeze_truoc.txt
+7477687e1ec4267d0d0f6c27204c107f20b5fa26755fb71eac5363f1b12cb43a        459  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/classifier_metrics_test.csv
+e351f9c4a237feae58bc56ace34448b49eafac87506c73ca7d27d9bfb22769e4         77  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/confusion_matrix_test.csv
+e9cdd18853365fba9aa2199b72ead9bccbf3ac9d82f75349b7a069b8bbda407d      32874  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/figures/fig-recall-at-k-test.pdf
+d87fbd01c8221dace4f7811a54c0a02b4ada04b99b55c92eedd3a6b406f48369     168417  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/figures/fig-recall-at-k-test.png
+e38b04f22b66438a737597753ef4007cd694adbe809ca62ac9fdfd734dfdb1b7       2883  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/lock.json
+f427dacc65e794d3094d93c87b4978ab5dc69497e114dbae1fe062a2b8d27c05        377  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/paired_bootstrap_test.csv
+069e888ce0981eab157864b0676b622571bb1b480f3805ece7a4887d5932ed47        537  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/ranking_metrics_test.csv
+a01cf2e1f8d965e77b41de43a3cd99e445c1d5974e5d2af83a2b4412b705eb10       1069  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/recall_at_k_test.csv
+fdacac53b9fddf77f81027b8f3b55d42b42438e6a09078c4a7721df4940ac9ec       1077  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/results_test.json
+f127c66831a590eff9e6a0faf1addc40656dd7cb074faf697f3dc71293b70297         83  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/BAO CAO/Bao cao mo hinh/test_started.json
+2662eea8019db009e51f35a4e7fc1dd7218406a413cc80699bdf90d3a39b88a1       1159  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/DATA/Data đã làm sạch/Bảng master TLCK/master_info.txt
+4ce5b8a54e151e980ec46b6fb5b05b46844d8bddf0089bd8e5ef5019b6a3bdd3        654  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/DATA/Data đã làm sạch/Bảng master TLCK/master_read_modes.csv
+3dcd0e6597c81ed92e050a3ce5f9b9c8b95b7ddaf501f350e5a9aae14b1caee8        397  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/DATA/Data đã làm sạch/Bảng master TLCK/master_read_modes.json
+cd9a9cfcc400375317bdfd3564d04611f32b2ea89dce3ef09dcd9eb7be322b12       2817  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/DATA/Data đã làm sạch/data_benchmark.csv
+fcd736620e477cfde639b4f2b9b1fb1cb32cdaca2eee5f947fca0acf6284b72d       3280  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/DATA/Data đã làm sạch/data_benchmark_metadata.json
+b7873140dfab5dcad2aada8a507b4603d846d060b7eb1a3dddc352028efde67e     217086  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/nhật ký làm việc.md
+03c918797c79bb885b14cf8cb4053ae2b4cdceb157889be9ed900d22b2d85d68       6553  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/references.bib
+2de40dce13974e3eddfa5ee4d2b4137eb3f2049b8e7caa1da37a8f1a0a0e6435       1102  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/cleaning/clean_vuong.py
+bc40d94d39ce7d77d17d3f90f7c34c04cfe7534e5225fef21aa8d7ce9bfbd4d0      29831  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/cleaning/common.py
+6c653ae7a1015d471545ffd2b777ea190232d6689f7dd0ee55579c1524280c60      17032  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m1_build_master.py
+5f239fc848c51d0270117ec5cb22d35606f33edd0a302fe23827de6fb535c2f2       2008  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m1_inspect_artifact.py
+240f8a784a4633a6e435cd3d7821b7b884517f7b5e7127d6c651ece8706406e1       3491  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m1_quality_summary.py
+b819de2d6856b400eab57ead181202838414e5feece770e17fb8c7fe0d0bf70d       7221  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m2_eda_multivariate.py
+512adacc032bcb3ef9582c6016f8bad98b98543a7cdf80f24cf6e32f1eedb550      10335  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m2_eda_summary.py
+727de62c59b4c4eedd9e5cbf09cdfd200bf2d0d0b8bcbfcb3bcca649dd03e278       9345  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m2_foundation.py
+12a3842a2c82d43a29986c21cccee456dddaf169efcf9d13142d588d4dbddc7c       4824  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m2_plot_univariate.py
+087d200bc9a559bbcd54a3968f240573180be428bafc21d3375b80ddc8ce2979       2107  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m2_profile_inputs.py
+c2973caa186511d313c5ff53a3b4abc43da42cb7931ff26d1e5aa25927548ef9       3354  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/m4_lock.py
+946afa8c3072eecab9f3c9305b163297b8956aefd310db1e005e311e1f2d6bce       5322  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/README.md
+baafbbdecf680c5a01c81eba03406528705b274ba42665be6ce831f8f066d3e5       6048  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/scripts/summarize_cleaning.py
+b91923aa5f6e24eba794ae3ff887bc1fe8e88510b84a9c1a105f043ba0ba7954       1202  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/BAO CAO/Bao cao EDA/ban1/document_checks.json
+0b767d724d61c9be9232835bf74a721effd39fdcffcb1319ef81029ae6870699       1452  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/BAO CAO/Bao cao EDA/ban1/g0_package_compatibility.json
+33b20322fca68ae0baccb0bf057401d8b25c87e09fb63bab94a4c0c3e6d9fb3f       5240  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/BAO CAO/Bao cao EDA/ban1/handoff_manifest.json
+95f96467b4c80421cd3436ccca8e0fe1d67d9934ab05d0fce2c778a9fc278b85       1201  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/BAO CAO/Bao cao EDA/ban1/reproducibility_checks.json
+fa3626032a54cd12c3fa413cf522f587d710c05a0e7cb84f51414bb5cef79e52       1650  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/BAO CAO/Bao cao EDA/ban1/validation.json
+5cd38fdbf847a7eae6831fb2f8c3a22c0b7f39eee577c3df1cd7d41beddd36fd        243  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/BAO CAO/Bao cao EDA/common/latest.json
+e5a962c8ea1ef281efc59b336a25f782d2ce4c33ebf63892e31f03cccb67d11e        189  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/BAO CAO/Bao cao EDA/common/pipeline_latest.json
+d21051c19559568934e6f40dd268bea71cbce990606605aa1b7b5b66fc16f349       9709  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/drafts/m2/ban1_3_4.qmd
+a1415b1c01ebb4c1fe0acf93958e5bc33d47c472d17d03d6f860902e511889fd       1848  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/drafts/m2/ban1_3_5_hinh_1_2.qmd
+74aa6f978e5c086f9ffad4a90ff901c38f6e4b53bc2b03321076ca0fac2aa694       1701  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/drafts/m2/ban1_evidence_i1_i3.md
+05c7fe65f0e6f37b190c2e71d69d2c9c9149e41f74fc97f32569c79a5ca49cdc     193378  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/drafts/m2/ban1_preview.pdf
+436a685c59ab730856de7ac0eb23960ab841293a7aedd078e5f8671af9167bc5       6120  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/01_inventory.py
+8347ef919cd65d240c4df86721b219dbfeaf1dc7c24b519455dbd9ea1c7197a3       6021  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/02_primary_keys.py
+e89c4751f894ac67d29cc47a20cc9bf40df1097b27347152282d0649e6125c64       7791  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/03_foreign_keys.py
+56ef36997b13e8d608c2833456e43f09c8965e698a847743da88dab9bd80d760       7625  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/04_order_history.py
+2179ceae948c3c59b39d81226ae829b5198ab2f4e704ed685358c47971dbeed0       7710  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/05_basket_structure.py
+102a4ffeefaaf45afd2bcdecc33cf5c821ff97ae094d6076153cdf2d500e2543       9455  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/06_compare_original.py
+58bc6516a5a106a5930d96b5119d18848aef898dfad57b036a2a99fdffbfa301       4314  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/audit_results/01_inventory.txt
+f3d01c7c22af72e467e2a0a6db1cfba78823efe00a9e14b157e666d7bb4e02a4       2290  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/audit_results/02_primary_keys.txt
+78fb0e3c024e3824a9e00e1e1544af071fd8e0ec632b162b0571a1eaa9c9f892       2029  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/audit_results/03_foreign_keys.txt
+e59012a39481fa46864f3362fe24293050b8c09c612a79fce93856de880b9eac       1896  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/audit_results/04_order_history.txt
+23d0d491e3554f1002ff0ab423d185941b56e07987f5c82c705dbee8291bed36       3489  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/audit_results/05_basket_structure.txt
+b6bcf23ce9ede890b8b96874389e08ec6878e51babd3846ef9dd13ca1e75ea24      21369  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/dirty_audit_results/06_compare_original.txt
+8dd5c6c4538db302e72df8e45812aa9a661cae61149aaaf5a108dc445d379d4f       6933  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/HUONG_DAN.md
+11bfa58d2940c408f3c77ca8c3b7534129a2e0ffeb680c1511c7bcdfa171fb61       2258  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/audit/RUN_CHECKS.py
+d612ae6915b0d741a45c1abd845e2d91bda11b4439aade1298ee43fad5d013d1       2606  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/m2_check_environment.py
+3ec5130abe3921750a3079b21f096d522a7db9cf4ed221d879e1c53f389327e5       9167  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/m2_common.py
+f0f0f8657f99217beea5114d8cc604716c0ac61521a34cb3e52f8d6e8fd37fd1       5653  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/m2_prepare_reference.py
+78ba1748c9b43485d2ac5f3566b5795f29152ee66897132cabfc4853cfe985b5       2615  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/m2_run_foundation.py
+cf361142745fd151bff894ca48b45d31e3cce7987157633321083e60077feacf       3017  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/m2_split_data.py
+979a97fb0ebec31cf244dbbe4781009500a2d0c53fbde07288327b577e467d45       6509  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/m2_verify_ban1.py
+b070d496492764b59607c6f1946b8e05260199248294d372faf2fd634d7289ba       5759  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/scripts/README_M2_BAN1.md
+811a8c75e798e9f31c56805c97f92f24b3a5b766615fbeca6ae0376989b68ef5       5863  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/tests/test_m2_evidence.py
+ab606fce7375adf1914c9851a7dab0c557a04cec27694de6b3f31d62292faf7c       2104  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/code_cu_truoc_rut_gon_20261031/tests/test_render_resources.py
+2b998ed678ed4e585c7cd120d6fd8eb055767c99b6667735a4c239ae5b19a38b      10397  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/m4_validate_truoc_sua_chu_thich_20261104.py
+934cc871dee792e8455de2f428b1ddb9fe5e916a704feaf47079ac120166f071     123806  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/nhat-ky-truoc-ghi-phien-20261105/nhật ký làm việc.md
+d1b419341154c95dc7df8ebc3d6cb55926ba8aa89844c6f28094167bac2a7e8b     187341  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/projects.pdf
+15a381412a9c0c311cd40511e3416560a9182abcf78b2f6fe7b5e047340883e3     929305  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3-hoan-thien_20261101/2521001118_Nhom01_TieuLuan.pdf
+92de8a5f0b4a2d85ca8257feecacc788b642734dbd5ff14c46f5484768e71382     116233  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3-hoan-thien_20261101/2521001118_Nhom01_TieuLuan.qmd
+1849c1c64ca95c22335e47a388cae8430e4bb96044f2612d35b7e680f09147be       3624  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3-hoan-thien_20261101/references.bib
+c87088b5a9b95be2d63a8bb21b5024e7a4d27c3d43aaf2767a6a8528a2731441        275  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3-hoan-thien_20261101/SHA256.txt
+6899f067b796395c27d91970205dd51b7ede37d04a7969e4dcff70ebb0adaf34     924765  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/2521001118_Nhom01_TieuLuan.pdf
+64202cabd00772a6ac1ba149c529fa0384a08257c65f437f2abfd66ba4483a13     121013  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/2521001118_Nhom01_TieuLuan.qmd
+6cd8200af5ff9b71f1422f387e2398eff4aa7fc4e38d5376f0ded8a3d4ff2c01      11664  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/block_35_36_nguyen_van_Phong.qmd
+468fe9e5dd7c3b105ec1c26d406b22932bcbf99c24aebac5163fda1a52aaa258        920  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/configs/hypotheses_config.json
+f00865789fb5098caccef8ac7364f64fe2afe442d8c75f55f4b3c63e79c3e06e       1533  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/configs/m2_eda.json
+8d1d3bdfb8b26e2c5915733d7be2a074d6dc2c66b0d4311d4e3cf36b239f1e62        447  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/configs/m2_plot_style.json
+9307deec8b6c5e28305ed9d37f6a8a9df36bdf981149da837963d78faa92b249        469  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/configs/render_resources.json
+d21051c19559568934e6f40dd268bea71cbce990606605aa1b7b5b66fc16f349       9709  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/ban1_3_4.qmd
+a1415b1c01ebb4c1fe0acf93958e5bc33d47c472d17d03d6f860902e511889fd       1848  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/ban1_3_5_hinh_1_2.qmd
+74aa6f978e5c086f9ffad4a90ff901c38f6e4b53bc2b03321076ca0fac2aa694       1701  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/ban1_evidence_i1_i3.md
+05c7fe65f0e6f37b190c2e71d69d2c9c9149e41f74fc97f32569c79a5ca49cdc     193378  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/ban1_preview.pdf
+d4815c081eba00a7950b271d99ac6f051d3b243b078ecc751b6d9f1962bdf804      12870  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/ban1_preview.qmd
+d5dfb992e2da0b5ebbfe451d372ae9dfd6855c4c2b384e758f491f8e51bfd36f       2578  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/ban2/ban2_3_5_hinh_3_5.qmd
+20ecbcf9bb994facf93723b6c8a92239400aafd58a09466b6e26e27e55b639c4       1407  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/ban2/ban2_3_5_insights.qmd
+e64b6f2def544ac285e370494e3e510f385e078e729505eb21fe5546ee2cf22a       3137  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/ban2/ban2_3_6.qmd
+72a58e077f1d85ae25822287b08e731317b9a9a70b99b1a1ef649d381997b0a1     132001  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/preview_checks/page_1.png
+9c76fcdb96dc4b2a595c79880ee8edf3d2c8868a79ce2ffd11ac734e1dd3b1ec     141418  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/preview_checks/page_2.png
+d2ceae4bd6148edb582e881d076279677e2b5e88ee75e5526ba8eb160c722be8     150863  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/preview_checks/page_3.png
+eb57e07285d297763d544a75db8b019a620ecf3ad84577a6b433872d701492c6      88857  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/preview_checks/page_4.png
+3ab35a0d968fe88cfa4f1b83a5c259c524d350b5ce80d3ec1490cb45b453392f      92013  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/preview_checks/page_5.png
+06dbb0666721dbdaa9be76d21e9166ad1d8eca1af19d97e1b51f61528ce58197      96492  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/drafts/m2/preview_checks/page_6.png
+0b45c30ef94e2178ff4b1b24b8bbb25e66c9d84559d9f2517bfdc84a95eab165      22836  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/hashes_truoc_ghep.txt
+64202cabd00772a6ac1ba149c529fa0384a08257c65f437f2abfd66ba4483a13     121013  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/QMD_ban_ghep_viet_lai_22h41.qmd
+1849c1c64ca95c22335e47a388cae8430e4bb96044f2612d35b7e680f09147be       3624  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/references.bib
+436a685c59ab730856de7ac0eb23960ab841293a7aedd078e5f8671af9167bc5       6120  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/01_inventory.py
+8347ef919cd65d240c4df86721b219dbfeaf1dc7c24b519455dbd9ea1c7197a3       6021  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/02_primary_keys.py
+e89c4751f894ac67d29cc47a20cc9bf40df1097b27347152282d0649e6125c64       7791  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/03_foreign_keys.py
+56ef36997b13e8d608c2833456e43f09c8965e698a847743da88dab9bd80d760       7625  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/04_order_history.py
+2179ceae948c3c59b39d81226ae829b5198ab2f4e704ed685358c47971dbeed0       7710  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/05_basket_structure.py
+102a4ffeefaaf45afd2bcdecc33cf5c821ff97ae094d6076153cdf2d500e2543       9455  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/06_compare_original.py
+58bc6516a5a106a5930d96b5119d18848aef898dfad57b036a2a99fdffbfa301       4314  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/audit_results/01_inventory.txt
+f3d01c7c22af72e467e2a0a6db1cfba78823efe00a9e14b157e666d7bb4e02a4       2290  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/audit_results/02_primary_keys.txt
+78fb0e3c024e3824a9e00e1e1544af071fd8e0ec632b162b0571a1eaa9c9f892       2029  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/audit_results/03_foreign_keys.txt
+e59012a39481fa46864f3362fe24293050b8c09c612a79fce93856de880b9eac       1896  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/audit_results/04_order_history.txt
+23d0d491e3554f1002ff0ab423d185941b56e07987f5c82c705dbee8291bed36       3489  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/audit_results/05_basket_structure.txt
+b6bcf23ce9ede890b8b96874389e08ec6878e51babd3846ef9dd13ca1e75ea24      21369  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/dirty_audit_results/06_compare_original.txt
+8dd5c6c4538db302e72df8e45812aa9a661cae61149aaaf5a108dc445d379d4f       6933  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/HUONG_DAN.md
+11bfa58d2940c408f3c77ca8c3b7534129a2e0ffeb680c1511c7bcdfa171fb61       2258  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/audit/RUN_CHECKS.py
+e1fbb57488d8f498d03c88ffba2c2e0e854d399333999e82399dadc21b94ce17       2148  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/config_phong.json
+3c45c44a3caedd827205c12a0e955f0270f5efa578ecf4f91885aa65c66e3294       2647  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/README_PHONG.md
+34312aca49c76910bae00c56c130b24b0526cfff42f6d12d7c435ac8052faa1d         45  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/requirements.txt
+400a129f85989171f57723e09fffafb76dd434dafda63b2f06bc6ce529b0b878        165  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/run_cleaning_phong.py
+eb5d13506259a050eefb88307eb12b90890fd6d2a94b1db0664cee0497593086         34  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/src/__init__.py
+6d4c9e494043e6fa5f004a81fdcfd1c42c5a8c22388bc3ac61ff03fea543190e       1554  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/src/clean_dimensions.py
+d8f24a8ae26f1ed91f38682e2901acbf7a1bb543ec4b509543bdfc064835916a      10216  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/src/clean_transactions.py
+0038d037b6d5cc191cea6a8309c94b5bad33707fffce58cfa324933fe072bc69      12813  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/src/cleaning_rules.py
+2641e769afd6ab7f29e8ccf260a477bdc8fa90703bf877247ea58f0365318788       3841  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/src/reconstruction.py
+a5ec9a377a63e121cda3161fd99e35a56980fc68a6f3cd5cba94f985be8def01       2590  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/src/reporting.py
+fa855f0c06a9d86a67dae006c1a6b18f27f6b4ce893efe4ad75fded8886267af      14800  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/phong/src/runner.py
+d9e78b1171d7052879111f3bf69bc0a9a82e450e880d42f9123aa6e6fe2b0414       1727  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/config_vuong.json
+0dd67e277f2c74d081a6f18214bf432059e6a7173f32e283428632b50fa31da4       2648  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/README_VUONG.md
+34312aca49c76910bae00c56c130b24b0526cfff42f6d12d7c435ac8052faa1d         45  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/requirements.txt
+88a839f0fa150dc562934132db302d1fc2498498ef015fa58bc499d7d0aa9136        165  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/run_cleaning_vuong.py
+eb5d13506259a050eefb88307eb12b90890fd6d2a94b1db0664cee0497593086         34  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/src/__init__.py
+6d4c9e494043e6fa5f004a81fdcfd1c42c5a8c22388bc3ac61ff03fea543190e       1554  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/src/clean_dimensions.py
+d8f24a8ae26f1ed91f38682e2901acbf7a1bb543ec4b509543bdfc064835916a      10216  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/src/clean_transactions.py
+0038d037b6d5cc191cea6a8309c94b5bad33707fffce58cfa324933fe072bc69      12813  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/src/cleaning_rules.py
+2641e769afd6ab7f29e8ccf260a477bdc8fa90703bf877247ea58f0365318788       3841  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/src/reconstruction.py
+a5ec9a377a63e121cda3161fd99e35a56980fc68a6f3cd5cba94f985be8def01       2590  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/src/reporting.py
+fa855f0c06a9d86a67dae006c1a6b18f27f6b4ce893efe4ad75fded8886267af      14800  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/cleaning/vuong/src/runner.py
+71a18ddadb483f7d1adf03ba56bed9ea8df962eb8648628d309cdae949d5f223      35018  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m1_benchmark.py
+2743cf4782aa7cec5a20b7461ee113278c49bd5f3b460d2d67c5a1fa47e5d022      34003  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m1_build_master.py
+66a5f188b44548369d8929fd3f4f35e7bd43294165d7d5debd2bd82a1dfb5815       3661  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m1_common.py
+da8470f93218757364521a67dc7037ea1896172b50b57b690fc363538213632b       3095  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m1_quality_summary.py
+d612ae6915b0d741a45c1abd845e2d91bda11b4439aade1298ee43fad5d013d1       2606  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_check_environment.py
+3ec5130abe3921750a3079b21f096d522a7db9cf4ed221d879e1c53f389327e5       9167  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_common.py
+54032ab57bffad547033eb58fe6c9a1e371511309df7cda38ce4139259fb9403        868  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_data_hashes.py
+a5eb70ba068fae75ef1c86db05b1b5941d3c198a07b463ad57a86209299b18ca       7004  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_eda_multivariate.py
+93b3ce4aaf541e0c481cb7c689567052d844a7ed839d6c8870565ad65771edbc      12486  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_eda_summary.py
+fd98043e8a19a747a8252403571843c25124d512e7c0d08241ae4e4ab6177134       6090  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_evidence.py
+4c104ebcd748bd28b750a1e1310c65ebb938bbbd8c7897943642d5b31bb87a7a       8170  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_hypothesis_tests.py
+3a0dcbe4170558d1367379e365c5896be2bb1e77d79e03244db3cf370a913b95      11047  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_plot_multivariate.py
+7e7b779d12ad6dc4b9efd18622edb0fc1b9a06e7d0cdf55eba890fb97f51f730       7489  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_plot_univariate.py
+f0f0f8657f99217beea5114d8cc604716c0ac61521a34cb3e52f8d6e8fd37fd1       5653  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_prepare_reference.py
+456fe9858bf46d432e2f1fa68e50fddc830a3dde3c707d73c425de57af50004b       2212  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_profile_inputs.py
+0c03a6b258cc8c673f8700c7a798e52c0a74d85435474905f15e8778cd314fe9        858  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_run_ban1.py
+78ba1748c9b43485d2ac5f3566b5795f29152ee66897132cabfc4853cfe985b5       2615  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_run_foundation.py
+cf361142745fd151bff894ca48b45d31e3cce7987157633321083e60077feacf       3017  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_split_data.py
+979a97fb0ebec31cf244dbbe4781009500a2d0c53fbde07288327b577e467d45       6509  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_verify_ban1.py
+4ccfded770bda2df53f86ff8a6b47ea2721196f8c543b390495de8e3b90b9628       2557  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_verify_foundation.py
+2f6d549f908e9a6078b74829b10cf1deb30e20e0e9f7705efa7736c86ebc105e      16988  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/m2_write_ban1_drafts.py
+0b31ffa378d4c69d8fd8e35fd9b11dbb1393e8ff739313238b95912a432f9789       3445  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/README_M1.md
+36d7fd76ccbd91f69781825b8a5d7516cb690a18ca58a5774247f22dc17bda86       5086  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/README_M2.md
+b070d496492764b59607c6f1946b8e05260199248294d372faf2fd634d7289ba       5759  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/README_M2_BAN1.md
+c300904c0748e51529b9b8eb265ffd2b8def6785e5c121c2c0238f54cc103de9       4832  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/render_pdf.py
+d03ddc51b5ba4a90c6d8dc22d89cb9ba27b71bafe69f3fafb507102665de3af9       4924  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/render_pdf.py.bak
+781002e4f133c134b8b690c9a433d918a822013805685329be0c6e4bc9160805        552  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/run_cleaning_all.py
+0154ad9c9f5750571418c8e98558e5292e767b2020d8de049aa887f2d95d7b7c       9871  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/scripts/summarize_cleaning.py
+9168cb52a745265ceb251898b1db0cba46182da9280db4580c63103b963c6e47        921  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/fixtures/m2_contingency_cases.json
+247688a76bf2fb807a2605712f312657423f970da309693b3fde99f378b54185       5531  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/test_cleaning.py
+185e591055fdc19b2caa2661d804b176547d3e6641a9977ff3778cab445a9ef0       4595  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/test_m1_portability.py
+811a8c75e798e9f31c56805c97f92f24b3a5b766615fbeca6ae0376989b68ef5       5863  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/test_m2_evidence.py
+6c58d03cef08690468f09436f50474c182e82464ea831ee6a4edf9617dce6a93       5750  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/test_m2_foundation.py
+a60d79ba7f1ba6c471608659d45067d0ed2d93584a7f6ac4f492af360ea3edf5       1514  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/test_m2_hypotheses.py
+8bdc10c618708ace36d3a572e016bbf890290515663fb72c318cfd19d6e359ff       3000  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/test_m2_multivariate.py
+e4be0b1173fc0480c6c5ca1177e3665fd93eb61e0712f17ea482627ce1495b74       4680  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/test_m2_summary.py
+ab606fce7375adf1914c9851a7dab0c557a04cec27694de6b3f31d62292faf7c       2104  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong3_20261030/tests/test_render_resources.py
+ac59964fe3b01a69eac8a84b17c5567988614c766c23b7ba0ac0cbc7dccf40d7        275  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-ghep-chuong5-20261105/SHA256.txt
+5a83f9255ee8c86fc4aa9700f1356527c6a377ffe8e8ae0425356651827adb6d     150107  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-hoan-thien-20261105/2521001118_Nhom01_TieuLuan.qmd
+3f130b275e9766329626141749e6960c9fe73d8fee47890ccbace6787c1002be     148777  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/archive/truoc-thu-muc-luc-20261105/2521001118_Nhom01_TieuLuan.qmd
+05f789451dd018988698fa6a75b001f3333b6cada174b89dd31d1d32e76b4ba9      78710  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Gửi/BAN_GIAO_RUT_GON_CODE_20261031.zip
+8f73068f74dfe1e699ee78433f7ece02ea0084c02fc44d07f226a5bf26ce45b1      19904  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Gửi/CHƯƠNG 2.md
+1770a0d566c817fe5fe303eff8cbc1075434c50bf4cb806a4f7105515e375254       7191  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Gửi/CODE_CHUONG4_20261104/README_CODE_CHUONG4.md
+7bc795024baf67e70cfea740a53a1111e94d64bdaaef617f1d0c64befe3d4098        392  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Gửi/GUI_phong_chuong4_qmd_20261104/DANH_SACH.txt
+b7227b327d4094f018420d2856aca6037a99b05a715a7db3cc9d587e85806b07    1221596  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Gửi/GUI_phong_ket_qua_test_20261104.zip
+821efb76f236607b7c6eb0640a27fa2b1344a7f0615bc862977044d111bc6343      15832  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Gửi/HUONG_DAN_HOAN_THIEN_CHUONG5_VA_M4_VALIDATE_20261104.md
+2282c43a0ed03c125ad3691259641d8a9ea3f6901b69df5106470e3069e5e074      42619  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Gửi/THIET_KE_VIET_CHUONG4_5_VA_PHAN_CONG_20261104.md
+a8e7b0737187ec43fc679f4d26886ac52343bd4c08f7bd423730bfb2970f54c2      16804  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Gửi/THONG_NHAT_CHUONG4_LAN1_20261104.md
+cceac9282316d41db2a570195e25a5a59dea9104596259665f7e952041a84e72       1588  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Nhận/Gửi Vương_Chương 5 và rà soát Chương 4_20261104/README.md
+f8bb2edfbdb58c65c55578140c1effb906114473361d996db26228d3f623b39c       1934  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Gửi và nhận/Nhận/Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104/README.md
+9310ba119a62fb313e0ad60eefa375e1c5256c0740a6ffc072e8343549371f42      28830  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Hướng dẫn chung/KE_HOACH_HOAN_THANH_CHUONG3_VA_RUT_GON.md
+63dbb8f8896425c02968a1456fc13cf8bae5b24aa74e52071e2a3ad3aaf6ce92      40844  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/Hướng dẫn chung/THIET_KE_CHUONG4_20261101.md
+6140a58cfaa7f807b805720116eaea8520844109d9a06b30851b3264d2eb0c0b        944  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/README.md
+4826e9dcef4ee984eee55de27a586f14005bc64dfcd48cd3cae16303979a4d88       1722  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/TAI_LIEU_NOI_BO/README_WORKSPACE.md
+d51bde398363e498071bb5642aba915c24cb202de04ebd8c272dbeca92a458d8     343619  TEP_CAN_CHEP/2521001118_Nhom01_TieuLuan/toàn bộ mã nguồn.md

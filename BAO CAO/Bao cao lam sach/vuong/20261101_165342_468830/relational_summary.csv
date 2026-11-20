@@ -1,0 +1,5 @@
+﻿table,rule,affected
+order_products__prior,position_exceeds_basket_size,0
+order_products__prior,sequence_corrected_observed,762067
+order_products__prior,sequence_filled_unusable,6005160
+order_products__prior,sequence_observed_consistent,25667262

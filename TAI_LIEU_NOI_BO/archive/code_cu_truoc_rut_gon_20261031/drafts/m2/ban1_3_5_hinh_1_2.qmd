@@ -1,0 +1,16 @@
+<!-- Chỉ phần Bạn 1 của 3.5; đường dẫn tính từ QMD chính. -->
+### Phân phối kích thước giỏ hàng
+
+![Phân phối kích thước giỏ reference: histogram bin rộng một sản phẩm và boxplot giữ các điểm ngoài râu.](<BAO CAO/Bao cao EDA/figures/ban1/fig-ref-basket-distribution.pdf>){#fig-ref-basket-distribution width=16cm fig-pos=H}
+
+*Nguồn: basket_summary.parquet đã nghiệm thu; dữ liệu vẽ basket_histogram.csv và basket_boxplot_values.csv của nhánh Bạn 1. N = 39.363 giỏ; hình PNG 300 DPI và PDF vector.*
+
+Histogram thể hiện tần số từng kích thước nguyên trên toàn khoảng quan sát. Boxplot dùng râu 1,5 × IQR; các điểm ngoài râu vẫn thuộc phân tích. Trung vị 9, Q1–Q3 là 5–14 sản phẩm; phần đuôi phải giải thích vì sao mean lớn hơn median. Các điểm trùng kích thước có thể chồng nhau trên boxplot, nên số giỏ bị gắn cờ được đọc từ bảng kiểm toán, không đếm số chấm trên hình.
+
+### Cơ cấu ngành hàng và đường tích lũy sản phẩm
+
+![Tỷ trọng dòng của Top-10 ngành và phần còn lại; đường tỷ trọng dòng tích lũy theo thứ hạng sản phẩm.](<BAO CAO/Bao cao EDA/figures/ban1/fig-ref-category-concentration.pdf>){#fig-ref-category-concentration width=16cm fig-pos=H}
+
+*Nguồn: department_display.csv, product_popularity.csv, top_n_coverage.csv; 415.053 dòng reference. Bản PNG 300 DPI/PDF vector.*
+
+Đường tích lũy đạt 100% trên 28.742 sản phẩm quan sát; thứ hạng theo popularity giảm dần, phá hòa bằng ID tăng dần. Các mốc Top-N chỉ mô tả tỷ trọng dòng, không phải doanh thu hay quyết định cắt danh mục. Chưa kết luận quy luật 80–20 từ hình này.

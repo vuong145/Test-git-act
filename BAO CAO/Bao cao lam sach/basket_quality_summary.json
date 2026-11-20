@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-11-04T07:08:45.823226+00:00",
+  "scope": "full train Master; structural quality audit only",
+  "source_sha256": {
+    "DATA/Data đã làm sạch/master_train.parquet": "2741c97001e6588a565c8e81771c9fb3e1e3c5edc9018dfeed879eb600473935",
+    "BAO CAO/Bao cao lam sach/before_after.csv": "5f050bc206f5c9407ecc1a65c2e4398210915fed8a5aebc3b9626b4f51667ff6"
+  },
+  "script_sha256": "240f8a784a4633a6e435cd3d7821b7b884517f7b5e7127d6c651ece8706406e1",
+  "pandas_version": "3.0.1",
+  "rows": 1384617,
+  "baskets": 131209,
+  "minimum": 1,
+  "maximum": 80,
+  "q1": 5.0,
+  "q3": 14.0,
+  "iqr": 9.0,
+  "lower_fence": -8.5,
+  "upper_fence": 27.5,
+  "quantile_interpolation": "linear",
+  "flagged_baskets": 5222,
+  "flagged_pct": 3.9799099147162162,
+  "decision": "retain; statistical flag alone is not an invalid-record rule",
+  "limitations": "No household inference; no model tuning on full Master. Model-directed EDA must use reference after splitting."
+}

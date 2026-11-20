@@ -1,0 +1,156 @@
+﻿ngay_sua_goc	chieu	goi	tep	bytes	sha256
+2026-10-18 14:37	Phong → Vương	(tệp lẻ)	Nhận/Chương 1.md	9962	30ee9c000d5f113c31e2c82a440eb88ed304b2d652482e26661584e486e5b67c
+2026-10-20 09:38	Phong → Vương	(tệp lẻ)	Nhận/Data_Dictionary.xlsx	14456	3a4433edc74ddac63304005fe32bbe2104e2d5231cdacb0e1f8a4f1b86f45250
+2026-10-20 10:54	Phong → Vương	(tệp lẻ)	Nhận/Kiểm tra độ sạch.md	18189	5c6ba0ef9b028fa9ead78912d5e1f7265a4334830b038c3ec1684e95852b71c4
+2026-10-20 11:01	Phong → Vương	(tệp lẻ)	Nhận/Kiểm tra độ sạch.docx	35723	64281b2b0a622312be7946ab0f5de34ff9a0403c4abdaf1ad68cddee34cc50cd
+2026-10-20 13:41	Vương → Phong	(tệp lẻ)	Gửi/CHƯƠNG 2.md	19904	8f73068f74dfe1e699ee78433f7ece02ea0084c02fc44d07f226a5bf26ce45b1
+2026-10-20 16:24	Phong → Vương	(tệp lẻ)	Nhận/PRJ08_Muc_3_1_Nguon_goc_va_cau_truc_du_lieu.md	11248	97de05a89fb914ff031a1b7e3b206f394b469afb9bfdd0faedf476a0dba9e339
+2026-10-26 16:32	Phong → Vương	(tệp lẻ)	Nhận/Chương 3_Phần 3.3.md	22042	809fa2547ae5e915b99d13beb358d2bb0c0331c7aaa800553fe51fc46851ca7e
+2026-10-29 15:00	Phong → Vương	(tệp lẻ)	Nhận/PHUONG_AN_SUA_THONG_NHAT.md	17247	84b07a068bbebd77c8dbe7158a81b1ad80b0a095e5c1776d571373b83c0c5f0b
+2026-10-29 15:23	Vương → Phong	(tệp lẻ)	Gửi/KET_QUA_SUA_THONG_NHAT.md	3866	35e5c585fa03b821de4460303e7340380d1e72d8c41d7f225d757e7fd34e6d71
+2026-10-29 22:46	Vương → Phong	(tệp lẻ)	Gửi/cần sửa(phong).md	14044	54fea917a0e2be470f3dc8fa593a1a9fd33d13e504291af1227bafd7fe2af2dc
+2026-10-30 14:24	Phong → Vương	G0_HOP_NHAT_20261030	Nhận/G0_HOP_NHAT_20261030/rebuild_retry.log	478	0e9e2d7fc3b4d4dee05f5c5f36abd90abe180ed0e2865de8089fc5a1d2c7c60c
+2026-10-30 14:26	Phong → Vương	G0_HOP_NHAT_20261030	Nhận/G0_HOP_NHAT_20261030/independent_retry.log	22	e6dec650d4a57864361e4847b35abd59ff7f3c0c07b328539b294ca6d4843846
+2026-10-30 14:27	Phong → Vương	G0_HOP_NHAT_20261030	Nhận/G0_HOP_NHAT_20261030/BAN_GIAO_G0.md	3216	0214d7d1e2364c20545da683c0bdd95259445180b2830248f00eeb33227738b2
+2026-10-30 14:27	Phong → Vương	G0_HOP_NHAT_20261030	Nhận/G0_HOP_NHAT_20261030/qmd_comparison.diff	42554	01591d5e3ff380ce47029711774828ce387167b29e66c1384bf733602ae8e50a
+2026-10-30 14:36	Phong → Vương	BAN_GIAO_BAN2_DAY_DU_CO_3_6	Nhận/BAN_GIAO_BAN2_DAY_DU_CO_3_6/scripts/m2_eda_multivariate.py	9517	a8ae4340507b1aa4da2ce824dedbab49d8ec91a21d1519c6274b973d8a2eee27
+2026-10-30 14:42	Phong → Vương	BAN_GIAO_BAN2_DAY_DU_CO_3_6	Nhận/BAN_GIAO_BAN2_DAY_DU_CO_3_6/tests/test_m2_hypotheses.py	1514	a60d79ba7f1ba6c471608659d45067d0ed2d93584a7f6ac4f492af360ea3edf5
+2026-10-30 15:10	Vương → Phong	(tệp lẻ)	Gửi/3.4-3.6.md	46264	164176fc55cca31118f772c94bfb8014eda1a8dcd432e0f7ea9ed79483673506
+2026-10-30 15:10	Vương → Phong	(tệp lẻ)	Gửi/PHAN_CONG_M2_3.4-3.6.md	26418	517ba3f72df488926184c5d3b0cca7d0d12926494583fdfb85f6734bdc29c828
+2026-10-30 15:36	Phong → Vương	BAN_GIAO_BAN2_DAY_DU_CO_3_6	Nhận/BAN_GIAO_BAN2_DAY_DU_CO_3_6/scripts/m2_multivariate_io.py	964	ec542b9dcd80a974bb4dedd59eee46258879227240625e84614aa3f3081fc404
+2026-10-30 15:37	Phong → Vương	BAN_GIAO_BAN2_DAY_DU_CO_3_6	Nhận/BAN_GIAO_BAN2_DAY_DU_CO_3_6/scripts/m2_audit_descriptive.py	5279	6dbb7e993eab14736c7ce19e034338fdc7bee6ba72bfac8b92656e6d354e6fa0
+2026-10-30 15:37	Phong → Vương	BAN_GIAO_BAN2_DAY_DU_CO_3_6	Nhận/BAN_GIAO_BAN2_DAY_DU_CO_3_6/tests/test_m2_multivariate.py	3000	8bdc10c618708ace36d3a572e016bbf890290515663fb72c318cfd19d6e359ff
+2026-10-30 15:37	Phong → Vương	BAN_GIAO_BAN2_DAY_DU_CO_3_6	Nhận/BAN_GIAO_BAN2_DAY_DU_CO_3_6/scripts/m2_plot_multivariate.py	11091	53cb6cf8502cb8970083963b98dd0195fabfe931cf0a553a170d7df332223c37
+2026-10-30 15:39	Phong → Vương	BAN_GIAO_BAN2_MO_TA	Nhận/BAN_GIAO_BAN2_MO_TA/Bao cao EDA/ban2/BAN_GIAO_BAN2.md	4186	47ff49e5c9c352b92e66dcf253aa431db5292f9fddf9b3cf97f0ba091ce138f2
+2026-10-30 15:50	Phong → Vương	BAN_GIAO_BAN2_DAY_DU_CO_3_6	Nhận/BAN_GIAO_BAN2_DAY_DU_CO_3_6/scripts/m2_hypothesis_tests.py	8178	2bef1f57f257c0fd6a9c9928c56f2dfb1b87d59cfbb33e2a5ed9d57001ecef66
+2026-10-30 15:51	Phong → Vương	BAN_GIAO_BAN2_DAY_DU_CO_3_6	Nhận/BAN_GIAO_BAN2_DAY_DU_CO_3_6/Bao cao EDA/ban2/BAN_GIAO_BAN2.md	2532	2ee11ee800aaba6a1ebf643fb888c0f6b18ab10c5ceb12fa2ab5c30dc17de7fd
+2026-10-30 20:52	Vương → Phong	DOI_CHIEU_BAN1_BAN2_20261030	Gửi/DOI_CHIEU_BAN1_BAN2_20261030/KET_QUA_BAN_DAY_DU.md	5214	4850e7c08a44a141c22598164991133a22bbbd862b7ea446845ee0ca77bdef04
+2026-10-30 23:36	Phong → Vương	Gửi Vương_Chương 4_Importance và hệ số LR_20261101	Nhận/Gửi Vương_Chương 4_Importance và hệ số LR_20261101/scripts/project_io.py	4142	2bb812c90df03293cfea2aeee391c8acddb4d6f5636a0cba9cb50c87c8da8ec7
+2026-10-31 13:40	Phong → Vương	GUI_vuong_chuong3_hoan-thien_20261031	Nhận/GUI_vuong_chuong3_hoan-thien_20261031/DANH_SACH.txt	14119	5a0f2a667d8256411eb16f6c517628b5b6f5cdbef154b3b3cc8b85cc278d2e24
+2026-10-31 13:40	Phong → Vương	GUI_vuong_chuong3_hoan-thien_20261031	Nhận/GUI_vuong_chuong3_hoan-thien_20261031/README_GUI_VUONG.md	1710	5d49d58cc8356f6f1de70ff201441a9aabe32993a36de2f1b2431f74578d5d70
+2026-10-31 13:40	Phong → Vương	GUI_vuong_chuong3_hoan-thien_20261031	Nhận/GUI_vuong_chuong3_hoan-thien_20261031/scripts/render_pdf.py	4742	aec018a09a02d13e5ea74e1fc8d61d643beb41d58516e3b93eb1ddec255cfefb
+2026-11-01 15:20	Phong → Vương	Gửi Vương_Chương 4_Importance và hệ số LR_20261101	Nhận/Gửi Vương_Chương 4_Importance và hệ số LR_20261101/scripts/m4_test.py	4251	be82faa0cca04f7c08f9f2e3a5cdd0c229a519f851fea66958b00f7d39c1bcd1
+2026-11-01 15:21	Phong → Vương	Gửi Vương_Chương 4_Importance và hệ số LR_20261101	Nhận/Gửi Vương_Chương 4_Importance và hệ số LR_20261101/scripts/m4_classifier.py	6307	ac9f4a565b7ace24ade78f373c420383d76943423a9939a1a1d006bf05f376d4
+2026-11-01 15:55	Phong → Vương	Gửi Vương_Chương 4_Importance và hệ số LR_20261101	Nhận/Gửi Vương_Chương 4_Importance và hệ số LR_20261101/scripts/m4_interpret.py	6139	13aaef754905b19681a767d50a37fb845f066735316262e34b220336eed9b7d3
+2026-11-01 15:55	Phong → Vương	Gửi Vương_Chương 4_Importance và hệ số LR_20261101	Nhận/Gửi Vương_Chương 4_Importance và hệ số LR_20261101/tests/test_m4_interpret.py	3119	ae137248a1da033f3ab013bad5b94113c46086ad075acaae02bc441c271d764f
+2026-11-01 15:56	Phong → Vương	Gửi Vương_Chương 4_Importance và hệ số LR_20261101	Nhận/Gửi Vương_Chương 4_Importance và hệ số LR_20261101/README_GUI_VUONG.md	4569	df3c86fce6087185f108da7af30284234beeb992427a03616cbf3810b20597c3
+2026-11-01 15:56	Phong → Vương	Gửi Vương_Chương 4_Importance và hệ số LR_20261101	Nhận/Gửi Vương_Chương 4_Importance và hệ số LR_20261101/DANH_SACH.txt	1924	cd585444d4a748c3434b4a8b865eb1b9654dd68191f775b693a360b11158edb0
+2026-11-01 16:59	Phong → Vương	(tệp lẻ)	Nhận/m1_inspect_artifact.py	1986	378e72dd13d97cfb9dcaa3ebc1c39710761aa218dff2af6611f6231a3205decf
+2026-11-01 18:10	Vương → Phong	(tệp lẻ)	Gửi/RA_SOAT_CLAUDE_20261101_CODEX.md	14687	6727bfd92ad01a74a74bdbc5f1e4bf517ce4937ab9e0065cc6d175f21c931906
+2026-11-01 22:08	Phong → Vương	Gửi Vương_Chương 4_dữ liệu tự tạo_20261101	Nhận/Gửi Vương_Chương 4_dữ liệu tự tạo_20261101/tests/test_m4_environment.py	3375	9fadab7ca92cbc59043ed8bf8d687d299f15e1d3264bd76329b198dbd9b5c876
+2026-11-01 22:12	Phong → Vương	Gửi Vương_Chương 4_dữ liệu tự tạo_20261101	Nhận/Gửi Vương_Chương 4_dữ liệu tự tạo_20261101/Chung/Hướng dẫn chung/CHOT_PHAN_CONG_CHUONG4_20261101.md	4319	b80ffa9f0225b5edbb4f5602ad5e602855acd97f95cc6708e04e5e2311a5492b
+2026-11-01 22:22	Phong → Vương	Gửi Vương_Chương 4_dữ liệu tự tạo_20261101	Nhận/Gửi Vương_Chương 4_dữ liệu tự tạo_20261101/tests/test_m4_model.py	5455	5ab2957433196dec73cd36630653e2c6b8f27726a5967c1832008adab868baf3
+2026-11-01 22:25	Phong → Vương	Gửi Vương_Chương 4_dữ liệu tự tạo_20261101	Nhận/Gửi Vương_Chương 4_dữ liệu tự tạo_20261101/DANH_SACH.txt	1634	a977bc5aec8f0afb98bb5d80a4ddd700557639daeaa61ad2d168c761f59966c8
+2026-11-01 22:25	Phong → Vương	Gửi Vương_Chương 4_dữ liệu tự tạo_20261101	Nhận/Gửi Vương_Chương 4_dữ liệu tự tạo_20261101/README_GUI_VUONG.md	7390	1af6a678c4474ce2346bdcdce424e32b25b27fd90a13a08c9b93abaf906a007f
+2026-11-01 22:34	Vương → Phong	GUI_phong_chuong4_phan_vuong_20261101	Gửi/GUI_phong_chuong4_phan_vuong_20261101/Chung/Hướng dẫn chung/THIET_KE_CHUONG4_20261101.md	40588	60885a30f5e046347b4b4bd5f2cd021a1682f7e54adcda6804909a469ed2b7eb
+2026-11-01 22:35	Vương → Phong	GUI_phong_chuong4_phan_vuong_20261101	Gửi/GUI_phong_chuong4_phan_vuong_20261101/README_GUI_PHONG.md	3611	6059cadb7232e518c81103abccec93759f158f5343ce2fd5f34a4bc8e63eaaa9
+2026-11-01 22:35	Vương → Phong	GUI_phong_chuong4_phan_vuong_20261101	Gửi/GUI_phong_chuong4_phan_vuong_20261101/DANH_SACH.txt	1147	5eef601c39c45499c277eeff53840550cee73512cf9541076d166bbe7d08e75c
+2026-11-04 07:20	Phong → Vương	Gửi Vương_Khung bài và kiểm chéo Recall_20261104	Nhận/Gửi Vương_Khung bài và kiểm chéo Recall_20261104/tests/test_m4_crosscheck.py	1389	38cb1196ccbea18831d220b03721a528e0226c89d28dcbd45eff2f73386313e7
+2026-11-04 07:20	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/m4_crosscheck.py	4841	3fda9ff4c6f2941d8b68d5deb084ec162b860480dcf49b01309cf1302aeb6095
+2026-11-04 07:20	Phong → Vương	Gửi Vương_Khung bài và kiểm chéo Recall_20261104	Nhận/Gửi Vương_Khung bài và kiểm chéo Recall_20261104/DANH_SACH.txt	374	8a7a9c0321d158b1bd9f78c4b2aa510be451924042df9fbb312892992bbf934b
+2026-11-04 07:20	Phong → Vương	Gửi Vương_Khung bài và kiểm chéo Recall_20261104	Nhận/Gửi Vương_Khung bài và kiểm chéo Recall_20261104/README_GUI_VUONG.md	2166	5bb08507722cec28258e0978e3110499005f830de75ec48bd8ef5f099985c17e
+2026-11-04 07:26	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/nghiem_thu/accept.py	2143	4587be98464f375a536a54b3fcacd3e58a717827575f71545f7e84d3b0f594a4
+2026-11-04 07:26	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/nghiem_thu/pip_install.log	5303	a01bd0a5467b028f2af9c29bf00c0b114db6af1d9856363f8f121b0e369a742b
+2026-11-04 07:26	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/nghiem_thu/pip_check.log	31	672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf
+2026-11-04 07:26	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/nghiem_thu/tests.log	6704	592fefeb3f0ef1bd84d8a65641855078ea45b353a58aa1e5052a456873d1d2af
+2026-11-04 07:27	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/nghiem_thu/check_classifier.py	4140	b68afeb0304896a21b636fea39e88288dea6f638834ffb9bbeb5a6cf0432c22a
+2026-11-04 07:28	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/nghiem_thu/classifier.log	586	2e2fc7de66dbda94d4c91a5364b57f30e563fced1e4faf1dc73a144b64623182
+2026-11-04 07:29	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/DANH_SACH.txt	1949	f033edd3a1f1ea3efa5ad78bd079d059241cfac5d13e043503db65acbbb4a561
+2026-11-04 07:29	Phong → Vương	Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104	Nhận/Gửi Vương_Nghiệm thu gói A và Recall 50 giỏ_20261104/ĐỌC_TRƯỚC.md	5538	03248aecfa434621e06bb7ba55ac39349b0bda6cb052106e54d1dada1c9fae54
+2026-11-04 08:05	Phong → Vương	Gửi Vương_Bản cuối chấm test_20261104	Nhận/Gửi Vương_Bản cuối chấm test_20261104/scripts/m4_common.py	14340	bed59411f67f4191a19abda1075b76d3a051df4cde6ecb57f7c1b73ea0eece1a
+2026-11-04 08:05	Phong → Vương	Gửi Vương_Mã chấm test đã rà và biên bản_20261104	Nhận/Gửi Vương_Mã chấm test đã rà và biên bản_20261104/tests/test_m4_gate.py	5547	772c3c9cfd2177d758995e8c0dcc7b941bd3ae4dafad8ab5760b5720b4c9289d
+2026-11-04 08:08	Phong → Vương	Gửi Vương_Mã chấm test đã rà và biên bản_20261104	Nhận/Gửi Vương_Mã chấm test đã rà và biên bản_20261104/THONG_NHAT_CHUONG4_LAN1_PHONG_XAC_NHAN_20261104.md	14672	d536d837ac86b0fbbdb8723a928cd1c1b37d4b2e69c22c9898a0588561be28d5
+2026-11-04 08:08	Phong → Vương	Gửi Vương_Mã chấm test đã rà và biên bản_20261104	Nhận/Gửi Vương_Mã chấm test đã rà và biên bản_20261104/scripts/m4_test.py	11714	cf4cdfb26bbe2a7dcdc346bd43bb0de629b62e2de34bb780e924419c295ba0a0
+2026-11-04 08:08	Phong → Vương	Gửi Vương_Mã chấm test đã rà và biên bản_20261104	Nhận/Gửi Vương_Mã chấm test đã rà và biên bản_20261104/ĐỌC_TRƯỚC.md	5097	650d559f545d6e0c03bb12ffb89000f3b8ba4cf4d16fd3c1a3dea395c4ecf39e
+2026-11-04 08:08	Phong → Vương	Gửi Vương_Mã chấm test đã rà và biên bản_20261104	Nhận/Gửi Vương_Mã chấm test đã rà và biên bản_20261104/DANH_SACH.txt	905	fa8bae15bc4052abc39718b437d2516fb90508283622c2f850e98415639c854b
+2026-11-04 08:39	Phong → Vương	Gửi Vương_Bản cuối chấm test_20261104	Nhận/Gửi Vương_Bản cuối chấm test_20261104/scripts/m4_test.py	12067	e9e2e4f7a439751ab898a01e93bde6a818ed8de2532510585eb5d3be34f3b8fd
+2026-11-04 08:39	Phong → Vương	Gửi Vương_Bản cuối chấm test_20261104	Nhận/Gửi Vương_Bản cuối chấm test_20261104/tests/test_m4_gate.py	5725	bd210f7cd17fa5bee51a53428e5ef251f82ebcff1a7cc175b141b07a8ee2854c
+2026-11-04 08:41	Phong → Vương	Gửi Vương_Bản cuối chấm test_20261104	Nhận/Gửi Vương_Bản cuối chấm test_20261104/scripts/m2_eda_multivariate.py	7232	4d9c1e6dd6e9e8dc5c504b2b5d1f3f07b92691d55372b86b953a580c0fe1a8e9
+2026-11-04 08:42	Phong → Vương	Gửi Vương_Bản cuối chấm test_20261104	Nhận/Gửi Vương_Bản cuối chấm test_20261104/README_GUI_VUONG.md	5368	fa7c0df6943215eebbf680c95b57a3766c50421a91ccb97dc052fcd8d493b526
+2026-11-04 08:44	Phong → Vương	Gửi Vương_Bản cuối chấm test_20261104	Nhận/Gửi Vương_Bản cuối chấm test_20261104/DANH_SACH.txt	2335	8c9085123b25a146894ed60850ba9126f453d94e517dc97ed0ab34989f36816a
+2026-11-04 13:56	Phong → Vương	(tệp lẻ)	Nhận/Gửi Vương_Kết quả kiểm tra máy Phong_20261104.md	3832	11fc7f4fec029e9b917c04d5c591548233e6f5b99b8e7355ecf0f58fd5d63c4f
+2026-11-04 14:14	Vương → Phong	GUI_vuong_ch4_goiA_20261104	Gửi/GUI_vuong_ch4_goiA_20261104/README_GUI_PHONG.md	5343	98a4ee7f151e510c789b1196f42c91b3ff6c2addafc381e5178da8c892900e22
+2026-11-04 14:14	Vương → Phong	GUI_vuong_ch4_goiA_20261104	Gửi/GUI_vuong_ch4_goiA_20261104/tai_lieu/THIET_KE_CHUONG4_20261101.md	40844	63dbb8f8896425c02968a1456fc13cf8bae5b24aa74e52071e2a3ad3aaf6ce92
+2026-11-04 14:14	Vương → Phong	GUI_vuong_ch4_goiA_20261104	Gửi/GUI_vuong_ch4_goiA_20261104/tai_lieu/THONG_NHAT_PHAN_VIEC_20261031.md	10897	aa8a38f8e1144c2f77138ffb8098d9ee8332c457970cb352c76810d86cffef92
+2026-11-04 14:14	Vương → Phong	GUI_vuong_ch4_goiA_20261104	Gửi/GUI_vuong_ch4_goiA_20261104/tai_lieu/THONG_NHAT_CHUONG4_LAN1_20261104.md	13033	c39800c46cab0772c9956e0654cc9dff01dc4b628c173d0a6d1f1160c78f91f1
+2026-11-04 14:14	Vương → Phong	GUI_vuong_ch4_goiA_20261104	Gửi/GUI_vuong_ch4_goiA_20261104/tai_lieu/PHU_THUOC_CO_SAN.txt	1188	ad51afdbc6d26bcb209ee30dbca2a2ad282392238c651b0cab83047a42db5e8b
+2026-11-04 14:14	Vương → Phong	GUI_vuong_ch4_goiA_20261104	Gửi/GUI_vuong_ch4_goiA_20261104/DANH_SACH.txt	7660	1f844367b255de3d05438455f4f9bdd939e192f45adcdb13e3752c6dc3f8f7e4
+2026-11-04 14:26	Phong → Vương	Gửi Vương_Chương 5 và rà soát Chương 4_20261104	Nhận/Gửi Vương_Chương 5 và rà soát Chương 4_20261104/tests_goi_vuong.log	4070	0024c847f1a929599cd6eee1e4fdbb7dc72c31de2c98e5c850ee33d49f3b9e4d
+2026-11-04 14:30	Phong → Vương	Gửi Vương_Chương 5 và rà soát Chương 4_20261104	Nhận/Gửi Vương_Chương 5 và rà soát Chương 4_20261104/khac_biet_chuong1_3_voi_vuong.diff	11201	14ecf727943a1b09ce65ace01acec1b91441a4aabdf7e3a9420ba07444b4290d
+2026-11-04 14:34	Phong → Vương	Gửi Vương_Chương 5 và rà soát Chương 4_20261104	Nhận/Gửi Vương_Chương 5 và rà soát Chương 4_20261104/BAO_CAO_GUI_VUONG.md	8418	e04abbc77194bb23a51ce399b5f807ff3fc185bbfe55fe81e3affa6f8c7ed929
+2026-11-04 14:36	Phong → Vương	Gửi Vương_Chương 5 và rà soát Chương 4_20261104	Nhận/Gửi Vương_Chương 5 và rà soát Chương 4_20261104/README.md	1588	cceac9282316d41db2a570195e25a5a59dea9104596259665f7e952041a84e72
+2026-11-04 14:36	Phong → Vương	Gửi Vương_Chương 5 và rà soát Chương 4_20261104	Nhận/Gửi Vương_Chương 5 và rà soát Chương 4_20261104/SHA256.txt	1263	8e57ca314d4e18f1b3714211c1c0df8b5e346fc70cb42e1b8a36db19bd18131d
+2026-11-04 14:36	Phong → Vương	Gửi Vương_Chương 5 và rà soát Chương 4_20261104	Nhận/Gửi Vương_Chương 5 và rà soát Chương 4_20261104/thay_doi_qmd.diff	55219	8a83f78b03d885a90d9c24149817ac6f493ddb9bd515ddaea191f171507250c1
+2026-11-04 14:58	Vương → Phong	GUI_phong_cham_test_20261104	Gửi/GUI_phong_cham_test_20261104/README_GUI_PHONG.md	5220	7ed44e72096081d1004fe26b1de9a95527ff5e36761f7a0ecf21be1e3ac0658f
+2026-11-04 14:59	Vương → Phong	GUI_phong_cham_test_20261104	Gửi/GUI_phong_cham_test_20261104/DANH_SACH.txt	1196	d3002a3b7687d46815376715d83645a4a7ae631efa0ac1ae7afa5791b58c8438
+2026-11-04 15:16	Phong → Vương	Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104	Nhận/Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104/BAO_CAO_GUI_VUONG.md	7438	2594114b1c957e7294f12de089128ea32f2159ecbd0b567438f5a3f7894dbe48
+2026-11-04 15:19	Phong → Vương	Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104	Nhận/Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104/render_pdf.log	1556	85220a1c7c14374ac85b50e73bfd6661d93677127bb8bf54266de5b831ee8f52
+2026-11-04 15:19	Phong → Vương	Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104	Nhận/Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104/README.md	1934	f8bb2edfbdb58c65c55578140c1effb906114473361d996db26228d3f623b39c
+2026-11-04 15:19	Phong → Vương	Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104	Nhận/Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104/SHA256.txt	2018	18f3bf9871b78d8e63b857122aede5f42f1caf576e00f66e7ba51ce0a359ea7e
+2026-11-04 15:19	Phong → Vương	Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104	Nhận/Gửi Vương_Hoàn thiện Chương 5 và gộp Chương 1-3_20261104/qmd.diff	33563	da15ae7c7b35dd33083b091b648ac9797326741f33c746ac6eec7242a0116c22
+2026-11-04 15:34	Vương → Phong	GUI_phong_dong_bo_moi_truong_20261104	Gửi/GUI_phong_dong_bo_moi_truong_20261104/NOI_DUNG_THAY_DOI.md	6389	e593d1a46095f28faeba4801ac18c61026dce54cb29315733f33a98f57821660
+2026-11-04 15:35	Vương → Phong	(tệp lẻ)	Gửi/HUONG_DAN_PHONG_TRUOC_KHI_GUI_LAI_20261104.md	5527	67caffa7341669eaabce7a806d04dc883973c240f1840e5122cf6db07963382e
+2026-11-04 15:35	Vương → Phong	GUI_phong_dong_bo_moi_truong_20261104	Gửi/GUI_phong_dong_bo_moi_truong_20261104/THONG_NHAT_CHUONG4_LAN1_20261104.md	15564	be60c92228ab2de49e490b80e80a7ba6f5c72decbd6a98e946b4e49911451438
+2026-11-04 15:35	Vương → Phong	GUI_phong_dong_bo_moi_truong_20261104	Gửi/GUI_phong_dong_bo_moi_truong_20261104/DANH_SACH.txt	2066	8688e0d210d7f17dcce9f7f686fd3e23b850002180386078fc63c572a5e79872
+2026-11-04 16:02	Vương → Phong	GUI_phong_lock_nhap_20261104	Gửi/GUI_phong_lock_nhap_20261104/README_GUI_PHONG.md	2945	c883895aff515b86684c555b42e35057f0142ea3f0701e0c89feb1ba00dd671b
+2026-11-04 16:02	Vương → Phong	GUI_phong_lock_nhap_20261104	Gửi/GUI_phong_lock_nhap_20261104/THONG_NHAT_CHUONG4_LAN1_20261104.md	15869	4b7ca65064626f82bf27f90173bd9cbd6311ded9c75e71ba13c9cd9cc3358626
+2026-11-04 16:02	Vương → Phong	GUI_phong_lock_nhap_20261104	Gửi/GUI_phong_lock_nhap_20261104/DANH_SACH.txt	375	0c56ef267d0a84082410289c7b756b97cd2265d27ffc00e8f2f02cca3f3ba687
+2026-11-04 16:10	Phong → Vương	(tệp lẻ)	Nhận/Gửi Vương_Đồng ý lock fe2db0a7_20261104.txt	1209	0d848c24a2516eb1ef89c5e05ee0f529cefd17b18fef6ee29ba715176b0f1200
+2026-11-04 16:18	Vương → Phong	GUI_phong_ket_qua_test_20261104	Gửi/GUI_phong_ket_qua_test_20261104/nhat_ky_chay/chay_test.log	42	392faac156b31dab23df8a4c6ad7cc3cf3484046a245444fd2576bb1bcecfdfd
+2026-11-04 16:18	Vương → Phong	GUI_phong_ket_qua_test_20261104	Gửi/GUI_phong_ket_qua_test_20261104/nhat_ky_chay/m4_test_stdout.txt	762	34257a73cdfff96b28a446be726b57c9a6c304e6c620a3112a506d7fa6deb830
+2026-11-04 16:18	Vương → Phong	GUI_phong_ket_qua_test_20261104	Gửi/GUI_phong_ket_qua_test_20261104/README_GUI_PHONG.md	4161	3908014d1bd720dd7bfe9831bc950941997c7fe852a63bd23f1e9bd6c9451bd5
+2026-11-04 16:18	Vương → Phong	GUI_phong_ket_qua_test_20261104	Gửi/GUI_phong_ket_qua_test_20261104/THONG_NHAT_CHUONG4_LAN1_20261104.md	16493	16bceac4d0667f1e5813960b165df49bca0079cf7951c860cc2a6af4fe4f1b6d
+2026-11-04 16:18	Vương → Phong	GUI_phong_ket_qua_test_20261104	Gửi/GUI_phong_ket_qua_test_20261104/DANH_SACH.txt	1631	53d271c25e41c99949d80347b688519143a66c0f234503291abb1818d22174d9
+2026-11-04 16:30	Vương → Phong	CODE_CHUONG4_20261104	Gửi/CODE_CHUONG4_20261104/README_CODE_CHUONG4.md	7191	1770a0d566c817fe5fe303eff8cbc1075434c50bf4cb806a4f7105515e375254
+2026-11-04 16:33	Vương → Phong	(tệp lẻ)	Gửi/THIET_KE_VIET_CHUONG4_5_VA_PHAN_CONG_20261104.md	42619	2282c43a0ed03c125ad3691259641d8a9ea3f6901b69df5106470e3069e5e074
+2026-11-04 16:33	Vương → Phong	(tệp lẻ)	Gửi/THONG_NHAT_CHUONG4_LAN1_20261104.md	16804	a8e7b0737187ec43fc679f4d26886ac52343bd4c08f7bd423730bfb2970f54c2
+2026-11-04 16:48	Vương → Phong	CODE_CHUONG4_20261104	Gửi/CODE_CHUONG4_20261104/DANH_SACH.txt	1780	f022f211f0cf0f6896a08b2fc16bd99246daeb0df2f2ce28092c1e337f4872c5
+2026-11-04 16:48	Vương → Phong	GUI_phong_chuong4_qmd_20261104	Gửi/GUI_phong_chuong4_qmd_20261104/DANH_SACH.txt	392	7bc795024baf67e70cfea740a53a1111e94d64bdaaef617f1d0c64befe3d4098
+2026-11-04 17:06	Vương → Phong	GUI_PHONG_TOAN_BO_20261104	Gửi/GUI_PHONG_TOAN_BO_20261104/00_DOC_TRUOC.md	4367	337159ff61b424344fb749dbd52893e9ffd2cb748eb34bc1afc555cae7b6024a
+2026-11-04 17:06	Vương → Phong	GUI_PHONG_TOAN_BO_20261104	Gửi/GUI_PHONG_TOAN_BO_20261104/DANH_SACH.txt	4264	f4c12a1bda29354017b7f65d340a59ba3ea3d2b4ae311b0eed80c65119a1b3de
+2026-11-04 22:03	Vương → Phong	(tệp lẻ)	Gửi/HUONG_DAN_HOAN_THIEN_CHUONG5_VA_M4_VALIDATE_20261104.md	15832	821efb76f236607b7c6eb0640a27fa2b1344a7f0615bc862977044d111bc6343
+2026-11-05 22:01	Vương → Phong	GUI_PHONG_HOAN_THIEN_20261105	Gửi/GUI_PHONG_HOAN_THIEN_20261105/03_SO_SANH_truoc_sau/apa.csl.diff	685	c82695116ba43c7af07558dd8eba11e02ab6a06fe332626d9ace651a46c8bc0a
+2026-11-05 22:01	Vương → Phong	GUI_PHONG_HOAN_THIEN_20261105	Gửi/GUI_PHONG_HOAN_THIEN_20261105/03_SO_SANH_truoc_sau/m2_plot_univariate.py.diff	3032	3d143ae3e8f458ad3b16b318e10d8577b820856ce23c4c1c732998537c1f4b37
+2026-11-05 22:01	Vương → Phong	GUI_PHONG_HOAN_THIEN_20261105	Gửi/GUI_PHONG_HOAN_THIEN_20261105/03_SO_SANH_truoc_sau/m2_plot_multivariate.py.diff	5432	59448ea690ea6c9156365bc4e1ac5b35b9433f28eb884a15b6dccb0b00c8015c
+2026-11-06 13:09	Vương → Phong	GUI_PHONG_HOAN_THIEN_20261105	Gửi/GUI_PHONG_HOAN_THIEN_20261105/03_SO_SANH_truoc_sau/2521001118_Nhom01_TieuLuan.qmd.diff	136930	1131e56bb834afc0e97245b02cff1d5b9283b49a8a813bc23bb98ffda7c8cf15
+2026-11-06 13:09	Vương → Phong	GUI_PHONG_HOAN_THIEN_20261105	Gửi/GUI_PHONG_HOAN_THIEN_20261105/README_GUI_PHONG.md	10482	f6b9103fd80510bb38ca788b6f93c6072e6378ffe9065eb0cd85ee4a2cfc921d
+2026-11-06 13:09	Vương → Phong	GUI_PHONG_HOAN_THIEN_20261105	Gửi/GUI_PHONG_HOAN_THIEN_20261105/DANH_SACH.txt	42373	ed986d58ec98f777c9d592454d1e1f3d0d0277f51f6f7f5c376f6d7bf91a436a
+2026-11-07 13:05	Vương → Phong	DE_XUAT_SUA_THEO_GOP_Y_20261107	Gửi/DE_XUAT_SUA_THEO_GOP_Y_20261107/2521001118_Nhom01_TieuLuan.qmd.diff	25040	1c552eebf71c67a194d3cc62808ecd2cdab3bf195c06256e23684688e404bb1b
+2026-11-07 13:05	Vương → Phong	DE_XUAT_SUA_THEO_GOP_Y_20261107	Gửi/DE_XUAT_SUA_THEO_GOP_Y_20261107/references.bib.diff	934	0099e9204bdb4a3d454c0a7e5b58c4f98b21cd2ba347ee29b65a530992463497
+2026-11-07 13:05	Vương → Phong	DE_XUAT_SUA_THEO_GOP_Y_20261107	Gửi/DE_XUAT_SUA_THEO_GOP_Y_20261107/DANH_SACH.txt	564	62227a9d3a309367d48500a421e13891a829fc1cd6532bea97b4287297777e5c
+2026-11-07 13:05	Vương → Phong	DE_XUAT_SUA_THEO_GOP_Y_20261107	Gửi/DE_XUAT_SUA_THEO_GOP_Y_20261107/DE_XUAT_SUA_THEO_GOP_Y.md	19534	648fdbfaa81a83376fae7d9278b1d762f562aacb01799b7362039fcb0f8e7916
+2026-11-07 13:27	Phong → Vương	(tệp lẻ)	Nhận/Gửi Vương_Duyệt đề xuất sửa theo góp ý_20261107.md	2255	c771085d7c3b5841bc15e1928711a83123de973aa98d0b0db8e24e0746a162e2
+2026-11-07 13:34	Vương → Phong	GUI_PHONG_DA_AP_DE_XUAT_20261107	Gửi/GUI_PHONG_DA_AP_DE_XUAT_20261107/03_SO_SANH_truoc_sau/2521001118_Nhom01_TieuLuan.qmd.diff	25032	3e6c506ab21ec0bdcfe56050f653b14c14067a96f1e028f542abf473868907a7
+2026-11-07 13:34	Vương → Phong	GUI_PHONG_DA_AP_DE_XUAT_20261107	Gửi/GUI_PHONG_DA_AP_DE_XUAT_20261107/03_SO_SANH_truoc_sau/references.bib.diff	926	6c2dcb0e6d9f2d1c9677579f6c66737a8008c62cb2b95f12b859b4b3b3979dd2
+2026-11-07 13:34	Vương → Phong	GUI_PHONG_DA_AP_DE_XUAT_20261107	Gửi/GUI_PHONG_DA_AP_DE_XUAT_20261107/03_SO_SANH_truoc_sau/m2_plot_multivariate.py.diff	2103	770364df32844d961aca294f3ad0dbae9778647a073159c4a53247673521f1f5
+2026-11-07 13:34	Vương → Phong	GUI_PHONG_DA_AP_DE_XUAT_20261107	Gửi/GUI_PHONG_DA_AP_DE_XUAT_20261107/03_SO_SANH_truoc_sau/m4_report.py.diff	683	8b24fbf2f63e244649b8968a034d669fda8a5af566c677cc64c716f61d504ebb
+2026-11-07 13:34	Vương → Phong	GUI_PHONG_DA_AP_DE_XUAT_20261107	Gửi/GUI_PHONG_DA_AP_DE_XUAT_20261107/README_GUI_PHONG.md	3189	87c48b19221aca04c7e00b6d18ee04c2cb8442049eec5d3ce64bb4ca930fbdc5
+2026-11-07 13:34	Vương → Phong	GUI_PHONG_DA_AP_DE_XUAT_20261107	Gửi/GUI_PHONG_DA_AP_DE_XUAT_20261107/DANH_SACH.txt	4394	d08e02aa260ef3d51f99eaba7028bee530b5d4d7af86495a862e3e90afc1eb78
+2026-11-07 13:53	Vương → Phong	GUI_PHONG_BO_VOL398_20261107	Gửi/GUI_PHONG_BO_VOL398_20261107/references.bib.diff	414	b7beea6e5c78d83aa24926f62c7b8062b60e2bc0073860b8b227025ae00a7738
+2026-11-07 13:53	Vương → Phong	GUI_PHONG_BO_VOL398_20261107	Gửi/GUI_PHONG_BO_VOL398_20261107/README_GUI_PHONG.md	1532	26f5621fc56bfc164bf08824208c1636cc54ae732228b0d75d2009df7278df82
+2026-11-07 13:53	Vương → Phong	GUI_PHONG_BO_VOL398_20261107	Gửi/GUI_PHONG_BO_VOL398_20261107/DANH_SACH.txt	530	72ed0c9772db72bcf421ca405e7aaec991abb6be39049abb61b51986a5e4eac6
+2026-11-07 14:20	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_BAN_CHOT_20261107/03_SO_SANH_voi_ban_06-11/2521001118_Nhom01_TieuLuan.qmd.diff	25041	9c288aabb3818ee4d6ed3ed10eef301931feac8ba7ca6541cc48ee633404411a
+2026-11-07 14:20	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_BAN_CHOT_20261107/03_SO_SANH_voi_ban_06-11/references.bib.diff	1030	a0bddeb513496eea98495093ecf64603a403695910b52ed20ed95ffd8734f183
+2026-11-07 14:20	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_BAN_CHOT_20261107/03_SO_SANH_voi_ban_06-11/m2_plot_multivariate.py.diff	2112	ba34b2b6cde178287b113df94a9e0dc98cfcc6f5d82391d649f333a19a2f4433
+2026-11-07 14:20	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_BAN_CHOT_20261107/03_SO_SANH_voi_ban_06-11/m4_report.py.diff	692	bf916061e8035c7bfed776d074ddc02cedb24fdcf0663e9a345dc9430e1cc473
+2026-11-07 14:20	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_BAN_CHOT_20261107/README_GUI_PHONG.md	3499	ddeb85de708ec7a7819f89ec00e2cf9d448368b4ee9d97d5cfb0fc54d753740c
+2026-11-07 14:20	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_BAN_CHOT_20261107/DANH_SACH.txt	4667	5968bd94c2e81b4c4262093860eabacfbe5560599f639daab38e955881fa41b2
+2026-11-07 14:46	Phong → Vương	(tệp lẻ)	Nhận/Gửi Vương_Xác nhận bản chốt_20261107.md	812	7aab7a8dfd58a6dedfb87bdd18c3e8d8d82c2ffba5bbb2f4596872434b389e84
+2026-11-11 09:54	Phong → Vương	Gửi Vương_Kiểm tra bản chốt V2_20261111	Nhận/Gửi Vương_Kiểm tra bản chốt V2_20261111/Gửi Vương_Log 57 test V2_20261111.txt	7680	6619dc9f7a0a4c672c29578b2a97801bfac65587280762b57845520e085a202b
+2026-11-11 09:57	Phong → Vương	Gửi Vương_Kiểm tra bản chốt V2_20261111	Nhận/Gửi Vương_Kiểm tra bản chốt V2_20261111/Gửi Vương_Đối chiếu 380 tệp V2_20261111.tsv	85938	83720f6faf303034377b68cf64d656262f13c805493e14b6ea6895fdb47a4f49
+2026-11-11 10:02	Phong → Vương	Gửi Vương_Kiểm tra bản chốt V2_20261111	Nhận/Gửi Vương_Kiểm tra bản chốt V2_20261111/Gửi Vương_Kết quả đối chiếu cuối V2_20261111.md	20681	12b8aaa1e01b655be6b1310d1aac5f62b28f5c0cef56277cd00e6d177d04e79b
+2026-11-11 16:43	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_DOI_CHIEU_TOAN_BO_V2_20261111/03_CAU_TRUC_THU_MUC/SHA256_MOI_TEP_BAN_NOP.tsv	50923	26174081fbe0bd0fb50a200dc956b70e632b6a4cdcc687ccd37bf75912020d8c
+2026-11-11 16:43	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_DOI_CHIEU_TOAN_BO_V2_20261111/03_CAU_TRUC_THU_MUC/CAY_THU_MUC_BAN_NOP.txt	28953	0fa1958ef7c458b681589b516025e47f00d2f36312f0af17f4bb4c95711a66cf
+2026-11-11 16:43	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_DOI_CHIEU_TOAN_BO_V2_20261111/04_SO_SANH_voi_ban_chot_07-11/2521001118_Nhom01_TieuLuan.qmd.diff	13416	3ff4c1ed3772d0b822f768b10dcca9f1a774abf8429697ce0ef6fa886dd66f28
+2026-11-11 16:43	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_DOI_CHIEU_TOAN_BO_V2_20261111/04_SO_SANH_voi_ban_chot_07-11/references.bib.diff	2858	e74903a8bc1aceb37920ab71276820ea4040e271d44a7a83a4affdb401f31c45
+2026-11-11 16:43	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_DOI_CHIEU_TOAN_BO_V2_20261111/04_SO_SANH_voi_ban_chot_07-11/m2_plot_univariate.py.diff	848	ed1fe337ff1521e7960532088b9affd64e186e1aacc66ccdf882e22f2ce0fdcf
+2026-11-11 16:43	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_DOI_CHIEU_TOAN_BO_V2_20261111/04_SO_SANH_voi_ban_chot_07-11/README.md.diff	483	5e400669dc90f982bf77fc7a93427159eda7c900a6a9a73cd8d584a3b64fa4c3
+2026-11-11 16:43	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_DOI_CHIEU_TOAN_BO_V2_20261111/README_GUI_PHONG.md	3996	ad5bff86e2ada60b03ea6caf0b972fc36973bbb811dd426190b11f4c3dd2e76e
+2026-11-11 16:43	Vương → Phong	GUI_PHONG_BAN_CHOT_20261107	Gửi/GUI_PHONG_DOI_CHIEU_TOAN_BO_V2_20261111/DANH_SACH.txt	8730	a97b07920c76278fa983482ee0dc114658f1a42edab30b8588c3c93b92de789f
+2026-11-11 17:09	Vương → Phong	GUI_PHONG_THEM_DOI_EFRON_20261111	Gửi/GUI_PHONG_THEM_DOI_EFRON_20261111/references.bib.diff	357	e0cea0adde572210b0130f37cca11ea9fca341a288efeed99d2585ab12cb5f5d
+2026-11-11 17:09	Vương → Phong	GUI_PHONG_THEM_DOI_EFRON_20261111	Gửi/GUI_PHONG_THEM_DOI_EFRON_20261111/README_GUI_PHONG.md	705	80ae2a212d749433463fde8ffbe5fe144dff16c5a84f39d4b877ac542a406823
+2026-11-11 17:09	Vương → Phong	GUI_PHONG_THEM_DOI_EFRON_20261111	Gửi/GUI_PHONG_THEM_DOI_EFRON_20261111/DANH_SACH.txt	646	64c60d20c9e4e9f566b524da55d59db64b308d2f59d9eac62a53ea49e8eb3d4e
+2026-11-11 17:15	Vương → Phong	GUI_PHONG_DONG_BO_100_20261111	Gửi/GUI_PHONG_DONG_BO_100_20261111/DANH_SACH_380_TEP.tsv	52627	eb3877563f4a1190d97649669c68e73ffbfb7fa30721c410626f9f0346246cd0
+2026-11-11 17:15	Vương → Phong	GUI_PHONG_DONG_BO_100_20261111	Gửi/GUI_PHONG_DONG_BO_100_20261111/SO_DO_THU_MUC_DONG_BO.txt	37805	53cd16e365c8e5fa1a17c57cece0b1641615579752d2a7de5519564aa5a528ac
+2026-11-11 17:15	Vương → Phong	GUI_PHONG_DONG_BO_100_20261111	Gửi/GUI_PHONG_DONG_BO_100_20261111/README_GUI_PHONG.md	2809	9518a1d4b84ee3f2897ab2fc32e2305b0e9113c4adbff3eb2d8a9e4ce39e5fc5
+2026-11-11 17:15	Vương → Phong	GUI_PHONG_DONG_BO_100_20261111	Gửi/GUI_PHONG_DONG_BO_100_20261111/DANH_SACH.txt	43594	9a1ddf806d26d59417bc10d95b2a2c2961abc3e6cbbbfcd4f040c74cde426bd8

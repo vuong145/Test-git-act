@@ -1,0 +1,332 @@
+--- QMD truoc
++++ QMD sau
+@@ -183,7 +183,7 @@
+ 
+ # TÓM TẮT ĐỒ ÁN {.unnumbered}
+ 
+-[Viết 250–350 từ khi có kết quả thực tế. Bao gồm: vấn đề, dữ liệu, phương pháp, kết quả định lượng, khuyến nghị và giới hạn. Đây là ô chờ, chưa phải tóm tắt hoàn chỉnh.]
++Nghiên cứu xây dựng quy trình gợi ý sản phẩm mua kèm trong khi khách hàng đang tạo giỏ, từ dữ liệu Instacart đa bảng được bổ sung nhiễu theo yêu cầu học phần. Sáu bảng được làm sạch và tích hợp; dữ liệu được phân hoạch theo người dùng thành reference, fit, validation và test để tách việc học thống kê, huấn luyện, lựa chọn cấu hình và đánh giá cuối. Bài toán hoàn thiện giỏ được mô phỏng bằng cách che một phần sản phẩm, sau đó so sánh Popularity, luật kết hợp, Logistic Regression và Random Forest trên cùng danh mục ứng viên. Apriori và FP-Growth cho cùng itemset và support tại hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy thực nghiệm. Lựa chọn cấu hình thực hiện trên validation, còn tập test được chấm sau khi khóa. Trên 24.877 giỏ test đủ điều kiện, Random Forest đạt Recall@10 bằng 0,0971, cao hơn Popularity 0,0216 với khoảng tin cậy bootstrap 95% [0,0192; 0,0239], và cao hơn Rules 0,0047. Tuy nhiên, trần Recall@10 của danh mục Top-1.000 chỉ đạt 0,5198, cho thấy giới hạn đáng kể ở khâu tạo ứng viên. Nghiên cứu đề xuất sử dụng luật đồng mua làm nền, thử nghiệm tầng xếp hạng Random Forest theo cân bằng chất lượng và chi phí, đồng thời dự phòng bằng độ phổ biến. Lộ trình triển khai gồm thử nghiệm kín, A/B theo người dùng và giám sát chất lượng, đa dạng cùng quyền riêng tư. Kết quả phản ánh hiệu quả ngoại tuyến trong một thiết kế che giỏ và một phân hoạch; chưa chứng minh khả năng tăng doanh thu hoặc tác động nhân quả trong vận hành thực tế.
+ 
+ ```{=latex}
+ \clearpage
+@@ -221,11 +221,11 @@
+ 
+ 1. **Dữ liệu, tuần 1:** Làm sạch sáu CSV; tạo bảng phân tích chính trên **1 triệu dòng sản phẩm–đơn hàng**, đối chiếu 1.384.617 dòng train. Đầu ra gồm bảng trước–sau và kiểm tra không trùng khóa, không khóa ngoại mồ côi, không mất/nhân dòng do ghép; thuộc tính còn thiếu và giả định khôi phục được công bố.
+ 2. **Tài nguyên, tuần 2:** Áp dụng chunksize, tối ưu dtype và Parquet; lập bảng RAM đỉnh, thời gian, dung lượng trước–sau trên cùng dữ liệu và máy, kiểm tra kết quả tương đương. Báo cáo mức thay đổi thực đo, không mặc định mọi kỹ thuật đều cải thiện.
+-3. **EDA và khai phá, tuần 2:** Đúc kết **4–5 insight định lượng** kèm biểu đồ và ý nghĩa kinh doanh; kiểm định liên hệ ngành hàng. Chạy Apriori và FP-Growth trên cùng giao dịch, danh mục và ngưỡng; đối chiếu itemset, support, confidence, lift và benchmark lặp.
++3. **EDA và khai phá, tuần 2:** Đúc kết **4–5 insight định lượng** kèm biểu đồ và ý nghĩa kinh doanh; kiểm định liên hệ ngành hàng. Chạy Apriori và FP-Growth trên cùng giao dịch, danh mục và ngưỡng; đối chiếu trực tiếp itemset và support, đồng thời benchmark lặp. Confidence và lift của luật được tính từ support theo cùng công thức, không phải hai phép đối chiếu độc lập đã thực hiện.
+ 4. **Mô hình, tuần 3:** Huấn luyện Logistic Regression (LR) [@hosmer2013] và Random Forest (RF) [@breiman2001] từ đặc trưng sản phẩm, giỏ quan sát và thống kê reference; so sánh với Popularity Baseline và Association Rules trên cùng ứng viên. Đầu ra gồm cấu hình, metrics và diễn giải đặc trưng.
+ 5. **Đánh giá và ứng dụng, tuần 4:** Báo cáo **macro Recall@10**, chênh lệch với baseline và khoảng tin cậy 95%. Phương pháp chính được chọn trên validation; chỉ kết luận cải thiện có bằng chứng khi cận dưới khoảng tin cậy chênh lệch trên test lớn hơn 0. Kết quả không cải thiện vẫn được phân tích. Hoàn thành khuyến nghị, KPI và lộ trình thử nghiệm A/B.
+ 
+-**Tính khả thi và thời hạn:** Bốn tuần tính từ mốc khởi động 15/10/2026, dự kiến kết thúc 11/11/2026; đây là lịch nghiên cứu, không thay thế hạn nộp học phần. Pilot trên máy 24 GB RAM dùng để chốt Top-N, ngưỡng khai phá, độ dài tập và quy mô lấy mẫu âm trước thực nghiệm chính. Mức tối ưu và khả thi chỉ được xác nhận bằng kết quả đo.
++**Tính khả thi và thời hạn:** Bốn tuần tính từ mốc khởi động 15/10/2026, dự kiến kết thúc 11/11/2026; đây là lịch nghiên cứu, không thay thế hạn nộp học phần. Pilot trên máy 24 GB RAM dùng để kiểm tra toàn luồng và khả năng thực thi trên mẫu nhỏ. Top-N và tham số luật được chọn bằng lưới 24 cấu hình trên validation; số mẫu âm được cố định trước ở mức tối đa 20 mẫu mỗi giỏ fit. Mức tối ưu và khả thi chỉ được xác nhận bằng kết quả đo.
+ 
+ ## Đối tượng và Phạm vi nghiên cứu
+ 
+@@ -301,7 +301,7 @@
+ 
+ ## Các phương pháp thống kê và Thuật toán Học máy ứng dụng
+ 
+-**Khai phá và benchmark.** Hai thuật toán dùng ma trận Boolean thưa, cùng giỏ, danh mục, ngưỡng support và độ dài tập tối đa. Giỏ rỗng sau lọc danh mục vẫn thuộc mẫu số support. Chạy riêng từng thuật toán ba lần, báo trung vị thời gian, RAM đỉnh và tính nhất quán itemset/support; tách chi phí tạo ma trận khỏi khai phá. Cấu hình vượt ngân sách pilot được ghi nhận và loại trước khi khóa thiết kế, không giảm dữ liệu riêng cho một thuật toán.
++**Khai phá và benchmark.** Hai thuật toán dùng ma trận Boolean thưa, cùng giỏ, danh mục, ngưỡng support và độ dài tập tối đa. Giỏ rỗng sau lọc danh mục vẫn thuộc mẫu số support. Chạy riêng từng thuật toán ba lần, báo trung vị thời gian, RAM đỉnh và tính nhất quán itemset/support; tách chi phí tạo ma trận khỏi khai phá. Không có cấu hình nào bị loại do ngân sách pilot. FP-Growth chạy 12 tổ hợp khai phá, kết hợp hai ngưỡng confidence thành 24 cấu hình validation; benchmark Apriori và FP-Growth được báo cáo tại cấu hình đã chọn và cấu hình lớn nhất của lưới.
+ 
+ **Gợi ý và classifier.** Popularity Baseline xếp theo tỷ lệ giỏ reference chứa sản phẩm. Luật gợi ý có hậu đề một sản phẩm $b$, tiền đề $A\subseteq O_j$; ưu tiên ứng viên có luật, xếp theo confidence lớn nhất, rồi độ phổ biến. LR học log-odds tuyến tính; RF tổng hợp cây để biểu diễn quan hệ phi tuyến. Đặc trưng X gồm độ phổ biến, số luật khớp, confidence/lift lớn nhất, kích thước $O_j$, số sản phẩm quan sát cùng ngành ứng viên và ngành ứng viên. Không có luật thì ba đặc trưng luật bằng 0. Ứng viên không có luật xếp sau theo độ phổ biến. Các phương pháp phá hòa cuối cùng bằng mã sản phẩm tăng dần; không dùng $H_j$ để tính X.
+ 
+@@ -329,13 +329,13 @@
+ \end{samepage}
+ ```
+ 
+-Chỉ số chính là **Recall@10** [@manning2008]; bổ sung các chỉ số trên tại $K=5,10$. Recall tính cả đáp án ngoài $C$; Precision vẫn chia $K$ khi danh sách ngắn. Báo riêng tỷ lệ đáp án thuộc danh mục, tỷ lệ giỏ có luật trước dự phòng và tỷ lệ danh mục được gợi ý. Classifier có thêm Accuracy, Precision, Recall, F1, ROC-AUC, Average Precision và ma trận nhầm lẫn; Average Precision không đồng nhất với diện tích PR tính bằng hình thang [@sklearn_ap]. Ngưỡng phân loại tối đa hóa F1 trên validation; metric không xác định được báo riêng, không tự gán 0. Bootstrap ghép cặp theo người dùng, 2.000 lần và seed cố định, cho khoảng tin cậy percentile 95% của chênh lệch Recall@10. Phép so sánh xác nhận dành cho phương pháp chọn trên validation với baseline; các so sánh còn lại mang tính bổ trợ. Không dùng test để chọn lại mô hình. Permutation importance trên validation với thước đo Average Precision hỗ trợ diễn giải classifier, có lưu ý đặc trưng tương quan. Hiệu quả ngoại tuyến là căn cứ đề xuất A/B test, chưa chứng minh tăng doanh thu.
++Chỉ số chính là **Recall@10** [@manning2008]; bổ sung các chỉ số trên tại $K=5,10$ và đường Recall@K từ $K=1$ đến $10$. Recall tính cả đáp án ngoài $C$; Precision vẫn chia $K$ khi danh sách ngắn. Báo riêng tỷ lệ đáp án thuộc danh mục, tỷ lệ giỏ có luật trước dự phòng. Độ phủ danh mục được gợi ý chưa được tính trong thực nghiệm này. Classifier có thêm Accuracy, Precision, Recall, F1, ROC-AUC, Average Precision và ma trận nhầm lẫn; Average Precision không đồng nhất với diện tích PR tính bằng hình thang [@sklearn_ap]. Ngưỡng phân loại tối đa hóa F1 trên validation; metric không xác định được báo riêng, không tự gán 0. Bootstrap ghép cặp theo người dùng, 2.000 lần và seed cố định, cho khoảng tin cậy percentile 95% của chênh lệch Recall@10. Phép so sánh xác nhận dành cho phương pháp chọn trên validation với baseline; các so sánh còn lại mang tính bổ trợ. Không dùng test để chọn lại mô hình. Permutation importance trên validation với thước đo Average Precision hỗ trợ diễn giải classifier, có lưu ý đặc trưng tương quan. Hiệu quả ngoại tuyến là căn cứ đề xuất A/B test, chưa chứng minh tăng doanh thu.
+ 
+ ## Môi trường thực nghiệm và Công cụ lập trình Python
+ 
+-Môi trường được ghi theo từng lượt, không đồng nhất giữa các giai đoạn. Hồ sơ M1 ghi Python 3.12.10, pandas 3.0.3 và PyArrow 24.0.0. Gói G0 nhận từ Vương ghi Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3. Môi trường kiểm chứng tại Phong dùng Python 3.12.10, các thư viện M2 theo `requirements-m2-lock.txt`; khác biệt bản vá Python được ghi trong hồ sơ mới. Số benchmark M1 vẫn thuộc môi trường lịch sử.
+-
+-pandas/NumPy xử lý bảng; PyArrow lưu Parquet; SciPy hỗ trợ kiểm định; mlxtend và scikit-learn phục vụ giai đoạn mô hình; Matplotlib/Seaborn xuất hình 300 DPI. Mã nguồn tổ chức theo mô-đun; kiểm tra cú pháp và kiểm thử được ghi theo phiên, chưa coi đó là chứng nhận tuân thủ toàn bộ PEP 8. Nhật ký tại gốc ghi đúng công cụ và thao tác thực tế theo P-D-M-V. Quarto quản lý tham chiếu, trích dẫn APA 7 và biên dịch PDF.
++Môi trường được ghi theo từng lượt, không đồng nhất giữa các giai đoạn. Hồ sơ M1 ghi Python 3.12.10, pandas 3.0.3 và PyArrow 24.0.0. Gói G0 nhận từ Vương ghi Python 3.12.14, pandas 3.0.1, NumPy 2.3.5, PyArrow 26.0.0 và SciPy 1.16.3. Môi trường kiểm chứng tại Phong dùng Python 3.12.10, các thư viện M2 theo `requirements-m2-lock.txt`; khác biệt bản vá Python được ghi trong hồ sơ mới. Số benchmark M1 trong bản này vẫn thuộc môi trường lịch sử. Các số liệu Chương 4 lấy từ lượt chạy trên máy Vương dùng `.venv-m2`, Windows 11, RAM 24 GB và phiên bản khóa trong `requirements.txt`; việc kiểm chứng trên máy Phong không thay thế các lượt đo này.
++
++pandas/NumPy xử lý bảng; PyArrow lưu Parquet; SciPy hỗ trợ kiểm định; mlxtend và scikit-learn phục vụ giai đoạn mô hình; Matplotlib/Seaborn xuất hình 300 DPI. Mã nguồn tổ chức theo mô-đun; kiểm tra cú pháp và kiểm thử được ghi theo phiên, chưa coi đó là chứng nhận tuân thủ toàn bộ PEP 8. Nhật ký tại gốc ghi đúng công cụ và thao tác thực tế theo P-D-M-V. Quarto quản lý tham chiếu, trích dẫn APA 7 và biên dịch PDF. Mã nguồn và nhật ký làm việc được nộp riêng, không đưa toàn văn vào phụ lục của bản tiểu luận.
+ 
+ ```{=latex}
+ \clubpenalty=\SavedClubPenalty
+@@ -915,7 +915,7 @@
+ 
+ *Nguồn: Nhóm tổng hợp từ tập reference; 39.363 giỏ và 415.053 dòng sản phẩm–đơn hàng. Thống kê khoảng cách đơn dùng 32.787 giỏ hợp lệ.*
+ 
+-Top-1.000 sản phẩm chiếm 52,71% dòng nhưng phủ 91,56% giỏ. Vẫn còn 196.286 dòng (47,29%) nằm ngoài nhóm này. Một giỏ được “phủ” có thể đồng thời chứa nhiều sản phẩm ngoài Top-N; vì vậy độ phủ giỏ cao không chứng minh danh mục đã giữ gần hết thành phần giỏ. Các con số chỉ cung cấp căn cứ cho lưới pilot Chương 4, chưa chốt N hoặc ngưỡng support và chưa chứng minh hiệu quả gợi ý.
++Top-1.000 sản phẩm chiếm 52,71% dòng nhưng phủ 91,56% giỏ. Vẫn còn 196.286 dòng (47,29%) nằm ngoài nhóm này. Một giỏ được “phủ” có thể đồng thời chứa nhiều sản phẩm ngoài Top-N; vì vậy độ phủ giỏ cao không chứng minh danh mục đã giữ gần hết thành phần giỏ. Các con số chỉ cung cấp căn cứ cho lưới cấu hình trên validation ở Chương 4, chưa chốt N hoặc ngưỡng support và chưa chứng minh hiệu quả gợi ý.
+ 
+ Các quầy có nhiều lượt xuất hiện nhất được trình bày theo ID để bảo toàn các nhóm thiếu tên. Bảng đầy đủ 134 quầy được lưu cùng dữ liệu kết quả; độ phủ giữa các quầy có thể chồng lấn.
+ 
+@@ -1001,7 +1001,7 @@
+ 
+ ### Năm phát hiện và hàm ý kinh doanh
+ 
+-**I1 — Giỏ nhỏ chiếm ưu thế, nhưng có đuôi dài.** Trên 39.363 giỏ, trung vị là 9 sản phẩm, Q1–Q3 là 5–14; 1.578 giỏ (4,01%) vượt rào 27,5 và 2.118 giỏ (5,38%) chỉ có một sản phẩm. Điều này gợi ý thiết kế gợi ý mua kèm ngắn, đồng thời có phương án dự phòng theo độ phổ biến khi ngữ cảnh giỏ quá ít. Có thể thử so sánh chất lượng gợi ý theo nhóm kích thước giỏ ở Chương 4. Không dùng độ lớn giỏ để suy ra thu nhập, loại hộ gia đình hoặc coi các giỏ lớn là sai dữ liệu.
++**I1 — Giỏ nhỏ chiếm ưu thế, nhưng có đuôi dài.** Trên 39.363 giỏ, trung vị là 9 sản phẩm, Q1–Q3 là 5–14; 1.578 giỏ (4,01%) vượt rào 27,5 và 2.118 giỏ (5,38%) chỉ có một sản phẩm. Điều này gợi ý thiết kế gợi ý mua kèm ngắn, đồng thời có phương án dự phòng theo độ phổ biến khi ngữ cảnh giỏ quá ít. So sánh chất lượng gợi ý theo nhóm kích thước giỏ là hướng phát triển, chưa được thực hiện trong Chương 4. Không dùng độ lớn giỏ để suy ra thu nhập, loại hộ gia đình hoặc coi các giỏ lớn là sai dữ liệu.
+ 
+ **I2 — Hai ngành phổ biến tạo nhiều điểm tiếp cận.** Produce chiếm 29,52% trong 415.053 dòng và hiện diện ở 73,95% giỏ; dairy eggs chiếm 15,73% dòng và phủ 66,76% giỏ. Vì thường có mặt trong ngữ cảnh mua, hai ngành có thể là vị trí thử nghiệm hiển thị gợi ý, nhưng cần so với phương án phổ biến chung. Độ phủ giữa các ngành chồng lấn; lượt xuất hiện không đo doanh thu, lợi nhuận hay mức sẵn lòng mua thêm.
+ 
+@@ -1053,70 +1053,231 @@
+ 
+ Kích thước giỏ là yếu tố có thể gây nhiễu: giỏ lớn dễ chứa đồng thời nhiều ngành. Mức nền 182/210 cặp có lift > 1 và trung vị 1,225 ở mục 3.5 cho thấy liên hệ dương không riêng ba cặp đã chọn. So sánh này cung cấp bối cảnh mô tả, không thay thế kiểm định đã điều chỉnh theo kích thước giỏ. Phân tích chưa kiểm soát yếu tố này, chưa chứng minh nhân quả, tính bổ trợ hay lợi ích của một hệ thống gợi ý. Kết quả chỉ định hướng việc kiểm tra luật cấp sản phẩm, đánh giá trên tập tách biệt và so với mốc phổ biến trong Chương 4.
+ 
+-# XÂY DỰNG MÔ HÌNH VÀ ĐÁNH GIÁ HIỆU NĂNG
++# XÂY DỰNG MÔ HÌNH VÀ ĐÁNH GIÁ HIỆU NĂNG {#sec-mo-hinh}
++
++```{=latex}
++\FloatBarrier
++```
++
++Chương này trả lời câu hỏi nghiên cứu 3 và 4. Mục 4.1 và 4.2 biến bài toán hoàn thiện giỏ hàng thành bài toán phân loại và nêu cách chia dữ liệu tránh rò rỉ; mục 4.3 so sánh Apriori với FP-Growth và chọn cấu hình bốn phương pháp trên validation; mục 4.4 báo cáo kết quả trên tập test sau khi khóa lựa chọn; mục 4.5 diễn giải đặc trưng; mục 4.6 thảo luận. Kết quả ở mục 4.4 lấy từ một lượt chấm test duy nhất; các số validation chỉ nêu để đối chiếu.
+ 
+ ## Kỹ thuật tạo lập và Lựa chọn đặc trưng (Feature Engineering)
+ 
+-[Viết X, Y, nguồn đặc trưng và kiểm soát leakage.]
++Nhóm mô phỏng việc giỏ còn thiếu bằng cách che $h=\min(k-1,\max(1,\lfloor0{,}2k\rfloor))$ sản phẩm của giỏ có $k\ge2$ sản phẩm (mục 2.3, seed 42 với mã đơn). Trung bình mỗi giỏ đủ điều kiện bị che khoảng 2,0 sản phẩm và còn khoảng 9,1 sản phẩm quan sát ở cả fit, validation và test. Một dòng dữ liệu phân loại là một cặp giỏ–ứng viên, trong đó ứng viên thuộc danh mục $C$ gồm 1.000 sản phẩm phổ biến nhất của reference và chưa có trong phần quan sát $O_j$. Nhãn $y=1$ khi ứng viên thuộc phần bị che $H_j$, và $y=0$ khi sản phẩm không thuộc giỏ đầy đủ; nhãn 0 chỉ có nghĩa là chưa mua trong giỏ đang xét, không có nghĩa là không thích.
++
++Bảy đặc trưng được tạo từ độ phổ biến và luật học trên reference cùng phần quan sát của giỏ (@tbl-c4-features). Ba đặc trưng về luật bằng 0 khi không có luật khớp, để bước điền giá trị thiếu không biến ứng viên không có luật thành ứng viên có luật trung bình.
++
++| Đặc trưng | Loại | Cách tính cho một ứng viên |
++|--------------------|----------|------------------------------------------|
++| Độ phổ biến | Số | Tỷ lệ giỏ reference chứa ứng viên |
++| Số luật khớp | Số | Số luật khớp có hậu đề là ứng viên |
++| Confidence lớn nhất | Số | Confidence cao nhất trong các luật khớp |
++| Lift lớn nhất | Số | Lift cao nhất trong các luật khớp |
++| Cỡ giỏ quan sát | Số | Số sản phẩm phân biệt còn nhìn thấy |
++| Số món cùng ngành | Số | Số sản phẩm quan sát cùng ngành với ứng viên |
++| Ngành ứng viên | Danh nghĩa | Mã ngành, mã hóa bằng các cột chỉ báo |
++
++: Bảy đặc trưng của một cặp giỏ–ứng viên {#tbl-c4-features}
++
++*Nguồn: Nhóm xây dựng theo mục 2.4; công thức trong `basket_features` của `m4_common.py`. Luật khớp khi giỏ quan sát chứa toàn bộ tiền đề và hậu đề là ứng viên.*
++
++Nhóm kiểm soát rò rỉ bằng ba quy tắc: thống kê chỉ học từ reference, phần bị che chỉ dùng tạo nhãn và chấm điểm; mã khách, mã sản phẩm và kích thước giỏ đầy đủ (tiết lộ số sản phẩm đã che) bị loại khỏi đầu vào; tham số điền thiếu, mã hóa và chuẩn hóa chỉ fit trên tập fit [@sklearn_pitfalls].
++
++Ba biến luật cùng phụ thuộc một tập luật khớp nên gần như tương quan hoàn toàn (Spearman từ 0,999 đến 1,000 trên mẫu fit sau lấy mẫu âm). Vì vậy nhóm đánh giá chúng theo nhóm bằng phép bỏ nhóm trên validation. Bỏ cả ba biến luật làm Recall@10 của Logistic Regression (LR) giảm từ 0,0923 xuống 0,0759 (khoảng 17,7%) và của Random Forest (RF) từ 0,0971 xuống 0,0788 (khoảng 18,9%). Bỏ hai biến về ngành (số món cùng ngành và ngành ứng viên) gần như không đổi Recall@10 (LR 0,0925; RF 0,0956). Trong thiết kế này, thông tin đồng mua đóng góp rõ hơn thông tin ngành; kết quả dùng để diễn giải bộ đặc trưng, không dùng để chọn lại đặc trưng sau khi khóa.
+ 
+ ## Chuẩn hóa và Phân chia tập dữ liệu huấn luyện / kiểm tra
+ 
+-[Viết thiết kế chia khách và Pipeline/ColumnTransformer.]
++Nhóm dùng phân hoạch theo người dùng đã lập ở Chương 3 (seed 42): reference 30%, fit 30%, validation 20%, test 20%. Mỗi người có đúng một giỏ train nên bốn tập không giao nhau. Reference cung cấp độ phổ biến, danh mục và luật; fit học tiền xử lý và hai classifier; validation chọn cấu hình, ngưỡng và phương pháp chính; test chỉ dùng đánh giá cuối sau khi khóa (@tbl-c4-splits).
++
++| Chỉ tiêu | Reference | Fit | Validation | Test |
++|------------------------------------|-----------:|-----------:|-----------:|-----------:|
++| Số người dùng (giỏ) theo phân hoạch | 39.363 | 39.363 | 26.241 | 26.242 |
++| Giỏ một sản phẩm, không che | — | 1.975 | 1.387 | 1.365 |
++| Giỏ đủ điều kiện (k ≥ 2) | — | 37.388 | 24.854 | 24.877 |
++| Sản phẩm bị che | — | 75.006 | 49.130 | 49.473 |
++| Phần bị che thuộc danh mục, gộp (%) | — | 52,30 | 52,48 | 52,47 |
++| Cặp giỏ–ứng viên trước lấy mẫu | — | 37.209.316 | 24.736.527 | 24.758.284 |
++| Tỷ lệ nhãn dương trước lấy mẫu (%) | — | 0,1054 | 0,1042 | 0,1048 |
++
++: Quy mô phân hoạch và mẫu ứng viên với danh mục 1.000 sản phẩm {#tbl-c4-splits}
++
++*Nguồn: Nhóm tính từ `dataset_description.csv` (fit, validation), `results_test.json`, `classifier_metrics_test.csv` và `basket_metrics_test.csv` (test). Giỏ một sản phẩm của test bằng 26.242 trừ 24.877. Dấu — là chỉ tiêu không áp dụng.*
++
++Phép che được lưu cố định theo seed và mã đơn để mọi phương pháp dùng cùng phần quan sát và phần che. Ở tập fit, mỗi giỏ giữ mọi ứng viên dương và tối đa 20 ứng viên âm lấy không hoàn lại (seed 43), nên mẫu huấn luyện có 786.986 dòng với 39.226 dòng dương (4,98%) thay vì 0,105%; ở validation và test, mọi ứng viên được chấm, không lấy mẫu âm. Vì lấy mẫu âm làm đổi tỷ lệ dương, điểm của classifier chỉ dùng xếp hạng, chưa coi là xác suất mua đã hiệu chỉnh. Hai classifier dùng chung `Pipeline` và `ColumnTransformer`: nhánh số điền trung vị (và chuẩn hóa riêng cho LR), nhánh ngành điền giá trị phổ biến nhất, mã hóa chỉ báo và bỏ qua mức chưa gặp. Danh mục chỉ chứa 19 trong 21 ngành (không có ngành 2 và 8) nên có 19 cột chỉ báo. Recall tính trên toàn bộ sản phẩm bị che kể cả ngoài danh mục; Precision luôn chia cho $K$.
+ 
+ ## Huấn luyện các mô hình Machine Learning
+ 
+ ### Apriori và FP-Growth
+ 
+-[Nội dung.]
++Nhóm biểu diễn 39.363 giỏ reference thành ma trận Boolean thưa; giỏ không chứa sản phẩm nào của danh mục vẫn nằm trong mẫu số support. Apriori [@agrawal1994] (chế độ tiết kiệm bộ nhớ) và FP-Growth [@han2000] nhận cùng ma trận, cùng ngưỡng support và độ dài tập tối đa; luật có hậu đề một sản phẩm và đạt ngưỡng confidence được giữ lại [@mlxtend_rules].
++
++Cấu hình luật được chọn trong lưới 24 cấu hình (danh mục 500, 1.000, 2.000; tối thiểu 20 hoặc 50 giỏ; độ dài 2 hoặc 3; confidence 0,05 hoặc 0,1) bằng Recall@10 của phương pháp luật trên validation, dung sai hòa 0,002 và ưu tiên cấu hình nhỏ hơn. Cấu hình cao nhất tuyệt đối đạt 0,0944 (danh mục 2.000, độ dài 3); nhóm chọn danh mục 1.000, 20 giỏ, độ dài 2, confidence 0,05 vì chênh 0,0012 nằm trong dung sai. Cấu hình này sinh 6.669 luật và đạt Recall@10 là 0,0932, so với 0,0752 của phương pháp độ phổ biến. Trần Recall@10 tăng theo danh mục (0,4104; 0,5211; 0,6363) nhưng Recall@10 của luật tăng rất ít vì sản phẩm thêm vào là sản phẩm ít phổ biến. Ba tham số luật đã chọn đều ở cạnh dưới của lưới nên kết luận chỉ áp dụng trong phạm vi lưới.
++
++Chi phí khai phá được đo ở cấu hình đã chọn và cấu hình lớn nhất của lưới; mỗi thuật toán chạy ba lần, mỗi lần trong một tiến trình mới (@tbl-c4-mining).
++
++| Danh mục / độ dài | Thuật toán | Itemset / luật | Khai phá (giây) | RAM đỉnh (MiB) |
++|---------------|-----------|---------------:|------------:|------------:|
++| 1.000 / 2 | Apriori | 7.730 / 6.669 | 3,698 | 199,6 |
++| 1.000 / 2 | FP-Growth | 7.730 / 6.669 | 0,903 | 188,8 |
++| 2.000 / 3 | Apriori | 11.314 / 13.918 | 19,809 | 280,2 |
++| 2.000 / 3 | FP-Growth | 11.314 / 13.918 | 1,389 | 211,9 |
++
++: Chi phí khai phá trên hai cấu hình, trung vị ba lượt {#tbl-c4-mining}
++
++*Nguồn: Nhóm đo bằng `m4_benchmark_mining.py`; `mining_benchmark_N1000_c20_l2.csv`, `mining_benchmark_N2000_c20_l3.csv`, `itemset_equivalence_*.json`. Thời gian khai phá ba lượt dao động 3,613 đến 3,761 giây (Apriori) và 0,894 đến 0,948 giây (FP-Growth) ở cấu hình đầu; 19,687 đến 22,388 giây và 1,204 đến 1,443 giây ở cấu hình sau.*
++
++Hai thuật toán cho cùng tập itemset với support lệch lớn nhất bằng 0, nên cùng số luật. Thời gian khai phá của FP-Growth thấp hơn khoảng 4,1 lần ở cấu hình đã chọn và khoảng 14,3 lần ở cấu hình lớn nhất; RAM đỉnh thấp hơn khoảng 11 MiB và 68 MiB. Dựng ma trận (khoảng 0,03 giây) và sinh luật (0,08 đến 0,19 giây) nhỏ so với khai phá; sinh luật của FP-Growth chậm hơn khoảng 0,06 đến 0,08 giây nhưng không đổi kết luận. Kết quả áp dụng cho hai cấu hình và máy đã đo; chất lượng gợi ý của bộ luật được đánh giá ở mục 4.4.
+ 
+ ### Logistic Regression và Random Forest
+ 
+-[Nội dung.]
++LR dùng điều chuẩn L2, bộ giải `lbfgs`, tối đa 1.000 vòng lặp và $C\in\{0{,}01;0{,}1;1;10\}$ [@hosmer2013]. RF dùng 300 cây, số đặc trưng mỗi lần chia bằng căn bậc hai tổng số đặc trưng, seed 42, độ sâu tối đa 10 hoặc 20 và số mẫu tối thiểu tại lá 20 hoặc 100 [@breiman2001]; cả hai không dùng trọng số lớp vì đã lấy mẫu âm. Mô hình được cài đặt bằng scikit-learn [@pedregosa2011]. Cấu hình được chọn bằng Recall@10 validation; các cấu hình cách mức cao nhất không quá 0,002 được coi là hòa và ưu tiên thời gian suy luận thấp hơn; ngưỡng phân loại tối đa hóa F1 trên validation và không đổi thứ tự xếp hạng (@tbl-c4-grid-b).
++
++| Mô hình | Cấu hình | Recall@10 validation | Suy luận (giây) | Chọn |
++|--------|--------------------|---------------:|---------------:|------|
++| LR | C = 0,01 | 0,0923 | 15,86 | |
++| LR | C = 0,1 | 0,0923 | 15,31 | Có |
++| LR | C = 1 | 0,0924 | 17,45 | |
++| LR | C = 10 | 0,0924 | 15,56 | |
++| RF | độ sâu 10, lá 20 | 0,0976 | 48,07 | |
++| RF | độ sâu 10, lá 100 | 0,0971 | 47,87 | Có |
++| RF | độ sâu 20, lá 20 | 0,0990 | 86,31 | |
++| RF | độ sâu 20, lá 100 | 0,0983 | 79,42 | |
++
++: Lưới cấu hình giai đoạn B trên validation {#tbl-c4-grid-b}
++
++*Nguồn: Nhóm tính từ `validation_grid_B.csv`. Suy luận là thời gian chấm toàn bộ 24.736.527 cặp validation; việc xét hòa dùng giá trị đủ độ chính xác.*
++
++Bốn giá trị $C$ của LR gần như bằng nhau nên chọn $C=0{,}1$ theo thời gian suy luận. Với RF, cấu hình tốt nhất (độ sâu 20, lá 20: 0,0990) hơn cấu hình đã chọn 0,0019, nằm trong dung sai 0,002, nên chọn độ sâu 10, lá 100 với 47,87 giây thay cho 86,31 giây. Ngưỡng F1 trên validation là 0,73128 cho LR và 0,57771 cho RF. Phương pháp chính được chọn bằng Recall@10 validation lớn nhất: RF (0,0971), hơn Rules (0,0932) và LR (0,0923) vượt dung sai hòa. Nhóm ghi phương pháp chính, cấu hình, ngưỡng và mã băm SHA-256 của mã nguồn, cấu hình và dữ liệu vào một tệp khóa; hai thành viên cùng duyệt trước khi mở tập test. Chương trình chấm test từ chối chạy nếu thiếu hai xác nhận hoặc nếu bất kỳ tệp khóa nào đã đổi, chỉ cho chấm một lần, và chạy RF một luồng để kết quả tái lập từng chữ số.
+ 
+ ## So sánh hiệu năng mô hình qua các chỉ số đo lường
+ 
+-[Chèn metrics từ cùng thiết kế đánh giá. Bảng mới tại chương này sẽ tự đánh số 4.1.]
++Bốn phương pháp được chấm trên cùng 24.877 giỏ test đủ điều kiện, 49.473 sản phẩm bị che và cùng danh mục 1.000 sản phẩm: Popularity xếp theo độ phổ biến; Rules xếp theo confidence lớn nhất rồi độ phổ biến; LR và RF xếp theo điểm của classifier; hòa phá bằng mã sản phẩm tăng dần (@tbl-c4-ranking).
++
++| Phương pháp | P@5 | R@5 | P@10 | R@10 | HR@10 |
++|---|---:|---:|---:|---:|---:|
++| Popularity | 0,0199 | 0,0509 | 0,0149 | 0,0755 | 0,1393 |
++| Rules | 0,0249 | 0,0650 | 0,0181 | 0,0924 | 0,1655 |
++| LR | 0,0235 | 0,0614 | 0,0178 | 0,0910 | 0,1627 |
++| RF | 0,0257 | 0,0677 | 0,0187 | 0,0971 | 0,1708 |
++| Recall@10 trần | | | | 0,5198 | |
++
++: Chỉ số xếp hạng trên tập test, danh mục 1.000 sản phẩm {#tbl-c4-ranking}
++
++*Nguồn: Nhóm tính từ `ranking_metrics_test.csv` (24.877 giỏ). Recall tính trên toàn bộ sản phẩm bị che kể cả ngoài danh mục; Precision chia cho K. Trần là trung bình theo giỏ của min(|H ∩ C|, 10)/|H|.*
++
++RF có Recall@10 cao nhất (0,0971), Popularity thấp nhất (0,0755); Rules đạt 0,0924 và LR đạt 0,0910, nên thứ tự Popularity, LR, Rules, RF trùng với validation (0,0752; 0,0923; 0,0932; 0,0971). Trần Recall@10 là 0,5198: khoảng một nửa sản phẩm bị che nằm ngoài danh mục nên không phương pháp nào có thể trúng; RF đạt khoảng 18,7% trần và Popularity khoảng 14,5%. Có 66,0% giỏ test có ít nhất một sản phẩm bị che nằm trong danh mục; 8.449 giỏ còn lại (34,0%) không thể trúng. HR@10 của RF là 0,1708, nghĩa là 17,1% giỏ có sản phẩm bị che trong Top-10 và 82,9% giỏ không có. @fig-c4-recall-k cho Recall@K với $K$ từ 1 đến 10: ở $K=1$, RF và Rules cùng đạt 0,0218 (Popularity 0,0145; LR 0,0179), và khoảng cách giữa RF với các phương pháp còn lại mở rộng dần khi $K$ tăng.
++
++![Recall@K của bốn phương pháp trên tập test và đường trần. Nguồn: Nhóm tính từ `recall_at_k_test.csv`; khung trên là Recall trần, khung dưới phóng to bốn phương pháp.](assets/chuong4/fig-recall-at-k-test.pdf){#fig-c4-recall-k width=16cm fig-pos=htbp}
++
++Kiểm định chính dùng bootstrap ghép cặp theo người dùng (2.000 lần, seed 42) trên chênh lệch Recall@10 giữa RF và Popularity: 0,0216 với khoảng tin cậy percentile 95% [0,0192; 0,0239]. Cận dưới lớn hơn 0 nên có bằng chứng RF cải thiện so với Popularity trên test. Hai so sánh bổ trợ cho cùng hướng: RF cao hơn Rules 0,0047 [0,0031; 0,0063], và LR thấp hơn RF 0,0061 [−0,0077; −0,0044]; các so sánh này không dùng để đổi phương pháp chính sau khi mở test.
++
++Với phân loại, LR và RF được chấm trên toàn bộ 24.758.284 cặp ứng viên của test, trong đó 25.958 cặp dương (0,105%), tại ngưỡng đã chọn trên validation (@tbl-c4-classifier và @tbl-c4-confusion). Accuracy gần 1 chỉ phản ánh lớp âm áp đảo nên cần đọc cùng Precision, Recall, F1 và Average Precision [@sklearn_ap]; ROC-AUC và Average Precision tính trên toàn bộ điểm, không lấy trung bình theo lô.
++
++| Mô hình | Ngưỡng | Accuracy | Precision | Recall | F1 | ROC-AUC | AP |
++|---|---:|---:|---:|---:|---:|---:|---:|
++| LR | 0,73128 | 0,99735 | 0,04803 | 0,08113 | 0,06034 | 0,78832 | 0,01401 |
++| RF | 0,57771 | 0,99738 | 0,05383 | 0,09034 | 0,06746 | 0,81353 | 0,01685 |
++
++: Chỉ số phân loại trên tập test tại ngưỡng F1 của validation {#tbl-c4-classifier}
++
++*Nguồn: Nhóm tính từ `classifier_metrics_test.csv`; 24.758.284 cặp, 25.958 cặp dương.*
++
++| Mô hình | TN | FP | FN | TP |
++|---|---:|---:|---:|---:|
++| LR | 24.690.586 | 41.740 | 23.852 | 2.106 |
++| RF | 24.691.109 | 41.217 | 23.613 | 2.345 |
++
++: Ma trận nhầm lẫn trên tập test {#tbl-c4-confusion}
++
++*Nguồn: Nhóm tính từ `confusion_matrix_test.csv`. TN: âm đoán âm; FP: âm đoán dương; FN: dương đoán âm; TP: dương đoán dương.*
++
++RF cao hơn LR ở mọi chỉ số phân loại (ROC-AUC 0,8135 so với 0,7883; Average Precision 0,0169 so với 0,0140). Precision dưới 6% và Recall dưới 10% của cả hai mô hình phản ánh bài toán rất mất cân bằng và việc đoán đúng sản phẩm bị che vốn khó.
+ 
+ ## Phân tích độ quan trọng của đặc trưng và Diễn giải mô hình
+ 
+-[Viết nội dung.]
++Nhóm tính permutation importance cho LR và RF ở cấu hình đã chọn trên 5.000 giỏ validation (seed 44) với toàn bộ 4.976.269 cặp ứng viên của các giỏ đó; mỗi biến được hoán vị 10 lần, đo mức giảm Average Precision (nền 0,01386 với LR; 0,01649 với RF), ngành được hoán vị như một biến trước khi mã hóa. Phân tích dùng validation, không dùng test (@fig-c4-importance).
++
++![Mức giảm Average Precision khi hoán vị từng đặc trưng (LR ở trên, RF ở dưới). Nguồn: Nhóm tính từ `importance.csv` trên 5.000 giỏ validation; thanh sai số là độ lệch chuẩn qua 10 lần hoán vị.](assets/chuong4/fig-importance.pdf){#fig-c4-importance width=16cm fig-pos=htbp}
++
++Với LR, hoán vị độ phổ biến làm Average Precision giảm nhiều nhất (0,0037), rồi lift lớn nhất (0,0025). Với RF, biến quan trọng nhất là confidence lớn nhất (0,0048), rồi số luật khớp (0,0024) và lift lớn nhất (0,0021). Ngành ứng viên có tác động nhỏ nhất ở cả hai mô hình (0,00015 với LR; 0,00057 với RF). Thanh sai số nhỏ so với độ chênh giữa các biến đầu bảng nên thứ hạng ổn định trên mẫu này; vì ba biến luật gần như tương quan hoàn toàn, kết luận chắc chắn hơn là phép bỏ nhóm ở mục 4.1, theo đó nhóm luật đóng góp nhiều nhất.
++
++Hệ số LR trên thang chuẩn hóa cho biết tăng một độ lệch chuẩn của biến làm log-odds đổi bằng hệ số khi giữ các biến khác. Cả sáu biến số đều dương: cỡ giỏ quan sát 0,308; số món cùng ngành 0,261; độ phổ biến 0,252; lift lớn nhất 0,193; confidence lớn nhất 0,141; số luật khớp 0,088. Hệ số dương của cỡ giỏ phù hợp với cơ chế che nhiều sản phẩm hơn ở giỏ lớn; đây là liên hệ trong bài toán giả lập, chưa phải bằng chứng về xác suất mua thật. Mã hóa chỉ báo giữ đủ các mức ngành (không bỏ một nhóm chuẩn); hệ số từng cột được đọc cùng hệ số chặn và điều chuẩn. Trong bộ hệ số đã fit, thấp nhất là dry goods pasta (−0,432) và snacks (−0,408), còn deli là ngành duy nhất dương (0,057); nên so hai ngành bằng hiệu hệ số, không gọi một ngành là nhóm chuẩn bị loại. RF không có hệ số hồi quy. Độ quan trọng và hệ số mô tả điều mô hình dựa vào, không chứng minh quan hệ nhân quả.
++
++Nhóm chọn trước theo quy tắc hai giỏ validation minh họa: giỏ có mã đơn nhỏ nhất có luật khớp (đơn 36) và không có luật khớp (đơn 5858). Ở cả hai giỏ, bốn phương pháp không trúng sản phẩm bị che nào trong Top-5. Ở đơn 36, Rules và RF đưa các sản phẩm phổ biến như Organic Baby Spinach và Organic Strawberries lên đầu, giống danh sách theo độ phổ biến; ở đơn 5858, Rules quay về thứ tự theo độ phổ biến còn RF xen vào hai loại nước uống. Một số `product_name` trống trong Master (ví dụ mã 13176 và 47626) nên bảng ví dụ để trống tên thay vì đoán. Hai ví dụ chỉ minh họa cách hệ thống làm việc, không đại diện cho toàn bộ kết quả.
+ 
+ ## Thảo luận kết quả thực nghiệm
+ 
+-[Viết nội dung.]
+-
+-# KHUYẾN NGHỊ QUẢN TRỊ VÀ KẾT LUẬN
++**Câu hỏi 3.** Apriori và FP-Growth cho cùng tập itemset và support ở cả hai cấu hình đã đo; FP-Growth nhanh hơn khoảng 4,1 đến 14,3 lần ở khâu khai phá với RAM đỉnh thấp hơn, và khoảng cách tăng theo kích thước danh mục và độ dài tập. Với dữ liệu và máy của nhóm, dùng FP-Growth cho lưới 12 tổ hợp là hợp lý; kết quả không suy rộng cho mọi máy hay ngưỡng.
++
++**Câu hỏi 4.** Trên test, cả ba phương pháp dùng thông tin giỏ đều cao hơn Popularity. RF cao hơn Popularity 0,0216 Recall@10 (khoảng 28,6% tương đối) với khoảng tin cậy 95% không chứa 0; Rules cao hơn khoảng 22,3% và LR khoảng 20,5% nhưng thấp hơn Rules và RF. Thứ tự phương pháp nhất quán giữa test và validation; một lượt chia chưa đủ để loại trừ nguy cơ quá khớp hoặc xác nhận độ ổn định ngoài mẫu này. Giá trị tuyệt đối thấp (dưới 0,1) có hai lý do: nửa số sản phẩm bị che nằm ngoài danh mục nên trần chỉ là 0,5198, và mỗi giỏ chỉ che khoảng hai sản phẩm giữa hàng nghìn ứng viên. So với trần, RF đạt khoảng 18,7%; đây là đặc điểm của bài toán chứ không chỉ của mô hình.
++
++**Chi phí và lợi ích.** Trên validation, chấm 24,7 triệu cặp mất 5,77 giây (Popularity), 6,19 giây (Rules), 15,59 giây (LR) và 63,55 giây (RF). RF chậm hơn Rules khoảng 10 lần để đổi lấy cải thiện khoảng 5,1% tương đối (0,0971 so với 0,0924) trên test. Cải thiện có ý nghĩa thống kê nhưng nhỏ về độ lớn, nên chọn giữa Rules và RF là quyết định cân bằng chất lượng và chi phí, cơ sở của thử nghiệm A/B ở Chương 5. Phép bỏ nhóm và độ quan trọng cho thấy thông tin đồng mua đóng góp nhiều nhất; LR dựa nhiều vào độ phổ biến còn RF dựa nhiều vào confidence của luật, gợi ý RF khai thác tốt hơn tương tác giữa độ phổ biến và độ chắc của luật.
++
++**Giới hạn.** Phần che ngẫu nhiên không tái hiện trình tự thêm hàng; nhãn 0 là chưa mua trong giỏ; bốn phương pháp so trên cùng một danh mục nên kết luận có điều kiện; nhóm dùng một lượt chia, một seed, cấu hình luật ở cạnh dưới của lưới và điểm classifier chưa hiệu chỉnh. Dữ liệu không có giá bán, lợi nhuận hay lịch sử hiển thị gợi ý, nên cải thiện Recall@10 là bằng chứng ngoại tuyến để đề xuất thử nghiệm, không chứng minh tăng doanh thu. Thời gian và RAM phụ thuộc máy và phiên bản thư viện nêu ở mục 2.5.
++
++# KHUYẾN NGHỊ QUẢN TRỊ VÀ KẾT LUẬN {#sec-ket-luan}
+ 
+ ## Đề xuất giải pháp và Chiến lược kinh doanh cho doanh nghiệp
+ 
+-[Liên kết bằng chứng với hành động.]
++Kết quả trả lời câu hỏi nghiên cứu 5 theo hướng triển khai có kiểm chứng: sử dụng thông tin giỏ đang tạo để đề xuất sản phẩm, lấy luật đồng mua làm nền và thử nghiệm tầng xếp hạng RF khi chi phí cho phép. Trên cùng 24.877 giỏ test, Recall@10 của RF đạt 0,0971, cao hơn Popularity 0,0216, với khoảng tin cậy bootstrap 95% [0,0192; 0,0239]. Tuy nhiên, HR@10 của RF chỉ đạt 17,08%; phần lớn giỏ chưa có sản phẩm che được tìm thấy trong Top-10. Vì vậy, cải thiện ngoại tuyến là căn cứ thử nghiệm, chưa đủ để cam kết hiệu quả thương mại.
++
++| Bằng chứng | Khuyến nghị | Điều kiện áp dụng |
++|:-------------------------|:-------------------------|:-------------------------|
++| RF hơn Rules 0,0047 Recall@10 trên test; khoảng tin cậy 95% [0,0031; 0,0063] | Dùng luật đồng mua làm nền; thử RF để xếp hạng ứng viên | So lợi ích với chi phí và độ trễ thực tế |
++| 88,38% giỏ validation có luật khớp; 11,62% không có | Dự phòng theo độ phổ biến khi thiếu luật hoặc ngữ cảnh | Đây là độ phủ luật trên validation, không phải tỷ lệ thành công của gợi ý |
++| Produce phủ 73,95% giỏ reference; dairy eggs phủ 66,76% | Ưu tiên thử vị trí gợi ý trong các ngành có độ phủ cao | Độ phủ không đo giá trị đơn hàng hay lợi nhuận |
++| Ba cặp ngành được kiểm định có V từ 0,152 đến 0,201 | Thử nội dung gợi ý cho các cặp ngành như giả thuyết kinh doanh | Liên hệ nhỏ; không khẳng định bổ trợ hay nhân quả |
++| Trần Recall@10 test là 0,5198 với Top-1.000 | Giữ danh mục hiện tại làm mốc; nghiên cứu thêm ứng viên ít phổ biến | Mở rộng danh mục chưa bảo đảm xếp hạng tốt hơn |
++
++: Từ bằng chứng thực nghiệm đến khuyến nghị triển khai {#tbl-c5-khuyen-nghi}
++
++*Nguồn: Mục 3.4–3.6, @tbl-c4-ranking; `paired_bootstrap_test.csv`, `rule_coverage.json` và `department_summary.csv`.*
++
++Chênh lệch RF so với Rules có ý nghĩa thống kê nhưng nhỏ về độ lớn. Thời gian chấm toàn bộ ứng viên validation là 63,55 giây với RF và 6,19 giây với Rules, chênh khoảng 10,3 lần. Đây là thời gian xử lý theo lô trên máy thực nghiệm, không phải độ trễ một yêu cầu trực tuyến; cần đo lại dưới tải thật trước khi quyết định phục vụ. Phép bỏ nhóm đặc trưng củng cố vai trò của luật: Recall@10 validation của RF giảm từ 0,0971 xuống 0,0788 khi bỏ ba biến luật. Điều này ủng hộ giữ thông tin đồng mua trong hệ thống, chưa chứng minh kiến trúc nào tối ưu cho mọi doanh nghiệp.
++
++Các phát hiện EDA giúp lựa chọn nội dung thử nghiệm. I1 cho thấy giỏ nhỏ chiếm ưu thế; danh sách gợi ý nên ngắn và tránh lặp sản phẩm đã có. I2 cung cấp căn cứ ưu tiên vị trí hiển thị theo độ phủ ngành; I3 cho thấy cần theo dõi phần lượt mua nằm ngoài danh mục phổ biến, thay vì đồng nhất độ phủ giỏ với khả năng giữ đủ sản phẩm. I4 chưa đủ cơ sở tách cấu hình theo giờ vì phân phối kích thước giỏ chồng lấn và còn thiếu giờ đặt đơn. Theo I5 và kiểm định sau Holm, có thể thử bakery–dairy eggs, dry goods pasta–pantry và produce–meat seafood; lift lần lượt 1,229; 1,412; 1,190 cần đọc cùng trung vị 1,225 của toàn bộ 210 cặp. Đồng mua dương vốn phổ biến, nên không chọn cặp chỉ vì lift lớn hơn 1.
+ 
+ ## Lộ trình triển khai ứng dụng thực tế
+ 
+-[Viết KPI và thử nghiệm A/B dự kiến.]
++**Bước 1 — Hoàn tất nền ngoại tuyến.** Nhóm đã có dữ liệu làm sạch, phân hoạch theo người dùng, benchmark, chọn cấu hình trên validation và kết quả test sau khóa. Các tệp cấu hình, mã băm và kết quả được giữ để kiểm chứng; không dùng test để chọn lại mô hình. Đây là đầu vào kỹ thuật, chưa phải một hệ thống đã triển khai tại doanh nghiệp.
++
++**Bước 2 — Thử nghiệm kín.** Hệ thống chạy trên luồng giỏ thật nhưng chưa hiển thị gợi ý, ghi thời điểm, ứng viên và độ trễ. Bộ phận kỹ thuật kiểm tra sản phẩm hết hàng, dữ liệu thiếu, mức tải và khả năng quay về Rules hoặc Popularity khi lỗi. Giai đoạn này giúp kiểm tra vận hành và khả năng dự báo hành vi quan sát, không đo được tác động của việc hiển thị gợi ý.
++
++**Bước 3 — Thử nghiệm A/B có kiểm soát.** Phân ngẫu nhiên theo người dùng vào ba nhánh Popularity, Rules và RF, giữ nhất quán vị trí hiển thị và điều kiện phục vụ. Chọn trước một chỉ tiêu chính, chẳng hạn tỷ lệ thêm sản phẩm được gợi ý vào giỏ; giá trị đơn hàng trung bình là chỉ tiêu kinh doanh bổ sung. Cỡ mẫu xác định từ mức nền thực tế và mức cải thiện tối thiểu có ý nghĩa, thời lượng bao phủ chu kỳ tuần. Quy tắc dừng, cách xử lý nhiều so sánh và ngưỡng rào chắn phải được định trước, tránh chọn chỉ tiêu có lợi sau khi xem kết quả.
++
++{{< pagebreak >}}
++
++| Nhóm | Chỉ tiêu và cách theo dõi |
++|:----------------|:------------------------------------------------------|
++| Chính | Tỷ lệ phiên có thêm sản phẩm gợi ý trong số phiên được hiển thị; phân tích theo nhánh người dùng |
++| Kinh doanh và bổ trợ | Giá trị đơn hàng trung bình; tỷ lệ nhấp; số sản phẩm mỗi giỏ; tỷ lệ sản phẩm có ít nhất một lượt được gợi ý trong danh mục đủ điều kiện |
++| Rào chắn | Độ trễ p95; doanh thu mỗi phiên; tỷ lệ bỏ hoặc phản ánh gợi ý; mức đa dạng sản phẩm |
++| Ngoại tuyến | Recall@10, HR@10, độ phủ luật và trần Recall trên bộ giỏ giữ lại mới |
++
++: Chỉ tiêu đề xuất cho thử nghiệm và giám sát {#tbl-c5-kpi tbl-colwidths="[25,75]"}
++
++*Nguồn: Nhóm đề xuất từ giới hạn của thực nghiệm. Đây là kế hoạch đo trong tương lai; nghiên cứu hiện tại chưa đo doanh thu, tỷ lệ nhấp hay độ phủ danh mục được gợi ý.*
++
++**Bước 4 — Mở rộng có điều kiện.** Chỉ chuyển sang RF nếu cải thiện chỉ tiêu chính đạt tiêu chuẩn đặt trước và không vi phạm rào chắn; nếu chưa đạt, tiếp tục phương án đơn giản hơn hoặc điều chỉnh trên dữ liệu phát triển mới. Nhóm kinh doanh duyệt nội dung và lợi ích, nhóm kỹ thuật chịu trách nhiệm độ trễ và phục hồi, người phụ trách dữ liệu theo dõi thiếu dữ liệu, thay đổi độ phổ biến, mùa vụ và chất lượng gợi ý. Cập nhật luật, danh mục và mô hình cần có phiên bản, đánh giá trên dữ liệu mới và khả năng quay lại phiên bản trước.
+ 
+ ## Hạn chế của nghiên cứu và Đạo đức dữ liệu
+ 
+-[Viết nội dung.]
+-
+-## Hướng phát triển trong tương lai
+-
+-[Viết nội dung và kết luận trả lời câu hỏi nghiên cứu.]
++**Giới hạn suy rộng.** Dữ liệu thuộc một nguồn bán lẻ và được bổ sung nhiễu theo học phần; mỗi người chỉ có một giỏ train trong phạm vi nghiên cứu. Phép che ngẫu nhiên mô phỏng hoàn thiện giỏ, không tái hiện thứ tự thêm hàng thật; thứ tự được tái dựng ở bước làm sạch là một giả định đã công bố. Một phân hoạch và một bộ seed chưa cho biết độ ổn định qua nhiều thời kỳ. Nhãn 0 nghĩa là sản phẩm không nằm trong giỏ, không chứng minh khách hàng không thích. Dữ liệu thiếu giá, lợi nhuận và lịch sử hiển thị nên không thể suy ra tác động nhân quả hay doanh thu.
++
++**Giới hạn mô hình.** Các phương pháp dùng chung Top-1.000 nên so sánh có điều kiện trên cùng danh mục. Có 8.449 giỏ test không có sản phẩm che nào thuộc danh mục, khiến mọi phương pháp đều không thể trúng ở các giỏ này. Cấu hình luật được chọn nằm ở cạnh dưới của lưới; nghiên cứu không chứng minh tối ưu ngoài phạm vi đã khảo sát. Lấy mẫu âm trên fit làm đổi tỷ lệ lớp, nên điểm LR/RF chưa được coi là xác suất mua đã hiệu chỉnh. Thời gian và RAM phụ thuộc phần cứng, thư viện và cách xử lý theo lô; độ quan trọng đặc trưng chịu ảnh hưởng của tương quan, không phải bằng chứng nhân quả.
++
++**Đạo đức và trách nhiệm.** Danh mục theo độ phổ biến có nguy cơ tiếp tục ưu tiên sản phẩm vốn được mua nhiều và hạn chế khả năng tiếp cận sản phẩm ít phổ biến. Khi triển khai cần đo độ phủ, đa dạng và cơ hội hiển thị; chưa thể khẳng định hệ thống hiện tại công bằng giữa các nhóm khách hàng. Mã người dùng được giả danh vẫn không loại bỏ nguy cơ suy luận thông tin nhạy cảm từ giỏ hàng. Doanh nghiệp cần tối thiểu hóa dữ liệu, giới hạn truy cập và thời gian lưu, giải thích mục đích sử dụng và cung cấp cơ chế từ chối gợi ý. Không suy luận thu nhập, sức khỏe hoặc loại hộ gia đình chỉ từ kích thước và thành phần giỏ. Con người chịu trách nhiệm duyệt nội dung, xử lý phản ánh và giám sát hệ thống; hồ sơ mã, cấu hình, hash và khóa trước test giúp minh bạch quá trình đánh giá.
++
++## Hướng phát triển trong tương lai và Kết luận
++
++Hướng phát triển ưu tiên là bổ sung ứng viên ít phổ biến, mô hình hóa trình tự khi có lịch sử tương tác phù hợp, hiệu chỉnh điểm xác suất và đánh giá riêng theo nhóm kích thước giỏ trên dữ liệu phát triển. Cần kiểm tra qua nhiều thời kỳ và bộ chia để đánh giá độ ổn định, sau đó thực hiện thử nghiệm A/B theo lộ trình trên. Đây là các hướng chưa triển khai trong phạm vi đồ án.
++
++Đối với câu hỏi 1, nghiên cứu xây dựng quy trình làm sạch và ghép sáu bảng thành Master, kèm đối soát quan hệ và hồ sơ tối ưu kiểu dữ liệu ở Chương 3. Đối với câu hỏi 2, mẫu reference có trung vị 9 sản phẩm/giỏ, produce và dairy eggs phủ rộng; 182 trong 210 cặp ngành có lift lớn hơn 1, nhưng ba liên hệ đã kiểm định chỉ có cỡ hiệu ứng nhỏ. Các kết quả mô tả hỗ trợ đặt giả thuyết kinh doanh, không thay thế thử nghiệm.
++
++Đối với câu hỏi 3, Apriori và FP-Growth cho cùng itemset và support ở hai cấu hình benchmark; FP-Growth có thời gian khai phá thấp hơn khoảng 4,1 và 14,3 lần trên máy đã đo. Đối với câu hỏi 4, RF đạt Recall@10 test 0,0971, vượt Popularity 0,0216 và Rules 0,0047; LR không vượt Rules. Trần 0,5198 cho thấy danh mục ứng viên còn giới hạn đáng kể chất lượng tối đa. Đối với câu hỏi 5, giải pháp đề xuất là sử dụng luật đồng mua, thử RF theo lợi ích và chi phí, duy trì dự phòng độ phổ biến và giám sát chất lượng lẫn quyền riêng tư. Kết quả hiện tại xác nhận hiệu quả ngoại tuyến trong thiết kế đã khảo sát; cần thử nghiệm thực tế trước khi kết luận về doanh thu.
++
+ 
+ # TÀI LIỆU THAM KHẢO {.unnumbered}
+ 
+ ::: {#refs}
+ :::
+-
+-```{=latex}
+-\clearpage
+-\appendix
+-```
+-
+-# TOÀN VĂN MÃ NGUỒN PYTHON SẠCH THEO CHUẨN PEP 8
+-
+-Phụ lục toàn văn mã nguồn chưa hoàn tất vì các giai đoạn EDA và mô hình còn đang phát triển. Danh mục API và nơi triển khai hiện hành được lưu trong `Chung/Hướng dẫn chung/DOI_CHIEU_API.md`. Mã nguồn thực tế đi cùng workspace; danh mục này không thay thế yêu cầu đưa toàn văn code vào phụ lục khi nộp. Không sử dụng code minh họa như kết quả triển khai.
+-
+-# NHẬT KÝ LÀM VIỆC VỚI ANTIGRAVITY IDE
+-
+-Nhật ký đầy đủ được lưu tại gốc project, ghi theo từng phiên và công cụ thực tế. Trích phiên 29/10/2026 của Phong: yêu cầu tiếp nhận gói chung và sửa các vấn đề trước 3.4; Codex hỗ trợ đối chiếu hash, sửa cổng kiểm chứng G0, cấu hình và render. Phần bóc tách xác định rủi ro trạng thái kiểm chứng cũ; phần thử lỗi dùng fixture để thay acceptance, config, output, môi trường và mô phỏng phiên bị ngắt; phần nghiệm thu lưu kết quả kiểm thử và hồ sơ lượt chạy riêng. Phiên này không được ghi thành công việc G0 lịch sử của Vương. Các kết quả EDA và mô hình chưa chạy vẫn được ghi là còn chờ.

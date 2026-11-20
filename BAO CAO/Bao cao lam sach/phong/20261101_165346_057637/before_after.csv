@@ -1,0 +1,16 @@
+﻿table,column,missing_tokens_before,unusable_after_initial_parse,missing_final,nonmissing_final
+products,product_id,0,0,0,49688
+products,product_name,6923,6923,6923,42765
+products,aisle_id,0,0,0,49688
+products,department_id,0,0,0,49688
+orders,order_id,0,0,0,3421083
+orders,user_id,0,0,0,3421083
+orders,eval_set,314925,813329,0,3421083
+orders,order_number,798715,1233938,0,3421083
+orders,order_dow,463331,965281,965281,2455802
+orders,order_hour_of_day,555547,555547,555547,2865536
+orders,days_since_prior_order,753252,753252,753252,2667831
+order_products__train,order_id,0,0,0,1384617
+order_products__train,product_id,0,0,0,1384617
+order_products__train,add_to_cart_order,348739,525773,0,1384617
+order_products__train,reordered,211571,420771,420771,963846

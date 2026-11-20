@@ -1,0 +1,21 @@
+--- truoc/styles/apa.csl
++++ sau/styles/apa.csl
+@@ -61,4 +61,18 @@
+         <single>suppl.</single>
+         <multiple>suppls.</multiple>
++      </term>
++    </terms>
++  </locale>
++  <!-- Nhóm 01 (05/11/2026): locale tiếng Việt in "a.b" cho ấn bản và "Vol" thiếu dấu chấm;
++       nguồn tiếng Anh nên giữ dạng APA "2nd ed.", "Vol. 398". -->
++  <locale xml:lang="vi">
++    <terms>
++      <term name="edition" form="short">
++        <single>ed.</single>
++        <multiple>eds.</multiple>
++      </term>
++      <term name="volume" form="short">
++        <single>Vol.</single>
++        <multiple>Vols.</multiple>
+       </term>
+     </terms>

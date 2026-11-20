@@ -1,0 +1,11 @@
+--- chot_07-11/scripts/README.md
++++ hien_tai_11-11/scripts/README.md
+@@ -1,2 +1,2 @@
+-# Mã nguồn PRJ-08 (đến hết Chương 3)
++# Mã nguồn PRJ-08 (Chương 3 và Chương 4)
+ 
+@@ -38,3 +38,3 @@
+ 
+-Tham số Chương 4 ở `configs/m4_model.json`; thiết kế ở `Chung/Hướng dẫn chung/THIET_KE_CHUONG4_20261101.md`.
++Tham số Chương 4 ở `configs/m4_model.json`; thiết kế ở `TAI_LIEU_NOI_BO/Hướng dẫn chung/THIET_KE_CHUONG4_20261101.md`.
+ 

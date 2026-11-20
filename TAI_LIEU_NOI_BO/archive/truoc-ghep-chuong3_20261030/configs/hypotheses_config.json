@@ -1,0 +1,17 @@
+{
+  "contract_version": 1,
+  "stage": "locked before M2 cooccurrence analysis; not external preregistration",
+  "alpha": 0.05,
+  "adjustment": "holm",
+  "family_size": 3,
+  "minimum_expected": 5,
+  "chi_square_correction": false,
+  "fisher_alternative": "two-sided",
+  "constant_variable": "not_testable; use p=1 internally for Holm only; report NA",
+  "effect_size": "sqrt(uncorrected Pearson chi2 / N)",
+  "pairs": [
+    {"id": "H1", "a": 3, "a_name": "bakery", "b": 16, "b_name": "dairy eggs", "reason": "Possible complementary breakfast categories; not an observed result"},
+    {"id": "H2", "a": 9, "a_name": "dry goods pasta", "b": 13, "b_name": "pantry", "reason": "Possible main ingredients and pantry complements; not an observed result"},
+    {"id": "H3", "a": 4, "a_name": "produce", "b": 12, "b_name": "meat seafood", "reason": "Possible vegetable and protein meal components; not an observed result"}
+  ]
+}

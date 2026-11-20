@@ -1,0 +1,16 @@
+﻿table,rule,affected
+order_products__prior,position_exceeds_basket_size,0
+order_products__prior,sequence_corrected_observed,762067
+order_products__prior,sequence_filled_unusable,6005160
+order_products__prior,sequence_observed_consistent,25667262
+order_products__train,position_exceeds_basket_size,0
+order_products__train,sequence_corrected_observed,67880
+order_products__train,sequence_filled_unusable,525773
+order_products__train,sequence_observed_consistent,790964
+orders,eval_inferred_test,17939
+orders,eval_observed_consistent,2607754
+orders,eval_recovered_prior,764250
+orders,eval_recovered_train,31140
+orders,sequence_corrected_observed,4773
+orders,sequence_filled_unusable,1233938
+orders,sequence_observed_consistent,2182372

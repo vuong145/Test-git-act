@@ -1,0 +1,115 @@
+{
+  "config": {
+    "contract_version": 1,
+    "stage": "locked before M2 cooccurrence analysis; not external preregistration",
+    "alpha": 0.05,
+    "adjustment": "holm",
+    "family_size": 3,
+    "minimum_expected": 5,
+    "chi_square_correction": false,
+    "fisher_alternative": "two-sided",
+    "constant_variable": "not_testable; use p=1 internally for Holm only; report NA",
+    "effect_size": "sqrt(uncorrected Pearson chi2 / N)",
+    "pairs": [
+      {
+        "id": "H1",
+        "a": 3,
+        "a_name": "bakery",
+        "b": 16,
+        "b_name": "dairy eggs",
+        "reason": "Possible complementary breakfast categories; not an observed result"
+      },
+      {
+        "id": "H2",
+        "a": 9,
+        "a_name": "dry goods pasta",
+        "b": 13,
+        "b_name": "pantry",
+        "reason": "Possible main ingredients and pantry complements; not an observed result"
+      },
+      {
+        "id": "H3",
+        "a": 4,
+        "a_name": "produce",
+        "b": 12,
+        "b_name": "meat seafood",
+        "reason": "Possible vegetable and protein meal components; not an observed result"
+      }
+    ]
+  },
+  "tables": [
+    {
+      "id": "H1",
+      "observed": [
+        [
+          11137,
+          17361
+        ],
+        [
+          1949,
+          8916
+        ]
+      ],
+      "expected": [
+        [
+          9473.994055331148,
+          19024.00594466885
+        ],
+        [
+          3612.0059446688515,
+          7252.994055331149
+        ]
+      ]
+    },
+    {
+      "id": "H2",
+      "observed": [
+        [
+          21407,
+          10291
+        ],
+        [
+          3763,
+          3902
+        ]
+      ],
+      "expected": [
+        [
+          20268.74628458197,
+          11429.253715418032
+        ],
+        [
+          4901.253715418032,
+          2763.7462845819678
+        ]
+      ]
+    },
+    {
+      "id": "H3",
+      "observed": [
+        [
+          9377,
+          878
+        ],
+        [
+          22689,
+          6419
+        ]
+      ],
+      "expected": [
+        [
+          8353.957523562736,
+          1901.0424764372635
+        ],
+        [
+          23712.042476437262,
+          5395.957523562736
+        ]
+      ]
+    }
+  ],
+  "warnings": [
+    "Zero machine p-values must be displayed as below numerical precision, never p=0.",
+    "Association is unadjusted for basket size; not causal; not externally preregistered."
+  ]
+}

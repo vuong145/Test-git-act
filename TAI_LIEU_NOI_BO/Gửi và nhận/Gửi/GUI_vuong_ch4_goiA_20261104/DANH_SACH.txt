@@ -1,0 +1,53 @@
+path	sha256	description
+BAO CAO/Bao cao mo hinh/ablation.csv	38b21c60a80fd973969d4a4ea15919bd274f77a8d6e1796dfb91e991b32df003	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/basket_metrics_validation.csv	0533b0999e5f02df15d0d6bb39dccd2cbd0c62417f7faf73220c5a0b0a47bfa6	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/classifier_validation.csv	732dfddbcbd140747d1bee7d105e9a6d463dc30af488a64a9d6aabeb2add34c1	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/dataset_description.csv	992a4cffcfa008347674b05365ecaff3ebe969173bd39aa8ff67613e4bde528d	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/examples.csv	8e63cf9ea80a4a2c068696a3ecc63494a7c9ff8dedc2a9dc7519f92bcceef1d1	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/feature_correlation.csv	666d9c889c56467769201182dfdd2ca15e02d61992ba97b9a13129d2d00cb118	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/figures/fig-importance.pdf	1a5f4cd53f2b6b97ed6b9ecc1d137968cadd8bbec9e5113c980bb0bef0eb070a	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/figures/fig-importance.png	f1a13be7895b6757942042b4ea091cb2eeece8ad052ee4d06337656b02d06263	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/importance.csv	c7528849e3204a72f26c9788e8320e78b261c75fac1973179b295d927ba8dccc	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/importance_baseline.json	d9f9e274256322f945ec44b250505a679b1a8e34f12596ce01d60f505a4587d1	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/importance_repeats.csv	f46e29484ac1ff0b904c8b3f18af026c474a1093f20b6bbfef49a9b97ed95547	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/itemset_equivalence_N1000_c20_l2.json	605269eb2b521ab7a5735a4ab0c3c4269614376054ece114d9b40586f9435a7d	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/itemset_equivalence_N2000_c20_l3.json	0ba1f8f1226b0fd922294ec528eca0890bab07902f14b6332e4eb579ff3ba1e4	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/itemset_equivalence_N500_c50_l2.json	9a82cf4f0945c45801cc91f4e6a5ace113ddc55d6287b851af2c09ffb019a980	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/lock.json	4c6f4b9cf492e434707556396060673543c6529c2e72a4388db419284bbe3d50	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/lr_coefficients.csv	864c3098cb0cbba54f621a06a532d6cc8fd431f0a772585c01dbf4ebcba9fcc7	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/mining_benchmark_N1000_c20_l2.csv	215cbc01f011f52349815fcd2a321b8f58d00456c5d32e91c7e0f359022ef718	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/mining_benchmark_N2000_c20_l3.csv	8a32ac164d2e871949f0f925c840b37614ad7ae1a26e7b40114754a8dd674118	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/mining_benchmark_N500_c50_l2.csv	32504387965afe670b33a035f713cb5306df859c294f174928c51523a866ebba	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/rule_coverage.json	f696ca9f8bbee7c21d6b4be05e8360329b0f7ad2ae4279439fd22bfdb13a4ed8	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/validation_grid_A.csv	3fa850ba056b6d5e2c6a5bc6e3bba9d882e7bca9668d87530564a901caa66187	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/validation_grid_B.csv	9b0fc798359a5f1804463cba0a31e5da62d4344efc47e067cfddbd8f5e06eb34	Bằng chứng thực nghiệm trên máy Vương
+BAO CAO/Bao cao mo hinh/validation_methods.csv	c9db65855b3722f398d9965726f78c2dff841146518b1d801b63685cb979a2e5	Bằng chứng thực nghiệm trên máy Vương
+configs/m4_model.json	1350c3ebc27b53464f3e5e3555ff23d45acbdafc843146e3106660c2ca2e604d	Cấu hình Chương 4
+DATA/Data phai sinh/M4/catalog.parquet	345d462c113a985e9138023356a9e18457f4c5ccc1bfd24606bf36232376d03e	Đầu ra M4 để tái lập và kiểm tra
+DATA/Data phai sinh/M4/features_fit.parquet	8393a5f2d74f806450f1565e2c18c25ba25c8b53389bf2496739e07675b75abe	Đầu ra M4 để tái lập và kiểm tra
+DATA/Data phai sinh/M4/hashes.json	af4871803db58b3b379e6da3c0142b717b2a928907307be4cc0b8d594b84c734	Đầu ra M4 để tái lập và kiểm tra
+DATA/Data phai sinh/M4/masked_baskets.parquet	fe4dfec0a9b1f3789c5228c7cab90eaabcf1e10434d84c83f50cf164d0bf61a2	Đầu ra M4 để tái lập và kiểm tra
+DATA/Data phai sinh/M4/pipeline_lr.joblib	e712fac34c1b7e9a7646d3291422349b330ffbc089bab5c6577cddd05838408f	Đầu ra M4 để tái lập và kiểm tra
+DATA/Data phai sinh/M4/pipeline_rf.joblib	281cdbf69c63e2dc3c2924dda6c327a34424630e531e46ea27ccc7f43782dc4e	Đầu ra M4 để tái lập và kiểm tra
+DATA/Data phai sinh/M4/rules_grid.parquet	b510993c71e202a1baddf6bf8194818b9ef017f071de24d55ed77ce2b5c68d92	Đầu ra M4 để tái lập và kiểm tra
+README_GUI_PHONG.md	98a4ee7f151e510c789b1196f42c91b3ff6c2addafc381e5178da8c892900e22	Hướng dẫn hoặc môi trường
+requirements.txt	79edb2c0752acb09da19838d85f10d889db6a8c89189eb916b10b282d1eac522	Hướng dẫn hoặc môi trường
+scripts/m4_benchmark_mining.py	69b5696bc6c73f736b8eaadd0ecf313f42689d401455b63c7d3567570d094bbe	Mã nguồn của Vương
+scripts/m4_common.py	d666b1831e534ca8089aa7e11c32f32a7103eadc3555aff27217c2acac5b3b42	Mã nguồn của Vương
+scripts/m4_lock.py	90e6599157cb18efafd3ccd64d9be1cbbe582802e2185fbe4bf42d0130d8c0c3	Mã nguồn của Vương
+scripts/m4_mining.py	2aa0810906ef05c1480579b99881a0d6a995aaa569ed5ada6f5cc435c3b868a7	Mã nguồn của Vương
+scripts/m4_prepare.py	f6272b4e4d5529d352355e9e492597bf6a9a0442f6b208914324532e531f17ba	Mã nguồn của Vương
+scripts/m4_report.py	9853694ac6ff1aabf98be3c4282804222c62e6b36e8c0528bf20e690d7983d37	Mã nguồn của Vương
+scripts/m4_validate.py	2b998ed678ed4e585c7cd120d6fd8eb055767c99b6667735a4c239ae5b19a38b	Mã nguồn của Vương
+tai_lieu/bang_4_1_dac_trung.csv	a8288788a9cfb70aa79695c9e774cd121b266876eab9f055c01bd8a0353e7e86	Tài liệu bàn giao và bảng nguồn
+tai_lieu/bang_4_2_phan_hoach.csv	4886a16c698c3ad496706372b816346fe94d0f4ca0c1985b2a1acd65b608c75d	Tài liệu bàn giao và bảng nguồn
+tai_lieu/bang_4_3_benchmark.csv	c07dd77ab228cacbf67cf98a97c6613862fdbf9f73122b4ceeb2495b6de1c82a	Tài liệu bàn giao và bảng nguồn
+tai_lieu/doi_chieu_50_may_Vuong.csv	dc6129065e14c354631c6bcb6c3bcc534592f8c4a57e6c1a2fda763e0df1523b	Tài liệu bàn giao và bảng nguồn
+tai_lieu/PHAN_VUONG_CHUONG4.qmd	70f269fd06db7afeac0c58165822a8b223094190d79bdb97a6045fa8d519f5d7	Tài liệu bàn giao và bảng nguồn
+tai_lieu/PHU_THUOC_CO_SAN.txt	ad51afdbc6d26bcb209ee30dbca2a2ad282392238c651b0cab83047a42db5e8b	Tài liệu bàn giao và bảng nguồn
+tai_lieu/rules_top10_50.csv	c5286feca7c00445b10c75a870652b0d28c9316cac3c48179c2f042552c4a25f	Tài liệu bàn giao và bảng nguồn
+tai_lieu/THIET_KE_CHUONG4_20261101.md	63dbb8f8896425c02968a1456fc13cf8bae5b24aa74e52071e2a3ad3aaf6ce92	Tài liệu bàn giao và bảng nguồn
+tai_lieu/THONG_NHAT_CHUONG4_LAN1_20261104.md	c39800c46cab0772c9956e0654cc9dff01dc4b628c173d0a6d1f1160c78f91f1	Tài liệu bàn giao và bảng nguồn
+tai_lieu/THONG_NHAT_PHAN_VIEC_20261031.md	aa8a38f8e1144c2f77138ffb8098d9ee8332c457970cb352c76810d86cffef92	Tài liệu bàn giao và bảng nguồn
+tai_lieu/xuat_bang_goi_A.py	ff058057fe7840fe9ac980ca6389f303af70e6d6331bd9feff840256ada6f4a1	Tài liệu bàn giao và bảng nguồn
+tests/test_m4_data.py	b8d1a87ccd7700b9868d9cf8f754ec123701d1ca782ca7c245e4b8a32cdeff1d	Kiểm thử của Vương

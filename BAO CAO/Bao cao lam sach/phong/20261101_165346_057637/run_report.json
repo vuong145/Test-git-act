@@ -1,0 +1,251 @@
+{
+  "status": "completed",
+  "assigned_to": "Hoàng Thanh Phong (MSSV: 2521001087)",
+  "tables_cleaned": [
+    "products",
+    "orders",
+    "order_products__train"
+  ],
+  "created_at_local": "2026-11-01T16:58:44.005829+07:00",
+  "seconds": 297.96,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "pandas": "3.0.1",
+    "numpy": "2.3.5"
+  },
+  "inputs": {
+    "aisles": {
+      "sha256": "ffa1ddce6395a6e808d239d104ab920eb20f2e169bbc538043e1e3191ce1f987",
+      "bytes": 2316,
+      "filename": "aisles.csv"
+    },
+    "departments": {
+      "sha256": "3d6a3f2a87ec3ccc61afea2044061017da733decda17de3beb2583dc4a1fc520",
+      "bytes": 277,
+      "filename": "departments.csv"
+    },
+    "products": {
+      "sha256": "c02c3f5c7ddbbf83b87b8b360923d81ca3a1d9fd83c6e719123cdc9d077fb7ba",
+      "bytes": 2022747,
+      "filename": "products.csv"
+    },
+    "orders": {
+      "sha256": "fbbbc436ddffefc7f609a540916e9728e81d86b8105bbaff79f3cb4dbc76269b",
+      "bytes": 113084083,
+      "filename": "orders.csv"
+    },
+    "order_products__prior": {
+      "sha256": "2cc2d226d9adcb1bd9381b681844a51d911a5ddc64910def71379e9b32d4f8c3",
+      "bytes": 614106632,
+      "filename": "order_products__prior.csv"
+    },
+    "order_products__train": {
+      "sha256": "37530a6ecdbe40ebbd923b2b294580dd2cfd414285659b2df71363389b696071",
+      "bytes": 26763333,
+      "filename": "order_products__train.csv"
+    }
+  },
+  "checks": {
+    "products": {
+      "input_rows": 49688,
+      "input_columns": [
+        "product_id",
+        "product_name",
+        "aisle_id",
+        "department_id"
+      ],
+      "input_key_sha256": "403f62df60881da386dc95f30808bc606bf640e4c2a0b34926b9558aedf223c3",
+      "primary_key_unique": true,
+      "foreign_keys_valid": true,
+      "output_rows": 49688,
+      "output_columns": [
+        "product_id",
+        "product_name",
+        "aisle_id",
+        "department_id"
+      ],
+      "output_key_sha256": "403f62df60881da386dc95f30808bc606bf640e4c2a0b34926b9558aedf223c3",
+      "same_schema": true,
+      "same_row_count": true,
+      "normalized_key_sequence_preserved": true
+    },
+    "orders": {
+      "input_rows": 3421083,
+      "input_columns": [
+        "order_id",
+        "user_id",
+        "eval_set",
+        "order_number",
+        "order_dow",
+        "order_hour_of_day",
+        "days_since_prior_order"
+      ],
+      "input_key_sha256": "badd2caec4c7d34c6141ab6846fa97c9368a659f940f15a45fe33bb7b856b9bf",
+      "primary_key_unique": true,
+      "sequence_policy": "reconstructed_from_preserved_csv_row_order",
+      "sequence_semantics": "assumed original purchase/cart order; not independently proven",
+      "noncontiguous_groups": 0,
+      "users": 206209,
+      "users_needing_sequence_review": 0,
+      "final_eval_set_counts": {
+        "prior": 3214874,
+        "train": 131209,
+        "test": 75000
+      },
+      "prior_train_disjoint": true,
+      "users_with_invalid_final_partition": 0,
+      "test_orders": 75000,
+      "test_inference": "complete audited files, neither source, exactly one final order per user",
+      "output_rows": 3421083,
+      "output_columns": [
+        "order_id",
+        "user_id",
+        "eval_set",
+        "order_number",
+        "order_dow",
+        "order_hour_of_day",
+        "days_since_prior_order"
+      ],
+      "output_key_sha256": "badd2caec4c7d34c6141ab6846fa97c9368a659f940f15a45fe33bb7b856b9bf",
+      "same_schema": true,
+      "same_row_count": true,
+      "normalized_key_sequence_preserved": true
+    },
+    "prior_dependency": {
+      "unique_orders": 3214874,
+      "order_foreign_keys_valid": true
+    },
+    "order_products__train": {
+      "input_rows": 1384617,
+      "input_columns": [
+        "order_id",
+        "product_id",
+        "add_to_cart_order",
+        "reordered"
+      ],
+      "input_key_sha256": "584d45ca6677ea0f9924a19e0f2609dfd27f25ed75755d61d656c2d5368ccf39",
+      "baskets": 131209,
+      "largest_basket": 80,
+      "primary_key_unique": true,
+      "foreign_keys_valid": true,
+      "baskets_needing_position_review": 0,
+      "duplicate_position_extra": 0,
+      "positions_exceeding_basket_size_set_missing": 0,
+      "sequence_policy": "reconstructed_from_preserved_csv_row_order",
+      "sequence_semantics": "assumed original purchase/cart order; not independently proven",
+      "noncontiguous_groups": 0,
+      "output_rows": 1384617,
+      "output_columns": [
+        "order_id",
+        "product_id",
+        "add_to_cart_order",
+        "reordered"
+      ],
+      "output_key_sha256": "584d45ca6677ea0f9924a19e0f2609dfd27f25ed75755d61d656c2d5368ccf39",
+      "same_schema": true,
+      "same_row_count": true,
+      "normalized_key_sequence_preserved": true
+    }
+  },
+  "output_comparison": {
+    "products": {
+      "new_sha256": "fb88d475cd4ef475fd229ee146fd2e20b8e11f123cd959c6ed408dc12e63fa96",
+      "previous_sha256": "fb88d475cd4ef475fd229ee146fd2e20b8e11f123cd959c6ed408dc12e63fa96",
+      "byte_identical_to_previous": true
+    },
+    "orders": {
+      "new_sha256": "9b52535e14f0be7af6e732714bb33a1d2c5895e175b18b59c4105821da6b5890",
+      "previous_sha256": "9b52535e14f0be7af6e732714bb33a1d2c5895e175b18b59c4105821da6b5890",
+      "byte_identical_to_previous": true
+    },
+    "order_products__train": {
+      "new_sha256": "4c8075f043a15a21864ef6df4bf909b2f90fa09806a2da4e8a177d236fa5244d",
+      "previous_sha256": "4c8075f043a15a21864ef6df4bf909b2f90fa09806a2da4e8a177d236fa5244d",
+      "byte_identical_to_previous": true
+    }
+  },
+  "config": {
+    "assigned_to": "Hoàng Thanh Phong (MSSV: 2521001087)",
+    "assigned_tables": [
+      "products",
+      "orders",
+      "order_products__train"
+    ],
+    "input_dir": "../../DATA/Data đã làm nhiễu",
+    "output_dir": "../../DATA/Data đã làm sạch",
+    "report_dir": "../../BAO CAO/Bao cao lam sach/phong",
+    "chunksize": 250000,
+    "missing_tokens": [
+      "",
+      "null",
+      "none",
+      "nan",
+      "na",
+      "n/a",
+      "?",
+      "-",
+      "chưa rõ"
+    ],
+    "missing_tokens_by_column": {
+      "products.product_name": [
+        "",
+        "null",
+        "none",
+        "nan",
+        "na",
+        "n/a",
+        "?",
+        "-",
+        "chưa rõ",
+        "unknown"
+      ]
+    },
+    "expected_rows": {
+      "products": 49688,
+      "orders": 3421083,
+      "order_products__train": 1384617
+    },
+    "expected_baskets": {
+      "order_products__train": 131209
+    },
+    "reconstruct_sequences_from_preserved_row_order": true,
+    "infer_test_from_complete_partition": true,
+    "expected_source_sha256": {
+      "aisles": "ffa1ddce6395a6e808d239d104ab920eb20f2e169bbc538043e1e3191ce1f987",
+      "departments": "3d6a3f2a87ec3ccc61afea2044061017da733decda17de3beb2583dc4a1fc520",
+      "order_products__prior": "2cc2d226d9adcb1bd9381b681844a51d911a5ddc64910def71379e9b32d4f8c3",
+      "order_products__train": "37530a6ecdbe40ebbd923b2b294580dd2cfd414285659b2df71363389b696071",
+      "orders": "fbbbc436ddffefc7f609a540916e9728e81d86b8105bbaff79f3cb4dbc76269b",
+      "products": "c02c3f5c7ddbbf83b87b8b360923d81ca3a1d9fd83c6e719123cdc9d077fb7ba"
+    },
+    "expected_test_orders": 75000,
+    "expected_users": 206209,
+    "expected_sequence_actions": {
+      "orders": {
+        "sequence_filled_unusable": 1233938,
+        "sequence_corrected_observed": 4773,
+        "sequence_observed_consistent": 2182372
+      },
+      "order_products__train": {
+        "sequence_filled_unusable": 525773,
+        "sequence_corrected_observed": 67880,
+        "sequence_observed_consistent": 790964
+      }
+    },
+    "expected_eval_recoveries": {
+      "eval_recovered_prior": 764250,
+      "eval_recovered_train": 31140,
+      "eval_inferred_test": 17939
+    }
+  },
+  "source_hashes_unchanged": true,
+  "assumptions": [
+    "CSV rows preserve original purchase/cart encounter order."
+  ],
+  "limitations": [
+    "Sequence semantics are assumed, not independently proven.",
+    "Valid-domain values may still be corrupted.",
+    "Unrecoverable attributes remain missing."
+  ]
+}

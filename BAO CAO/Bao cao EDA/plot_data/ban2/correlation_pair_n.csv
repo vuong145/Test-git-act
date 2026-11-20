@@ -1,0 +1,5 @@
+variable,basket_size,n_departments,n_aisles,days_since_prior_order
+basket_size,39363,39363,39363,32787
+n_departments,39363,39363,39363,32787
+n_aisles,39363,39363,39363,32787
+days_since_prior_order,32787,32787,32787,32787

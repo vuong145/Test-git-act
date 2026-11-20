@@ -1,0 +1,33 @@
+Gói GUI_PHONG_BAN_CHOT_20261107 — Vương gửi Phong — 07/11/2026 14:20
+Kiểm: sha256 từng tệp phải trùng cột đầu.
+
+cd4dea05ef74c400197d45f7c4fff3673d2fcb3b5e576fe64a3ed10ec9d6c8b9     967522  01_DE_DOC/2521001118_Nhom01_TieuLuan.pdf
+31014e63cad710a4e27280317a59313e1da256ce3b52bdedbfad0d70ad9da3d4     184099  01_DE_DOC/nhật ký làm việc.md
+97c394f22cb8151d9d3a25797e1ecc7d3b7e2e15dd0a2d64004f5cf94fff01e2     343336  01_DE_DOC/toàn bộ mã nguồn.md
+cd4dea05ef74c400197d45f7c4fff3673d2fcb3b5e576fe64a3ed10ec9d6c8b9     967522  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/2521001118_Nhom01_TieuLuan.pdf
+cfbb8f34b1565296bafa65a85a646c065709417993366d25d826df3b634b52c1     111872  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/2521001118_Nhom01_TieuLuan.qmd
+7bacce6c5213c1c80a03f47b5d8bb7f7fedb9499f56cf76d6c8fe5ba1f5c214e      41490  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/assets/chuong3/fig-ref-corr-spearman.pdf
+ec9a2500848e2d02c8f99a5ce6d991ae3d416ec5ccc74dfc9a2caa5cc36f72b4      53277  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/assets/chuong3/fig-ref-department-lift.pdf
+e7cf370a4178f94ea5fb174c2b26fdfec8619a2efd306485f8019fe997523ad5      39188  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/assets/chuong3/fig-ref-time-basket-size.pdf
+428e0c3f059b07a4c4228a08bebce6e71a2cfbb1968f7fc011b2b8c06bcd8958      38777  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/assets/chuong4/fig-importance.pdf
+06300abc469a87a35344acf81fd8e7beb742524d46d2841a84282c8c973874de      41127  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-pearson.pdf
+883f19e8cbb5b69dc3f549d2e9caeda790c589396ded4d7b526d3ddcca783645     136960  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-pearson.png
+7bacce6c5213c1c80a03f47b5d8bb7f7fedb9499f56cf76d6c8fe5ba1f5c214e      41490  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-spearman.pdf
+6c2039a7e19c6163de1f72672fd8ffb7c7b0955112d09efa8c2eea3e5335594a     139878  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-spearman.png
+ec9a2500848e2d02c8f99a5ce6d991ae3d416ec5ccc74dfc9a2caa5cc36f72b4      53277  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao EDA/figures/ban2/fig-ref-department-lift.pdf
+9dfb88ef77408dfafba669b5488f2920e02904e1acd66c2c73a9ecc14d8152c1     164493  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao EDA/figures/ban2/fig-ref-department-lift.png
+e7cf370a4178f94ea5fb174c2b26fdfec8619a2efd306485f8019fe997523ad5      39188  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao EDA/figures/ban2/fig-ref-time-basket-size.pdf
+afb3d6ed624b4d9064790d4131aa2e61ad8006e650ba41eb7098a6f1d1d33808     123296  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao EDA/figures/ban2/fig-ref-time-basket-size.png
+428e0c3f059b07a4c4228a08bebce6e71a2cfbb1968f7fc011b2b8c06bcd8958      38777  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao mo hinh/figures/fig-importance.pdf
+9ef5a7b82dcf97e90728deb3a1adc67b5506c81a610a29ad91f97cdc85814ea1     164023  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/BAO CAO/Bao cao mo hinh/figures/fig-importance.png
+31014e63cad710a4e27280317a59313e1da256ce3b52bdedbfad0d70ad9da3d4     184099  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/nhật ký làm việc.md
+c5c0e7d0c5435d28891daf7b3e0bbbf4106ed2d0efcf7d145717d6fe029ee73f       5341  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/references.bib
+b909d52186266fcf41916d667b5d92794c0c2fdfa04173e579163dd7182bcaa8       5726  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/scripts/m2_plot_multivariate.py
+f9ef4f84c176d89e7f1b622169d7051b27a96eb1e7dfad7c094af83d0c5ff454       6812  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/scripts/m4_report.py
+97c394f22cb8151d9d3a25797e1ecc7d3b7e2e15dd0a2d64004f5cf94fff01e2     343336  02_TEP_DA_DOI_theo_duong_dan_thu_muc_bai/toàn bộ mã nguồn.md
+9c288aabb3818ee4d6ed3ed10eef301931feac8ba7ca6541cc48ee633404411a      25041  03_SO_SANH_voi_ban_06-11/2521001118_Nhom01_TieuLuan.qmd.diff
+183da748c02ba93183c77388de7316782775cb03e6364107c3f8077a53d38bcd     967856  03_SO_SANH_voi_ban_06-11/2521001118_Nhom01_TieuLuan_BAN_06-11.pdf
+ba34b2b6cde178287b113df94a9e0dc98cfcc6f5d82391d649f333a19a2f4433       2112  03_SO_SANH_voi_ban_06-11/m2_plot_multivariate.py.diff
+bf916061e8035c7bfed776d074ddc02cedb24fdcf0663e9a345dc9430e1cc473        692  03_SO_SANH_voi_ban_06-11/m4_report.py.diff
+a0bddeb513496eea98495093ecf64603a403695910b52ed20ed95ffd8734f183       1030  03_SO_SANH_voi_ban_06-11/references.bib.diff
+ddeb85de708ec7a7819f89ec00e2cf9d448368b4ee9d97d5cfb0fc54d753740c       3499  README_GUI_PHONG.md

@@ -1,0 +1,8 @@
+Gói GUI_PHONG_THEM_DOI_EFRON_20261111 — Vương gửi Phong — 11/11/2026 17:09
+Kiểm: sha256 từng tệp phải trùng cột đầu.
+
+ecc06a38391c0b21eb461215ab2c757d16ddcea0df9b411075af2f6577de21a6     968963  2521001118_Nhom01_TieuLuan.pdf
+3f79e0684d438813e717dd5c67f6bdb5454165f444834b9fa18553cdff5d1c0c     213595  nhật ký làm việc.md
+80ae2a212d749433463fde8ffbe5fe144dff16c5a84f39d4b877ac542a406823        705  README_GUI_PHONG.md
+03c918797c79bb885b14cf8cb4053ae2b4cdceb157889be9ed900d22b2d85d68       6553  references.bib
+e0cea0adde572210b0130f37cca11ea9fca341a288efeed99d2585ab12cb5f5d        357  references.bib.diff

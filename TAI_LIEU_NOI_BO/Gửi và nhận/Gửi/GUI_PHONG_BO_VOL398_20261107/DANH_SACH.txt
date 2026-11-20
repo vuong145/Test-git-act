@@ -1,0 +1,7 @@
+Gói GUI_PHONG_BO_VOL398_20261107 — Vương gửi Phong — 07/11/2026 13:53
+Kiểm: sha256 từng tệp phải trùng cột đầu.
+
+cd4dea05ef74c400197d45f7c4fff3673d2fcb3b5e576fe64a3ed10ec9d6c8b9     967522  2521001118_Nhom01_TieuLuan.pdf
+26f5621fc56bfc164bf08824208c1636cc54ae732228b0d75d2009df7278df82       1532  README_GUI_PHONG.md
+c5c0e7d0c5435d28891daf7b3e0bbbf4106ed2d0efcf7d145717d6fe029ee73f       5341  references.bib
+b7beea6e5c78d83aa24926f62c7b8062b60e2bc0073860b8b227025ae00a7738        414  references.bib.diff

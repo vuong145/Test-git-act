@@ -1,0 +1,53 @@
+{
+  "created_at_utc": "2026-10-30T08:51:17.043551+00:00",
+  "python": "3.12.14",
+  "pandas": "3.0.1",
+  "numpy": "2.3.5",
+  "pyarrow": "26.0.0",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "pyarrow": "26.0.0",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "status": "passed",
+  "scope": "member 1 only",
+  "foundation_sha256": "5d42246a800f6c1d30b938783e25b0b512cb2760c99c871297b5fb54cb5780c4",
+  "counts": {
+    "master_rows": 1384617,
+    "users": 131209,
+    "reference_rows": 415053,
+    "split_users": {
+      "fit": 39363,
+      "reference": 39363,
+      "test": 26242,
+      "validation": 26241
+    },
+    "reference_baskets": 39363,
+    "reference_users": 39363,
+    "departments": 21
+  },
+  "stages": {
+    "BAO CAO/Bao cao EDA/ban1/summary_manifest.json": "46286cd1f5dfc7f83745f8609bb2a572ce02caace394c376d97184b9d03594c6",
+    "BAO CAO/Bao cao EDA/ban1/plot_manifest.json": "2295b4c9a8f923c481ac8bec7fcab7d0aa2f9e221448e0b576599e5edc06a4e5",
+    "BAO CAO/Bao cao EDA/ban1/draft_manifest.json": "25431a1f9cc2b6881987e4c384ca037fc4a4db7f9fdcee651ef0ab7f7f04fa81"
+  },
+  "verifier_sha256": "979a97fb0ebec31cf244dbbe4781009500a2d0c53fbde07288327b577e467d45",
+  "checks": [
+    "describe independent reconciliation",
+    "frequency cells",
+    "group counts and valid-only reorder denominators",
+    "product ranking",
+    "Top-N union counts",
+    "reference IQR",
+    "all stage code/input/output hashes",
+    "source hashes unchanged"
+  ],
+  "pending": [
+    "peer review",
+    "member 2 results",
+    "main QMD integration"
+  ]
+}

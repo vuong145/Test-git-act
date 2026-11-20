@@ -1,0 +1,7 @@
+Gói DE_XUAT_SUA_THEO_GOP_Y_20261107 — Vương gửi Phong — 07/11/2026 13:05
+Kiểm: sha256 từng tệp phải trùng cột đầu.
+
+1c552eebf71c67a194d3cc62808ecd2cdab3bf195c06256e23684688e404bb1b      25040  2521001118_Nhom01_TieuLuan.qmd.diff
+52730e4dbdd6ec94ae8e2f8d7aa12aa3470ff0c4efaa99ac351483859c2a0b86     968847  BAN_THU_DA_SUA_44_trang.pdf
+648fdbfaa81a83376fae7d9278b1d762f562aacb01799b7362039fcb0f8e7916      19534  DE_XUAT_SUA_THEO_GOP_Y.md
+0099e9204bdb4a3d454c0a7e5b58c4f98b21cd2ba347ee29b65a530992463497        934  references.bib.diff

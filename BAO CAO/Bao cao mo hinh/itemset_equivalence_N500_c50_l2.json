@@ -1,0 +1,15 @@
+{
+  "config": {
+    "top_n": 500,
+    "min_count": 50,
+    "max_len": 2
+  },
+  "same_itemsets": true,
+  "max_support_gap": 0.0,
+  "tolerance": 1e-12,
+  "equivalent": true,
+  "python": "3.12.14",
+  "pandas": "3.0.1",
+  "mlxtend": "0.25.0",
+  "psutil": "7.2.2"
+}

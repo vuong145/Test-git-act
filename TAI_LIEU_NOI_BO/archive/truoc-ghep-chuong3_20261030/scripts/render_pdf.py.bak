@@ -1,0 +1,104 @@
+"""Render the report; publish only a successful build and retain diagnostics."""
+import argparse
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+import time
+
+
+def stage_resources(root, source, staging):
+    """Keep relative EDA paths; fail before Quarto on missing/oversized assets."""
+    spec_path = root / 'configs/render_resources.json'
+    spec = json.loads(spec_path.read_text(encoding='utf-8')) if spec_path.exists() else {}
+    files = set(spec.get('files', []))
+    for pattern in spec.get('globs', []):
+        files.update(p.relative_to(root).as_posix() for p in root.glob(pattern) if p.is_file())
+    text = source.read_text(encoding='utf-8')
+    references = re.findall(r'!\[[^\]]*\]\(([^\n)]+)\)', text)
+    references += re.findall(r'\\(?:includegraphics|VerbatimInput|input)(?:\[[^\]]*\])?\{([^}]+)\}', text)
+    references += re.findall(r'''(?:read_csv|read_json|read_parquet|open)\(\s*["']([^"']+)["']''', text)
+    for reference in references:
+        value = reference.strip().strip('<>')
+        if value.startswith(('http://', 'https://', 'data:')):
+            continue
+        files.add(value)
+    for name in sorted(files):
+        original = (root / name).resolve()
+        if not original.is_relative_to(root.resolve()):
+            raise ValueError(f'Resource outside project: {name}')
+        if not original.is_file():
+            raise FileNotFoundError(f'Missing render resource: {name}')
+        if original.stat().st_size > spec.get('max_file_bytes', 10 * 1024 * 1024):
+            raise ValueError(f'Resource too large; export a light table: {name}')
+        target = staging / original.relative_to(root.resolve())
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(original, target)
+
+
+def main():
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    parser = argparse.ArgumentParser(description='Xuất PDF bằng Quarto/XeLaTeX')
+    parser.add_argument('--no-open', action='store_true')
+    args = parser.parse_args()
+    root = Path(__file__).resolve().parent.parent
+    source = root / '2521001118_Nhom01_TieuLuan.qmd'
+    target = source.with_suffix('.pdf')
+    build = root / (source.stem + '.build.pdf')
+    quarto = shutil.which('quarto')
+    if not quarto:
+        for base in [Path(os.environ.get('ProgramFiles', 'C:/Program Files')),
+                     Path(os.environ.get('LOCALAPPDATA', '')) / 'Programs']:
+            candidate = base / 'Quarto/bin/quarto.exe'
+            if candidate.exists():
+                quarto = str(candidate)
+                break
+    if not quarto:
+        raise RuntimeError('Không tìm thấy Quarto CLI')
+    if not source.exists():
+        raise FileNotFoundError(source)
+    started = time.perf_counter()
+    # Quarto may remove the source-stem PDF even with --output specified.
+    # Render an isolated copy so a failed build cannot delete the published PDF.
+    with tempfile.TemporaryDirectory(prefix='quarto-build-', dir=root,
+                                     ignore_cleanup_errors=True) as directory:
+        staging = Path(directory)
+        for name in [source.name, 'references.bib']:
+            shutil.copy2(root / name, staging / name)
+        for name in ['styles', 'assets', 'images', 'src']:
+            if (root / name).is_dir():
+                shutil.copytree(root / name, staging / name)
+        stage_resources(root, source, staging)
+        process = subprocess.run(
+            [quarto, 'render', str(staging / source.name), '--to', 'pdf',
+             '--output', build.name],
+            cwd=staging, capture_output=True, text=True, encoding='utf-8',
+            errors='replace',
+        )
+        produced = staging / build.name
+        if process.returncode == 0 and produced.exists():
+            os.replace(produced, build)
+        elif process.returncode == 0:
+            raise RuntimeError('Quarto không tạo PDF trong thư mục biên dịch')
+    log = (process.stdout or '') + (process.stderr or '')
+    (root / 'BAO CAO' / 'Bao cao lam sach' / 'logs').mkdir(parents=True, exist_ok=True)
+    (root / 'Bao cao lam sach' / 'logs' / 'render_pdf.log').write_text(log, encoding='utf-8')
+    if process.returncode or not build.exists():
+        print(log)
+        raise RuntimeError('Render thất bại; xem BAO CAO/Bao cao lam sach/logs/render_pdf.log, PDF cũ được giữ')
+    try:
+        os.replace(build, target)
+    except PermissionError as exc:
+        raise PermissionError(f'PDF đang khóa; bản mới đã lưu tại {build}') from exc
+    print(f'THÀNH CÔNG: {target}; {time.perf_counter() - started:.2f} giây')
+    if not args.no_open and hasattr(os, 'startfile'):
+        os.startfile(str(target))
+
+
+if __name__ == '__main__':
+    main()

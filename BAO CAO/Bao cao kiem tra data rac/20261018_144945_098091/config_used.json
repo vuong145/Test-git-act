@@ -1,0 +1,13 @@
+{
+  "input_dir": "\Data đã làm nhiễu",
+  "report_dir": "\Bao cao kiem tra data rac",
+  "files": {},
+  "expected_rows": {
+    "aisles": 134,
+    "departments": 21,
+    "products": 49688,
+    "orders": 3421083,
+    "order_products__prior": 32434489,
+    "order_products__train": 1384617
+  }
+}

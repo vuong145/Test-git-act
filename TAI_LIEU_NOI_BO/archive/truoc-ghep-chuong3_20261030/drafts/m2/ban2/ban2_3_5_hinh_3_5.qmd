@@ -1,0 +1,47 @@
+## Trực quan hóa đa biến — phần Bạn 2
+
+![Tần số giờ và mã ngày đặt đơn — phần A của nhóm hình thời gian](<BAO CAO/Bao cao EDA/figures/ban2/fig-ref-time-frequency.png>){#fig-ref-time-patterns-frequency width=100%}
+
+Nguồn: reference G0; N=39,363 giỏ. Dữ liệu vẽ và mẫu số lưu trong hồ sơ nhánh Bạn 2.
+
+![Kích thước giỏ theo ngày và khung giờ — phần B của nhóm hình thời gian](<BAO CAO/Bao cao EDA/figures/ban2/fig-ref-time-basket-size.png>){#fig-ref-time-patterns width=100%}
+
+Nguồn: reference G0; N=39,363 giỏ. Dữ liệu vẽ và mẫu số lưu trong hồ sơ nhánh Bạn 2.
+
+![Tương quan Spearman giữa các biến định lượng](<BAO CAO/Bao cao EDA/figures/ban2/fig-ref-corr-spearman.png>){#fig-ref-correlations width=100%}
+
+Nguồn: reference G0; N=39,363 giỏ. Dữ liệu vẽ và mẫu số lưu trong hồ sơ nhánh Bạn 2.
+
+![Lift đồng mua cấp ngành trên reference](<BAO CAO/Bao cao EDA/figures/ban2/fig-ref-department-lift.png>){#fig-ref-department-cooccurrence width=100%}
+
+Nguồn: reference G0; N=39,363 giỏ. Dữ liệu vẽ và mẫu số lưu trong hồ sơ nhánh Bạn 2.
+
+Pivot ngày × khung giờ: N hợp lệ=23,549; thiếu ngày hoặc giờ=15,814. Tương quan giữa ba biến đếm dùng N=39,363; cặp có khoảng cách đơn dùng N=32,787. Các nhóm thiếu chỉ loại khỏi phép tính cần biến đó.
+
+Hình thời gian giữ riêng số thiếu; median ô trống là NA, nhóm N<30 chỉ tham khảo. Spearman là hình chính; Pearson là hình bổ trợ, không chọn hệ số lớn hơn để kết luận. Số ngành/quầy và kích thước giỏ có quan hệ cấu trúc. Heatmap ngành dùng thang tuyến tính, ẩn đường chéo và giá trị không xác định; ID tăng từ 1 đến 21, tên tương ứng trong bảng dưới. Lift cao cần đọc cùng số đồng mua và support, không chứng minh quan hệ nhân quả.
+
+| ID | Ngành |
+|---:|---|
+| 1 | frozen |
+| 2 | other |
+| 3 | bakery |
+| 4 | produce |
+| 5 | alcohol |
+| 6 | international |
+| 7 | beverages |
+| 8 | pets |
+| 9 | dry goods pasta |
+| 10 | bulk |
+| 11 | personal care |
+| 12 | meat seafood |
+| 13 | pantry |
+| 14 | breakfast |
+| 15 | canned goods |
+| 16 | dairy eggs |
+| 17 | household |
+| 18 | babies |
+| 19 | snacks |
+| 20 | deli |
+| 21 | missing |
+
+Đường dẫn hình tính từ gốc project để Bạn 1 tích hợp vào QMD chính; bản thảo này không render riêng.

@@ -1,0 +1,16 @@
+--- ban_06-11/scripts/m4_report.py
++++ ban_chot/scripts/m4_report.py
+@@ -41,2 +41,9 @@
+     plt, style = plot_setup()
++    from matplotlib.ticker import ScalarFormatter
++
++    class Comma(ScalarFormatter):
++        """Nhãn trục số dùng dấu phẩy thập phân cho khớp lời văn (07/11)."""
++        def __call__(self, x, pos=None):
++            return super().__call__(x, pos).replace(".", ",")
++
+     fig, axes = plt.subplots(2, 1, figsize=(16 / 2.54, 5.6))
+@@ -49,2 +56,3 @@
+         ax.set_xlabel("Mức giảm Average Precision")
++        ax.xaxis.set_major_formatter(Comma())
+     fig.subplots_adjust(left=0.36, right=0.96, top=0.95, bottom=0.16, hspace=0.6)

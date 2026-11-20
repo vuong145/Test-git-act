@@ -1,0 +1,207 @@
+{
+  "status": "completed",
+  "assigned_to": "Lê Văn Vương (MSSV: 2521001118)",
+  "tables_cleaned": [
+    "aisles",
+    "departments",
+    "order_products__prior"
+  ],
+  "created_at_local": "2026-11-01T17:03:43.249418+07:00",
+  "seconds": 600.79,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "pandas": "3.0.1",
+    "numpy": "2.3.5"
+  },
+  "inputs": {
+    "aisles": {
+      "sha256": "ffa1ddce6395a6e808d239d104ab920eb20f2e169bbc538043e1e3191ce1f987",
+      "bytes": 2316,
+      "filename": "aisles.csv"
+    },
+    "departments": {
+      "sha256": "3d6a3f2a87ec3ccc61afea2044061017da733decda17de3beb2583dc4a1fc520",
+      "bytes": 277,
+      "filename": "departments.csv"
+    },
+    "products": {
+      "sha256": "c02c3f5c7ddbbf83b87b8b360923d81ca3a1d9fd83c6e719123cdc9d077fb7ba",
+      "bytes": 2022747,
+      "filename": "products.csv"
+    },
+    "orders": {
+      "sha256": "fbbbc436ddffefc7f609a540916e9728e81d86b8105bbaff79f3cb4dbc76269b",
+      "bytes": 113084083,
+      "filename": "orders.csv"
+    },
+    "order_products__prior": {
+      "sha256": "2cc2d226d9adcb1bd9381b681844a51d911a5ddc64910def71379e9b32d4f8c3",
+      "bytes": 614106632,
+      "filename": "order_products__prior.csv"
+    },
+    "order_products__train": {
+      "sha256": "37530a6ecdbe40ebbd923b2b294580dd2cfd414285659b2df71363389b696071",
+      "bytes": 26763333,
+      "filename": "order_products__train.csv"
+    }
+  },
+  "checks": {
+    "aisles": {
+      "input_rows": 134,
+      "input_columns": [
+        "aisle_id",
+        "aisle"
+      ],
+      "input_key_sha256": "04f7de2ec551ec4110f427a117c2b98175c273dc3bb888a9d8773516d78a08c6",
+      "primary_key_unique": true,
+      "foreign_keys_valid": true,
+      "output_rows": 134,
+      "output_columns": [
+        "aisle_id",
+        "aisle"
+      ],
+      "output_key_sha256": "04f7de2ec551ec4110f427a117c2b98175c273dc3bb888a9d8773516d78a08c6",
+      "same_schema": true,
+      "same_row_count": true,
+      "normalized_key_sequence_preserved": true
+    },
+    "departments": {
+      "input_rows": 21,
+      "input_columns": [
+        "department_id",
+        "department"
+      ],
+      "input_key_sha256": "4ba6838a14db858ba582370c7d475a9ecd74322e23c00a748a6aa879ede3adf9",
+      "primary_key_unique": true,
+      "foreign_keys_valid": true,
+      "output_rows": 21,
+      "output_columns": [
+        "department_id",
+        "department"
+      ],
+      "output_key_sha256": "4ba6838a14db858ba582370c7d475a9ecd74322e23c00a748a6aa879ede3adf9",
+      "same_schema": true,
+      "same_row_count": true,
+      "normalized_key_sequence_preserved": true
+    },
+    "order_products__prior": {
+      "input_rows": 32434489,
+      "input_columns": [
+        "order_id",
+        "product_id",
+        "add_to_cart_order",
+        "reordered"
+      ],
+      "input_key_sha256": "bd16dea12950257b501a6b65f16d34da9b67abe692216c52a09db62e3c8d025e",
+      "baskets": 3214874,
+      "largest_basket": 145,
+      "primary_key_unique": true,
+      "foreign_keys_valid": true,
+      "baskets_needing_position_review": 0,
+      "duplicate_position_extra": 0,
+      "positions_exceeding_basket_size_set_missing": 0,
+      "sequence_policy": "reconstructed_from_preserved_csv_row_order",
+      "sequence_semantics": "assumed original purchase/cart order; not independently proven",
+      "noncontiguous_groups": 0,
+      "output_rows": 32434489,
+      "output_columns": [
+        "order_id",
+        "product_id",
+        "add_to_cart_order",
+        "reordered"
+      ],
+      "output_key_sha256": "bd16dea12950257b501a6b65f16d34da9b67abe692216c52a09db62e3c8d025e",
+      "same_schema": true,
+      "same_row_count": true,
+      "normalized_key_sequence_preserved": true
+    }
+  },
+  "output_comparison": {
+    "aisles": {
+      "new_sha256": "7190515349247784f15d83b7d860b0757c98e805c97a3e14487b8c70337ad747",
+      "previous_sha256": "7190515349247784f15d83b7d860b0757c98e805c97a3e14487b8c70337ad747",
+      "byte_identical_to_previous": true
+    },
+    "departments": {
+      "new_sha256": "d075b04a7b1bf5e5eda0a566776f63b1c2c545d135645ae6ad9e6b29b21380d0",
+      "previous_sha256": "d075b04a7b1bf5e5eda0a566776f63b1c2c545d135645ae6ad9e6b29b21380d0",
+      "byte_identical_to_previous": true
+    },
+    "order_products__prior": {
+      "new_sha256": "b4426f3c1f83c2a6e3db626afba01d1a4ea276a06f40e489ceb523e4c992c797",
+      "previous_sha256": "b4426f3c1f83c2a6e3db626afba01d1a4ea276a06f40e489ceb523e4c992c797",
+      "byte_identical_to_previous": true
+    }
+  },
+  "config": {
+    "assigned_to": "Lê Văn Vương (MSSV: 2521001118)",
+    "assigned_tables": [
+      "aisles",
+      "departments",
+      "order_products__prior"
+    ],
+    "input_dir": "../../DATA/Data đã làm nhiễu",
+    "output_dir": "../../DATA/Data đã làm sạch",
+    "report_dir": "../../BAO CAO/Bao cao lam sach/vuong",
+    "chunksize": 250000,
+    "missing_tokens": [
+      "",
+      "null",
+      "none",
+      "nan",
+      "na",
+      "n/a",
+      "?",
+      "-",
+      "chưa rõ"
+    ],
+    "missing_tokens_by_column": {
+      "aisles.aisle": [
+        "",
+        "null",
+        "none",
+        "nan",
+        "na",
+        "n/a",
+        "?",
+        "-",
+        "chưa rõ",
+        "unknown"
+      ]
+    },
+    "expected_rows": {
+      "aisles": 134,
+      "departments": 21,
+      "order_products__prior": 32434489
+    },
+    "expected_baskets": {
+      "order_products__prior": 3214874
+    },
+    "reconstruct_sequences_from_preserved_row_order": true,
+    "expected_source_sha256": {
+      "aisles": "ffa1ddce6395a6e808d239d104ab920eb20f2e169bbc538043e1e3191ce1f987",
+      "departments": "3d6a3f2a87ec3ccc61afea2044061017da733decda17de3beb2583dc4a1fc520",
+      "order_products__prior": "2cc2d226d9adcb1bd9381b681844a51d911a5ddc64910def71379e9b32d4f8c3",
+      "order_products__train": "37530a6ecdbe40ebbd923b2b294580dd2cfd414285659b2df71363389b696071",
+      "orders": "fbbbc436ddffefc7f609a540916e9728e81d86b8105bbaff79f3cb4dbc76269b",
+      "products": "c02c3f5c7ddbbf83b87b8b360923d81ca3a1d9fd83c6e719123cdc9d077fb7ba"
+    },
+    "expected_sequence_actions": {
+      "order_products__prior": {
+        "sequence_filled_unusable": 6005160,
+        "sequence_corrected_observed": 762067,
+        "sequence_observed_consistent": 25667262
+      }
+    }
+  },
+  "source_hashes_unchanged": true,
+  "assumptions": [
+    "CSV rows preserve original purchase/cart encounter order."
+  ],
+  "limitations": [
+    "Sequence semantics are assumed, not independently proven.",
+    "Valid-domain values may still be corrupted.",
+    "Unrecoverable attributes remain missing."
+  ]
+}
